@@ -5,7 +5,8 @@ scripts = \
 
 files = \
 	/etc/group \
-	/etc/passwd
+	/etc/passwd \
+	/lib/lsb/init-functions
 
 links = \
 	/init
