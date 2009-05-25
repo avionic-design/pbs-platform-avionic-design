@@ -1,0 +1,13 @@
+if PLATFORM_AVIONIC_DESIGN
+
+choice
+	prompt "Avionic Design"
+
+config PLATFORM_AVIONIC_DESIGN_XANTHOS
+	bool "Xanthos"
+
+endchoice
+
+source "platforms/avionic-design/xanthos/Kconfig"
+
+endif

@@ -1,0 +1,2 @@
+config PLATFORM_AVIONIC_DESIGN
+	bool "Avionic Design"
