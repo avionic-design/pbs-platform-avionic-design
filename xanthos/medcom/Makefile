@@ -5,7 +5,9 @@ scripts = \
 
 files = \
 	/etc/group \
+	/etc/inittab \
 	/etc/passwd \
+	/etc/shadow \
 	/lib/lsb/init-functions
 
 links = \
