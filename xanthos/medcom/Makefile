@@ -4,10 +4,13 @@ scripts = \
 	/etc/init.d/rcS
 
 files = \
+	/etc/fstab \
 	/etc/group \
 	/etc/inittab \
+	/etc/mdev.conf \
 	/etc/passwd \
 	/etc/shadow \
+	/etc/sysctl.conf \
 	/lib/lsb/init-functions
 
 links = \
