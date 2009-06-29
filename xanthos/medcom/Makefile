@@ -11,6 +11,7 @@ files = \
 	/etc/passwd \
 	/etc/shadow \
 	/etc/sysctl.conf \
+	/etc/ts.conf \
 	/lib/lsb/init-functions
 
 links = \
@@ -19,6 +20,9 @@ links = \
 scripts := $(addprefix $(ROOTFS),$(scripts))
 files := $(addprefix $(ROOTFS),$(files))
 links := $(addprefix $(ROOTFS),$(links))
+
+$(pkgtree)/.setup:
+	$(call cmd,stamp)
 
 $(pkgtree)/.configure:
 	$(call cmd,stamp)
