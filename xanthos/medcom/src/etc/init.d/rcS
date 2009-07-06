@@ -10,12 +10,21 @@ mkdir -p /sys
 mount -t sysfs none /sys
 echo "done"
 
+echo -n "Creating /tmp filesystem ... "
+mkdir -p /tmp
+echo "done"
+
+echo -n "Creating /var/log filesystem ... "
+mkdir -p /var/log
+echo "done"
+
 echo -n "Configuring kernel parameters ... "
 sysctl -p > /dev/null
 echo "done"
 
 echo -n "Populating /dev filesystem ... "
-mdev -s
+udevd --daemon
+udevadm trigger
 echo "done"
 
 echo -n "Unblanking /dev/tty0 ... "
