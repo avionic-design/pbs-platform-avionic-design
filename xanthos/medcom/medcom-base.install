@@ -1,4 +1,11 @@
+/dev
 /etc
 /init
 /lib/lsb
-/usr/share/udhcpc
+/media
+/proc
+/root
+/sys
+/tmp
+/usr/share
+/var

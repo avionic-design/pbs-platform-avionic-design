@@ -1,21 +1,21 @@
 #!/bin/sh
 
-echo -n "Mounting /proc filesystem ... "
-mkdir -p /proc
-mount -t proc none /proc
-echo "done"
-
-echo -n "Mounting /sys filesystem ... "
-mkdir -p /sys
-mount -t sysfs none /sys
-echo "done"
-
 echo -n "Creating /tmp filesystem ... "
-mkdir -p /tmp
+mount -t tmpfs none /tmp
 echo "done"
 
-echo -n "Creating /var/log filesystem ... "
-mkdir -p /var/log
+echo -n "Creating /var filesystem ... "
+mount -t tmpfs none /var
+mkdir /var/cache
+mkdir /var/cache/hald
+mkdir /var/lib
+mkdir /var/lib/xkb
+mkdir /var/log
+mkdir /var/run
+mkdir /var/run/dbus
+mkdir /var/run/hald
+mkdir /var/run/hald/hald-local
+mkdir /var/run/hald/hald-runner
 echo "done"
 
 echo -n "Configuring kernel parameters ... "
@@ -26,6 +26,16 @@ echo -n "Populating /dev filesystem ... "
 udevd --daemon
 udevadm trigger
 echo "done"
+
+echo -n "Creating /dev/pts filesystem ... "
+mkdir /dev/pts
+mount -t devpts devpts /dev/pts
+echo "done"
+
+echo -n "Setting hostname ... "
+hostname=`cat /etc/hostname`
+hostname -F /etc/hostname
+echo "$hostname"
 
 echo -n "Unblanking /dev/tty0 ... "
 echo -ne "\033[9;0]" > /dev/tty0

@@ -4,12 +4,27 @@ include packages/common.mk
 
 ARCH := $(shell echo $(CONFIG_ARCH))
 
+dirs = \
+	/dev \
+	/etc/rcS.d \
+	/media/sd-card \
+	/proc \
+	/root \
+	/sys \
+	/tmp \
+	/var
+
 scripts = \
+	/etc/init.d/dbus \
+	/etc/init.d/hal \
 	/etc/init.d/rcS \
+	/etc/init.d/syslogd \
 	/usr/share/udhcpc/default.script
 
 files = \
 	/etc/fstab \
+	/etc/hostname \
+	/etc/hosts \
 	/etc/group \
 	/etc/inittab \
 	/etc/mdev.conf \
@@ -20,8 +35,12 @@ files = \
 	/lib/lsb/init-functions
 
 links = \
+	/etc/rcS.d/S10syslogd \
+	/etc/rcS.d/S50dbus \
+	/etc/rcS.d/S51hal \
 	/init
 
+dirs := $(addprefix $(DESTDIR),$(dirs))
 scripts := $(addprefix $(DESTDIR),$(scripts))
 files := $(addprefix $(DESTDIR),$(files))
 links := $(addprefix $(DESTDIR),$(links))
@@ -38,13 +57,19 @@ $(pkgtree)/.build:
 $(files): $(DESTDIR)%: $(obj)/src%
 	$(call cmd,install)
 
+quiet_cmd_priv_mkdir_p = MKDIR   $*
+      cmd_priv_mkdir_p = $(priv) mkdir -p $@
+
+$(dirs): $(DESTDIR)%:
+	$(call cmd,priv_mkdir_p)
+
 $(scripts): $(DESTDIR)%: $(obj)/src%
 	$(call cmd,install_bin)
 
 $(links): $(DESTDIR)%: $(obj)/src%
 	$(call cmd,install_link)
 
-$(pkgtree)/.do-install: $(pkgtree)/.build $(scripts) $(files) $(links)
+$(pkgtree)/.do-install: $(pkgtree)/.build $(dirs) $(scripts) $(files) $(links)
 	$(call cmd,stamp)
 
 $(pkgtree)/.binary: $(pkgtree)/.do-install
