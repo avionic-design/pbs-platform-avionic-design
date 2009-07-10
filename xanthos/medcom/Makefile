@@ -7,6 +7,7 @@ ARCH := $(shell echo $(CONFIG_ARCH))
 dirs = \
 	/dev \
 	/etc/rcS.d \
+	/etc/pango \
 	/media/sd-card \
 	/proc \
 	/root \
@@ -70,6 +71,7 @@ $(links): $(DESTDIR)%: $(obj)/src%
 	$(call cmd,install_link)
 
 $(pkgtree)/.do-install: $(pkgtree)/.build $(dirs) $(scripts) $(files) $(links)
+	$(priv) ln -sf /var/lib/resolv.conf $(DESTDIR)/etc/resolv.conf
 	$(call cmd,stamp)
 
 $(pkgtree)/.binary: $(pkgtree)/.do-install
