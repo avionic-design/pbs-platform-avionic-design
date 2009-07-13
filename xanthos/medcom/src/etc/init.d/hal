@@ -11,7 +11,7 @@ usage() {
 
 case $1 in
 	start)
-		log_action_begin_msg "Stopping HAL daemon"
+		log_action_begin_msg "Starting HAL daemon"
 		$HALD $HALD_OPTS
 		log_action_end_msg $?
 		;;
