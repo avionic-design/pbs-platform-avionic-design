@@ -72,6 +72,7 @@ $(links): $(DESTDIR)%: $(obj)/src%
 
 $(pkgtree)/.do-install: $(pkgtree)/.build $(dirs) $(scripts) $(files) $(links)
 	$(priv) ln -sf /var/lib/resolv.conf $(DESTDIR)/etc/resolv.conf
+	$(priv) ln -sf /var/lib/pointercal $(DESTDIR)/etc/pointercal
 	$(call cmd,stamp)
 
 $(pkgtree)/.binary: $(pkgtree)/.do-install
