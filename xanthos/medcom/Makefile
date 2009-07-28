@@ -16,13 +16,18 @@ dirs = \
 	/var
 
 scripts = \
+	/etc/init.d/bluetooth \
 	/etc/init.d/dbus \
 	/etc/init.d/hal \
+	/etc/init.d/networking \
 	/etc/init.d/rcS \
 	/etc/init.d/syslogd \
 	/usr/share/udhcpc/default.script
 
 files = \
+	/etc/bluetooth/audio.conf \
+	/etc/bluetooth/input.conf \
+	/etc/bluetooth/network.conf \
 	/etc/fstab \
 	/etc/hostname \
 	/etc/hosts \
@@ -37,6 +42,7 @@ files = \
 
 links = \
 	/etc/rcS.d/S10syslogd \
+	/etc/rcS.d/S25networking \
 	/etc/rcS.d/S50dbus \
 	/etc/rcS.d/S51hal \
 	/init

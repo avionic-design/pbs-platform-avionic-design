@@ -1,0 +1,32 @@
+#!/bin/sh
+
+. /lib/lsb/init-functions
+
+MODULE=ethoc
+IFACE=eth0
+PID=/var/run/udhcpc.$IFACE.pid
+
+usage() {
+	echo "usage: $1 {start|stop}"
+}
+
+case $1 in
+	start)
+		log_action_begin_msg "Starting networking"
+		modprobe $MODULE
+		udhcpc -i $IFACE -p $PID
+		log_action_end_msg $?
+		;;
+
+	stop)
+		log_action_begin_msg "Stopping networking"
+		pid=`cat $PID`; kill $pid
+		modprobe -r $MODULE
+		log_action_end_msg $?
+		;;
+
+	*)
+		usage $0
+		exit 1
+		;;
+esac

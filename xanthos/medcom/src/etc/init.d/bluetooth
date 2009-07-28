@@ -1,0 +1,32 @@
+#!/bin/sh -e
+
+. /lib/lsb/init-functions
+
+BTD=/usr/sbin/bluetoothd
+BTD_OPTS='--udev'
+
+usage()
+{
+	echo "usage: $1 {start|stop}"
+}
+
+case $1 in
+	start)
+		log_action_begin_msg "Starting bluetooth daemon"
+		$BTD $BTD_OPTS
+		pidof `basename $BTD` > /var/run/bluetoothd.pid
+		log_action_end_msg $?
+		;;
+
+	stop)
+		log_action_begin_msg "Stopping bluetooth daemon"
+		pid=`cat /var/run/bluetoothd.pid`
+		kill $pid
+		log_action_end_msg $?
+		;;
+
+	*)
+		usage $0
+		exit 1
+		;;
+esac
