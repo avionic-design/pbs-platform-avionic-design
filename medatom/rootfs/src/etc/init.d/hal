@@ -1,0 +1,38 @@
+#!/bin/sh
+
+. /lib/lsb/init-functions
+
+HALD=/usr/sbin/hald
+HALD_OPTS="--daemon=yes --use-syslog"
+
+usage() {
+	echo "usage: $1 {start|stop}"
+}
+
+if test ! -d /var/run/hald; then
+	mkdir -p /var/run/hald
+fi
+
+if test ! -d /var/cache/hald; then
+	mkdir -p /var/cache/hald
+fi
+
+case $1 in
+	start)
+		log_action_begin_msg "Starting HAL daemon"
+		$HALD $HALD_OPTS
+		log_action_end_msg $?
+		;;
+
+	stop)
+		log_action_begin_msg "Stopping HAL daemon"
+		pid=`cat /var/run/hald/pid`
+		kill $pid
+		log_action_end_msg $?
+		;;
+
+	*)
+		usage $0
+		exit 1
+		;;
+esac

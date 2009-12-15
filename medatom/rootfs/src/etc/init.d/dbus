@@ -1,0 +1,34 @@
+#!/bin/sh
+
+. /lib/lsb/init-functions
+
+DBUS=/usr/bin/dbus-daemon
+DBUS_OPTS="--system"
+
+usage() {
+	echo "usage: $1 {start|stop}"
+}
+
+if test ! -d /var/run/dbus; then
+	mkdir -p /var/run/dbus
+fi
+
+case $1 in
+	start)
+		log_action_begin_msg "Starting D-Bus daemon"
+		$DBUS $DBUS_OPTS
+		log_action_end_msg $?
+		;;
+
+	stop)
+		log_action_begin_msg "Stopping D-Bus daemon"
+		pid=`cat /var/run/dbus/pid`
+		kill $pid
+		log_action_end_msg $?
+		;;
+
+	*)
+		usage $0
+		exit 1
+		;;
+esac

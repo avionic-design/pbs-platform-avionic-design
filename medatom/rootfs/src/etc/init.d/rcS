@@ -1,0 +1,44 @@
+#!/bin/sh
+
+. /lib/lsb/init-functions
+
+log_action_begin_msg "Creating /tmp filesystem"
+mount -t tmpfs tmpfs /tmp
+log_action_end_msg $?
+
+log_action_begin_msg "Creating /var filesystem"
+mount -t tmpfs tmpfs /var
+mkdir /var/cache
+mkdir /var/lib
+mkdir /var/log
+mkdir /var/run
+log_action_end_msg $?
+
+log_action_begin_msg "Configuring kernel parameters"
+sysctl -p > /dev/null
+log_action_end_msg $?
+
+log_action_begin_msg "Populating /dev filesystem"
+udevd --daemon
+udevadm trigger
+udevadm settle
+log_action_end_msg $?
+
+log_action_begin_msg "Creating /dev/pts filesystem"
+mkdir /dev/pts
+mount -t devpts devpts /dev/pts
+log_action_end_msg $?
+
+log_action_begin_msg "Creating /root filesystem"
+mount -t tmpfs none /root
+log_action_end_msg $?
+
+log_action_begin_msg "Setting hostname"
+hostname -F /etc/hostname
+log_action_end_msg $?
+
+log_action_begin_msg "Enabling verbose kernel messages"
+echo 8 > /proc/sys/kernel/printk
+log_action_end_msg $?
+
+/bin/run-parts -a start /etc/rcS.d

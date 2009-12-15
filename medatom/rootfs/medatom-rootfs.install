@@ -1,0 +1,11 @@
+/dev
+/etc
+/init
+/lib/lsb
+/media
+/proc
+/root
+/sys
+/tmp
+/usr/share
+/var
