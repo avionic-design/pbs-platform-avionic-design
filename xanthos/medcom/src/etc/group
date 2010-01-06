@@ -7,6 +7,8 @@ dialout:x:20:
 cdrom:x:24:
 floppy:x:25:
 tape:x:26:
+audio:x:29:
 video:x:44:
 messagebus:x:104:
 haldaemon:x:108:
+_lldpd:x:129:

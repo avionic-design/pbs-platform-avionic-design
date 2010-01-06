@@ -1,0 +1,98 @@
+#!/bin/sh
+
+PATH=/sbin:/usr/sbin:/bin:/usr/bin
+DESC="network management services"
+NAME=snmpd
+DAEMON=/usr/sbin/$NAME
+DAEMON_ARGS="-Lsd -Lf /dev/null -p /var/run/$NAME.pid"
+PIDFILE=/var/run/$NAME.pid
+SCRIPTNAME=/etc/init.d/$NAME
+STARTSTOP=/sbin/start-stop-daemon
+
+# exit if the daemons are not installed
+test -x $STARTSTOP || exit 0
+test -x $DAEMON || exit 0
+
+# read configuration variable file if it is present
+test -r /etc/default/$NAME && . /etc/default/$NAME
+
+. /lib/lsb/init-functions
+
+do_start()
+{
+	$STARTSTOP --start --quiet --pidfile $PIDFILE --exec $DAEMON \
+		--test > /dev/null || return 1
+	$STARTSTOP --start --quiet --pidfile $PIDFILE --exec $DAEMON \
+		-- $DAEMON_ARGS || return 2
+}
+
+do_stop()
+{
+	$STARTSTOP --stop --quiet --retry=TERM/30/KILL/5 \
+		--pidfile $PIDFILE --name $NAME
+	ret="$?"
+	test "$ret" = 2 && return 2
+	$STARTSTOP --stop --quiet --oknodo --retry=0/30/KILL/5 \
+		--exec $DAEMON
+	test "$?" = 2 && return 2
+	rm -f $PIDFILE
+	return "$ret"
+}
+
+do_reload()
+{
+	$STARTSTOP --stop --signal 1 --quiet --pidfile $PIDFILE --name $NAME
+}
+
+case "$1" in
+	start)
+		log_daemon_msg "Starting $DESC" "$NAME"
+		do_start
+
+		case "$?" in
+			0 | 1) log_end_msg 0 ;;
+			2) log_end_msg 1 ;;
+		esac
+		;;
+
+	stop)
+		log_daemon_msg "Stopping $DESC" "$NAME"
+		do_stop
+
+		case "$?" in
+			0 | 1) log_end_msg 0 ;;
+			2) log_end_msg 1 ;;
+		esac
+		;;
+
+	reload)
+		log_daemon_msg "Reloading $DESC" "$NAME"
+		do_reload
+		log_end_msg $?
+		;;
+
+	restart | force-reload)
+		log_daemon_msg "Restarting $DESC" "$NAME"
+		do_stop
+
+		case "$?" in
+			0 | 1)
+				do_start
+
+				case "$?" in
+					0) log_end_msg 0 ;;
+					*) log_end_msg 1 ;;
+				esac
+				;;
+
+			*)
+				# failed to stop daemon
+				log_end_msg 1
+				;;
+		esac
+		;;
+
+	*)
+		echo "usage: $SCRIPTNAME {start|stop|restart|reload|force-reload}" >&2
+		;;
+esac

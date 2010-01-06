@@ -1,5 +1,13 @@
 #!/bin/sh
 
+echo -n "Silencing kernel ... "
+echo 3 > /proc/sys/kernel/printk
+echo "done"
+
+echo -n "Increasing kernel logging verbosity ... "
+echo 8 > /proc/sys/kernel/printk
+echo "done"
+
 echo -n "Creating /tmp filesystem ... "
 mount -t tmpfs none /tmp
 echo "done"
@@ -16,6 +24,11 @@ mkdir /var/run/dbus
 mkdir /var/run/hald
 mkdir /var/run/hald/hald-local
 mkdir /var/run/hald/hald-runner
+mkdir /var/run/lldpd
+echo "done"
+
+echo -n "Configuring lo interface ... "
+/sbin/ifconfig lo 127.0.0.1
 echo "done"
 
 echo -n "Configuring kernel parameters ... "
@@ -36,6 +49,10 @@ echo -n "Setting hostname ... "
 hostname=`cat /etc/hostname`
 hostname -F /etc/hostname
 echo "$hostname"
+
+echo -n "Loading framebuffer ... "
+modprobe adxtv
+echo "done"
 
 echo -n "Unblanking /dev/tty0 ... "
 echo -ne "\033[9;0]" > /dev/tty0

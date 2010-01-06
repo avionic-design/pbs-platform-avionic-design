@@ -7,21 +7,33 @@ LIBC := $(shell echo $(CONFIG_LIBC))
 
 dirs = \
 	/dev \
+	/etc \
 	/etc/rcS.d \
+	/etc/network \
+	/etc/network/if-down.d \
+	/etc/network/if-pre-up.d \
+	/etc/network/if-post-down.d \
+	/etc/network/if-up.d \
 	/etc/pango \
+	/etc/snmp \
+	/media \
 	/media/sd-card \
 	/proc \
 	/root \
 	/sys \
 	/tmp \
-	/var
+	/var \
+	/var/run \
+	/var/run/lldpd
 
 scripts = \
 	/etc/init.d/bluetooth \
 	/etc/init.d/dbus \
 	/etc/init.d/hal \
+	/etc/init.d/lldpd \
 	/etc/init.d/networking \
 	/etc/init.d/rcS \
+	/etc/init.d/snmpd \
 	/etc/init.d/syslogd \
 	/usr/share/udhcpc/default.script
 
@@ -35,18 +47,24 @@ files = \
 	/etc/group \
 	/etc/inittab \
 	/etc/mdev.conf \
+	/etc/network/interfaces \
+	/etc/nsswitch.conf \
 	/etc/passwd \
 	/etc/shadow \
+	/etc/snmp/snmpd.conf \
 	/etc/sysctl.conf \
 	/etc/ts.conf \
 	/lib/lsb/init-functions
 
 links = \
+	/etc/mtab \
 	/etc/rcS.d/S10syslogd \
 	/etc/rcS.d/S25networking \
-	/etc/rcS.d/S50dbus \
-	/etc/rcS.d/S51hal \
+	/etc/rcS.d/S40snmpd \
+	/etc/rcS.d/S41lldpd \
 	/init
+#	/etc/rcS.d/S50dbus \
+#	/etc/rcS.d/S51hal \
 
 dirs := $(addprefix $(DESTDIR),$(dirs))
 scripts := $(addprefix $(DESTDIR),$(scripts))
