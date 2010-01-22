@@ -2,9 +2,6 @@ VERSION = 0.0.0
 
 include packages/common.mk
 
-ARCH := $(shell echo $(CONFIG_ARCH))
-LIBC := $(shell echo $(CONFIG_LIBC))
-
 scripts = \
 	/init
 
@@ -38,17 +35,4 @@ $(files): $(DESTDIR)%: $(obj)/src%
 $(pkgtree)/.do-install: $(pkgtree)/.build $(scripts) $(files)
 	$(call cmd,stamp)
 
-$(pkgtree)/.binary: $(pkgtree)/.do-install
-	cd $(pkgsrctree) && \
-		$(priv) $(srctree)/scripts/pbs-install \
-			-a $(ARCH) -s $(DESTDIR)
-	cd $(pkgsrctree) && \
-		$(priv) $(srctree)/scripts/pbs-binary \
-			-a $(ARCH) -l $(LIBC) -v $(VERSION)
-	$(call cmd,stamp)
-
-$(pkgtree)/.install: $(pkgtree)/.binary
-	cd $(pkgsrctree) && \
-		$(priv) $(srctree)/scripts/pbs-extract \
-			-a $(ARCH) -l $(LIBC) -v $(VERSION) -r $(ROOTFS)
-	$(call cmd,stamp)
+include packages/binary.mk
