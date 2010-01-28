@@ -10,6 +10,10 @@ dirs = \
 	/etc/default \
 	/etc/init.d \
 	/etc/network \
+	/etc/network/if-down.d \
+	/etc/network/if-post-down.d \
+	/etc/network/if-pre-up.d \
+	/etc/network/if-up.d \
 	/etc/rcS.d \
 	/etc/X11 \
 	/media \
