@@ -3,11 +3,11 @@
 . /lib/lsb/init-functions
 
 log_action_begin_msg "Creating /tmp filesystem"
-mount -t tmpfs tmpfs /tmp
+mount -t tmpfs -n tmpfs /tmp
 log_action_end_msg $?
 
 log_action_begin_msg "Creating /var filesystem"
-mount -t tmpfs tmpfs /var
+mount -t tmpfs -n tmpfs /var
 mkdir /var/cache
 mkdir /var/lib
 mkdir /var/log
@@ -26,11 +26,11 @@ log_action_end_msg $?
 
 log_action_begin_msg "Creating /dev/pts filesystem"
 mkdir /dev/pts
-mount -t devpts devpts /dev/pts
+mount -t devpts -n devpts /dev/pts
 log_action_end_msg $?
 
 log_action_begin_msg "Creating /root filesystem"
-mount -t tmpfs none /root
+mount -t tmpfs -n none /root
 log_action_end_msg $?
 
 log_action_begin_msg "Setting hostname"
