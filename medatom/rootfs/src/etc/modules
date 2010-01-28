@@ -3,3 +3,7 @@ cpufreq-conservative
 cpufreq-powersave
 cpufreq-stats
 processor
+snd-hda-intel
+ad64p-gpio
+8250-pci
+r8169
