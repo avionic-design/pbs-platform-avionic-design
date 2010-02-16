@@ -1,17 +1,2 @@
-if PLATFORM_AVIONIC_DESIGN_MEDATOM
-
-choice
-	prompt "Avionic Design Medatom"
-
-config PLATFORM_AVIONIC_DESIGN_MEDATOM_INITRD
-	bool "Avionic Design Medatom Initial Ramdisk"
-
-config PLATFORM_AVIONIC_DESIGN_MEDATOM_ROOTFS
-	bool "Avionic Design Medatom Root Filesystem"
-
-endchoice
-
-source "platforms/avionic-design/medatom/initrd/Kconfig"
-source "platforms/avionic-design/medatom/rootfs/Kconfig"
-
+if PLATFORM_AVIONIC_DESIGN_MEDATOM_ROOTFS
 endif
