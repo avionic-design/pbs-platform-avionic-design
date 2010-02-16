@@ -3,15 +3,11 @@ if PLATFORM_AVIONIC_DESIGN_XANTHOS
 choice
 	prompt "Avionic Design Xanthos"
 
-config PLATFORM_AVIONIC_DESIGN_XANTHOS_INITRD
-	bool "Avionic Design Initial Ramdisk"
-
 config PLATFORM_AVIONIC_DESIGN_XANTHOS_MEDCOM
 	bool "Avionic Design Med@com"
 
 endchoice
 
-source "platforms/avionic-design/xanthos/initrd/Kconfig"
 source "platforms/avionic-design/xanthos/medcom/Kconfig"
 
 endif
