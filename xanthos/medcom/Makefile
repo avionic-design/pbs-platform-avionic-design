@@ -14,7 +14,7 @@ dirs = \
 	/etc/pango \
 	/etc/snmp \
 	/media \
-	/media/sd-card \
+	/media/disk \
 	/proc \
 	/root \
 	/sys \

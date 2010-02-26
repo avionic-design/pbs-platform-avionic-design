@@ -12,6 +12,7 @@ usage() {
 case $1 in
 	start)
 		log_action_begin_msg "Starting networking"
+		/sbin/ifup lo
 		/sbin/modprobe $MODULE
 		/sbin/ifup eth0
 		log_action_end_msg $?
@@ -21,6 +22,7 @@ case $1 in
 		log_action_begin_msg "Stopping networking"
 		/sbin/ifdown eth0
 		/sbin/modprobe -r $MODULE
+		/sbin/ifdown lo
 		log_action_end_msg $?
 		;;
 

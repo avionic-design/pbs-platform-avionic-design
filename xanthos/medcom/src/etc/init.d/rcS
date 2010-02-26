@@ -27,10 +27,6 @@ mkdir /var/run/hald/hald-runner
 mkdir /var/run/lldpd
 echo "done"
 
-echo -n "Configuring lo interface ... "
-/sbin/ifconfig lo 127.0.0.1
-echo "done"
-
 echo -n "Configuring kernel parameters ... "
 sysctl -p > /dev/null
 echo "done"
@@ -38,6 +34,7 @@ echo "done"
 echo -n "Populating /dev filesystem ... "
 udevd --daemon
 udevadm trigger
+udevadm settle
 echo "done"
 
 echo -n "Creating /dev/pts filesystem ... "
