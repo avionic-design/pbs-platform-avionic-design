@@ -1,0 +1,37 @@
+#!/bin/sh
+
+usage()
+{
+	echo "usage: $1 {start|stop}"
+}
+
+install_schema()
+{
+	echo -n "  $1 ... "
+	GCONF_CONFIG_SOURCE=xml:merged:/root/.gconf \
+		gconftool-2 --makefile-install-rule "$1" > /dev/null
+	echo "done"
+}
+
+install_schemas()
+{
+	for schema in /etc/gconf/schemas/*.schemas; do
+		install_schema $schema
+	done
+}
+
+case $1 in
+	start)
+		echo "Installing gconf schemas ..."
+		install_schemas
+		echo "done"
+		;;
+
+	stop)
+		;;
+
+	*)
+		usage $0
+		exit 1
+		;;
+esac

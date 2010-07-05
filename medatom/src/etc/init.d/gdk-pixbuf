@@ -1,0 +1,28 @@
+#!/bin/sh
+
+. /lib/lsb/init-functions
+
+GDK_PIXBUF_QUERY_LOADERS=/usr/bin/gdk-pixbuf-query-loaders
+GDK_PIXBUF_LOADERS_CACHE=/usr/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache
+
+usage() {
+	echo "usage: $0 {start|stop}"
+}
+
+[ -x $GDK_PIXBUF_QUERY_LOADERS ] || exit 0
+
+case $1 in
+	start)
+		log_action_begin_msg "Creating Gdk pixbuf loaders cache"
+		$GDK_PIXBUF_QUERY_LOADERS > $GDK_PIXBUF_LOADERS_CACHE
+		log_action_end_msg $?
+		;;
+
+	stop)
+		;;
+
+	*)
+		usage $0
+		exit 1
+		;;
+esac

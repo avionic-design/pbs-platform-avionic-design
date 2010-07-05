@@ -1,6 +1,1 @@
-UID=`id -u`
-
-HOME=`getent passwd $UID | cut -d: -f 6`
-export HOME
-
 echo "Hello, World!"
