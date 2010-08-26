@@ -73,7 +73,6 @@ links = \
 	/etc/rcS.d/11-networking \
 	/etc/rcS.d/20-alsa \
 	/etc/rcS.d/50-dbus \
-	/etc/rcS.d/51-hal \
 	/etc/rcS.d/52-motd \
 	/etc/rcS.d/53-gdk-pixbuf \
 	/etc/rcS.d/54-pango \
