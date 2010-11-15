@@ -1,0 +1,18 @@
+#!/bin/sh -e
+
+interface="$1"
+action="$2"
+
+logger "$0 $1 $2"
+
+case $action in
+	up)
+		/usr/bin/ntpdate pool.ntp.org
+		;;
+
+	down)
+		;;
+
+	*)
+		;;
+esac

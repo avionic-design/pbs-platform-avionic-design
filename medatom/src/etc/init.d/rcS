@@ -37,4 +37,8 @@ log_action_begin_msg "Enabling verbose kernel messages"
 echo 8 > /proc/sys/kernel/printk
 log_action_end_msg $?
 
+log_action_begin_msg "Creating /root filesystem"
+mount -t tmpfs none /root
+log_action_end_msg $?
+
 /bin/run-parts -a start /etc/rcS.d

@@ -1,0 +1,13 @@
+#!/bin/sh
+
+set -e
+
+if test "x$DISPLAY" = "x"; then
+	PROG=/usr/bin/xinit
+else
+	PROG=/bin/sh
+fi
+
+exec $PROG /etc/xdg/awesome/xinitrc
+
+exit 0

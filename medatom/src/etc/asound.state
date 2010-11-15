@@ -7,11 +7,53 @@ state.Intel {
 		comment.dbmin -4800
 		comment.dbmax 0
 		iface MIXER
-		name 'Front Playback Volume'
-		value.0 64
-		value.1 64
+		name 'Headphone Playback Volume'
+		value.0 48
+		value.1 48
 	}
 	control.2 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 2
+		iface MIXER
+		name 'Headphone Playback Switch'
+		value.0 false
+		value.1 false
+	}
+	control.3 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 2
+		comment.range '0 - 64'
+		comment.dbmin -4800
+		comment.dbmax 0
+		iface MIXER
+		name 'Speaker Playback Volume'
+		value.0 48
+		value.1 48
+	}
+	control.4 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 2
+		iface MIXER
+		name 'Speaker Playback Switch'
+		value.0 false
+		value.1 false
+	}
+	control.5 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 2
+		comment.range '0 - 64'
+		comment.dbmin -4800
+		comment.dbmax 0
+		iface MIXER
+		name 'Front Playback Volume'
+		value.0 48
+		value.1 48
+	}
+	control.6 {
 		comment.access 'read write'
 		comment.type BOOLEAN
 		comment.count 2
@@ -20,27 +62,7 @@ state.Intel {
 		value.0 true
 		value.1 true
 	}
-	control.3 {
-		comment.access 'read write'
-		comment.type ENUMERATED
-		comment.count 1
-		comment.item.0 'Mic In'
-		comment.item.1 'Line In'
-		iface MIXER
-		name 'Front Mic Jack Mode'
-		value 'Mic In'
-	}
-	control.4 {
-		comment.access 'read write'
-		comment.type ENUMERATED
-		comment.count 1
-		comment.item.0 'Mic In'
-		comment.item.1 'Line In'
-		iface MIXER
-		name 'Line Jack Mode'
-		value 'Line In'
-	}
-	control.5 {
+	control.7 {
 		comment.access 'read write'
 		comment.type BOOLEAN
 		comment.count 1
@@ -48,7 +70,7 @@ state.Intel {
 		name 'Beep Playback Switch'
 		value false
 	}
-	control.6 {
+	control.8 {
 		comment.access 'read write'
 		comment.type INTEGER
 		comment.count 1
@@ -59,47 +81,26 @@ state.Intel {
 		name 'Beep Playback Volume'
 		value 0
 	}
-	control.7 {
-		comment.access 'read write'
-		comment.type INTEGER
-		comment.count 2
-		comment.range '0 - 64'
-		comment.dbmin -4800
-		comment.dbmax 0
-		iface MIXER
-		name 'Headphone Playback Volume'
-		value.0 64
-		value.1 64
-	}
-	control.8 {
-		comment.access 'read write'
-		comment.type BOOLEAN
-		comment.count 2
-		iface MIXER
-		name 'Headphone Playback Switch'
-		value.0 false
-		value.1 false
-	}
 	control.9 {
 		comment.access 'read write'
 		comment.type INTEGER
 		comment.count 2
-		comment.range '0 - 64'
-		comment.dbmin -4800
-		comment.dbmax 0
+		comment.range '0 - 15'
+		comment.dbmin 0
+		comment.dbmax 2250
 		iface MIXER
-		name 'Speaker Playback Volume'
-		value.0 64
-		value.1 64
+		name 'Capture Volume'
+		value.0 10
+		value.1 10
 	}
 	control.10 {
 		comment.access 'read write'
 		comment.type BOOLEAN
 		comment.count 2
 		iface MIXER
-		name 'Speaker Playback Switch'
-		value.0 false
-		value.1 false
+		name 'Capture Switch'
+		value.0 true
+		value.1 true
 	}
 	control.11 {
 		comment.access 'read write'
@@ -110,32 +111,11 @@ state.Intel {
 		comment.dbmax 2250
 		iface MIXER
 		name 'Capture Volume'
-		value.0 5
-		value.1 5
+		index 1
+		value.0 0
+		value.1 0
 	}
 	control.12 {
-		comment.access 'read write'
-		comment.type BOOLEAN
-		comment.count 2
-		iface MIXER
-		name 'Capture Switch'
-		value.0 true
-		value.1 true
-	}
-	control.13 {
-		comment.access 'read write'
-		comment.type INTEGER
-		comment.count 2
-		comment.range '0 - 15'
-		comment.dbmin 0
-		comment.dbmax 2250
-		iface MIXER
-		name 'Capture Volume'
-		index 1
-		value.0 5
-		value.1 5
-	}
-	control.14 {
 		comment.access 'read write'
 		comment.type BOOLEAN
 		comment.count 2
@@ -145,7 +125,7 @@ state.Intel {
 		value.0 false
 		value.1 false
 	}
-	control.15 {
+	control.13 {
 		comment.access 'read write'
 		comment.type INTEGER
 		comment.count 2
@@ -154,10 +134,10 @@ state.Intel {
 		comment.dbmax 3000
 		iface MIXER
 		name 'Mic Capture Volume'
-		value.0 1
-		value.1 1
+		value.0 2
+		value.1 2
 	}
-	control.16 {
+	control.14 {
 		comment.access 'read write'
 		comment.type INTEGER
 		comment.count 2
@@ -166,10 +146,10 @@ state.Intel {
 		comment.dbmax 3000
 		iface MIXER
 		name 'Front Mic Capture Volume'
-		value.0 1
-		value.1 1
+		value.0 2
+		value.1 2
 	}
-	control.17 {
+	control.15 {
 		comment.access 'read write'
 		comment.type INTEGER
 		comment.count 2
@@ -178,10 +158,22 @@ state.Intel {
 		comment.dbmax 3000
 		iface MIXER
 		name 'Line Capture Volume'
-		value.0 1
-		value.1 1
+		value.0 0
+		value.1 0
 	}
-	control.18 {
+	control.16 {
+		comment.access 'read write'
+		comment.type ENUMERATED
+		comment.count 1
+		comment.item.0 DAC0
+		comment.item.1 DAC1
+		comment.item.2 Mixer
+		comment.item.3 DAC2
+		iface MIXER
+		name 'Mono Mux'
+		value DAC2
+	}
+	control.17 {
 		comment.access 'read write'
 		comment.type ENUMERATED
 		comment.count 1
@@ -192,7 +184,7 @@ state.Intel {
 		name 'Input Source'
 		value 'Front Mic'
 	}
-	control.19 {
+	control.18 {
 		comment.access 'read write'
 		comment.type ENUMERATED
 		comment.count 1
@@ -204,47 +196,7 @@ state.Intel {
 		index 1
 		value Mic
 	}
-	control.20 {
-		comment.access read
-		comment.type IEC958
-		comment.count 1
-		iface MIXER
-		name 'IEC958 Playback Con Mask'
-		value '0fff000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
-	}
-	control.21 {
-		comment.access read
-		comment.type IEC958
-		comment.count 1
-		iface MIXER
-		name 'IEC958 Playback Pro Mask'
-		value '0f00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
-	}
-	control.22 {
-		comment.access 'read write'
-		comment.type IEC958
-		comment.count 1
-		iface MIXER
-		name 'IEC958 Playback Default'
-		value '0400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000'
-	}
-	control.23 {
-		comment.access 'read write'
-		comment.type BOOLEAN
-		comment.count 1
-		iface MIXER
-		name 'IEC958 Playback Switch'
-		value false
-	}
-	control.24 {
-		comment.access 'read write'
-		comment.type BOOLEAN
-		comment.count 1
-		iface MIXER
-		name 'IEC958 Default PCM Playback Switch'
-		value false
-	}
-	control.25 {
+	control.19 {
 		comment.access 'read write'
 		comment.type INTEGER
 		comment.count 1
@@ -253,9 +205,9 @@ state.Intel {
 		comment.dbmax 0
 		iface MIXER
 		name 'Master Playback Volume'
-		value 64
+		value 48
 	}
-	control.26 {
+	control.20 {
 		comment.access 'read write'
 		comment.type BOOLEAN
 		comment.count 1
@@ -263,20 +215,7 @@ state.Intel {
 		name 'Master Playback Switch'
 		value true
 	}
-	control.27 {
-		comment.access 'read write user'
-		comment.type INTEGER
-		comment.count 2
-		comment.range '0 - 120'
-		comment.tlv '0000000100000008fffff44800000032'
-		comment.dbmin -3000
-		comment.dbmax 3000
-		iface MIXER
-		name 'Digital Capture Volume'
-		value.0 40
-		value.1 40
-	}
-	control.28 {
+	control.21 {
 		comment.access 'read write user'
 		comment.type INTEGER
 		comment.count 2
@@ -286,7 +225,20 @@ state.Intel {
 		comment.dbmax 0
 		iface MIXER
 		name 'PCM Playback Volume'
-		value.0 255
-		value.1 255
+		value.0 192
+		value.1 192
+	}
+	control.22 {
+		comment.access 'read write user'
+		comment.type INTEGER
+		comment.count 2
+		comment.range '0 - 120'
+		comment.tlv '0000000100000008fffff44800000032'
+		comment.dbmin -3000
+		comment.dbmax 3000
+		iface MIXER
+		name 'Digital Capture Volume'
+		value.0 60
+		value.1 60
 	}
 }

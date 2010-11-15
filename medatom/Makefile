@@ -6,16 +6,38 @@ dirs = \
 	/dev \
 	/etc \
 	/etc/default \
+	/etc/gtk-2.0 \
 	/etc/init.d \
-	/etc/pango \
+	/etc/modprobe.d \
+	/etc/modules-load.d \
 	/etc/network \
 	/etc/network/if-down.d \
 	/etc/network/if-post-down.d \
 	/etc/network/if-pre-up.d \
 	/etc/network/if-up.d \
+	/etc/NetworkManager \
+	/etc/NetworkManager/dispatcher.d \
+	/etc/pam.d \
+	/etc/pango \
 	/etc/rcS.d \
+	/etc/rsyslog.d \
+	/etc/systemd \
+	/etc/systemd/system \
+	/etc/systemd/system/basic.target.wants \
+	/etc/systemd/system/local-fs.target.wants \
+	/etc/systemd/system/graphical.target.wants \
+	/etc/tmpfiles.d \
 	/etc/X11 \
 	/etc/X11/xorg.conf.d \
+	/etc/xdg \
+	/etc/xdg/awesome \
+	/etc/xdg/menus \
+	/etc/xdg/xfce4 \
+	/etc/xdg/xfce4/xfconf \
+	/etc/xdg/xfce4/xfconf/xfce-perchannel-xml \
+	/lib \
+	/lib/lsb \
+	/lib/systemd \
 	/media \
 	/media/disk \
 	/proc \
@@ -27,11 +49,19 @@ dirs = \
 	/usr/lib \
 	/usr/lib/gdk-pixbuf-2.0 \
 	/usr/lib/gdk-pixbuf-2.0/2.10.0 \
+	/usr/share \
+	/usr/share/applications \
+	/usr/share/icons \
+	/usr/share/icons/default \
 	/var \
+	/var/lib \
+	/var/lock \
+	/var/log \
 	/var/run
 
 scripts = \
 	/etc/init.d/alsa \
+	/etc/init.d/console-kit \
 	/etc/init.d/dbus \
 	/etc/init.d/gconf \
 	/etc/init.d/gdk-pixbuf \
@@ -40,45 +70,103 @@ scripts = \
 	/etc/init.d/motd \
 	/etc/init.d/networking \
 	/etc/init.d/pango \
+	/etc/init.d/powersave \
 	/etc/init.d/rcS \
+	/etc/init.d/ssh \
 	/etc/init.d/syslogd \
+	/etc/init.d/X \
+	/etc/NetworkManager/dispatcher.d/01-ntpdate \
+	/etc/X11/Xsession \
+	/etc/xdg/awesome/xinitrc \
+	/lib/systemd/gdk-pixbuf-loaders-cache \
+	/lib/systemd/pango-modules-cache \
 	/usr/share/udhcpc/default.script
 
 files = \
 	/etc/asound.state \
+	/etc/default/locale \
 	/etc/default/rcS \
+	/etc/environment \
 	/etc/fstab \
 	/etc/group \
+	/etc/gtk-2.0/gtkrc \
 	/etc/hostname \
 	/etc/hosts \
 	/etc/inittab \
 	/etc/issue \
+	/etc/modprobe.d/blacklist.conf \
+	/etc/modprobe.d/sound.conf \
 	/etc/modules \
+	/etc/modules-load.d/cpufreq.conf \
+	/etc/modules-load.d/input.conf \
+	/etc/modules-load.d/misc.conf \
+	/etc/modules-load.d/networking.conf \
+	/etc/modules-load.d/sound.conf \
+	/etc/modules-load.d/video.conf \
 	/etc/motd.tail \
 	/etc/network/interfaces \
+	/etc/NetworkManager/NetworkManager.conf \
+	/etc/pam.conf \
+	/etc/pam.d/common-account \
+	/etc/pam.d/common-auth \
+	/etc/pam.d/common-password \
+	/etc/pam.d/common-session \
+	/etc/pam.d/nodm \
+	/etc/pam.d/other \
 	/etc/passwd \
 	/etc/profile \
+	/etc/rsyslog.conf \
+	/etc/services \
 	/etc/shadow \
 	/etc/sysctl.conf \
-	/etc/X11/xorg.conf.d/input.conf \
+	/etc/systemd/system.conf \
+	/etc/systemd/system/alsa.service \
+	/etc/systemd/system/gdk-pixbuf.service \
+	/etc/systemd/system/nodm.service \
+	/etc/systemd/system/pango.service \
+	/etc/systemd/system/root.mount \
+	/etc/systemd/system/tmp.mount \
+	/etc/systemd/system/var-lib.mount \
+	/etc/systemd/system/var-log.mount \
+	/etc/tmpfiles.d/console-kit.conf \
+	/etc/tmpfiles.d/dbus.conf \
+	/etc/X11/xorg.conf.d/10-evdev.conf \
+	/etc/X11/xorg.conf.d/99-calibration.conf \
+	/etc/xdg/menus/applications.menu \
+	/etc/xdg/xfce4/helpers.rc \
+	/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml \
 	/lib/lsb/init-functions \
-	/root/.xinitrc
+	/usr/share/applications/xterm.desktop
 
 links = \
 	/bin/sh \
 	/etc/motd \
+	/etc/mtab \
 	/etc/pango/pango.modules \
 	/etc/rcS.d/05-syslogd \
 	/etc/rcS.d/10-modules \
 	/etc/rcS.d/11-networking \
+	/etc/rcS.d/12-powersave \
 	/etc/rcS.d/20-alsa \
 	/etc/rcS.d/50-dbus \
 	/etc/rcS.d/52-motd \
 	/etc/rcS.d/53-gdk-pixbuf \
 	/etc/rcS.d/54-pango \
+	/etc/rcS.d/70-console-kit \
+	/etc/rcS.d/75-ssh \
+	/etc/rcS.d/99-X \
 	/etc/resolv.conf \
-	/init \
+	/etc/systemd/system/basic.target.wants/alsa.service \
+	/etc/systemd/system/graphical.target.wants/gdk-pixbuf.service \
+	/etc/systemd/system/graphical.target.wants/nodm.service \
+	/etc/systemd/system/graphical.target.wants/pango.service \
+	/etc/systemd/system/local-fs.target.wants/root.mount \
+	/etc/systemd/system/local-fs.target.wants/tmp.mount \
+	/etc/systemd/system/local-fs.target.wants/var-lib.mount \
+	/etc/systemd/system/local-fs.target.wants/var-log.mount \
+	/etc/xdg/menus/xfce-applications.menu \
 	/sbin/getty \
-	/usr/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache
+	/usr/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache \
+	/usr/share/icons/default/index.theme
 
 include platforms/common.mk

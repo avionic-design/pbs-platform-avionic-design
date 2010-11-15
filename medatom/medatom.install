@@ -1,8 +1,7 @@
 /bin
 /dev
 /etc
-/init
-/lib/lsb
+/lib
 /media
 /proc
 /root

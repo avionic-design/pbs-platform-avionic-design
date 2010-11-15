@@ -13,6 +13,10 @@ case $1 in
 		log_action_begin_msg "Restoring ALSA configuration"
 		$ALSACTL restore
 		log_action_end_msg $?
+		log_action_begin_msg "Enabling amplifier"
+		i2cset -y 2 0x60 1 0xc0
+		i2cset -y 2 0x60 2 0x2f
+		log_action_end_msg $?
 		;;
 
 	stop)

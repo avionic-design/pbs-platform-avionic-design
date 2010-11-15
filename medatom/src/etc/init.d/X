@@ -1,0 +1,24 @@
+#!/bin/sh -e
+
+. /lib/lsb/init-functions
+
+usage()
+{
+	echo "usage: $1 {start|stop}"
+}
+
+case $1 in
+	start)
+		log_action_begin_msg "Starting X"
+		log_action_end_msg $?
+		;;
+
+	stop)
+		log_action_begin_msg "Stopping X"
+		log_action_end_msg $?
+		;;
+
+	*)
+		usage $0
+		;;
+esac
