@@ -91,7 +91,6 @@ files = \
 	/etc/group \
 	/etc/gtk-2.0/gtkrc \
 	/etc/hostname \
-	/etc/hosts \
 	/etc/inittab \
 	/etc/issue \
 	/etc/modprobe.d/blacklist.conf \
@@ -155,6 +154,7 @@ links = \
 	/etc/rcS.d/70-console-kit \
 	/etc/rcS.d/75-ssh \
 	/etc/rcS.d/99-X \
+	/etc/hosts \
 	/etc/resolv.conf \
 	/etc/systemd/system/basic.target.wants/alsa.service \
 	/etc/systemd/system/graphical.target.wants/gdk-pixbuf.service \
