@@ -40,6 +40,7 @@ dirs = \
 	/lib/systemd \
 	/media \
 	/media/disk \
+	/persist \
 	/proc \
 	/root \
 	/sbin \
@@ -90,7 +91,6 @@ files = \
 	/etc/fstab \
 	/etc/group \
 	/etc/gtk-2.0/gtkrc \
-	/etc/hostname \
 	/etc/inittab \
 	/etc/issue \
 	/etc/modprobe.d/blacklist.conf \
@@ -154,6 +154,7 @@ links = \
 	/etc/rcS.d/70-console-kit \
 	/etc/rcS.d/75-ssh \
 	/etc/rcS.d/99-X \
+	/etc/hostname \
 	/etc/hosts \
 	/etc/resolv.conf \
 	/etc/systemd/system/basic.target.wants/alsa.service \
