@@ -3,6 +3,7 @@ if PLATFORM_AVIONIC_DESIGN_MEDATOM
 choice
 	prompt "Avionic Design Med@om"
 
+source "platforms/avionic-design/medatom/install/Kconfig"
 source "platforms/avionic-design/medatom/rootfs/Kconfig"
 
 endchoice
