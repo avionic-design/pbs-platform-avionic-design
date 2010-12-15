@@ -1,0 +1,5 @@
+CALIBRATION_FILE=/etc/X11/xorg.conf.d/99-calibration.conf
+
+if ! test -f "$CALIBRATION_FILE"; then
+	xinput_calibrator --output-type xorg.conf.d --output "$CALIBRATION_FILE"
+fi

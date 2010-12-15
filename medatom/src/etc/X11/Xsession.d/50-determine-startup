@@ -1,0 +1,5 @@
+if test -x /usr/bin/remote-control; then
+	STARTUP=/usr/bin/remote-control
+else
+	STARTUP=/usr/bin/awesome
+fi

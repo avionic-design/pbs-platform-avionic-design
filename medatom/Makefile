@@ -31,6 +31,7 @@ dirs = \
 	/etc/tmpfiles.d \
 	/etc/X11 \
 	/etc/X11/xorg.conf.d \
+	/etc/X11/Xsession.d \
 	/etc/xdg \
 	/etc/xdg/awesome \
 	/etc/xdg/menus \
@@ -134,7 +135,9 @@ files = \
 	/etc/tmpfiles.d/dbus.conf \
 	/etc/tmpfiles.d/ssh.conf \
 	/etc/X11/xorg.conf.d/10-evdev.conf \
-	/etc/X11/xorg.conf.d/99-calibration.conf \
+	/etc/X11/Xsession.d/50-determine-startup \
+	/etc/X11/Xsession.d/90-calibrate \
+	/etc/X11/Xsession.d/99-start \
 	/etc/xdg/menus/applications.menu \
 	/etc/xdg/xfce4/helpers.rc \
 	/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml \
@@ -176,6 +179,7 @@ links = \
 	/etc/systemd/system/local-fs.target.wants/var-lib.mount \
 	/etc/systemd/system/local-fs.target.wants/var-log.mount \
 	/etc/systemd/system/multi-user.target.wants/openssh.service \
+	/etc/X11/xorg.conf.d/99-calibration.conf \
 	/etc/xdg/menus/xfce-applications.menu \
 	/sbin/getty \
 	/usr/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache \
