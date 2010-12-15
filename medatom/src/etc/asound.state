@@ -64,25 +64,6 @@ state.Intel {
 	}
 	control.7 {
 		comment.access 'read write'
-		comment.type BOOLEAN
-		comment.count 1
-		iface MIXER
-		name 'Beep Playback Switch'
-		value false
-	}
-	control.8 {
-		comment.access 'read write'
-		comment.type INTEGER
-		comment.count 1
-		comment.range '0 - 3'
-		comment.dbmin -1800
-		comment.dbmax 0
-		iface MIXER
-		name 'Beep Playback Volume'
-		value 0
-	}
-	control.9 {
-		comment.access 'read write'
 		comment.type INTEGER
 		comment.count 2
 		comment.range '0 - 15'
@@ -93,7 +74,7 @@ state.Intel {
 		value.0 10
 		value.1 10
 	}
-	control.10 {
+	control.8 {
 		comment.access 'read write'
 		comment.type BOOLEAN
 		comment.count 2
@@ -102,7 +83,7 @@ state.Intel {
 		value.0 true
 		value.1 true
 	}
-	control.11 {
+	control.9 {
 		comment.access 'read write'
 		comment.type INTEGER
 		comment.count 2
@@ -115,7 +96,7 @@ state.Intel {
 		value.0 0
 		value.1 0
 	}
-	control.12 {
+	control.10 {
 		comment.access 'read write'
 		comment.type BOOLEAN
 		comment.count 2
@@ -125,7 +106,7 @@ state.Intel {
 		value.0 false
 		value.1 false
 	}
-	control.13 {
+	control.11 {
 		comment.access 'read write'
 		comment.type INTEGER
 		comment.count 2
@@ -137,7 +118,7 @@ state.Intel {
 		value.0 2
 		value.1 2
 	}
-	control.14 {
+	control.12 {
 		comment.access 'read write'
 		comment.type INTEGER
 		comment.count 2
@@ -145,11 +126,11 @@ state.Intel {
 		comment.dbmin 0
 		comment.dbmax 3000
 		iface MIXER
-		name 'Front Mic Capture Volume'
-		value.0 2
-		value.1 2
+		name 'Internal Mic Capture Volume'
+		value.0 1
+		value.1 1
 	}
-	control.15 {
+	control.13 {
 		comment.access 'read write'
 		comment.type INTEGER
 		comment.count 2
@@ -161,7 +142,7 @@ state.Intel {
 		value.0 0
 		value.1 0
 	}
-	control.16 {
+	control.14 {
 		comment.access 'read write'
 		comment.type ENUMERATED
 		comment.count 1
@@ -173,30 +154,30 @@ state.Intel {
 		name 'Mono Mux'
 		value DAC2
 	}
-	control.17 {
+	control.15 {
 		comment.access 'read write'
 		comment.type ENUMERATED
 		comment.count 1
 		comment.item.0 Mic
-		comment.item.1 'Front Mic'
+		comment.item.1 'Internal Mic'
 		comment.item.2 Line
 		iface MIXER
 		name 'Input Source'
-		value 'Front Mic'
+		value Mic
 	}
-	control.18 {
+	control.16 {
 		comment.access 'read write'
 		comment.type ENUMERATED
 		comment.count 1
 		comment.item.0 Mic
-		comment.item.1 'Front Mic'
+		comment.item.1 'Internal Mic'
 		comment.item.2 Line
 		iface MIXER
 		name 'Input Source'
 		index 1
 		value Mic
 	}
-	control.19 {
+	control.17 {
 		comment.access 'read write'
 		comment.type INTEGER
 		comment.count 1
@@ -207,7 +188,7 @@ state.Intel {
 		name 'Master Playback Volume'
 		value 48
 	}
-	control.20 {
+	control.18 {
 		comment.access 'read write'
 		comment.type BOOLEAN
 		comment.count 1
@@ -215,7 +196,7 @@ state.Intel {
 		name 'Master Playback Switch'
 		value true
 	}
-	control.21 {
+	control.19 {
 		comment.access 'read write user'
 		comment.type INTEGER
 		comment.count 2
@@ -228,7 +209,7 @@ state.Intel {
 		value.0 192
 		value.1 192
 	}
-	control.22 {
+	control.20 {
 		comment.access 'read write user'
 		comment.type INTEGER
 		comment.count 2

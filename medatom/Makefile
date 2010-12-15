@@ -97,6 +97,7 @@ files = \
 	/etc/gtk-2.0/gtkrc \
 	/etc/inittab \
 	/etc/issue \
+	/etc/locale.conf \
 	/etc/modprobe.d/blacklist.conf \
 	/etc/modprobe.d/sound.conf \
 	/etc/modules \
@@ -109,6 +110,7 @@ files = \
 	/etc/motd.tail \
 	/etc/network/interfaces \
 	/etc/NetworkManager/NetworkManager.conf \
+	/etc/nsswitch.conf \
 	/etc/pam.conf \
 	/etc/pam.d/common-account \
 	/etc/pam.d/common-auth \
@@ -134,7 +136,10 @@ files = \
 	/etc/systemd/system/var-log.mount \
 	/etc/tmpfiles.d/console-kit.conf \
 	/etc/tmpfiles.d/dbus.conf \
+	/etc/tmpfiles.d/hosts.conf \
 	/etc/tmpfiles.d/ssh.conf \
+	/etc/tmpfiles.d/systemd.conf \
+	/etc/vconsole.conf \
 	/etc/X11/xorg.conf.d/10-evdev.conf \
 	/etc/X11/Xsession.d/50-determine-startup \
 	/etc/X11/Xsession.d/90-calibrate \
