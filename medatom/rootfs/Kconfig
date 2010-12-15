@@ -1,0 +1,2 @@
+config PLATFORM_AVIONIC_DESIGN_MEDATOM_ROOTFS
+	bool "Root Filesystem"
