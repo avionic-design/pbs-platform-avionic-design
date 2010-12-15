@@ -80,6 +80,7 @@ scripts = \
 	/etc/init.d/syslogd \
 	/etc/init.d/X \
 	/etc/NetworkManager/dispatcher.d/01-ntpdate \
+	/etc/NetworkManager/dispatcher.d/02-ddip-announce \
 	/etc/X11/Xsession \
 	/etc/xdg/awesome/xinitrc \
 	/lib/systemd/gdk-pixbuf-loaders-cache \
