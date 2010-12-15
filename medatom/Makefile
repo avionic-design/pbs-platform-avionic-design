@@ -21,11 +21,13 @@ dirs = \
 	/etc/pango \
 	/etc/rcS.d \
 	/etc/rsyslog.d \
+	/etc/ssh \
 	/etc/systemd \
 	/etc/systemd/system \
 	/etc/systemd/system/basic.target.wants \
 	/etc/systemd/system/local-fs.target.wants \
 	/etc/systemd/system/graphical.target.wants \
+	/etc/systemd/system/multi-user.target.wants \
 	/etc/tmpfiles.d \
 	/etc/X11 \
 	/etc/X11/xorg.conf.d \
@@ -122,6 +124,7 @@ files = \
 	/etc/systemd/system/alsa.service \
 	/etc/systemd/system/gdk-pixbuf.service \
 	/etc/systemd/system/nodm.service \
+	/etc/systemd/system/openssh.service \
 	/etc/systemd/system/pango.service \
 	/etc/systemd/system/root.mount \
 	/etc/systemd/system/tmp.mount \
@@ -129,6 +132,7 @@ files = \
 	/etc/systemd/system/var-log.mount \
 	/etc/tmpfiles.d/console-kit.conf \
 	/etc/tmpfiles.d/dbus.conf \
+	/etc/tmpfiles.d/ssh.conf \
 	/etc/X11/xorg.conf.d/10-evdev.conf \
 	/etc/X11/xorg.conf.d/99-calibration.conf \
 	/etc/xdg/menus/applications.menu \
@@ -157,6 +161,12 @@ links = \
 	/etc/hostname \
 	/etc/hosts \
 	/etc/resolv.conf \
+	/etc/ssh/ssh_host_dsa_key \
+	/etc/ssh/ssh_host_dsa_key.pub \
+	/etc/ssh/ssh_host_key \
+	/etc/ssh/ssh_host_key.pub \
+	/etc/ssh/ssh_host_rsa_key \
+	/etc/ssh/ssh_host_rsa_key.pub \
 	/etc/systemd/system/basic.target.wants/alsa.service \
 	/etc/systemd/system/graphical.target.wants/gdk-pixbuf.service \
 	/etc/systemd/system/graphical.target.wants/nodm.service \
@@ -165,6 +175,7 @@ links = \
 	/etc/systemd/system/local-fs.target.wants/tmp.mount \
 	/etc/systemd/system/local-fs.target.wants/var-lib.mount \
 	/etc/systemd/system/local-fs.target.wants/var-log.mount \
+	/etc/systemd/system/multi-user.target.wants/openssh.service \
 	/etc/xdg/menus/xfce-applications.menu \
 	/sbin/getty \
 	/usr/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache \
