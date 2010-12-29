@@ -1,0 +1,11 @@
+[Unit]
+Description=LLDP Daemon
+
+[Service]
+ExecStart=/usr/sbin/lldpd -d -M 1
+ExecStartPost=/usr/sbin/lldpctl -O PD:1:1:255
+Sockets=lldpd.socket
+StandardError=syslog
+
+[Install]
+WantedBy=multi-user.target

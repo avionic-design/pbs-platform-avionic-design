@@ -28,6 +28,7 @@ dirs = \
 	/etc/systemd/system/local-fs.target.wants \
 	/etc/systemd/system/graphical.target.wants \
 	/etc/systemd/system/multi-user.target.wants \
+	/etc/systemd/system/sockets.target.wants \
 	/etc/tmpfiles.d \
 	/etc/X11 \
 	/etc/X11/xorg.conf.d \
@@ -127,6 +128,8 @@ files = \
 	/etc/systemd/system.conf \
 	/etc/systemd/system/alsa.service \
 	/etc/systemd/system/gdk-pixbuf.service \
+	/etc/systemd/system/lldpd.service \
+	/etc/systemd/system/lldpd.socket \
 	/etc/systemd/system/nodm.service \
 	/etc/systemd/system/openssh.service \
 	/etc/systemd/system/pango.service \
@@ -137,6 +140,7 @@ files = \
 	/etc/tmpfiles.d/console-kit.conf \
 	/etc/tmpfiles.d/dbus.conf \
 	/etc/tmpfiles.d/hosts.conf \
+	/etc/tmpfiles.d/lldpd.conf \
 	/etc/tmpfiles.d/ssh.conf \
 	/etc/tmpfiles.d/systemd.conf \
 	/etc/vconsole.conf \
@@ -185,6 +189,7 @@ links = \
 	/etc/systemd/system/local-fs.target.wants/var-lib.mount \
 	/etc/systemd/system/local-fs.target.wants/var-log.mount \
 	/etc/systemd/system/multi-user.target.wants/openssh.service \
+	/etc/systemd/system/sockets.target.wants/lldpd.socket \
 	/etc/X11/xorg.conf.d/99-calibration.conf \
 	/etc/xdg/menus/xfce-applications.menu \
 	/sbin/getty \

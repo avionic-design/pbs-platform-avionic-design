@@ -1,0 +1,21 @@
+#!/bin/sh -e
+
+interface="$1"
+action="$2"
+
+case $action in
+	up)
+		if /bin/systemctl is-active lldpd.service; then
+			/bin/systemctl restart lldpd.service
+		else
+			/bin/systemctl start lldpd.service
+		fi
+		;;
+
+	down)
+		/bin/systemctl stop lldpd.service
+		;;
+
+	*)
+		;;
+esac

@@ -1,0 +1,5 @@
+[Unit]
+Description=LLDP Daemon Socket
+
+[Socket]
+ListenStream=/var/run/lldpd.socket
