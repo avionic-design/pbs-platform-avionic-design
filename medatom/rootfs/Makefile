@@ -15,8 +15,6 @@ dirs = \
 	/etc/network/if-post-down.d \
 	/etc/network/if-pre-up.d \
 	/etc/network/if-up.d \
-	/etc/NetworkManager \
-	/etc/NetworkManager/dispatcher.d \
 	/etc/pam.d \
 	/etc/pango \
 	/etc/rcS.d \
@@ -80,8 +78,6 @@ scripts = \
 	/etc/init.d/ssh \
 	/etc/init.d/syslogd \
 	/etc/init.d/X \
-	/etc/NetworkManager/dispatcher.d/01-ntpdate \
-	/etc/NetworkManager/dispatcher.d/02-ddip-announce \
 	/etc/X11/Xsession \
 	/etc/xdg/awesome/xinitrc \
 	/lib/systemd/gdk-pixbuf-loaders-cache \
@@ -110,7 +106,6 @@ files = \
 	/etc/modules-load.d/video.conf \
 	/etc/motd.tail \
 	/etc/network/interfaces \
-	/etc/NetworkManager/NetworkManager.conf \
 	/etc/nsswitch.conf \
 	/etc/pam.conf \
 	/etc/pam.d/common-account \
