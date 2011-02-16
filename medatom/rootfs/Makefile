@@ -103,6 +103,7 @@ files = \
 	/etc/inittab \
 	/etc/issue \
 	/etc/locale.conf \
+	/etc/localtime \
 	/etc/modprobe.d/blacklist.conf \
 	/etc/modprobe.d/sound.conf \
 	/etc/modules \
