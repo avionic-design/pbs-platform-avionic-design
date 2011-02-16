@@ -7,6 +7,8 @@ dirs = \
 	/etc \
 	/etc/default \
 	/etc/gtk-2.0 \
+	/etc/iflinkd \
+	/etc/iflinkd/hooks.d \
 	/etc/init.d \
 	/etc/modprobe.d \
 	/etc/modules-load.d \
@@ -63,6 +65,8 @@ dirs = \
 	/var/run
 
 scripts = \
+	/etc/iflinkd/hooks.d/00-lldpd \
+	/etc/iflinkd/hooks.d/10-dhcpcd \
 	/etc/init.d/alsa \
 	/etc/init.d/console-kit \
 	/etc/init.d/dbus \
