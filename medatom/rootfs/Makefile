@@ -44,6 +44,7 @@ dirs = \
 	/lib/systemd \
 	/media \
 	/media/disk \
+	/mnt \
 	/persist \
 	/proc \
 	/root \

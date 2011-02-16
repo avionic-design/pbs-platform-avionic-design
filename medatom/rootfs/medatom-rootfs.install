@@ -4,6 +4,7 @@
 /fastboot
 /lib
 /media
+/mnt
 /persist
 /proc
 /root
