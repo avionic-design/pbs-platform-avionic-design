@@ -1,5 +1,7 @@
+STARTUP=/usr/bin/awesome
+
 if test -x /usr/bin/remote-control; then
-	STARTUP=/usr/bin/remote-control
-else
-	STARTUP=/usr/bin/awesome
+	if test -f /etc/remote-control.conf; then
+		STARTUP=/usr/bin/remote-control
+	fi
 fi
