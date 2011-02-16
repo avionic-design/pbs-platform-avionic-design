@@ -1,0 +1,10 @@
+#!/bin/sh -e
+
+case "$reason" in
+	BOUND | RENEW)
+		/usr/bin/ntpdate -p 1 pool.ntp.org
+		;;
+
+	*)
+		;;
+esac

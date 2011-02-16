@@ -52,6 +52,8 @@ dirs = \
 	/tmp \
 	/usr \
 	/usr/lib \
+	/usr/lib/dhcpcd \
+	/usr/lib/dhcpcd/dhcpcd-hooks \
 	/usr/lib/gdk-pixbuf-2.0 \
 	/usr/lib/gdk-pixbuf-2.0/2.10.0 \
 	/usr/share \
@@ -86,6 +88,8 @@ scripts = \
 	/etc/xdg/awesome/xinitrc \
 	/lib/systemd/gdk-pixbuf-loaders-cache \
 	/lib/systemd/pango-modules-cache \
+	/usr/lib/dhcpcd/dhcpcd-hooks/90-ntpdate \
+	/usr/lib/dhcpcd/dhcpcd-hooks/91-ddip-announce \
 	/usr/share/udhcpc/default.script
 
 files = \

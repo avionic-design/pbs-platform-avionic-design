@@ -1,0 +1,14 @@
+#!/bin/sh -e
+
+case "$reason" in
+	BOUND | RENEW)
+		/bin/systemctl start ddip-announce@$interface.service
+		;;
+
+	EXPIRE | RELEASE | STOP)
+		/bin/systemctl stop ddip-announce@$interface.service
+		;;
+
+	*)
+		;;
+esac
