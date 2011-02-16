@@ -180,6 +180,7 @@ links = \
 	/etc/rcS.d/99-X \
 	/etc/hostname \
 	/etc/hosts \
+	/etc/remote-control.conf \
 	/etc/resolv.conf \
 	/etc/ssh/ssh_host_dsa_key \
 	/etc/ssh/ssh_host_dsa_key.pub \
