@@ -155,6 +155,7 @@ files = \
 	/etc/xdg/menus/applications.menu \
 	/etc/xdg/xfce4/helpers.rc \
 	/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml \
+	/fastboot \
 	/lib/lsb/init-functions \
 	/usr/share/applications/xterm.desktop
 
