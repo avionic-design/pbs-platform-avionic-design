@@ -101,6 +101,7 @@ files = \
 	/etc/fstab \
 	/etc/group \
 	/etc/gtk-2.0/gtkrc \
+	/etc/hosts \
 	/etc/inittab \
 	/etc/issue \
 	/etc/locale.conf \
@@ -180,7 +181,6 @@ links = \
 	/etc/rcS.d/75-ssh \
 	/etc/rcS.d/99-X \
 	/etc/hostname \
-	/etc/hosts \
 	/etc/remote-control.conf \
 	/etc/resolv.conf \
 	/etc/ssh/ssh_host_dsa_key \
