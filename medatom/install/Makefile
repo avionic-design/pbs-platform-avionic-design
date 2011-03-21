@@ -1,5 +1,5 @@
 PACKAGE = medatom-install
-VERSION = 2-wip
+VERSION = 2
 
 dirs = \
 	/etc \
