@@ -2,6 +2,12 @@
 
 interface="$1"
 action="$2"
+arptype="$3"
+
+if test "x$arptype" != "xether"; then
+	echo "unsupported ARP type: $arptype"
+	exit 0
+fi
 
 case $action in
 	link)
