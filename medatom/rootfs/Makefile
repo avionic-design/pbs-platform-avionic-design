@@ -198,6 +198,7 @@ links = \
 	/etc/systemd/system/local-fs.target.wants/tmp.mount \
 	/etc/systemd/system/local-fs.target.wants/var-lib.mount \
 	/etc/systemd/system/local-fs.target.wants/var-log.mount \
+	/etc/systemd/system/multi-user.target.wants/network.target \
 	/etc/systemd/system/multi-user.target.wants/openssh.service \
 	/etc/systemd/system/sockets.target.wants/lldpd.socket \
 	/etc/X11/xorg.conf.d/99-calibration.conf \
