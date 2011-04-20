@@ -8,6 +8,7 @@
 /persist
 /proc
 /root
+/run
 /sbin
 /sys
 /tmp

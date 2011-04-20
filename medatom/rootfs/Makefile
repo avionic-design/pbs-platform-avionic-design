@@ -48,6 +48,7 @@ dirs = \
 	/persist \
 	/proc \
 	/root \
+	/run \
 	/sbin \
 	/sys \
 	/tmp \
@@ -63,9 +64,7 @@ dirs = \
 	/usr/share/icons/default \
 	/var \
 	/var/lib \
-	/var/lock \
-	/var/log \
-	/var/run
+	/var/log
 
 scripts = \
 	/etc/iflinkd/hooks.d/00-lldpd \
@@ -204,7 +203,9 @@ links = \
 	/sbin/getty \
 	/sbin/init \
 	/usr/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache \
-	/usr/share/icons/default/index.theme
+	/usr/share/icons/default/index.theme \
+	/var/lock \
+	/var/run
 
 include platforms/common.mk
 
