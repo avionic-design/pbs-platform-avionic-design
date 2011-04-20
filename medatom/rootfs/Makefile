@@ -40,6 +40,7 @@ dirs = \
 	/etc/xdg/xfce4/xfconf \
 	/etc/xdg/xfce4/xfconf/xfce-perchannel-xml \
 	/lib \
+	/lib/firmware \
 	/lib/lsb \
 	/lib/systemd \
 	/media \
@@ -159,6 +160,7 @@ files = \
 	/etc/xdg/xfce4/helpers.rc \
 	/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml \
 	/fastboot \
+	/lib/firmware/v4l-cx231xx-avcore-01.fw \
 	/lib/lsb/init-functions \
 	/usr/share/applications/xterm.desktop
 
