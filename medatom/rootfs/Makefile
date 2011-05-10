@@ -1,5 +1,5 @@
 PACKAGE = medatom
-VERSION = 4-wip
+VERSION = 4
 
 dirs = \
 	/bin \
