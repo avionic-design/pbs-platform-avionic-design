@@ -108,6 +108,7 @@ files = \
 	/etc/localtime \
 	/etc/modprobe.d/blacklist.conf \
 	/etc/modprobe.d/sound.conf \
+	/etc/modprobe.d/touch.conf \
 	/etc/modules \
 	/etc/modules-load.d/cpufreq.conf \
 	/etc/modules-load.d/input.conf \
