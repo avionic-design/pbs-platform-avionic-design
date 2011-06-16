@@ -167,6 +167,7 @@ files = \
 
 links = \
 	/bin/sh \
+	/etc/machine-id \
 	/etc/motd \
 	/etc/mtab \
 	/etc/pango/pango.modules \
