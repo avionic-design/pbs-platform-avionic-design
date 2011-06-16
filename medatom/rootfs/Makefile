@@ -162,7 +162,8 @@ files = \
 	/fastboot \
 	/lib/firmware/v4l-cx231xx-avcore-01.fw \
 	/lib/lsb/init-functions \
-	/usr/share/applications/xterm.desktop
+	/usr/share/applications/xterm.desktop \
+	/usr/share/vim/vimrc
 
 links = \
 	/bin/sh \
