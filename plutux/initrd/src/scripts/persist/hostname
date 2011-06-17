@@ -1,0 +1,7 @@
+#!/bin/sh -e
+
+persist="$1"
+
+serial=`adak-mac -i eth0 serial`
+
+echo "plutux-$serial" > "$persist/etc/hostname"

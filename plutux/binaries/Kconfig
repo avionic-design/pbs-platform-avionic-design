@@ -1,0 +1,11 @@
+if PLATFORM_AVIONIC_DESIGN_PLUTUX_ROOTFS
+
+config PLATFORM_AVIONIC_DESIGN_PLUTUX_BINARIES
+	bool "Avionic Design Plutux Binaries"
+	default n
+	help
+	  This package contains all binaries shipped with nvidia's sdk.
+	  It contains the x display driver and the codecs to use hardware
+	  accelerated video playback and OpenGL.
+
+endif

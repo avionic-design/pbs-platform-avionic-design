@@ -1,0 +1,29 @@
+#!/bin/sh
+
+/usr/bin/logger -t iflinkd "interface $1 is now in state $2"
+
+configure_interface() {
+	/usr/bin/logger -t dhcp "configure interface $1"
+
+	/sbin/udhcpc -R -n -t 3 -h `hostname` -p /var/run/udhcpc.$1.pid -i $1
+}
+
+unconfigure_interface() {
+	/usr/bin/logger -t dhcp "remove configuration from $1"
+
+	/bin/kill `cat /var/run/udhcpc.$1.pid`
+	/bin/rm -f /var/run/udhcpc.$1.pid
+	/sbin/ifconfig $1 0.0.0.0
+}
+
+case $2 in
+	link)
+		configure_interface $1
+		;;
+	up)
+		unconfigure_interface $1
+		;;
+	*)
+		/usr/bin/logger -t dhcp "unhandled state $2 on $1"
+		;;
+esac
