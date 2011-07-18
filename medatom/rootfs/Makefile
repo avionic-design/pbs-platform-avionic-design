@@ -152,6 +152,7 @@ files = \
 	/etc/vconsole.conf \
 	/etc/X11/xorg.conf.d/10-evdev.conf \
 	/etc/X11/xorg.conf.d/98-dpms.conf \
+	/etc/X11/Xsession.d/00-persist \
 	/etc/X11/Xsession.d/10-keyboard-layout \
 	/etc/X11/Xsession.d/50-determine-startup \
 	/etc/X11/Xsession.d/90-calibrate \
