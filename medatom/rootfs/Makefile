@@ -108,12 +108,14 @@ files = \
 	/etc/localtime \
 	/etc/modprobe.d/blacklist.conf \
 	/etc/modprobe.d/sound.conf \
+	/etc/modprobe.d/v4l.conf \
 	/etc/modules \
 	/etc/modules-load.d/cpufreq.conf \
 	/etc/modules-load.d/input.conf \
 	/etc/modules-load.d/misc.conf \
 	/etc/modules-load.d/networking.conf \
 	/etc/modules-load.d/sound.conf \
+	/etc/modules-load.d/v4l.conf \
 	/etc/modules-load.d/video.conf \
 	/etc/motd.tail \
 	/etc/network/interfaces \
@@ -162,6 +164,7 @@ files = \
 	/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml \
 	/fastboot \
 	/lib/firmware/v4l-cx231xx-avcore-01.fw \
+	/lib/firmware/xc3028L-v36.fw \
 	/lib/lsb/init-functions \
 	/usr/share/applications/xterm.desktop \
 	/usr/share/vim/vimrc
