@@ -89,7 +89,7 @@ scripts = \
 	/etc/xdg/awesome/xinitrc \
 	/lib/systemd/gdk-pixbuf-loaders-cache \
 	/lib/systemd/pango-modules-cache \
-	/usr/lib/dhcpcd/dhcpcd-hooks/90-ntpdate \
+	/usr/lib/dhcpcd/dhcpcd-hooks/90-ntp \
 	/usr/lib/dhcpcd/dhcpcd-hooks/91-ddip-announce \
 	/usr/share/udhcpc/default.script
 
@@ -149,6 +149,7 @@ files = \
 	/etc/tmpfiles.d/dbus.conf \
 	/etc/tmpfiles.d/hosts.conf \
 	/etc/tmpfiles.d/lldpd.conf \
+	/etc/tmpfiles.d/ntp.conf \
 	/etc/tmpfiles.d/ssh.conf \
 	/etc/tmpfiles.d/systemd.conf \
 	/etc/vconsole.conf \
@@ -188,6 +189,7 @@ links = \
 	/etc/rcS.d/75-ssh \
 	/etc/rcS.d/99-X \
 	/etc/hostname \
+	/etc/ntp.conf \
 	/etc/remote-control.conf \
 	/etc/resolv.conf \
 	/etc/ssh/ssh_host_dsa_key \
