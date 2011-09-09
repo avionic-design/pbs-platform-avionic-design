@@ -1,0 +1,9 @@
+[Unit]
+Description=SLIP on port /dev/%i
+
+[Service]
+ExecStart=/sbin/slattach /dev/%I -p slip -s 115200 -F -L
+ExecStartPost=/usr/bin/sleep 2 ; /sbin/ifconfig sl0 169.254.1.1 up ; /sbin/route add 169.254.1.2 dev sl0
+
+[Install]
+WantedBy=multi-user.target

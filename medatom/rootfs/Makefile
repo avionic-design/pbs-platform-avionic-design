@@ -141,6 +141,7 @@ files = \
 	/etc/systemd/system/nodm.service \
 	/etc/systemd/system/openssh.service \
 	/etc/systemd/system/pango.service \
+	/etc/systemd/system/slattach@.service \
 	/etc/systemd/system/root.mount \
 	/etc/systemd/system/tmp.mount \
 	/etc/systemd/system/var-lib.mount \
@@ -190,6 +191,7 @@ links = \
 	/etc/rcS.d/99-X \
 	/etc/hostname \
 	/etc/ntp.conf \
+	/etc/proxy.conf \
 	/etc/remote-control.conf \
 	/etc/resolv.conf \
 	/etc/ssh/ssh_host_dsa_key \
@@ -208,8 +210,10 @@ links = \
 	/etc/systemd/system/local-fs.target.wants/tmp.mount \
 	/etc/systemd/system/local-fs.target.wants/var-lib.mount \
 	/etc/systemd/system/local-fs.target.wants/var-log.mount \
+	/etc/systemd/system/multi-user.target.wants/irkey@ttyS5.service \
 	/etc/systemd/system/multi-user.target.wants/network.target \
 	/etc/systemd/system/multi-user.target.wants/openssh.service \
+	/etc/systemd/system/multi-user.target.wants/slattach@ttyS4.service \
 	/etc/systemd/system/sockets.target.wants/lldpd.socket \
 	/etc/X11/xorg.conf.d/99-calibration.conf \
 	/etc/xdg/menus/xfce-applications.menu \
