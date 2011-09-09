@@ -1,0 +1,22 @@
+#!/bin/sh -e
+
+if test "x$1" = "x"; then
+	echo "usage: $0 DIRECTORY"
+	exit 1
+fi
+
+dir="$1"
+
+test -f "$dir/install/bios.bin" && files="$files bios.bin"
+test -f "$dir/install/fpga.bit" && files="$files fpga.bit"
+test -f "$dir/install/disk-layout" && files="$files disk-layout"
+test -f "$dir/install/vmlinuz" && files="$files vmlinuz"
+test -f "$dir/install/initrd.gz" && files="$files initrd.gz"
+test -f "$dir/install/rootfs.img" && files="$files rootfs.img"
+test -f "$dir/install/extlinux.conf" && files="$files extlinux.conf"
+test -f "$dir/install/hostname-prefix" && files="$files hostname-prefix"
+test -f "$dir/install/remote-control.conf" && files="$files remote-control.conf"
+test -f "$dir/install/ring.wav" && files="$files ring.wav"
+test -f "$dir/install/MANIFEST" && files="$files MANIFEST"
+
+tar cf "$dir/install.tar" -C "$dir/install" $files
