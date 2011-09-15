@@ -123,7 +123,12 @@ links = \
 	/usr/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache \
 	/var/run \
 	/init \
-	/sbin/init
+	/sbin/halt \
+	/sbin/init \
+	/sbin/poweroff \
+	/sbin/reboot \
+	/sbin/runlevel \
+	/sbin/shutdown
 
 include include/config/auto.conf
 include platforms/common.mk
