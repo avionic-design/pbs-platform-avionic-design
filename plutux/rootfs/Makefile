@@ -40,7 +40,7 @@ dirs = \
 
 scripts = \
 	/etc/X11/Xsession \
-	/etc/iflinkd/hooks.d/10-dhcp \
+	/etc/iflinkd/hooks.d/10-dhcpcd \
 	/etc/xdg/awesome/xinitrc \
 	/lib/systemd/gdk-pixbuf-loaders-cache \
 	/lib/systemd/pango-modules-cache \
