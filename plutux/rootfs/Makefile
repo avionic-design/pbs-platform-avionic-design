@@ -72,12 +72,14 @@ files = \
 	/etc/profile \
 	/etc/remote-control.conf \
 	/etc/rsyslog.conf \
+	/etc/services \
 	/etc/shadow \
 	/etc/sysctl.conf \
 	/etc/systemd/system.conf \
 	/etc/systemd/system/alsa.service \
 	/etc/systemd/system/gdk-pixbuf.service \
 	/etc/systemd/system/nodm.service \
+	/etc/systemd/system/ntpdate.service \
 	/etc/systemd/system/nvidia-resource-manager.service \
 	/etc/systemd/system/openssh.service \
 	/etc/systemd/system/pango.service \
