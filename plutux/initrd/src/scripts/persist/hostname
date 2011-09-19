@@ -2,6 +2,33 @@
 
 persist="$1"
 
-serial=`adak-mac -i eth0 serial`
+serial=`/usr/bin/adak-mac -i eth0 serial`
+name="plutux-$serial"
 
-echo "plutux-$serial" > "$persist/etc/hostname"
+. /lib/lsb/init-functions
+
+
+# check if update is needed
+if test -e "$persist/etc/hostname" ; then
+	if test $name == `cat $persist/etc/hostname` ; then
+		exit 0
+	fi
+fi
+
+# check if filesystem is writable
+if ! test -w "$persist/etc/hostname"; then
+	log_action_begin_msg "Remounting persistent filesystem read-write"
+	mount -o remount,rw "$persist"
+	log_action_end_msg $?
+fi
+
+# update hostname
+echo $name > "$persist/etc/hostname"
+#/usr/bin/hostname $name
+
+# make sure filesystem is protected
+if test -w "$persist/etc/hostname"; then
+	log_action_begin_msg "Remounting persistent filesystem read-only"
+	mount -o remount,ro "$persist"
+	log_action_end_msg $?
+fi
