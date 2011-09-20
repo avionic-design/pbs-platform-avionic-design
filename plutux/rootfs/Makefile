@@ -44,8 +44,7 @@ scripts = \
 	/etc/xdg/awesome/xinitrc \
 	/lib/systemd/gdk-pixbuf-loaders-cache \
 	/lib/systemd/pango-modules-cache \
-	/lib/systemd/update-mime-db \
-	/usr/share/udhcpc/default.script
+	/lib/systemd/update-mime-db
 
 files = \
 	/fastboot \
