@@ -32,6 +32,9 @@ dirs = \
 	/sys \
 	/tmp \
 	/usr \
+	/usr/lib \
+	/usr/lib/dhcpcd \
+	/usr/lib/dhcpcd/dhcpcd-hooks \
 	/usr/lib/gdk-pixbuf-2.0/2.10.0 \
 	/var \
 	/var/lib \
@@ -44,7 +47,8 @@ scripts = \
 	/etc/xdg/awesome/xinitrc \
 	/lib/systemd/gdk-pixbuf-loaders-cache \
 	/lib/systemd/pango-modules-cache \
-	/lib/systemd/update-mime-db
+	/lib/systemd/update-mime-db \
+	/usr/lib/dhcpcd/dhcpcd-hooks/90-ntp
 
 files = \
 	/fastboot \
@@ -78,7 +82,6 @@ files = \
 	/etc/systemd/system/alsa.service \
 	/etc/systemd/system/gdk-pixbuf.service \
 	/etc/systemd/system/nodm.service \
-	/etc/systemd/system/ntpdate.service \
 	/etc/systemd/system/nvidia-resource-manager.service \
 	/etc/systemd/system/openssh.service \
 	/etc/systemd/system/pango.service \
@@ -88,6 +91,7 @@ files = \
 	/etc/systemd/system/var-lib.mount \
 	/etc/systemd/system/var-log.mount \
 	/etc/tmpfiles.d/dbus.conf \
+	/etc/tmpfiles.d/ntp.conf \
 	/etc/tmpfiles.d/ssh.conf \
 	/etc/tmpfiles.d/systemd.conf \
 	/etc/udev/rules.d/70-persistent-net.rules \
@@ -100,6 +104,7 @@ links = \
 	/etc/machine-id \
 	/etc/motd \
 	/etc/mtab \
+	/etc/ntp.conf \
 	/etc/resolv.conf \
 	/etc/ssh/ssh_host_dsa_key \
 	/etc/ssh/ssh_host_dsa_key.pub \
