@@ -55,10 +55,6 @@ files = \
 	/etc/X11/Xsession.d/10-keyboard-layout \
 	/etc/X11/Xsession.d/50-determine-startup \
 	/etc/X11/Xsession.d/99-start \
-	/etc/X11/xorg.conf.d/05-evdev.conf \
-	/etc/X11/xorg.conf.d/10-device.conf \
-	/etc/X11/xorg.conf.d/10-monitor-hdmi.conf \
-	/etc/X11/xorg.conf.d/80-screen-hdmi.conf \
 	/etc/fstab \
 	/etc/group \
 	/etc/hosts \
@@ -100,6 +96,7 @@ files = \
 
 links = \
 	/bin/sh \
+	/etc/X11/xorg.conf.d \
 	/etc/hostname \
 	/etc/machine-id \
 	/etc/motd \
