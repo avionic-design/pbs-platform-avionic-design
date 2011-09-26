@@ -97,6 +97,7 @@ files = \
 links = \
 	/bin/sh \
 	/etc/X11/xorg.conf.d \
+	/etc/asound.state \
 	/etc/hostname \
 	/etc/machine-id \
 	/etc/motd \
@@ -111,6 +112,7 @@ links = \
 	/etc/ssh/ssh_host_key.pub \
 	/etc/ssh/ssh_host_rsa_key \
 	/etc/ssh/ssh_host_rsa_key.pub \
+	/etc/systemd/system/basic.target.wants/alsa.service \
 	/etc/systemd/system/basic.target.wants/nvidia-resource-manager.service \
 	/etc/systemd/system/graphical.target.wants/gdk-pixbuf.service \
 	/etc/systemd/system/graphical.target.wants/nodm.service \
