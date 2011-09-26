@@ -69,7 +69,6 @@ files = \
 	/etc/pam.d/nodm \
 	/etc/pam.d/other \
 	/etc/profile \
-	/etc/remote-control.conf \
 	/etc/rsyslog.conf \
 	/etc/services \
 	/etc/shadow \
@@ -103,6 +102,7 @@ links = \
 	/etc/motd \
 	/etc/mtab \
 	/etc/ntp.conf \
+	/etc/remote-control.conf \
 	/etc/resolv.conf \
 	/etc/ssh/ssh_host_dsa_key \
 	/etc/ssh/ssh_host_dsa_key.pub \
