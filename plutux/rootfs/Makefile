@@ -7,6 +7,8 @@ dirs = \
 	/etc \
 	/etc/X11 \
 	/etc/X11/Xsession.d \
+	/etc/fonts \
+	/etc/fonts/conf.d \
 	/etc/iflinkd \
 	/etc/iflinkd/hooks.d \
 	/etc/systemd \
@@ -55,6 +57,7 @@ files = \
 	/etc/X11/Xsession.d/10-keyboard-layout \
 	/etc/X11/Xsession.d/50-determine-startup \
 	/etc/X11/Xsession.d/99-start \
+	/etc/fonts/conf.d/99-antialiasing.conf \
 	/etc/fstab \
 	/etc/group \
 	/etc/hosts \
