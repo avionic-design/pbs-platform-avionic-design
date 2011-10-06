@@ -34,7 +34,14 @@ mp="/media"
 ,,L,*
 EOF
 
-cat /usr/lib/syslinux/mbr.bin > ${device}
+if test -r /usr/lib/syslinux/mbr.bin ; then
+	cat /usr/lib/syslinux/mbr.bin > ${device}
+elif test -r /usr/share/syslinux/mbr.bin ; then
+	cat /usr/share/syslinux/mbr.bin > ${device}
+else
+	echo "mbr.bin not found"
+	exit 1
+fi
 wait_for_partition ${device}1
 format_partition ${device}1 ext4 install
 
