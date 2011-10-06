@@ -1,5 +1,5 @@
 PACKAGE = harmony
-VERSION = 19.0006
+VERSION = 19.0026
 
 LOCATION = http://ftp.avionic-design.de/pub/$(PACKAGE)
 TARBALLS = $(PACKAGE)-$(VERSION).tar.bz2
