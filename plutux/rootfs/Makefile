@@ -104,6 +104,7 @@ links = \
 	/etc/machine-id \
 	/etc/motd \
 	/etc/mtab \
+	/etc/network \
 	/etc/ntp.conf \
 	/etc/remote-control.conf \
 	/etc/resolv.conf \
