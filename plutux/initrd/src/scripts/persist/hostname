@@ -16,19 +16,14 @@ if test -e "$persist/etc/hostname" ; then
 fi
 
 # check if filesystem is writable
-if ! test -w "$persist/etc/hostname"; then
-	log_action_begin_msg "Remounting persistent filesystem read-write"
-	mount -o remount,rw "$persist"
-	log_action_end_msg $?
-fi
+log_action_begin_msg "Remounting persistent filesystem read-write"
+mount -o remount,rw "$persist"
+log_action_end_msg $?
 
 # update hostname
 echo $name > "$persist/etc/hostname"
-#/usr/bin/hostname $name
 
 # make sure filesystem is protected
-if test -w "$persist/etc/hostname"; then
-	log_action_begin_msg "Remounting persistent filesystem read-only"
-	mount -o remount,ro "$persist"
-	log_action_end_msg $?
-fi
+log_action_begin_msg "Remounting persistent filesystem read-only"
+mount -o remount,ro "$persist"
+log_action_end_msg $?
