@@ -61,6 +61,7 @@ files = \
 	/etc/group \
 	/etc/hosts \
 	/etc/inittab \
+	/etc/localtime \
 	/etc/nsswitch.conf \
 	/etc/passwd \
 	/etc/pam.conf \
