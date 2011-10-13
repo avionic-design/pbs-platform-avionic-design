@@ -1,0 +1,15 @@
+#
+# This will set the correct output for plutux or 16:9 med@com.
+#
+if test -x /usr/bin/xrandr; then
+	HAVE_HDMI="`/usr/bin/xrandr | grep 'HDMI connected' | wc -l`"
+	HAVE_LVDS="`/usr/bin/xrandr | grep 'TFTLCD connected' | wc -l`"
+
+	# If HDMI is connected than give HDMI the favor and disable LVDS.
+	# This is required for correct video playback.
+	if test "$HAVE_LVDS" = "1" -a "$HAVE_HDMI" = "1"; then
+		/usr/bin/xrandr --output HDMI --mode 1920x1080 --output TFTLCD --off
+	elif test "$HAVE_HDMI" = "1"; then
+		/usr/bin/xrandr --output HDMI --mode 1920x1080
+	fi
+fi
