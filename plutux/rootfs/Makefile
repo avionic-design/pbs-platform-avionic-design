@@ -54,7 +54,6 @@ scripts = \
 
 files = \
 	/fastboot \
-	/etc/X11/Xsession.d/10-keyboard-layout \
 	/etc/X11/Xsession.d/50-determine-startup \
 	/etc/X11/Xsession.d/99-start \
 	/etc/fonts/conf.d/99-antialiasing.conf \
