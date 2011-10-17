@@ -2,4 +2,9 @@ if test "x$XDG_CONFIG_HOME" = "x"; then
 	XDG_CONFIG_HOME="$HOME/.config"
 fi
 
+# backup old session file for later analysis
+if test -e /var/log/Xsession.log; then
+	/bin/gzip /var/log/Xsession.log
+fi
+
 exec $STARTUP > /var/log/Xsession.log 2>&1
