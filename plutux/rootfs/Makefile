@@ -18,6 +18,7 @@ dirs = \
 	/etc/systemd/system/basic.target.wants \
 	/etc/systemd/system/local-fs.target.wants \
 	/etc/systemd/system/multi-user.target.wants \
+	/etc/systemd/system/sockets.target.wants \
 	/etc/pango \
 	/etc/pam.d \
 	/etc/tmpfiles.d \
@@ -86,6 +87,8 @@ files = \
 	/etc/systemd/system/alsa.service \
 	/etc/systemd/system/gdk-pixbuf.service \
 	/etc/systemd/system/irkey.service \
+	/etc/systemd/system/lldpd.service \
+	/etc/systemd/system/lldpd.socket \
 	/etc/systemd/system/nodm.service \
 	/etc/systemd/system/nvidia-resource-manager.service \
 	/etc/systemd/system/openssh.service \
@@ -137,6 +140,7 @@ links = \
 	/etc/systemd/system/multi-user.target.wants/network.target \
 	/etc/systemd/system/multi-user.target.wants/serial-getty@ttyS0.service \
 	/etc/systemd/system/multi-user.target.wants/openssh.service \
+	/etc/systemd/system/sockets.target.wants/lldpd.socket \
 	/etc/pango/pango.modules \
 	/usr/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache \
 	/var/run \
