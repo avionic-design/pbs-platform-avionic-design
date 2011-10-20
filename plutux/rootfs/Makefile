@@ -11,6 +11,7 @@ dirs = \
 	/etc/fonts/conf.d \
 	/etc/iflinkd \
 	/etc/iflinkd/hooks.d \
+	/etc/modules-load.d \
 	/etc/systemd \
 	/etc/systemd/system \
 	/etc/systemd/system/basic.target.wants \
@@ -64,6 +65,7 @@ files = \
 	/etc/hosts \
 	/etc/inittab \
 	/etc/localtime \
+	/etc/modules-load.d/input.conf \
 	/etc/nsswitch.conf \
 	/etc/passwd \
 	/etc/pam.conf \
