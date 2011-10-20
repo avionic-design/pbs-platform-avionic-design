@@ -9,6 +9,7 @@ dirs = \
 	/etc/X11/Xsession.d \
 	/etc/fonts \
 	/etc/fonts/conf.d \
+	/etc/gtk-2.0 \
 	/etc/iflinkd \
 	/etc/iflinkd/hooks.d \
 	/etc/modules-load.d \
@@ -62,6 +63,7 @@ files = \
 	/etc/fonts/conf.d/99-antialiasing.conf \
 	/etc/fstab \
 	/etc/group \
+	/etc/gtk-2.0/gtkrc \
 	/etc/hosts \
 	/etc/inittab \
 	/etc/localtime \
