@@ -85,6 +85,7 @@ files = \
 	/etc/systemd/system.conf \
 	/etc/systemd/system/alsa.service \
 	/etc/systemd/system/gdk-pixbuf.service \
+	/etc/systemd/system/irkey.service \
 	/etc/systemd/system/nodm.service \
 	/etc/systemd/system/nvidia-resource-manager.service \
 	/etc/systemd/system/openssh.service \
@@ -125,6 +126,7 @@ links = \
 	/etc/systemd/system/basic.target.wants/alsa.service \
 	/etc/systemd/system/basic.target.wants/nvidia-resource-manager.service \
 	/etc/systemd/system/graphical.target.wants/gdk-pixbuf.service \
+	/etc/systemd/system/graphical.target.wants/irkey.service \
 	/etc/systemd/system/graphical.target.wants/nodm.service \
 	/etc/systemd/system/graphical.target.wants/pango.service \
 	/etc/systemd/system/graphical.target.wants/update-mime-db.service \

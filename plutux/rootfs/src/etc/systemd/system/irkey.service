@@ -1,0 +1,9 @@
+[Unit]
+Description=IR Remote Key Translator
+
+[Service]
+ExecStart=/usr/bin/irkey /dev/ttyHS2
+StandardError=syslog
+
+[Install]
+WantedBy=multi-user.target
