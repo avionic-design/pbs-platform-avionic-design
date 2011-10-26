@@ -127,8 +127,8 @@ state.Intel {
 		comment.dbmax 3000
 		iface MIXER
 		name 'Internal Mic Capture Volume'
-		value.0 1
-		value.1 1
+		value.0 0
+		value.1 0
 	}
 	control.13 {
 		comment.access 'read write'
@@ -219,7 +219,7 @@ state.Intel {
 		comment.dbmax 3000
 		iface MIXER
 		name 'Digital Capture Volume'
-		value.0 60
-		value.1 60
+		value.0 78
+		value.1 78
 	}
 }
