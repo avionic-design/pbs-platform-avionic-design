@@ -1,6 +1,9 @@
-#!/bin/sh -e
+#!/bin/sh
+
+pbsroot=.
 
 mp=/media
+def=$pbsroot/platforms/avionic-design/plutux/defconfig
 
 log_action_begin_msg()
 {
@@ -63,9 +66,34 @@ format_partition ${device}2 ext4 persist
 wait_for_partition ${device}3
 format_partition ${device}3 ext4 data
 
-log_action_begin_msg "Mounting persistent storage"
-mount "${device}2" "$mp"
+log_action_begin_msg "Mounting rootfs storage"
+	mount "${device}1" "$mp"
 log_action_end_msg $?
+
+log_action_begin_msg "  Creating directories"
+	mkdir -p "$mp/boot"
+log_action_end_msg $?
+
+log_action_begin_msg "Unmounting rootfs storage"
+	umount "$mp"
+log_action_end_msg $?
+
+log_action_begin_msg "Mounting persistent storage"
+	mount "${device}2" "$mp"
+log_action_end_msg $?
+
+log_action_begin_msg "  Creating directories"
+	mkdir -p "$mp/etc/X11/xorg.conf.d" && mkdir -p "$mp/etc/network"
+log_action_end_msg $?
+
+if test -d "$def"; then
+	log_action_begin_msg "  Copy default configuration"
+		cp "$def/etc"/*.conf "$mp/etc"/
+		cp "$def/etc/X11/xorg.conf.d"/*.conf "$mp/etc/X11/xorg.conf.d"/
+	log_action_end_msg $?
+else
+	echo "$def"
+fi
 
 if test -x `which dbus-uuidgen`; then
 	log_action_begin_msg "  Generating machine ID"
@@ -77,13 +105,13 @@ fi
 if test -x `which ssh-keygen`; then
 	log_action_begin_msg "  Generating SSH keys"
 	mkdir -p "$mp/etc/ssh" &&
-		ssh_keygen rsa1 "$mp/etc/ssh/ssh_host_key" &&
-		ssh_keygen ecdsa "$mp/etc/ssh/ssh_host_ecdsa_key" &&
 		ssh_keygen dsa "$mp/etc/ssh/ssh_host_dsa_key" &&
-		ssh_keygen rsa "$mp/etc/ssh/ssh_host_rsa_key"
+		ssh_keygen rsa "$mp/etc/ssh/ssh_host_rsa_key" &&
+		ssh_keygen rsa1 "$mp/etc/ssh/ssh_host_key" &&
+		ssh_keygen ecdsa "$mp/etc/ssh/ssh_host_ecdsa_key"
 	log_action_end_msg $?
 fi
 
 log_action_begin_msg "Unmounting persistent storage"
-umount "$mp"
+	umount "$mp"
 log_action_end_msg $?
