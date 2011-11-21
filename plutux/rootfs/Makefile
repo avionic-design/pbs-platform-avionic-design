@@ -68,6 +68,7 @@ files = \
 	/etc/fstab \
 	/etc/group \
 	/etc/gtk-2.0/gtkrc \
+	/etc/host.conf \
 	/etc/hosts \
 	/etc/inittab \
 	/etc/localtime \
