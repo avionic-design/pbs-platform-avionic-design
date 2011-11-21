@@ -41,6 +41,8 @@ dirs = \
 	/usr/lib/dhcpcd \
 	/usr/lib/dhcpcd/dhcpcd-hooks \
 	/usr/lib/gdk-pixbuf-2.0/2.10.0 \
+	/usr/share \
+	/usr/share/alsa \
 	/var \
 	/var/lib \
 	/var/lock \
@@ -143,6 +145,7 @@ links = \
 	/etc/systemd/system/sockets.target.wants/lldpd.socket \
 	/etc/pango/pango.modules \
 	/usr/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache \
+	/usr/share/alsa/ucm \
 	/var/run \
 	/init \
 	/sbin/halt \
