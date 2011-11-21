@@ -2,8 +2,15 @@
 # This will set the correct output for plutux or 16:9 med@com.
 #
 if test -x /usr/bin/xrandr; then
-	HAVE_HDMI="`/usr/bin/xrandr | grep 'HDMI connected' | wc -l`"
-	HAVE_LVDS="`/usr/bin/xrandr | grep 'TFTLCD connected' | wc -l`"
+	# call xrandr only once to avoid flickering screen
+	XRANDR="`/usr/bin/xrandr`"
+	# for plutux
+	HAVE_HDMI="`echo $XRANDR | grep 'HDMI connected' | wc -l`"
+	HAVE_LVDS="`echo $XRANDR | grep 'TFTLCD connected' | wc -l`"
+	# for medcom
+	if test "$HAVE_LVDS" = "0"; then
+		HAVE_LVDS="`echo $XRANDR | grep 'LVDS-1 connected' | wc -l`"
+	fi
 
 	# If HDMI is connected than give HDMI the favor and disable LVDS.
 	# This is required for correct video playback.
