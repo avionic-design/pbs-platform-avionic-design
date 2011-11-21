@@ -83,13 +83,15 @@ log_action_begin_msg "Mounting persistent storage"
 log_action_end_msg $?
 
 log_action_begin_msg "  Creating directories"
-	mkdir -p "$mp/etc/X11/xorg.conf.d" && mkdir -p "$mp/etc/network"
+	mkdir -p "$mp/etc/X11/xorg.conf.d" && mkdir -p "$mp/etc/network" &&
+	mkdir -p "$mp/usr/share/alsa/ucm"
 log_action_end_msg $?
 
 if test -d "$def"; then
 	log_action_begin_msg "  Copy default configuration"
-		cp "$def/etc"/*.conf "$mp/etc"/
-		cp "$def/etc/X11/xorg.conf.d"/*.conf "$mp/etc/X11/xorg.conf.d"/
+		cp "$def/etc"/*.conf "$mp/etc"/ &&
+		cp "$def/etc/X11/xorg.conf.d"/*.conf "$mp/etc/X11/xorg.conf.d"/ &&
+		cp -r "$def/usr/share/alsa/ucm"/* "$mp/usr/share/alsa/ucm"/
 	log_action_end_msg $?
 else
 	echo "$def"
