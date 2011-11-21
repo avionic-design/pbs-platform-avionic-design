@@ -1,0 +1,3 @@
+# unexport gpio's
+echo 248 > /sys/class/gpio/unexport
+echo 249 > /sys/class/gpio/unexport
