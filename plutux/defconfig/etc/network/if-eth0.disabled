@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# set ip-address
+/sbin/ifconfig eth0 192.168.0.58
+# add default gateway
+/sbin/route add default gw 192.168.0.1 dev eth0
+# update resolv.conf
+echo "nameserver 80.58.0.33" > /etc/resolv.conf
+# update time
+/usr/bin/ntpdate -p 1 pool.ntp.org
