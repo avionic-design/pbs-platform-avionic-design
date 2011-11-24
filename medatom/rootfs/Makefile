@@ -105,6 +105,7 @@ files = \
 	/etc/hosts \
 	/etc/inittab \
 	/etc/issue \
+	/etc/linphone.conf \
 	/etc/locale.conf \
 	/etc/localtime \
 	/etc/modprobe.d/blacklist.conf \
