@@ -1,3 +1,6 @@
+#echo '/tmp/%e-%p' > /proc/sys/kernel/core_pattern
+#ulimit -c unlimited
+
 if test "x$XDG_CONFIG_HOME" = "x"; then
 	XDG_CONFIG_HOME="$HOME/.config"
 fi
