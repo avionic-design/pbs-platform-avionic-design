@@ -6,8 +6,8 @@ After=systemd-modules-load.service
 [Service]
 Type=oneshot
 RemainAfterExit=yes
-ExecStartPre=-/usr/sbin/i2cset -y 2 0x60 1 0xc0
-ExecStartPre=-/usr/sbin/i2cset -y 2 0x60 2 0x2f
+ExecStartPre=-/usr/sbin/i2cset -y 2 0x60 1 0xd0
+ExecStartPre=-/usr/sbin/i2cset -y 2 0x60 2 0x3f
 ExecStart=/usr/sbin/alsactl restore
 
 [Install]
