@@ -4,4 +4,5 @@ if ! test -f "$CALIBRATION_FILE"; then
 	mount -o remount,rw /persist
 	evdev-calibrate --output "$CALIBRATION_FILE"
 	mount -o remount,ro /persist
+	exit 0
 fi
