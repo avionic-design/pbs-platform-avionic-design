@@ -17,6 +17,7 @@ test -f "$dir/install/extlinux.conf" && files="$files extlinux.conf"
 test -f "$dir/install/hostname-prefix" && files="$files hostname-prefix"
 test -f "$dir/install/remote-control.conf" && files="$files remote-control.conf"
 test -f "$dir/install/ring.wav" && files="$files ring.wav"
+test -f "$dir/install/config.tar" && files="$files config.tar"
 test -f "$dir/install/MANIFEST" && files="$files MANIFEST"
 
 tar cf "$dir/install.tar" -C "$dir/install" $files
