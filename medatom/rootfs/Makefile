@@ -94,6 +94,7 @@ scripts = \
 	/usr/share/udhcpc/default.script
 
 files = \
+	/etc/asound.conf \
 	/etc/asound.state \
 	/etc/default/locale \
 	/etc/default/rcS \
