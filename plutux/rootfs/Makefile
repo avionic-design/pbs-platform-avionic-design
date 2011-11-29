@@ -133,7 +133,6 @@ links = \
 	/etc/systemd/system/basic.target.wants/alsa.service \
 	/etc/systemd/system/basic.target.wants/nvidia-resource-manager.service \
 	/etc/systemd/system/graphical.target.wants/gdk-pixbuf.service \
-	/etc/systemd/system/graphical.target.wants/irkey.service \
 	/etc/systemd/system/graphical.target.wants/nodm.service \
 	/etc/systemd/system/graphical.target.wants/pango.service \
 	/etc/systemd/system/graphical.target.wants/update-mime-db.service \
