@@ -1,0 +1,53 @@
+#!/bin/sh -e
+
+interface="$1"
+action="$2"
+arptype="$3"
+
+end_wpa_supplicant ()
+{
+	echo "closing supplicant for $1"
+	kill `cat /run/wpa_supplicant-$1.pid`
+	rm -f /run/wpa_supplicant-$1.pid
+}
+
+# check if we have a wireless device
+if ! test -d "/sys/class/net/$interface/wireless"; then
+        echo "$interface is not a wireless device"
+        exit 0
+fi
+
+# check if it is of type ethernet
+if test "x$arptype" != "xether"; then
+	echo "unsupported ARP type: $arptype"
+	exit 0
+fi
+
+#check the action we should take
+case $action in
+	link)
+		echo "$interface got link"
+		if test -e /run/wpa_supplicant-$interface.pid; then
+			echo "supplicant already running for $interface"
+#			end_wpa_supplicant $interface
+			exit 0
+		fi
+		# Set link up (some cards require this.)
+		/bin/ip link set dev $interface up
+		# Start the supplicant
+		/usr/sbin/wpa_supplicant -B -Dwext -i$interface \
+			-c/etc/wpa_supplicant.conf \
+			-P/run/wpa_supplicant-$interface.pid
+		;;
+	up)
+		echo "$interface is now up"
+		end_wpa_supplicant $interface
+		;;
+	down)
+		echo "$interface is now down"
+		end_wpa_supplicant $interface
+		;;
+	*)
+		echo "unsupported action $action on $interface"
+		;;
+esac

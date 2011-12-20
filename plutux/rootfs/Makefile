@@ -58,6 +58,7 @@ scripts = \
 	/lib/systemd/pango-modules-cache \
 	/lib/systemd/update-mime-db \
 	/usr/lib/dhcpcd/dhcpcd-hooks/90-ntp
+#	/etc/iflinkd/hooks.d/09-wpa_supplicant \
 
 files = \
 	/fastboot \
@@ -140,6 +141,7 @@ links = \
 	/etc/ntp.conf \
 	/etc/remote-control.conf \
 	/etc/resolv.conf \
+	/etc/wpa_supplicant.conf \
 	/etc/ssh/ssh_host_dsa_key \
 	/etc/ssh/ssh_host_dsa_key.pub \
 	/etc/ssh/ssh_host_ecdsa_key \
