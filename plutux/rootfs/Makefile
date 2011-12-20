@@ -27,6 +27,8 @@ dirs = \
 	/etc/xdg \
 	/etc/xdg/awesome \
 	/lib \
+	/lib/firmware \
+	/lib/firmware/rtlwifi \
 	/media \
 	/media/disk \
 	/persist \
@@ -109,7 +111,22 @@ files = \
 	/etc/tmpfiles.d/systemd.conf \
 	/etc/udev/rules.d/70-persistent-net.rules \
 	/lib/lsb/init-functions \
-	/root/.htoprc
+	/lib/firmware/ar9170-1.fw \
+	/lib/firmware/ar9170-2.fw \
+	/lib/firmware/ar9170.fw \
+	/lib/firmware/ar9271.fw \
+	/lib/firmware/htc_9271.fw \
+	/lib/firmware/rt2860.bin \
+	/lib/firmware/rt2870.bin \
+	/lib/firmware/rt3070.bin \
+	/lib/firmware/rt3071.bin \
+	/lib/firmware/rt3090.bin \
+	/lib/firmware/rt73.bin \
+	/lib/firmware/rtlwifi/rtl8192cfw.bin \
+	/lib/firmware/rtlwifi/rtl8192cufw.bin \
+	/lib/firmware/rtlwifi/rtl8192defw.bin \
+	/lib/firmware/rtlwifi/rtl8192sefw.bin \
+	/lib/firmware/rtlwifi/rtl8712u.bin
 
 links = \
 	/bin/sh \
