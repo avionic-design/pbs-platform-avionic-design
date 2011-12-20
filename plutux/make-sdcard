@@ -91,7 +91,8 @@ if test -d "$def"; then
 	log_action_begin_msg "  Copy default configuration"
 		cp "$def/etc"/*.conf "$mp/etc"/ &&
 		cp "$def/etc/X11/xorg.conf.d"/*.conf "$mp/etc/X11/xorg.conf.d"/ &&
-		cp -r "$def/usr/share/alsa/ucm"/* "$mp/usr/share/alsa/ucm"/
+		cp -r "$def/usr/share/alsa/ucm"/* "$mp/usr/share/alsa/ucm"/ &&
+		cp "$def/etc"/asound.state "$mp/etc"/
 	log_action_end_msg $?
 else
 	echo "$def"
