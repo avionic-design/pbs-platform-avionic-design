@@ -8,6 +8,4 @@ source "platforms/avionic-design/plutux/rootfs/Kconfig"
 
 endchoice
 
-source "platforms/avionic-design/plutux/binaries/Kconfig"
-
 endif
