@@ -1,5 +1,5 @@
 PACKAGE = plutux-rootfs
-VERSION = 0
+VERSION = 1
 
 dirs = \
 	/bin \
