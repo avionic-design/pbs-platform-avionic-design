@@ -45,6 +45,8 @@ dirs = \
 	/usr/lib/gdk-pixbuf-2.0/2.10.0 \
 	/usr/share \
 	/usr/share/alsa \
+	/usr/share/alsa/ucm \
+	/usr/share/alsa/ucm/tegrawm8903 \
 	/var \
 	/var/lib \
 	/var/lock \
@@ -127,7 +129,11 @@ files = \
 	/lib/firmware/rtlwifi/rtl8192cufw.bin \
 	/lib/firmware/rtlwifi/rtl8192defw.bin \
 	/lib/firmware/rtlwifi/rtl8192sefw.bin \
-	/lib/firmware/rtlwifi/rtl8712u.bin
+	/lib/firmware/rtlwifi/rtl8712u.bin \
+	/usr/share/alsa/ucm/tegrawm8903/hifi.conf \
+	/usr/share/alsa/ucm/tegrawm8903/tegrawm8903.conf \
+	/usr/share/alsa/ucm/tegrawm8903/voice-call.conf \
+	/usr/share/alsa/ucm/tegrawm8903/voice-call-ip.conf
 
 links = \
 	/bin/sh \
@@ -166,7 +172,6 @@ links = \
 	/etc/systemd/system/sockets.target.wants/lldpd.socket \
 	/etc/pango/pango.modules \
 	/usr/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache \
-	/usr/share/alsa/ucm \
 	/var/run \
 	/init \
 	/sbin/halt \
