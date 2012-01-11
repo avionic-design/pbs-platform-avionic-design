@@ -54,6 +54,7 @@ dirs = \
 
 scripts = \
 	/etc/X11/Xsession \
+	/etc/iflinkd/hooks.d/00-lldpd \
 	/etc/iflinkd/hooks.d/10-dhcpcd \
 	/etc/xdg/awesome/xinitrc \
 	/lib/systemd/gdk-pixbuf-loaders-cache \
@@ -109,6 +110,7 @@ files = \
 	/etc/systemd/system/var-lib.mount \
 	/etc/systemd/system/var-log.mount \
 	/etc/tmpfiles.d/dbus.conf \
+	/etc/tmpfiles.d/lldpd.conf \
 	/etc/tmpfiles.d/ntp.conf \
 	/etc/tmpfiles.d/ssh.conf \
 	/etc/tmpfiles.d/systemd.conf \
