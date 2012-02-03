@@ -1,0 +1,3 @@
+- Remove files/symlinks in /media/disk. These files should be static and
+  belong in the read-only root filesystem or in persistent storage (/persist).
+- Add install platform to boot with fresh units.

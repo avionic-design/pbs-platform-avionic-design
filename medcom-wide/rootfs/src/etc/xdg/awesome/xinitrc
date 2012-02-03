@@ -1,0 +1,7 @@
+#!/bin/sh
+
+if test "x$XDG_CONFIG_HOME" = "x"; then
+	XDG_CONFIG_HOME=$HOME/.config
+fi
+
+exec awesome

@@ -1,0 +1,27 @@
+#!/bin/sh -e
+
+interface="$1"
+action="$2"
+arptype="$3"
+
+if test "x$arptype" != "xether"; then
+	echo "unsupported ARP type: $arptype"
+	exit 0
+fi
+
+case $action in
+	link)
+		if /bin/systemctl is-active lldpd.service; then
+			/bin/systemctl restart lldpd.service
+		else
+			/bin/systemctl start lldpd.service
+		fi
+		;;
+
+	up | down)
+		/bin/systemctl stop lldpd.service
+		;;
+
+	*)
+		;;
+esac

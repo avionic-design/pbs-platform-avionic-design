@@ -1,0 +1,9 @@
+::sysinit:/etc/init.d/rcS
+::respawn:/sbin/getty -L 57600 ttyS0 vt100
+#ttyS0::askfirst:/bin/sh
+#tty1::askfirst:/bin/sh
+#tty2::askfirst:/bin/sh
+#tty3::askfirst:/bin/sh
+#tty4::askfirst:/bin/sh
+#tty5::askfirst:/bin/sh
+#tty6::askfirst:/bin/sh

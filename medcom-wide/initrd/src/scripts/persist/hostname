@@ -1,0 +1,28 @@
+#!/bin/sh -e
+
+persist="$1"
+
+serial=`/usr/bin/adak-mac -i eth0 serial`
+name="medcom-wide-$serial"
+
+. /lib/lsb/init-functions
+
+# check if update is needed
+if test -e "$persist/etc/hostname" ; then
+	if test $name == `cat $persist/etc/hostname` ; then
+		exit 0
+	fi
+fi
+
+# make filesystem writable
+log_action_begin_msg "Remounting persistent filesystem read-write"
+mount -o remount,rw "$persist"
+log_action_end_msg $?
+
+# update hostname
+echo $name > "$persist/etc/hostname"
+
+# make sure filesystem is protected
+log_action_begin_msg "Remounting persistent filesystem read-only"
+mount -o remount,ro "$persist"
+log_action_end_msg $?

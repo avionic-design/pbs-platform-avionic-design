@@ -1,0 +1,39 @@
+#!/bin/sh -e
+
+interface="$1"
+action="$2"
+arptype="$3"
+
+configure_interface_manual() {
+	#FIXME: right now we just call a script, but for the future we
+	#       should parse a file and us the informations from it.
+	/bin/sh $1
+}
+
+if test "x$arptype" != "xether"; then
+	echo "unsupported ARP type: $arptype"
+	exit 0
+fi
+
+# configure interface manualy if required
+if test -s /etc/network/if-$interface; then
+	if test "x$action" == "xlink"; then
+		/usr/bin/logger -t dhcp "configure interface $1 manualy"
+		#configure_interface_manual /etc/network/if-$interface
+		/bin/sh /etc/network/if-$interface
+	fi
+	exit 0
+fi
+
+case $action in
+	link)
+		/usr/sbin/dhcpcd --quiet --hostname --noipv4ll --timeout 0 $interface
+		;;
+
+	up | down)
+		/usr/sbin/dhcpcd --quiet --exit $interface
+		;;
+
+	*)
+		;;
+esac

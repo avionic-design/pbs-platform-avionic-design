@@ -1,0 +1,7 @@
+#!/bin/sh -e
+
+if test -e "/etc/os-release" ; then
+	echo ""
+	echo "`cat /etc/os-release`"
+	echo ""
+fi

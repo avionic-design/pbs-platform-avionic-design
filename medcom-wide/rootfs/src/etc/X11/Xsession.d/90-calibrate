@@ -1,0 +1,15 @@
+CALIBRATION_FILE=/etc/X11/xorg.conf.d/99-calibration.conf
+CALIBRATION_OUT=/tmp/calibration.conf
+
+if ! test -f "$CALIBRATION_FILE"; then
+	/usr/bin/evdev-calibrate --output "$CALIBRATION_OUT"
+	RET=$?
+	echo "evdev-calibrate: $RET"
+	if [ $RET -eq 0 ]; then
+		echo "saving calibration"
+		mount -o remount,rw /persist
+		mv $CALIBRATION_OUT $CALIBRATION_FILE
+		mount -o remount,ro /persist
+		exit 0
+	fi
+fi
