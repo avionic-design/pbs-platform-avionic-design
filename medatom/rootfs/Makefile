@@ -217,6 +217,7 @@ links = \
 	/etc/systemd/system/multi-user.target.wants/openssh.service \
 	/etc/systemd/system/multi-user.target.wants/slattach@ttyS4.service \
 	/etc/systemd/system/sockets.target.wants/lldpd.socket \
+	/etc/systemd/system/syslog.service \
 	/etc/X11/xorg.conf.d/99-calibration.conf \
 	/etc/xdg/menus/xfce-applications.menu \
 	/sbin/getty \
