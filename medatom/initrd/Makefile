@@ -1,5 +1,5 @@
 PACKAGE = medatom-initrd
-VERSION = 3
+VERSION = 4-wip
 
 dirs = \
 	/etc
