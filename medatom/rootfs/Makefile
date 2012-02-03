@@ -5,6 +5,7 @@ dirs = \
 	/bin \
 	/dev \
 	/etc \
+	/etc/adobe \
 	/etc/default \
 	/etc/gtk-2.0 \
 	/etc/iflinkd \
@@ -94,6 +95,7 @@ scripts = \
 	/usr/share/udhcpc/default.script
 
 files = \
+	/etc/adobe/mms.cfg \
 	/etc/asound.conf \
 	/etc/asound.state \
 	/etc/default/locale \
