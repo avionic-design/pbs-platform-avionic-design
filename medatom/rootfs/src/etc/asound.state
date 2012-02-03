@@ -139,8 +139,8 @@ state.Intel {
 	control.11 {
 		iface MIXER
 		name 'Mic Capture Volume'
-		value.0 0
-		value.1 0
+		value.0 1
+		value.1 1
 		comment {
 			access 'read write'
 			type INTEGER
@@ -148,15 +148,15 @@ state.Intel {
 			range '0 - 3'
 			dbmin 0
 			dbmax 3000
-			dbvalue.0 0
-			dbvalue.1 0
+			dbvalue.0 1000
+			dbvalue.1 1000
 		}
 	}
 	control.12 {
 		iface MIXER
 		name 'Internal Mic Capture Volume'
-		value.0 0
-		value.1 0
+		value.0 1
+		value.1 1
 		comment {
 			access 'read write'
 			type INTEGER
@@ -164,8 +164,8 @@ state.Intel {
 			range '0 - 3'
 			dbmin 0
 			dbmax 3000
-			dbvalue.0 0
-			dbvalue.1 0
+			dbvalue.0 1000
+			dbvalue.1 1000
 		}
 	}
 	control.13 {
