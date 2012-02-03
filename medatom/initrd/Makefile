@@ -2,7 +2,12 @@ PACKAGE = medatom-initrd
 VERSION = 4-wip
 
 dirs = \
-	/etc
+	/etc \
+	/scripts \
+	/scripts/shutdown
+
+scripts = \
+	/scripts/shutdown/unmount
 
 include platforms/common.mk
 
