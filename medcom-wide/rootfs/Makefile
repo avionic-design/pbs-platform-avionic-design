@@ -151,6 +151,7 @@ links = \
 	/etc/systemd/system/multi-user.target.wants/serial-getty@ttyS0.service \
 	/etc/systemd/system/multi-user.target.wants/openssh.service \
 	/etc/systemd/system/sockets.target.wants/lldpd.socket \
+	/etc/systemd/system/syslog.service \
 	/etc/pango/pango.modules \
 	/usr/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache \
 	/var/run \
