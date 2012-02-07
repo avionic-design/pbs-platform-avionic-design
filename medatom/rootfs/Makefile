@@ -21,6 +21,7 @@ dirs = \
 	/etc/pam.d \
 	/etc/pango \
 	/etc/rcS.d \
+	/etc/remote-control.conf.d \
 	/etc/rsyslog.d \
 	/etc/ssh \
 	/etc/systemd \
@@ -133,6 +134,7 @@ files = \
 	/etc/pam.d/other \
 	/etc/passwd \
 	/etc/profile \
+	/etc/remote-control.conf.d/modem.conf \
 	/etc/rsyslog.conf \
 	/etc/services \
 	/etc/shadow \
