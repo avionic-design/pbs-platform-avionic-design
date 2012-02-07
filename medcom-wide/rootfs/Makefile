@@ -23,6 +23,7 @@ dirs = \
 	/etc/systemd/system/sockets.target.wants \
 	/etc/pango \
 	/etc/pam.d \
+	/etc/remote-control.conf.d \
 	/etc/tmpfiles.d \
 	/etc/udev \
 	/etc/udev/rules.d \
@@ -90,6 +91,7 @@ files = \
 	/etc/pam.d/nodm \
 	/etc/pam.d/other \
 	/etc/profile \
+	/etc/remote-control.conf.d/modem.conf \
 	/etc/rsyslog.conf \
 	/etc/services \
 	/etc/shadow \
