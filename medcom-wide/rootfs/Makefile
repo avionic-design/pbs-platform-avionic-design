@@ -1,5 +1,5 @@
 PACKAGE = medcom-wide-rootfs
-VERSION = 3-wip1
+VERSION = 3
 
 dirs = \
 	/bin \
