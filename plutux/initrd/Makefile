@@ -4,10 +4,12 @@ VERSION = 1
 dirs = \
 	/etc \
 	/scripts \
-	/scripts/persist
+	/scripts/persist \
+	/scripts/shutdown
 
 scripts = \
-	/scripts/persist/hostname
+	/scripts/persist/hostname \
+	/scripts/shutdown/unmount
 
 include platforms/common.mk
 
