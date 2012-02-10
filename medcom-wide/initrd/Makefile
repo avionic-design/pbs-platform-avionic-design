@@ -4,11 +4,13 @@ VERSION = 4-wip
 dirs = \
 	/etc \
 	/scripts \
-	/scripts/persist
+	/scripts/persist \
+	/scripts/shutdown
 
 scripts = \
 	/scripts/persist/hostname \
-	/scripts/persist/version
+	/scripts/persist/version \
+	/scripts/shutdown/unmount
 
 include platforms/common.mk
 
