@@ -1,5 +1,5 @@
 PACKAGE = medcom-wide-initrd
-VERSION = 4-wip
+VERSION = 4
 
 dirs = \
 	/etc \
