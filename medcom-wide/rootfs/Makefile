@@ -79,6 +79,7 @@ files = \
 	/etc/host.conf \
 	/etc/hosts \
 	/etc/inittab \
+	/etc/linphone.conf \
 	/etc/localtime \
 	/etc/modules-load.d/input.conf \
 	/etc/nsswitch.conf \
