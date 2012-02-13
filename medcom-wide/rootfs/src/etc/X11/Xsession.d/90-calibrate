@@ -1,4 +1,4 @@
-CALIBRATION_FILE=/etc/X11/xorg.conf.d/99-calibration.conf
+CALIBRATION_FILE=`/usr/bin/readlink /etc/X11/xorg.conf.d/99-calibration.conf`
 CALIBRATION_OUT=/tmp/calibration.conf
 
 if ! test -f "$CALIBRATION_FILE"; then
