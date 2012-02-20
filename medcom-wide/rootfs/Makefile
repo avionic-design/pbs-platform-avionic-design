@@ -156,6 +156,7 @@ links = \
 	/etc/systemd/system/sockets.target.wants/lldpd.socket \
 	/etc/systemd/system/syslog.service \
 	/etc/pango/pango.modules \
+	/etc/proxy.conf \
 	/usr/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache \
 	/var/run \
 	/init \
