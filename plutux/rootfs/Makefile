@@ -174,6 +174,7 @@ links = \
 	/etc/systemd/system/multi-user.target.wants/openssh.service \
 	/etc/systemd/system/sockets.target.wants/lldpd.socket \
 	/etc/pango/pango.modules \
+	/etc/proxy.conf \
 	/usr/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache \
 	/var/run \
 	/init \
