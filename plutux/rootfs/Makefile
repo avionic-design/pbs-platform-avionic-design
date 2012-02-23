@@ -66,9 +66,7 @@ scripts = \
 files = \
 	/fastboot \
 	/etc/X11/Xsession.d/10-set-output \
-	/etc/X11/Xsession.d/20-unexport-gpios \
 	/etc/X11/Xsession.d/50-determine-startup \
-	/etc/X11/Xsession.d/90-calibrate \
 	/etc/X11/Xsession.d/99-start \
 	/etc/asound.conf \
 	/etc/fonts/conf.d/99-antialiasing.conf \
