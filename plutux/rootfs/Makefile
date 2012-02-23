@@ -7,6 +7,7 @@ dirs = \
 	/etc \
 	/etc/X11 \
 	/etc/X11/Xsession.d \
+	/etc/X11/xorg.conf.d \
 	/etc/fonts \
 	/etc/fonts/conf.d \
 	/etc/gtk-2.0 \
@@ -68,6 +69,11 @@ files = \
 	/etc/X11/Xsession.d/10-set-output \
 	/etc/X11/Xsession.d/50-determine-startup \
 	/etc/X11/Xsession.d/99-start \
+	/etc/X11/xorg.conf.d/05-evdev.conf \
+	/etc/X11/xorg.conf.d/80-monitor-hdmi.conf \
+	/etc/X11/xorg.conf.d/80-monitor-lvds.conf \
+	/etc/X11/xorg.conf.d/81-server.conf \
+	/etc/X11/xorg.conf.d/99-keyboard-de.conf \
 	/etc/asound.conf \
 	/etc/fonts/conf.d/99-antialiasing.conf \
 	/etc/fstab \
@@ -138,7 +144,7 @@ files = \
 
 links = \
 	/bin/sh \
-	/etc/X11/xorg.conf.d \
+	/etc/X11/xorg.conf.d/90-undefined.conf \
 	/etc/asound.state \
 	/etc/hostname \
 	/etc/machine-id \
