@@ -1,39 +1,5 @@
-#!/bin/sh -e
-#
-# This will set the correct output for plutux or 16:9 med@com.
-#
+#!/bin/sh
 if test -x /usr/bin/xrandr; then
-	# call xrandr only once to avoid flickering screen
-	XRANDR="`DISPLAY=:0 /usr/bin/xrandr`"
-
-	# for plutux
-	HAVE_HDMI="`echo $XRANDR | grep 'HDMI connected' | wc -l`"
-	HAVE_LVDS="`echo $XRANDR | grep 'TFTLCD connected' | wc -l`"
-
-	HDMI_NAME="HDMI"
-	LVDS_NAME="TFTLCD"
-
-	# for chromium kernels
-	if test "$HAVE_LVDS" = "0"; then
-		HAVE_LVDS="`echo $XRANDR | grep 'LVDS-1 connected' | wc -l`"
-		if test "$HAVE_LVDS" = "1"; then
-			LVDS_NAME="LVDS-1"
-			HDMI_NAME="HDMI-1"
-		fi
-	fi
-	if test "$HAVE_HDMI" = "0"; then
-		HAVE_HDMI="`echo $XRANDR | grep 'HDMI-1 connected' | wc -l`"
-		if test "$HAVE_HDMI" = "1"; then
-			LVDS_NAME="LVDS-1"
-			HDMI_NAME="HDMI-1"
-		fi
-	fi
-
-	# If HDMI is connected than give HDMI the favor and disable LVDS.
-	# This is required for correct video playback.
-	if test "$HAVE_LVDS" = "1" -a "$HAVE_HDMI" = "1"; then
-		/usr/bin/xrandr --output $HDMI_NAME --mode 1920x1080 --output $LVDS_NAME --off
-	elif test "$HAVE_HDMI" = "1"; then
-		/usr/bin/xrandr --output $HDMI_NAME --mode 1920x1080
-	fi
+	/usr/bin/xrandr -s 1920x1080
+	/usr/bin/xrandr -r 50
 fi
