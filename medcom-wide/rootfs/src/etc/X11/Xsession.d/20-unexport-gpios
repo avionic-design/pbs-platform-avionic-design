@@ -1,3 +1,11 @@
 # unexport gpio's
-echo 448 > /sys/class/gpio/unexport
-echo 449 > /sys/class/gpio/unexport
+if test -w /sys/class/gpio/unexport; then
+	set -e
+	if test -e /sys/class/gpio/gpio448; then
+		echo 448 > /sys/class/gpio/unexport
+	fi
+	if test -e /sys/class/gpio/gpio449; then
+		echo 449 > /sys/class/gpio/unexport
+	fi
+	set +e
+fi
