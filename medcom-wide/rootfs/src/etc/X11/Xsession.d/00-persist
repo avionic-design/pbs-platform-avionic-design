@@ -1,0 +1,12 @@
+#!/bin/sh
+
+SESSIONDIR=/persist/etc/X11/Xsession.d
+SESSIONFILES=$(run-parts --list $SESSIONDIR)
+
+if test "x$SESSIONFILES" != "x"; then
+	set +e
+	for SESSIONFILE in $SESSIONFILES; do
+		. $SESSIONFILE
+	done
+	set -e
+fi

@@ -62,6 +62,7 @@ scripts = \
 
 files = \
 	/fastboot \
+	/etc/X11/Xsession.d/00-persist \
 	/etc/X11/Xsession.d/20-unexport-gpios \
 	/etc/X11/Xsession.d/50-determine-startup \
 	/etc/X11/Xsession.d/90-calibrate \
