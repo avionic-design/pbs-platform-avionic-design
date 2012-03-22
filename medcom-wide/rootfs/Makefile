@@ -118,6 +118,7 @@ files = \
 	/etc/vconsole.conf \
 	/lib/lsb/init-functions \
 	/usr/share/alsa/ucm/tegrawm8903/hifi.conf \
+	/usr/share/alsa/ucm/tegrawm8903/linein.conf \
 	/usr/share/alsa/ucm/tegrawm8903/tegrawm8903.conf \
 	/usr/share/alsa/ucm/tegrawm8903/voice-call.conf \
 	/usr/share/alsa/ucm/tegrawm8903/voice-call-ip.conf
