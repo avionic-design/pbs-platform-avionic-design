@@ -27,7 +27,7 @@ fi
 
 case $action in
 	link)
-		/usr/sbin/dhcpcd --quiet --hostname --noipv4ll --timeout 0 $interface
+		/usr/sbin/dhcpcd --quiet --hostname --noipv4ll --timeout 0 $interface &
 		;;
 
 	up | down)
