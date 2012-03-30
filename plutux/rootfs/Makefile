@@ -101,7 +101,6 @@ files = \
 	/etc/sysctl.conf \
 	/etc/systemd/system.conf \
 	/etc/systemd/system/gdk-pixbuf.service \
-	/etc/systemd/system/irkey.service \
 	/etc/systemd/system/lldpd.service \
 	/etc/systemd/system/lldpd.socket \
 	/etc/systemd/system/nodm.service \
