@@ -25,6 +25,7 @@ dirs = \
 	/etc/tmpfiles.d \
 	/etc/udev \
 	/etc/udev/rules.d \
+	/etc/wpa_supplicant \
 	/etc/xdg \
 	/etc/xdg/awesome \
 	/lib \
@@ -56,13 +57,13 @@ dirs = \
 scripts = \
 	/etc/X11/Xsession \
 	/etc/iflinkd/hooks.d/00-lldpd \
+	/etc/iflinkd/hooks.d/09-wpa_supplicant \
 	/etc/iflinkd/hooks.d/10-dhcpcd \
 	/etc/xdg/awesome/xinitrc \
 	/lib/systemd/gdk-pixbuf-loaders-cache \
 	/lib/systemd/pango-modules-cache \
 	/lib/systemd/update-mime-db \
 	/usr/lib/dhcpcd/dhcpcd-hooks/90-ntp
-#	/etc/iflinkd/hooks.d/09-wpa_supplicant \
 
 files = \
 	/fastboot \
@@ -154,7 +155,6 @@ links = \
 	/etc/ntp.conf \
 	/etc/remote-control.conf \
 	/etc/resolv.conf \
-	/etc/wpa_supplicant.conf \
 	/etc/ssh/ssh_host_dsa_key \
 	/etc/ssh/ssh_host_dsa_key.pub \
 	/etc/ssh/ssh_host_ecdsa_key \
@@ -179,6 +179,7 @@ links = \
 	/etc/systemd/system/sockets.target.wants/lldpd.socket \
 	/etc/pango/pango.modules \
 	/etc/proxy.conf \
+	/etc/wpa_supplicant/wpa_supplicant-nl80211-wlan0.conf \
 	/usr/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache \
 	/var/run \
 	/init \

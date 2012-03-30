@@ -4,50 +4,53 @@ interface="$1"
 action="$2"
 arptype="$3"
 
-end_wpa_supplicant ()
+stop_wpa_supplicant ()
 {
-	echo "closing supplicant for $1"
-	kill `cat /run/wpa_supplicant-$1.pid`
-	rm -f /run/wpa_supplicant-$1.pid
+	/usr/bin/logger -t iflinkd "closing supplicant for $1"
+	/usr/bin/kill `cat /run/wpa_supplicant-$1.pid`
+	/usr/bin/rm -f /run/wpa_supplicant-$1.pid
+}
+
+start_wpa_supplicant()
+{
+	if test -e /run/wpa_supplicant-$1.pid; then
+		/usr/bin/logger -t iflinkd "supplicant already running for $1"
+		exit 0
+	fi
+	# Start the supplicant
+	/usr/sbin/wpa_supplicant -B -Dnl80211 -i$1 \
+		-c/etc/wpa_supplicant/wpa_supplicant-nl80211-$1.conf \
+		-P/run/wpa_supplicant-$interface.pid &
 }
 
 # check if we have a wireless device
 if ! test -d "/sys/class/net/$interface/wireless"; then
-        echo "$interface is not a wireless device"
+        /usr/bin/logger -t iflinkd "$interface is not a wireless device"
         exit 0
 fi
 
 # check if it is of type ethernet
 if test "x$arptype" != "xether"; then
-	echo "unsupported ARP type: $arptype"
+	/usr/bin/logger -t iflinkd "unsupported ARP type: $arptype"
 	exit 0
 fi
 
 #check the action we should take
 case $action in
 	link)
-		echo "$interface got link"
-		if test -e /run/wpa_supplicant-$interface.pid; then
-			echo "supplicant already running for $interface"
-#			end_wpa_supplicant $interface
-			exit 0
-		fi
-		# Set link up (some cards require this.)
-		/bin/ip link set dev $interface up
-		# Start the supplicant
-		/usr/sbin/wpa_supplicant -B -Dwext -i$interface \
-			-c/etc/wpa_supplicant.conf \
-			-P/run/wpa_supplicant-$interface.pid
+		/usr/bin/logger -t iflinkd "$interface got link"
+		start_wpa_supplicant $interface
 		;;
 	up)
-		echo "$interface is now up"
-		end_wpa_supplicant $interface
+		/usr/bin/logger -t iflinkd "$interface is now up"
+		start_wpa_supplicant $interface
 		;;
 	down)
-		echo "$interface is now down"
-		end_wpa_supplicant $interface
+		/usr/bin/logger -t iflinkd "$interface is now down"
+		stop_wpa_supplicant $interface
 		;;
 	*)
-		echo "unsupported action $action on $interface"
+		/usr/bin/logger -t iflinkd "unsupported action $action on $interface"
 		;;
 esac
+
