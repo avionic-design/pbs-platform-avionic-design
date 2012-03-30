@@ -106,7 +106,6 @@ files = \
 	/etc/systemd/system/lldpd.service \
 	/etc/systemd/system/lldpd.socket \
 	/etc/systemd/system/nodm.service \
-	/etc/systemd/system/nvidia-resource-manager.service \
 	/etc/systemd/system/openssh.service \
 	/etc/systemd/system/pango.service \
 	/etc/systemd/system/root.mount \
@@ -164,7 +163,6 @@ links = \
 	/etc/ssh/ssh_host_rsa_key \
 	/etc/ssh/ssh_host_rsa_key.pub \
 	/etc/systemd/system/basic.target.wants/alsa.service \
-	/etc/systemd/system/basic.target.wants/nvidia-resource-manager.service \
 	/etc/systemd/system/graphical.target.wants/gdk-pixbuf.service \
 	/etc/systemd/system/graphical.target.wants/nodm.service \
 	/etc/systemd/system/graphical.target.wants/pango.service \
