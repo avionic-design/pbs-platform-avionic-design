@@ -1,5 +1,0 @@
-#!/bin/sh
-if test -x /usr/bin/xrandr; then
-	/usr/bin/xrandr -s 1920x1080
-	/usr/bin/xrandr -r 50
-fi

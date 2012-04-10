@@ -67,7 +67,6 @@ scripts = \
 
 files = \
 	/fastboot \
-	/etc/X11/Xsession.d/10-set-output \
 	/etc/X11/Xsession.d/50-determine-startup \
 	/etc/X11/Xsession.d/99-start \
 	/etc/X11/xorg.conf.d/05-evdev.conf \
