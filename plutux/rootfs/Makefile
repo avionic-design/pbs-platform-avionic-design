@@ -143,7 +143,6 @@ files = \
 links = \
 	/bin/sh \
 	/etc/X11/xorg.conf.d/90-undefined.conf \
-	/etc/asound.state \
 	/etc/hostname \
 	/etc/machine-id \
 	/etc/motd \
