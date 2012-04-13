@@ -1,0 +1,26 @@
+#!/bin/sh -e
+
+function show_usage()
+{
+	/bin/echo "Usage: $0 [on|off]"
+}
+
+if [ "$#" != "1" ]; then
+	show_usage
+	exit 1
+fi
+
+if [ "$1" = "on" ]; then
+	VALUE="high"
+elif [ "$1" = "off" ]; then
+	VALUE="low"
+else
+	show_usage
+	exit 1
+fi
+
+/bin/echo 456 > /sys/class/gpio/export
+/bin/echo $VALUE > /sys/class/gpio/gpio456/direction
+/bin/echo 456 > /sys/class/gpio/unexport
+
+exit 0

@@ -59,7 +59,8 @@ scripts = \
 	/lib/systemd/pango-modules-cache \
 	/lib/systemd/update-mime-db \
 	/usr/lib/dhcpcd/dhcpcd-hooks/90-ntp \
-	/bin/reset-medcom
+	/bin/reset-medcom \
+	/bin/enable-lan
 
 files = \
 	/fastboot \
