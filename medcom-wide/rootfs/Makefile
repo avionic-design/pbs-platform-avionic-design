@@ -58,7 +58,8 @@ scripts = \
 	/lib/systemd/gdk-pixbuf-loaders-cache \
 	/lib/systemd/pango-modules-cache \
 	/lib/systemd/update-mime-db \
-	/usr/lib/dhcpcd/dhcpcd-hooks/90-ntp
+	/usr/lib/dhcpcd/dhcpcd-hooks/90-ntp \
+	/bin/reset-medcom
 
 files = \
 	/fastboot \

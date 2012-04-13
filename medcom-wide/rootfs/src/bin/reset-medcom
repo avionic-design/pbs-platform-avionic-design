@@ -1,0 +1,10 @@
+#!/bin/sh
+
+echo 508 > /sys/class/gpio/export
+echo 509 > /sys/class/gpio/export
+echo 510 > /sys/class/gpio/export
+echo 511 > /sys/class/gpio/export
+echo low > /sys/class/gpio/gpio508/direction
+echo high > /sys/class/gpio/gpio509/direction
+echo low > /sys/class/gpio/gpio510/direction
+echo high > /sys/class/gpio/gpio511/direction
