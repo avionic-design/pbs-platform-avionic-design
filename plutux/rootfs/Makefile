@@ -41,6 +41,7 @@ dirs = \
 	/sys \
 	/tmp \
 	/usr \
+	/usr/bin \
 	/usr/lib \
 	/usr/lib/dhcpcd \
 	/usr/lib/dhcpcd/dhcpcd-hooks \
@@ -63,6 +64,7 @@ scripts = \
 	/lib/systemd/gdk-pixbuf-loaders-cache \
 	/lib/systemd/pango-modules-cache \
 	/lib/systemd/update-mime-db \
+	/usr/bin/ntpdate-wrapper \
 	/usr/lib/dhcpcd/dhcpcd-hooks/90-ntp
 
 files = \
