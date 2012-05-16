@@ -5,12 +5,13 @@ action="$2"
 arptype="$3"
 
 if test "x$arptype" != "xether"; then
-	echo "unsupported ARP type: $arptype"
+	/usr/bin/logger -t iflinkd "$interace: unsupported ARP type: $arptype"
 	exit 0
 fi
 
 # check if we have a wireless device
 if test -d "/sys/class/net/$interface/wireless"; then
+	/usr/bin/logger -t iflinkd "$interace: is a wireless device"
 	exit 0
 fi
 

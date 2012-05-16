@@ -6,7 +6,7 @@ arptype="$3"
 
 stop_wpa_supplicant ()
 {
-	/usr/bin/logger -t iflinkd "closing supplicant for $1"
+	/usr/bin/logger -t iflinkd "$1: stopping wpa_supplicant"
 	/usr/bin/kill `cat /run/wpa_supplicant-$1.pid`
 	/usr/bin/rm -f /run/wpa_supplicant-$1.pid
 }
@@ -14,7 +14,7 @@ stop_wpa_supplicant ()
 start_wpa_supplicant()
 {
 	if test -e /run/wpa_supplicant-$1.pid; then
-		/usr/bin/logger -t iflinkd "supplicant already running for $1"
+		/usr/bin/logger -t iflinkd "$1: supplicant already running"
 		exit 0
 	fi
 
@@ -27,6 +27,7 @@ start_wpa_supplicant()
 	# happend, that we try to restart wpa_supplicant twice, due
 	# multi-threading.
 	touch /run/wpa_supplicant-$1.pid
+	/usr/bin/logger -t iflinkd "$1: starting wpa_supplicant"
 	/usr/sbin/wpa_supplicant -B -Dnl80211 -i$1 \
 		-c/etc/wpa_supplicant/wpa_supplicant-nl80211-$1.conf \
 		-P/run/wpa_supplicant-$1.pid \
@@ -35,32 +36,31 @@ start_wpa_supplicant()
 
 # check if we have a wireless device
 if ! test -d "/sys/class/net/$interface/wireless"; then
-        /usr/bin/logger -t iflinkd "$interface is not a wireless device"
+        /usr/bin/logger -t iflinkd "$interface: not a wireless device"
         exit 0
 fi
 
 # check if it is of type ethernet
 if test "x$arptype" != "xether"; then
-	/usr/bin/logger -t iflinkd "unsupported ARP type: $arptype"
+	/usr/bin/logger -t iflinkd "$interface: unsupported ARP type: $arptype"
 	exit 0
 fi
 
 #check the action we should take
 case $action in
 	link)
-		/usr/bin/logger -t iflinkd "$interface got link"
+		/usr/bin/logger -t iflinkd "$interface: got link"
 		start_wpa_supplicant $interface
 		;;
 	up)
-		/usr/bin/logger -t iflinkd "$interface is now up"
+		/usr/bin/logger -t iflinkd "$interface: now up"
 		start_wpa_supplicant $interface
 		;;
 	down)
-		/usr/bin/logger -t iflinkd "$interface is now down"
+		/usr/bin/logger -t iflinkd "$interface: now down"
 		stop_wpa_supplicant $interface
 		;;
 	*)
-		/usr/bin/logger -t iflinkd "unsupported action $action on $interface"
+		/usr/bin/logger -t iflinkd "$interface: unsupported action: $action"
 		;;
 esac
-
