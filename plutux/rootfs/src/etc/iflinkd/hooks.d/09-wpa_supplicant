@@ -17,10 +17,20 @@ start_wpa_supplicant()
 		/usr/bin/logger -t iflinkd "supplicant already running for $1"
 		exit 0
 	fi
-	# Start the supplicant
+
+	if test -e /var/run/wpa_supplicant/$1; then
+		/usr/bin/logger -t iflinkd "$1: found old control file"
+		rm -f /var/run/wpa_supplicant/$1
+	fi
+
+	# Start the supplicant, touch the pid file first, otherwise it can
+	# happend, that we try to restart wpa_supplicant twice, due
+	# multi-threading.
+	touch /run/wpa_supplicant-$1.pid
 	/usr/sbin/wpa_supplicant -B -Dnl80211 -i$1 \
 		-c/etc/wpa_supplicant/wpa_supplicant-nl80211-$1.conf \
-		-P/run/wpa_supplicant-$interface.pid &
+		-P/run/wpa_supplicant-$1.pid \
+		-f/var/log/wpa_supplicant-$1.log &
 }
 
 # check if we have a wireless device
