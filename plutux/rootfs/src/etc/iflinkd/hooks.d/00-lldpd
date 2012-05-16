@@ -9,6 +9,11 @@ if test "x$arptype" != "xether"; then
 	exit 0
 fi
 
+# check if we have a wireless device
+if test -d "/sys/class/net/$interface/wireless"; then
+	exit 0
+fi
+
 case $action in
 	link)
 		if /bin/systemctl is-active lldpd.service; then
