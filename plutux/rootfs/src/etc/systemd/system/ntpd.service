@@ -1,0 +1,12 @@
+[Unit]
+Description=Network Time Service
+After=syslog.target ntpdate.service
+
+[Service]
+Type=forking
+ExecStart=/usr/bin/ntpd -p /run/ntpd.pid -g
+PrivateTmp=true
+ControlGroup=cpu:/
+
+[Install]
+WantedBy=multi-user.target
