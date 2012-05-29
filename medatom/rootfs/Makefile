@@ -71,6 +71,7 @@ dirs = \
 
 scripts = \
 	/etc/iflinkd/hooks.d/00-lldpd \
+	/etc/iflinkd/hooks.d/05-slip \
 	/etc/iflinkd/hooks.d/10-dhcpcd \
 	/etc/init.d/alsa \
 	/etc/init.d/console-kit \
