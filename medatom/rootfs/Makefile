@@ -113,6 +113,7 @@ files = \
 	/etc/locale.conf \
 	/etc/localtime \
 	/etc/modprobe.d/blacklist.conf \
+	/etc/modprobe.d/i2c.conf \
 	/etc/modprobe.d/sound.conf \
 	/etc/modprobe.d/v4l.conf \
 	/etc/modules \
