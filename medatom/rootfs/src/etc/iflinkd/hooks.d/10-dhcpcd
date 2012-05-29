@@ -5,17 +5,17 @@ action="$2"
 arptype="$3"
 
 if test "x$arptype" != "xether"; then
-	echo "unsupported ARP type: $arptype"
+	echo "$0: unsupported ARP type: $arptype"
 	exit 0
 fi
 
 case $action in
 	link)
-		/usr/sbin/dhcpcd --quiet --hostname --noipv4ll --timeout 0 $interface
+		dhcpcd --quiet --hostname --noipv4ll --timeout 0 $interface
 		;;
 
 	up | down)
-		/usr/sbin/dhcpcd --quiet --exit $interface
+		dhcpcd --quiet --exit $interface
 		;;
 
 	*)
