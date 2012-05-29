@@ -143,6 +143,7 @@ files = \
 	/etc/systemd/system.conf \
 	/etc/systemd/system/alsa.service \
 	/etc/systemd/system/gdk-pixbuf.service \
+	/etc/systemd/system/lldpctl.service \
 	/etc/systemd/system/lldpd.service \
 	/etc/systemd/system/lldpd.socket \
 	/etc/systemd/system/nodm.service \
@@ -218,6 +219,7 @@ links = \
 	/etc/systemd/system/local-fs.target.wants/var-lib.mount \
 	/etc/systemd/system/local-fs.target.wants/var-log.mount \
 	/etc/systemd/system/multi-user.target.wants/irkey@ttyS5.service \
+	/etc/systemd/system/multi-user.target.wants/lldpctl.service \
 	/etc/systemd/system/multi-user.target.wants/network.target \
 	/etc/systemd/system/multi-user.target.wants/openssh.service \
 	/etc/systemd/system/multi-user.target.wants/slattach@ttyS4.service \

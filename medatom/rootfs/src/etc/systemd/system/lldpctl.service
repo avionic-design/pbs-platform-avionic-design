@@ -1,0 +1,12 @@
+[Unit]
+Description=LLDP Runtime Configuration
+Requires=lldpd.service
+After=lldpd.service
+
+[Service]
+ExecStart=/usr/sbin/lldpctl -o PD:1:1:0:2:5:2:1:2:255:255
+RemainAfterExit=yes
+Type=oneshot
+
+[Install]
+WantedBy=multi-user.target
