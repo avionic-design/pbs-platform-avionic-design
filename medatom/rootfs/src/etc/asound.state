@@ -250,6 +250,47 @@ state.Intel {
 		}
 	}
 	control.19 {
+		iface CARD
+		name 'Line Jack'
+		value false
+		comment {
+			access read
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.20 {
+		iface CARD
+		name 'Mic Jack'
+		value true
+		comment {
+			access read
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.21 {
+		iface CARD
+		name 'Headphone Jack'
+		value false
+		comment {
+			access read
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.22 {
+		iface CARD
+		name 'Headphone Jack'
+		index 1
+		value false
+		comment {
+			access read
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.23 {
 		iface MIXER
 		name 'PCM Playback Volume'
 		value.0 192
@@ -266,7 +307,7 @@ state.Intel {
 			dbvalue.1 -1260
 		}
 	}
-	control.20 {
+	control.24 {
 		iface MIXER
 		name 'Digital Capture Volume'
 		value.0 62
