@@ -84,15 +84,13 @@ log_action_end_msg $?
 
 log_action_begin_msg "  Creating directories"
 	mkdir -p "$mp/etc/X11/xorg.conf.d" && mkdir -p "$mp/etc/network" &&
-	mkdir -p "$mp/usr/share/alsa/ucm"
+	mkdir -p "$mp/etc/wpa_supplicant"
 log_action_end_msg $?
 
 if test -d "$def"; then
 	log_action_begin_msg "  Copy default configuration"
 		cp "$def/etc"/*.conf "$mp/etc"/ &&
-		cp "$def/etc/X11/xorg.conf.d"/*.conf "$mp/etc/X11/xorg.conf.d"/ &&
-		cp -r "$def/usr/share/alsa/ucm"/* "$mp/usr/share/alsa/ucm"/ &&
-		cp "$def/etc"/asound.state "$mp/etc"/
+		cp "$def/etc/X11/xorg.conf.d"/*.conf "$mp/etc/X11/xorg.conf.d"/
 	log_action_end_msg $?
 else
 	echo "$def"
@@ -110,8 +108,7 @@ if test -x `which ssh-keygen`; then
 	mkdir -p "$mp/etc/ssh" &&
 		ssh_keygen dsa "$mp/etc/ssh/ssh_host_dsa_key" &&
 		ssh_keygen rsa "$mp/etc/ssh/ssh_host_rsa_key" &&
-		ssh_keygen rsa1 "$mp/etc/ssh/ssh_host_key" &&
-		ssh_keygen ecdsa "$mp/etc/ssh/ssh_host_ecdsa_key"
+		ssh_keygen rsa1 "$mp/etc/ssh/ssh_host_key"
 	log_action_end_msg $?
 fi
 
