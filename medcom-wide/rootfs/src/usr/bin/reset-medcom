@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -e
 
 echo 508 > /sys/class/gpio/export
 echo 509 > /sys/class/gpio/export

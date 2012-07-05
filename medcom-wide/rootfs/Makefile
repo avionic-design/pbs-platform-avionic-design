@@ -41,6 +41,7 @@ dirs = \
 	/sys \
 	/tmp \
 	/usr \
+	/usr/bin \
 	/usr/lib \
 	/usr/lib/dhcpcd \
 	/usr/lib/dhcpcd/dhcpcd-hooks \
@@ -60,8 +61,8 @@ scripts = \
 	/usr/lib/systemd/gdk-pixbuf-loaders-cache \
 	/usr/lib/systemd/pango-modules-cache \
 	/usr/lib/systemd/update-mime-db \
-	/bin/reset-medcom \
-	/bin/enable-lan
+	/usr/bin/enable-lan \
+	/usr/bin/reset-medcom
 
 files = \
 	/fastboot \

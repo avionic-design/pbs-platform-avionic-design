@@ -2,7 +2,7 @@
 
 function show_usage()
 {
-	/bin/echo "Usage: $0 [on|off]"
+	echo "Usage: $0 [on|off]"
 }
 
 if [ "$#" != "1" ]; then
@@ -19,8 +19,8 @@ else
 	exit 1
 fi
 
-/bin/echo 456 > /sys/class/gpio/export
-/bin/echo $VALUE > /sys/class/gpio/gpio456/direction
-/bin/echo 456 > /sys/class/gpio/unexport
+echo 456 > /sys/class/gpio/export
+echo $VALUE > /sys/class/gpio/gpio456/direction
+echo 456 > /sys/class/gpio/unexport
 
 exit 0
