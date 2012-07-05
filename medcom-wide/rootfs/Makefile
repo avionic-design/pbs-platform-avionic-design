@@ -56,10 +56,10 @@ scripts = \
 	/etc/iflinkd/hooks.d/00-lldpd \
 	/etc/iflinkd/hooks.d/10-dhcpcd \
 	/etc/xdg/awesome/xinitrc \
-	/lib/systemd/pango-modules-cache \
 	/lib/systemd/update-mime-db \
 	/usr/lib/dhcpcd/dhcpcd-hooks/90-ntp \
 	/usr/lib/systemd/gdk-pixbuf-loaders-cache \
+	/usr/lib/systemd/pango-modules-cache \
 	/bin/reset-medcom \
 	/bin/enable-lan
 
