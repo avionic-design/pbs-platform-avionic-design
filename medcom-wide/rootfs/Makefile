@@ -97,6 +97,7 @@ files = \
 	/etc/pam.d/other \
 	/etc/profile \
 	/etc/remote-control.conf.d/gpio.conf \
+	/etc/remote-control.conf.d/linphone.conf \
 	/etc/remote-control.conf.d/modem.conf \
 	/etc/rsyslog.conf \
 	/etc/services \
