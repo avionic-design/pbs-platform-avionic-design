@@ -1,0 +1,12 @@
+[Unit]
+Description=Spooler Directory
+Before=local-fs.target
+
+[Mount]
+What=tmpfs
+Where=/var/spool
+Type=tmpfs
+Options=mode=755
+
+[Install]
+WantedBy=local-fs.target

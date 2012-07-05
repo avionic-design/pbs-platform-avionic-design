@@ -50,7 +50,8 @@ dirs = \
 	/var \
 	/var/lib \
 	/var/lock \
-	/var/log
+	/var/log \
+	/var/spool
 
 scripts = \
 	/etc/X11/Xsession \
@@ -117,6 +118,7 @@ files = \
 	/etc/systemd/system/update-mime-db.service \
 	/etc/systemd/system/var-lib.mount \
 	/etc/systemd/system/var-log.mount \
+	/etc/systemd/system/var-spool.mount \
 	/etc/tmpfiles.d/dbus.conf \
 	/etc/tmpfiles.d/lldpd.conf \
 	/etc/tmpfiles.d/ntp.conf \
@@ -159,6 +161,7 @@ links = \
 	/etc/systemd/system/local-fs.target.wants/tmp.mount \
 	/etc/systemd/system/local-fs.target.wants/var-lib.mount \
 	/etc/systemd/system/local-fs.target.wants/var-log.mount \
+	/etc/systemd/system/local-fs.target.wants/var-spool.mount \
 	/etc/systemd/system/multi-user.target.wants/network.target \
 	/etc/systemd/system/multi-user.target.wants/serial-getty@ttyS0.service \
 	/etc/systemd/system/multi-user.target.wants/openssh.service \
