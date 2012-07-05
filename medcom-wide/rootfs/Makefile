@@ -79,6 +79,7 @@ files = \
 	/etc/X11/xorg.conf.d/99-keyboard-de.conf \
 	/etc/adobe/mms.cfg \
 	/etc/asound.conf \
+	/etc/browser.conf \
 	/etc/fonts/conf.d/99-antialiasing.conf \
 	/etc/fstab \
 	/etc/group \
