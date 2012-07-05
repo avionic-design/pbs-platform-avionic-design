@@ -14,6 +14,7 @@ dirs = \
 	/etc/gtk-2.0 \
 	/etc/iflinkd \
 	/etc/iflinkd/hooks.d \
+	/etc/logrotate.d \
 	/etc/modules-load.d \
 	/etc/systemd \
 	/etc/systemd/system \
@@ -80,6 +81,7 @@ files = \
 	/etc/adobe/mms.cfg \
 	/etc/asound.conf \
 	/etc/browser.conf \
+	/etc/crontab \
 	/etc/fonts/conf.d/99-antialiasing.conf \
 	/etc/fstab \
 	/etc/group \
@@ -90,6 +92,8 @@ files = \
 	/etc/inittab \
 	/etc/linphone.conf \
 	/etc/localtime \
+	/etc/logrotate.conf \
+	/etc/logrotate.d/general \
 	/etc/modules-load.d/input.conf \
 	/etc/nsswitch.conf \
 	/etc/passwd \
