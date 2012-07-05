@@ -109,6 +109,7 @@ files = \
 	/etc/shadow \
 	/etc/sysctl.conf \
 	/etc/systemd/system.conf \
+	/etc/systemd/system/crond.service \
 	/etc/systemd/system/gdk-pixbuf.service \
 	/etc/systemd/system/lldpd.service \
 	/etc/systemd/system/lldpd.socket \
@@ -165,6 +166,7 @@ links = \
 	/etc/systemd/system/local-fs.target.wants/var-lib.mount \
 	/etc/systemd/system/local-fs.target.wants/var-log.mount \
 	/etc/systemd/system/local-fs.target.wants/var-spool.mount \
+	/etc/systemd/system/multi-user.target.wants/crond.service \
 	/etc/systemd/system/multi-user.target.wants/network.target \
 	/etc/systemd/system/multi-user.target.wants/serial-getty@ttyS0.service \
 	/etc/systemd/system/multi-user.target.wants/openssh.service \
