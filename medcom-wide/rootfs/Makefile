@@ -81,6 +81,7 @@ files = \
 	/etc/gtk-2.0/gtkrc \
 	/etc/host.conf \
 	/etc/hosts \
+	/etc/htoprc \
 	/etc/inittab \
 	/etc/linphone.conf \
 	/etc/localtime \
