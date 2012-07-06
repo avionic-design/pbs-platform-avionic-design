@@ -4,36 +4,36 @@ interface="$1"
 action="$2"
 arptype="$3"
 
-configure_interface_manual() {
-	#FIXME: right now we just call a script, but for the future we
-	#       should parse a file and us the informations from it.
-	/bin/sh $1
-}
-
 if test "x$arptype" != "xether"; then
-	echo "unsupported ARP type: $arptype"
+	/usr/bin/logger -t iflinkd "$interface: unsupported ARP type: $arptype"
 	exit 0
 fi
 
 # configure interface manualy if required
 if test -s /etc/network/if-$interface; then
 	if test "x$action" == "xlink"; then
-		/usr/bin/logger -t dhcp "configure interface $1 manualy"
-		#configure_interface_manual /etc/network/if-$interface
-		/bin/sh /etc/network/if-$interface
+		/usr/bin/logger -t iflinkd "$interface: found manual config"
+		/bin/sh /etc/network/if-$interface $action
+	else
+		/usr/bin/logger -t iflinkd "$interface: removing address"
+		/bin/ip addr flush dev $interface
+		/bin/ip route flush dev $interface
 	fi
 	exit 0
 fi
 
 case $action in
 	link)
-		/usr/sbin/dhcpcd --quiet --hostname --noipv4ll --timeout 0 $interface
+		/usr/bin/logger -t iflinkd "$interface: starting dhcpcd"
+		/usr/sbin/dhcpcd --quiet --hostname --noipv4ll --timeout 0 $interface &
 		;;
 
 	up | down)
+		/usr/bin/logger -t iflinkd "$interface: stopping dhcpcd"
 		/usr/sbin/dhcpcd --quiet --exit $interface
 		;;
 
 	*)
+		/usr/bin/logger -t iflinkd "$interface: unsupported action: $action"
 		;;
 esac
