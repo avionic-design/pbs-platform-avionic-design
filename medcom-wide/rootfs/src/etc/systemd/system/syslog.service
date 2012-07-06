@@ -1,1 +1,1 @@
-../../../usr/lib/systemd/system/rsyslog.service
+../../../usr/lib/systemd/system/syslog-ng.service

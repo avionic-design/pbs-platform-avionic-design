@@ -16,6 +16,7 @@ dirs = \
 	/etc/iflinkd/hooks.d \
 	/etc/logrotate.d \
 	/etc/modules-load.d \
+	/etc/syslog-ng \
 	/etc/systemd \
 	/etc/systemd/system \
 	/etc/systemd/system/basic.target.wants \
@@ -108,10 +109,10 @@ files = \
 	/etc/remote-control.conf.d/gpio.conf \
 	/etc/remote-control.conf.d/linphone.conf \
 	/etc/remote-control.conf.d/modem.conf \
-	/etc/rsyslog.conf \
 	/etc/services \
 	/etc/shadow \
 	/etc/sysctl.conf \
+	/etc/syslog-ng/syslog-ng.conf \
 	/etc/systemd/system.conf \
 	/etc/systemd/system/crond.service \
 	/etc/systemd/system/gdk-pixbuf.service \
@@ -174,6 +175,7 @@ links = \
 	/etc/systemd/system/multi-user.target.wants/network.target \
 	/etc/systemd/system/multi-user.target.wants/serial-getty@ttyS0.service \
 	/etc/systemd/system/multi-user.target.wants/openssh.service \
+	/etc/systemd/system/multi-user.target.wants/syslog-ng.service \
 	/etc/systemd/system/multi-user.target.wants/update-crontab.service \
 	/etc/systemd/system/sockets.target.wants/lldpd.socket \
 	/etc/systemd/system/syslog.service \
