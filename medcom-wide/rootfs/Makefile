@@ -66,6 +66,7 @@ scripts = \
 	/usr/lib/systemd/update-crontab \
 	/usr/lib/systemd/update-mime-db \
 	/usr/bin/enable-lan \
+	/usr/bin/ntpdate-wrapper \
 	/usr/bin/reset-medcom
 
 files = \
@@ -120,6 +121,8 @@ files = \
 	/etc/systemd/system/lldpd.service \
 	/etc/systemd/system/lldpd.socket \
 	/etc/systemd/system/nodm.service \
+	/etc/systemd/system/ntpd.service \
+	/etc/systemd/system/ntpdate.service \
 	/etc/systemd/system/openssh.service \
 	/etc/systemd/system/pango.service \
 	/etc/systemd/system/root.mount \
@@ -178,6 +181,8 @@ links = \
 	/etc/systemd/system/multi-user.target.wants/openssh.service \
 	/etc/systemd/system/multi-user.target.wants/syslog-ng.service \
 	/etc/systemd/system/multi-user.target.wants/update-crontab.service \
+	/etc/systemd/system/network.target.wants/ntpd.service \
+	/etc/systemd/system/network.target.wants/ntpdate.service \
 	/etc/systemd/system/sockets.target.wants/lldpd.socket \
 	/etc/systemd/system/syslog.service \
 	/etc/pango/pango.modules \
