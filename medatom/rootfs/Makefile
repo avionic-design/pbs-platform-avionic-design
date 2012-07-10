@@ -121,7 +121,6 @@ files = \
 	/etc/modules-load.d/input.conf \
 	/etc/modules-load.d/misc.conf \
 	/etc/modules-load.d/networking.conf \
-	/etc/modules-load.d/sound.conf \
 	/etc/modules-load.d/v4l.conf \
 	/etc/modules-load.d/video.conf \
 	/etc/motd.tail \
