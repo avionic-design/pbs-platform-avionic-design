@@ -137,6 +137,8 @@ files = \
 	/etc/remote-control.conf.d/modem.conf \
 	/etc/remote-control.conf.d/linphone.conf \
 	/etc/rsyslog.conf \
+	/etc/rsyslog.d/50-remote-control.conf \
+	/etc/rsyslog.d/99-persist.conf \
 	/etc/services \
 	/etc/shadow \
 	/etc/sysctl.conf \
