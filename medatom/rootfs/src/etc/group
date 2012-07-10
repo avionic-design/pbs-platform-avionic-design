@@ -11,6 +11,7 @@ audio:x:29:
 utmp:x:43:
 video:x:44:
 lock:x:54:
+avahi:x:84:
 messagebus:x:104:
 haldaemon:x:108:
 _lldpd:x:129:
