@@ -46,12 +46,12 @@ sleep 1
 
 mount ${device}1 /media
 extlinux --install /media
-cat > /media/usb/extlinux.conf << EOF
+cat > /media/extlinux.conf << EOF
 DEFAULT linux
 LABEL linux
 	KERNEL vmlinuz
 	INITRD initrd.gz
 	APPEND root=LABEL=boot:/rootfs.img
 EOF
-chown root:root /media/usb/extlinux.conf
+chown root:root /media/extlinux.conf
 umount /media
