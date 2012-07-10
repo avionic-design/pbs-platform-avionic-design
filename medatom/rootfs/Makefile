@@ -135,6 +135,7 @@ files = \
 	/etc/passwd \
 	/etc/profile \
 	/etc/remote-control.conf.d/modem.conf \
+	/etc/remote-control.conf.d/linphone.conf \
 	/etc/rsyslog.conf \
 	/etc/services \
 	/etc/shadow \
