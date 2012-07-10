@@ -182,6 +182,7 @@ files = \
 
 links = \
 	/bin/sh \
+	/etc/browser.conf \
 	/etc/machine-id \
 	/etc/motd \
 	/etc/mtab \
