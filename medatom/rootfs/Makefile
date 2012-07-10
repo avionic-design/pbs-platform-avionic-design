@@ -173,6 +173,7 @@ files = \
 	/etc/xdg/xfce4/helpers.rc \
 	/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml \
 	/fastboot \
+	/lib/firmware/hda-patch.fw \
 	/lib/firmware/v4l-cx231xx-avcore-01.fw \
 	/lib/firmware/xc3028L-v36.fw \
 	/lib/lsb/init-functions \
