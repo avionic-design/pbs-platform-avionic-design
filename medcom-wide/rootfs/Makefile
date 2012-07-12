@@ -167,7 +167,6 @@ links = \
 	/etc/ssh/ssh_host_rsa_key \
 	/etc/ssh/ssh_host_rsa_key.pub \
 	/etc/systemd/system/graphical.target.wants/gdk-pixbuf.service \
-	/etc/systemd/system/graphical.target.wants/nodm.service \
 	/etc/systemd/system/graphical.target.wants/pango.service \
 	/etc/systemd/system/graphical.target.wants/update-mime-db.service \
 	/etc/systemd/system/local-fs.target.wants/root.mount \
@@ -184,6 +183,7 @@ links = \
 	/etc/systemd/system/network.target.wants/ntpd.service \
 	/etc/systemd/system/network.target.wants/ntpdate.service \
 	/etc/systemd/system/sockets.target.wants/lldpd.socket \
+	/etc/systemd/system/display-manager.service \
 	/etc/systemd/system/syslog.service \
 	/etc/pango/pango.modules \
 	/etc/proxy.conf \
