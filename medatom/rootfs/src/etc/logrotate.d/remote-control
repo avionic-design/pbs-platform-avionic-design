@@ -1,0 +1,11 @@
+/var/log/remote-control.log
+{
+	sharedscripts
+	maxsize 16M
+	missingok
+	ifempty
+
+	postrotate
+		/usr/bin/kill -HUP `cat /var/run/rsyslogd.pid 2> /dev/null` 2> /dev/null || true
+	endscript
+}

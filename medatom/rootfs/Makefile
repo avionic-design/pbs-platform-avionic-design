@@ -11,6 +11,7 @@ dirs = \
 	/etc/iflinkd \
 	/etc/iflinkd/hooks.d \
 	/etc/init.d \
+	/etc/logrotate.d \
 	/etc/modprobe.d \
 	/etc/modules-load.d \
 	/etc/network \
@@ -112,6 +113,9 @@ files = \
 	/etc/linphone.conf \
 	/etc/locale.conf \
 	/etc/localtime \
+	/etc/logrotate.conf \
+	/etc/logrotate.d/remote-control \
+	/etc/logrotate.d/syslog \
 	/etc/modprobe.d/blacklist.conf \
 	/etc/modprobe.d/i2c.conf \
 	/etc/modprobe.d/sound.conf \
@@ -148,6 +152,8 @@ files = \
 	/etc/systemd/system/lldpctl.service \
 	/etc/systemd/system/lldpd.service \
 	/etc/systemd/system/lldpd.socket \
+	/etc/systemd/system/logrotate.service \
+	/etc/systemd/system/logrotate.timer \
 	/etc/systemd/system/nodm.service \
 	/etc/systemd/system/openssh.service \
 	/etc/systemd/system/pango.service \
@@ -215,6 +221,7 @@ links = \
 	/etc/ssh/ssh_host_rsa_key \
 	/etc/ssh/ssh_host_rsa_key.pub \
 	/etc/systemd/system/basic.target.wants/alsa.service \
+	/etc/systemd/system/basic.target.wants/logrotate.timer \
 	/etc/systemd/system/graphical.target.wants/gdk-pixbuf.service \
 	/etc/systemd/system/graphical.target.wants/nodm.service \
 	/etc/systemd/system/graphical.target.wants/pango.service \
