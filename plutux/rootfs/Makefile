@@ -65,12 +65,12 @@ scripts = \
 	/etc/iflinkd/hooks.d/09-wpa_supplicant \
 	/etc/iflinkd/hooks.d/10-dhcpcd \
 	/etc/xdg/awesome/xinitrc \
-	/lib/systemd/gdk-pixbuf-loaders-cache \
-	/lib/systemd/pango-modules-cache \
-	/lib/systemd/update-mime-db \
 	/usr/bin/ntpdate-wrapper \
 	/usr/lib/dhcpcd/dhcpcd-hooks/90-ntp \
-	/usr/lib/systemd/update-crontab
+	/usr/lib/systemd/gdk-pixbuf-loaders-cache \
+	/usr/lib/systemd/update-crontab \
+	/usr/lib/systemd/pango-modules-cache \
+	/usr/lib/systemd/update-mime-db
 
 files = \
 	/fastboot \
