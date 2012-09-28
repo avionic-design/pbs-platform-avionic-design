@@ -8,6 +8,7 @@ dirs = \
 	/etc/X11 \
 	/etc/X11/Xsession.d \
 	/etc/X11/xorg.conf.d \
+	/etc/adobe \
 	/etc/fonts \
 	/etc/fonts/conf.d \
 	/etc/gtk-2.0 \
@@ -76,6 +77,7 @@ files = \
 	/etc/X11/xorg.conf.d/80-monitor-lvds.conf \
 	/etc/X11/xorg.conf.d/81-server.conf \
 	/etc/X11/xorg.conf.d/99-keyboard-de.conf \
+	/etc/adobe/mms.cfg \
 	/etc/asound.conf \
 	/etc/fonts/conf.d/99-antialiasing.conf \
 	/etc/fstab \
