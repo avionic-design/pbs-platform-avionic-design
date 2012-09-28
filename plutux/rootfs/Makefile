@@ -24,6 +24,7 @@ dirs = \
 	/etc/systemd/system/sockets.target.wants \
 	/etc/pango \
 	/etc/pam.d \
+	/etc/remote-control.conf.d \
 	/etc/tmpfiles.d \
 	/etc/udev \
 	/etc/udev/rules.d \
@@ -83,6 +84,7 @@ files = \
 	/etc/X11/xorg.conf.d/99-keyboard-de.conf \
 	/etc/adobe/mms.cfg \
 	/etc/asound.conf \
+	/etc/browser.conf \
 	/etc/crontab \
 	/etc/fonts/conf.d/99-antialiasing.conf \
 	/etc/fstab \
@@ -106,6 +108,8 @@ files = \
 	/etc/pam.d/nodm \
 	/etc/pam.d/other \
 	/etc/profile \
+	/etc/remote-control.conf.d/linphone.conf \
+	/etc/remote-control.conf.d/logging.conf \
 	/etc/rsyslog.conf \
 	/etc/services \
 	/etc/shadow \
