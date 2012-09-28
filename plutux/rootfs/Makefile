@@ -114,6 +114,7 @@ files = \
 	/etc/services \
 	/etc/shadow \
 	/etc/sysctl.conf \
+	/etc/systemd/journald.conf \
 	/etc/systemd/system.conf \
 	/etc/systemd/system/crond.service \
 	/etc/systemd/system/gdk-pixbuf.service \
