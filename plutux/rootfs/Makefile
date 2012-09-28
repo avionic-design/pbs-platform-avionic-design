@@ -94,6 +94,7 @@ files = \
 	/etc/hosts \
 	/etc/htoprc \
 	/etc/inittab \
+	/etc/linphone.conf \
 	/etc/localtime \
 	/etc/logrotate.conf \
 	/etc/logrotate.d/general \
