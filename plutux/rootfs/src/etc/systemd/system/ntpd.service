@@ -1,12 +1,14 @@
+# We do not what to run a ntp server, we need this because we need
+# someone to update the time from time to time.
 [Unit]
 Description=Network Time Service
-After=syslog.target ntpdate.service
+After=syslog.target network.target ntpdate.service
 
 [Service]
 Type=forking
-ExecStart=/usr/bin/ntpd -p /run/ntpd.pid -g
-PrivateTmp=true
-ControlGroup=cpu:/
+PIDFile=/run/ntpd.pid
+ExecStart=/usr/bin/ntpd -p /run/ntpd.pid -f /run/ntp/driftfile -I lo -g
+PrivateTmp=false
 
 [Install]
 WantedBy=multi-user.target
