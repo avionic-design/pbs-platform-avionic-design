@@ -14,6 +14,7 @@ dirs = \
 	/etc/gtk-2.0 \
 	/etc/iflinkd \
 	/etc/iflinkd/hooks.d \
+	/etc/logrotate.d \
 	/etc/modules-load.d \
 	/etc/systemd \
 	/etc/systemd/system \
@@ -88,6 +89,8 @@ files = \
 	/etc/htoprc \
 	/etc/inittab \
 	/etc/localtime \
+	/etc/logrotate.conf \
+	/etc/logrotate.d/general \
 	/etc/modules-load.d/input.conf \
 	/etc/nsswitch.conf \
 	/etc/passwd \
