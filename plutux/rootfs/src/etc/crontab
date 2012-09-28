@@ -1,0 +1,6 @@
+SHELL=/bin/sh
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+
+# m         h   dom mon dow command
+# Run logrotate every 1/4 H
+1,16,31,46  *   *   *   *   logrotate --state=/var/run/logrotate.state /etc/logrotate.conf

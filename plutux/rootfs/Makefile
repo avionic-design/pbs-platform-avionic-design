@@ -52,6 +52,7 @@ dirs = \
 	/usr/share/alsa \
 	/usr/share/alsa/ucm \
 	/usr/share/alsa/ucm/tegrawm8903 \
+	/usr/lib/systemd \
 	/var \
 	/var/lib \
 	/var/lock \
@@ -68,7 +69,8 @@ scripts = \
 	/lib/systemd/pango-modules-cache \
 	/lib/systemd/update-mime-db \
 	/usr/bin/ntpdate-wrapper \
-	/usr/lib/dhcpcd/dhcpcd-hooks/90-ntp
+	/usr/lib/dhcpcd/dhcpcd-hooks/90-ntp \
+	/usr/lib/systemd/update-crontab
 
 files = \
 	/fastboot \
@@ -81,6 +83,7 @@ files = \
 	/etc/X11/xorg.conf.d/99-keyboard-de.conf \
 	/etc/adobe/mms.cfg \
 	/etc/asound.conf \
+	/etc/crontab \
 	/etc/fonts/conf.d/99-antialiasing.conf \
 	/etc/fstab \
 	/etc/group \
@@ -108,6 +111,7 @@ files = \
 	/etc/shadow \
 	/etc/sysctl.conf \
 	/etc/systemd/system.conf \
+	/etc/systemd/system/crond.service \
 	/etc/systemd/system/gdk-pixbuf.service \
 	/etc/systemd/system/lldpd.service \
 	/etc/systemd/system/lldpd.socket \
@@ -118,6 +122,7 @@ files = \
 	/etc/systemd/system/pango.service \
 	/etc/systemd/system/root.mount \
 	/etc/systemd/system/tmp.mount \
+	/etc/systemd/system/update-crontab.service \
 	/etc/systemd/system/update-mime-db.service \
 	/etc/systemd/system/var-lib.mount \
 	/etc/systemd/system/var-log.mount \
@@ -179,9 +184,11 @@ links = \
 	/etc/systemd/system/local-fs.target.wants/var-lib.mount \
 	/etc/systemd/system/local-fs.target.wants/var-log.mount \
 	/etc/systemd/system/local-fs.target.wants/var-spool.mount \
+	/etc/systemd/system/multi-user.target.wants/crond.service \
 	/etc/systemd/system/multi-user.target.wants/network.target \
 	/etc/systemd/system/multi-user.target.wants/serial-getty@ttyS0.service \
 	/etc/systemd/system/multi-user.target.wants/openssh.service \
+	/etc/systemd/system/multi-user.target.wants/update-crontab.service \
 	/etc/systemd/system/network.target.wants/ntpd.service \
 	/etc/systemd/system/network.target.wants/ntpdate.service \
 	/etc/systemd/system/sockets.target.wants/lldpd.socket \

@@ -1,0 +1,9 @@
+[Unit]
+Description=Command Scheduler
+After=syslog.target update-crontab.service
+
+[Service]
+ExecStart=/usr/sbin/crond -f
+
+[Install]
+WantedBy=multi-user.target
