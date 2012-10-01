@@ -6,6 +6,7 @@ dirs = \
 	/dev \
 	/etc \
 	/etc/adobe \
+	/etc/alsa \
 	/etc/default \
 	/etc/gtk-2.0 \
 	/etc/iflinkd \
@@ -75,6 +76,8 @@ dirs = \
 	/var/log
 
 scripts = \
+	/etc/alsa/medatom.sh \
+	/etc/alsa/medatom-wide.sh \
 	/etc/iflinkd/hooks.d/eth0/50-dhcpcd \
 	/etc/iflinkd/hooks.d/eth0/00-lldpd \
 	/etc/iflinkd/hooks.d/sl0/slip \
@@ -105,6 +108,10 @@ files = \
 	/etc/adobe/mms.cfg \
 	/etc/asound.conf \
 	/etc/asound.state \
+	/etc/alsa/medatom.conf \
+	/etc/alsa/medatom.state \
+	/etc/alsa/medatom-wide.conf \
+	/etc/alsa/medatom-wide.state \
 	/etc/default/locale \
 	/etc/default/rcS \
 	/etc/environment \
@@ -151,7 +158,6 @@ files = \
 	/etc/shadow \
 	/etc/sysctl.conf \
 	/etc/systemd/system.conf \
-	/etc/systemd/system/alsa.service \
 	/etc/systemd/system/gdk-pixbuf.service \
 	/etc/systemd/system/iflinkd@eth0.service \
 	/etc/systemd/system/iflinkd@lo.service \
@@ -227,7 +233,6 @@ links = \
 	/etc/ssh/ssh_host_key.pub \
 	/etc/ssh/ssh_host_rsa_key \
 	/etc/ssh/ssh_host_rsa_key.pub \
-	/etc/systemd/system/basic.target.wants/alsa.service \
 	/etc/systemd/system/basic.target.wants/logrotate.timer \
 	/etc/systemd/system/graphical.target.wants/gdk-pixbuf.service \
 	/etc/systemd/system/graphical.target.wants/nodm.service \
