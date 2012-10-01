@@ -1,0 +1,9 @@
+#!/bin/sh -e
+
+unit="$1"
+
+options="-o StrictHostKeyChecking=no"
+
+ssh $options root@$unit 'mount -o remount,rw /media/disk && mv /media/disk/vmlinuz{,.old} && mv /media/disk/initrd.gz{,.old} && mv /media/disk/rootfs.img{,.old}'
+scp $options build/medatom-rootfs/vmlinuz build/medatom-initrd/initrd.gz build/medatom-rootfs/rootfs.img root@$unit:/media/disk
+ssh $options root@$unit 'mount -o remount,ro /media/disk && systemctl poweroff'
