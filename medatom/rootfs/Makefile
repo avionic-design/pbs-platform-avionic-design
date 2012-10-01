@@ -233,8 +233,8 @@ links = \
 	/etc/ssh/ssh_host_rsa_key \
 	/etc/ssh/ssh_host_rsa_key.pub \
 	/etc/systemd/system/basic.target.wants/logrotate.timer \
+	/etc/systemd/system/display-manager.service \
 	/etc/systemd/system/graphical.target.wants/gdk-pixbuf.service \
-	/etc/systemd/system/graphical.target.wants/nodm.service \
 	/etc/systemd/system/graphical.target.wants/pango.service \
 	/etc/systemd/system/local-fs.target.wants/root.mount \
 	/etc/systemd/system/local-fs.target.wants/tmp.mount \
