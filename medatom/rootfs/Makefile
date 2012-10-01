@@ -128,7 +128,6 @@ files = \
 	/etc/logrotate.d/remote-control \
 	/etc/logrotate.d/syslog \
 	/etc/modprobe.d/blacklist.conf \
-	/etc/modprobe.d/i2c.conf \
 	/etc/modprobe.d/sound.conf \
 	/etc/modprobe.d/v4l.conf \
 	/etc/modules \
