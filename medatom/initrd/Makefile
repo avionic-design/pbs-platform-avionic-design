@@ -7,7 +7,7 @@ dirs = \
 	/scripts/shutdown
 
 scripts = \
-	/scripts/shutdown/unmount
+	/scripts/shutdown/00-unmount
 
 include platforms/common.mk
 

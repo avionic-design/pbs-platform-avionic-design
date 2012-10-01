@@ -18,11 +18,8 @@ log_action_begin_msg "Unmounting /run filesystem"
 umount "$root/run"
 log_action_end_msg $?
 
-log_action_begin_msg "Unmounting /sys filesystem"
-umount "$root/sys/fs/cgroup/systemd" &&
-	umount "$root/sys/fs/cgroup/debug" &&
-	umount "$root/sys/fs/cgroup" &&
-	umount "$root/sys"
+log_action_begin_msg "Moving /sys filesystem"
+mkdir -p /sys && mount --move "$root/sys" /sys
 log_action_end_msg $?
 
 log_action_begin_msg "Moving /media/disk"
