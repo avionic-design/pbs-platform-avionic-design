@@ -1,0 +1,13 @@
+[Unit]
+Description=Interface Link Status Monitor for Serial Line IP Interface
+BindTo=sys-devices-virtual-net-sl0.device
+Requires=slattach@ttyS4.service
+After=slattach@ttyS4.service sys-devices-virtual-net-sl0.device
+
+[Service]
+Type=simple
+ExecStart=/usr/sbin/iflinkd -i sl0
+StandardError=syslog
+
+[Install]
+WantedBy=network.target

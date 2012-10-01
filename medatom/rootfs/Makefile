@@ -10,6 +10,9 @@ dirs = \
 	/etc/gtk-2.0 \
 	/etc/iflinkd \
 	/etc/iflinkd/hooks.d \
+	/etc/iflinkd/hooks.d/eth0 \
+	/etc/iflinkd/hooks.d/lo \
+	/etc/iflinkd/hooks.d/sl0 \
 	/etc/init.d \
 	/etc/logrotate.d \
 	/etc/modprobe.d \
@@ -71,9 +74,9 @@ dirs = \
 	/var/log
 
 scripts = \
-	/etc/iflinkd/hooks.d/00-lldpd \
-	/etc/iflinkd/hooks.d/05-slip \
-	/etc/iflinkd/hooks.d/10-dhcpcd \
+	/etc/iflinkd/hooks.d/eth0/50-dhcpcd \
+	/etc/iflinkd/hooks.d/eth0/00-lldpd \
+	/etc/iflinkd/hooks.d/sl0/slip \
 	/etc/init.d/alsa \
 	/etc/init.d/console-kit \
 	/etc/init.d/dbus \
@@ -149,6 +152,9 @@ files = \
 	/etc/systemd/system.conf \
 	/etc/systemd/system/alsa.service \
 	/etc/systemd/system/gdk-pixbuf.service \
+	/etc/systemd/system/iflinkd@eth0.service \
+	/etc/systemd/system/iflinkd@lo.service \
+	/etc/systemd/system/iflinkd@sl0.service \
 	/etc/systemd/system/lldpctl.service \
 	/etc/systemd/system/lldpd.service \
 	/etc/systemd/system/lldpd.socket \
@@ -230,6 +236,9 @@ links = \
 	/etc/systemd/system/local-fs.target.wants/var-lib.mount \
 	/etc/systemd/system/local-fs.target.wants/var-log.mount \
 	/etc/systemd/system/multi-user.target.wants/irkey@ttyS5.service \
+	/etc/systemd/system/network.target.wants/iflinkd@eth0.service \
+	/etc/systemd/system/network.target.wants/iflinkd@lo.service \
+	/etc/systemd/system/network.target.wants/iflinkd@sl0.service \
 	/etc/systemd/system/multi-user.target.wants/lldpctl.service \
 	/etc/systemd/system/multi-user.target.wants/network.target \
 	/etc/systemd/system/multi-user.target.wants/openssh.service \
