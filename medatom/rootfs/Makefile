@@ -34,6 +34,7 @@ dirs = \
 	/etc/systemd/system/local-fs.target.wants \
 	/etc/systemd/system/graphical.target.wants \
 	/etc/systemd/system/multi-user.target.wants \
+	/etc/systemd/system/network.target.wants \
 	/etc/systemd/system/sockets.target.wants \
 	/etc/tmpfiles.d \
 	/etc/X11 \
@@ -239,10 +240,10 @@ links = \
 	/etc/systemd/system/network.target.wants/iflinkd@eth0.service \
 	/etc/systemd/system/network.target.wants/iflinkd@lo.service \
 	/etc/systemd/system/network.target.wants/iflinkd@sl0.service \
+	/etc/systemd/system/network.target.wants/slattach@ttyS4.service \
 	/etc/systemd/system/multi-user.target.wants/lldpctl.service \
 	/etc/systemd/system/multi-user.target.wants/network.target \
 	/etc/systemd/system/multi-user.target.wants/openssh.service \
-	/etc/systemd/system/multi-user.target.wants/slattach@ttyS4.service \
 	/etc/systemd/system/sockets.target.wants/lldpd.socket \
 	/etc/systemd/system/syslog.service \
 	/etc/X11/xorg.conf.d/99-calibration.conf \
