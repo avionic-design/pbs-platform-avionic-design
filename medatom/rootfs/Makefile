@@ -28,6 +28,8 @@ dirs = \
 	/etc/pango \
 	/etc/rcS.d \
 	/etc/remote-control.conf.d \
+	/etc/remote-control.conf.d/medatom \
+	/etc/remote-control.conf.d/medatom-wide \
 	/etc/rsyslog.d \
 	/etc/ssh \
 	/etc/systemd \
@@ -150,8 +152,13 @@ files = \
 	/etc/pam.d/other \
 	/etc/passwd \
 	/etc/profile \
-	/etc/remote-control.conf.d/modem.conf \
 	/etc/remote-control.conf.d/linphone.conf \
+	/etc/remote-control.conf.d/logging.conf \
+	/etc/remote-control.conf.d/medatom/gpio.conf \
+	/etc/remote-control.conf.d/medatom/smartcard.conf \
+	/etc/remote-control.conf.d/medatom-wide/gpio.conf \
+	/etc/remote-control.conf.d/medatom-wide/smartcard.conf \
+	/etc/remote-control.conf.d/modem.conf \
 	/etc/rsyslog.conf \
 	/etc/rsyslog.d/50-remote-control.conf \
 	/etc/rsyslog.d/99-persist.conf \
