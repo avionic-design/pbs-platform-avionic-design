@@ -4,6 +4,7 @@ VERSION = 3
 dirs = \
 	/etc \
 	/etc/init.d \
+	/etc/modprobe.d \
 	/lib \
 	/mnt \
 	/mnt/install \
@@ -22,6 +23,7 @@ files = \
 	/etc/group \
 	/etc/inittab \
 	/etc/mdev.conf \
+	/etc/modprobe.d/blacklist.conf \
 	/etc/passwd \
 	/etc/shadow \
 	/etc/sysctl.conf \
