@@ -9,6 +9,7 @@ dirs = \
 	/etc/alsa \
 	/etc/default \
 	/etc/gtk-2.0 \
+	/etc/gtk-3.0 \
 	/etc/iflinkd \
 	/etc/iflinkd/hooks.d \
 	/etc/iflinkd/hooks.d/eth0 \
@@ -118,6 +119,7 @@ files = \
 	/etc/fstab \
 	/etc/group \
 	/etc/gtk-2.0/gtkrc \
+	/etc/gtk-3.0/settings.ini \
 	/etc/hosts \
 	/etc/inittab \
 	/etc/issue \
