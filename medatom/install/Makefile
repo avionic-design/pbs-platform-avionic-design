@@ -15,7 +15,6 @@ dirs = \
 
 scripts = \
 	/etc/init.d/rcS \
-	/init \
 	/usr/share/udhcpc/default.script
 
 files = \
