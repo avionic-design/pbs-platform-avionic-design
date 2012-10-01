@@ -34,28 +34,28 @@ mp="/media"
 ,,L,*
 EOF
 
-if test -r /usr/lib/syslinux/mbr.bin ; then
-	cat /usr/lib/syslinux/mbr.bin > ${device}
-elif test -r /usr/share/syslinux/mbr.bin ; then
-	cat /usr/share/syslinux/mbr.bin > ${device}
-else
-	echo "mbr.bin not found"
+for directory in /usr/lib/syslinux /usr/share/syslinux; do
+	if test -f "$directory/mbr.bin"; then
+		cat "$directory/mbr.bin" > ${device}
+		mbr_installed=yes
+	fi
+done
+
+if test "x$mbr_installed" != "xyes"; then
+	echo "MBR not found, try installing syslinux"
 	exit 1
 fi
+
 wait_for_partition ${device}1
 format_partition ${device}1 ext4 install
 
+files="$source/extlinux.conf $source/vmlinuz $source/initrd.gz"
+files="$files $source/install.tar"
+
+test -f "$source/linux.c32" && files="$files $source/linux.c32"
+test -f "$source/fdt.dtb" && files="$files $source/fdt.dtb"
+
 mount ${device}1 "$mp"
 extlinux --install "$mp"
-cat > "$mp/extlinux.conf" << EOF
-DEFAULT linux
-LABEL linux
-	KERNEL vmlinuz
-	INITRD initrd.gz
-	APPEND quiet
-EOF
-chown root:root "$mp/extlinux.conf"
-cp "$source/vmlinuz" "$mp/vmlinuz"
-cp "$source/initrd.gz" "$mp/initrd.gz"
-cp "$source/install.tar" "$mp/install.tar"
+cp -v $files "$mp"
 umount "$mp"
