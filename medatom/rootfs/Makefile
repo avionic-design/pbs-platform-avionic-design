@@ -236,7 +236,6 @@ links = \
 	/etc/systemd/system/local-fs.target.wants/tmp.mount \
 	/etc/systemd/system/local-fs.target.wants/var-lib.mount \
 	/etc/systemd/system/local-fs.target.wants/var-log.mount \
-	/etc/systemd/system/multi-user.target.wants/irkey@ttyS5.service \
 	/etc/systemd/system/network.target.wants/iflinkd@eth0.service \
 	/etc/systemd/system/network.target.wants/iflinkd@lo.service \
 	/etc/systemd/system/network.target.wants/iflinkd@sl0.service \
