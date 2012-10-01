@@ -1,0 +1,33 @@
+#!/bin/sh -e
+
+sysfs_find_pci_device()
+{
+	vendor="$1"
+	device="$2"
+
+	for path in /sys/bus/pci/devices/*; do
+		read vid < "$path/vendor"
+		read did < "$path/device"
+
+		if test "x$vid" = "x$vendor" -a "x$did" = "x$device"; then
+			echo "$path"
+			return 0
+		fi
+	done
+
+	return 1
+}
+
+path=`sysfs_find_pci_device 0xa510 0x0002`
+
+if test -z "$path" -o ! -d "$path/gpio"; then
+	echo "GPIO controller not found"
+	exit 1
+fi
+
+chip="`echo $path/gpio/gpiochip*`"
+read base < "$chip/base"
+gpio=`expr $base + 63`
+
+echo $gpio > /sys/class/gpio/export
+echo high > /sys/class/gpio/gpio$gpio/direction
