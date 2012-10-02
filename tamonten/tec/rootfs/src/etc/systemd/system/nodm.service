@@ -1,0 +1,8 @@
+[Unit]
+Description=nodm Display Manager
+
+[Service]
+ExecStart=/usr/sbin/nodm
+
+[Install]
+WantedBy=graphical.target

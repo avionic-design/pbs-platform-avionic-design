@@ -1,0 +1,11 @@
+if PLATFORM_AVIONIC_DESIGN_TAMONTEN_MEDCOM_WIDE
+
+choice
+	prompt "Avionic Design Medcom Wide"
+
+source "platforms/avionic-design/tamonten/medcom-wide/initrd/Kconfig"
+source "platforms/avionic-design/tamonten/medcom-wide/rootfs/Kconfig"
+
+endchoice
+
+endif

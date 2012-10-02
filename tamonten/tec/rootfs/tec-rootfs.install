@@ -1,0 +1,15 @@
+/bin
+/dev
+/etc
+/lib
+/lib/lsb
+/media
+/persist
+/proc
+/root
+/run
+/sbin
+/sys
+/tmp
+/usr
+/var

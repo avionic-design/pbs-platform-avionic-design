@@ -1,0 +1,19 @@
+#!/bin/sh
+
+. /lib/lsb/init-functions
+
+persist="$1"
+
+serial=`adak-mac -i eth0 serial`
+name="tec-$serial"
+
+if test -f "$persist/etc/hostname"; then
+	oldname=`cat "$persist/etc/hostname"`
+	if test "$name" != "$oldname"; then
+		log_action_begin_msg "Generating hostname"
+		mount -o remount,rw "$persist" && \
+			echo "tec-$serial" > "$persist/etc/hostname" && \
+			mount -o remount,ro "$persist"
+		log_action_end_msg $?
+	fi
+fi

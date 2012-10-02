@@ -1,0 +1,10 @@
+[Unit]
+Description=Pango Modules Cache
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/lib/systemd/pango-modules-cache
+
+[Install]
+WantedBy=graphical.target

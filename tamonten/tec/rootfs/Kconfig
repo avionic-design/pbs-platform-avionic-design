@@ -1,0 +1,2 @@
+config PLATFORM_AVIONIC_DESIGN_TAMONTEN_TEC_ROOTFS
+	bool "Root Filesystem"

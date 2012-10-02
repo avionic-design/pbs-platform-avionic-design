@@ -1,0 +1,33 @@
+#!/bin/sh
+
+PLATFORM="`cd ${0%/*}; pwd`"
+
+TEGRA2_DIR="`cd $PLATFORM/../../../..; pwd`/tools/nvidia/tegra2"
+NVFLASH_DIR="`cd $TEGRA2_DIR; pwd`"
+BURNFLASH="$TEGRA2_DIR/fastboot.bin"
+BCT="$PLATFORM/plutux.bct"
+CFG="$PLATFORM/plutux.cfg"
+
+if test "x$1" = "x"; then
+	display_type="hdmi"
+else
+	display_type="$1"
+fi
+
+case "$display_type" in
+	hdmi)
+		ODM="0x2b2d8011"
+		;;
+
+	lvds)
+		ODM="0x2b0d8011"
+		;;
+
+	*)
+		echo "Invalid display type, must be one of: hdmi, lvds"
+		exit 1
+		;;
+esac
+
+sudo env LD_LIBRARY_PATH="$NVFLASH_DIR" "$NVFLASH_DIR/nvflash" --bct "$BCT" --setbct --configfile "$CFG" --create \
+	--bl "$BURNFLASH" --odmdata "$ODM" --go

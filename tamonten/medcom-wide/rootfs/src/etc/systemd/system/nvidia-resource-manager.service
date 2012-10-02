@@ -1,0 +1,12 @@
+[Unit]
+Description=NVIDIA Resource Manager
+DefaultDependencies=no
+After=systemd-modules-load.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/sbin/nvrm_daemon --daemon
+
+[Install]
+WantedBy=basic.target

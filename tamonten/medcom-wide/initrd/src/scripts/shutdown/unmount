@@ -1,0 +1,41 @@
+#!/bin/sh
+
+. /lib/lsb/init-functions
+
+root=/oldroot
+
+log_action_begin_msg "Unmounting /dev filesystem"
+umount "$root/dev/shm" &&
+	umount "$root/dev/pts" &&
+	umount "$root/dev"
+log_action_end_msg $?
+
+log_action_begin_msg "Unmounting /proc filesystem"
+umount "$root/proc"
+log_action_end_msg $?
+
+log_action_begin_msg "Unmounting /run filesystem"
+umount "$root/run"
+log_action_end_msg $?
+
+log_action_begin_msg "Unmounting /sys filesystem"
+umount "$root/sys/fs/cgroup/systemd" &&
+	umount "$root/sys/fs/cgroup/cpu,cpuacct" &&
+	umount "$root/sys/fs/cgroup/debug" &&
+	umount "$root/sys/fs/cgroup/freezer" &&
+	umount "$root/sys/fs/cgroup" &&
+	umount "$root/sys"
+log_action_end_msg $?
+
+log_action_begin_msg "Moving /media/disk"
+mkdir -p /media/disk &&
+	mount --move "$root/media/disk" /media/disk
+log_action_end_msg $?
+
+log_action_begin_msg "Unmounting root filesystem"
+umount "$root"
+log_action_end_msg $?
+
+log_action_begin_msg "Unmounting /media/disk"
+umount /media/disk
+log_action_end_msg $?

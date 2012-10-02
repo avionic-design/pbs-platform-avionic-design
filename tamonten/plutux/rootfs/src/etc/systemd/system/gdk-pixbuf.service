@@ -1,0 +1,10 @@
+[Unit]
+Description=Gdk-Pixbuf Loaders Cache
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/lib/systemd/gdk-pixbuf-loaders-cache
+
+[Install]
+WantedBy=graphical.target

@@ -1,0 +1,5 @@
+if test "x$XDG_CONFIG_HOME" = "x"; then
+	XDG_CONFIG_HOME="$HOME/.config"
+fi
+
+exec $STARTUP > /var/log/Xsession.log 2>&1

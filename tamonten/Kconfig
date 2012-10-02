@@ -1,0 +1,21 @@
+if PLATFORM_AVIONIC_DESIGN_TAMONTEN
+
+choice
+	prompt "Avionic Design Tamonten"
+
+config PLATFORM_AVIONIC_DESIGN_TAMONTEN_PLUTUX
+	bool "Avionic Design Plutux"
+
+config PLATFORM_AVIONIC_DESIGN_TAMONTEN_MEDCOM_WIDE
+	bool "Avionic Design Medcom Wide"
+
+config PLATFORM_AVIONIC_DESIGN_TAMONTEN_TEC
+	bool "Avionic Design Tamonten Evaluation Carrier"
+
+endchoice
+
+source "platforms/avionic-design/tamonten/plutux/Kconfig"
+source "platforms/avionic-design/tamonten/medcom-wide/Kconfig"
+source "platforms/avionic-design/tamonten/tec/Kconfig"
+
+endif

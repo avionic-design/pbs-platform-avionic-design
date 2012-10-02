@@ -1,0 +1,12 @@
+[Unit]
+Description=Root Home Directory
+Before=local-fs.target
+
+[Mount]
+What=tmpfs
+Where=/root
+Type=tmpfs
+Options=mode=755
+
+[Install]
+WantedBy=local-fs.target
