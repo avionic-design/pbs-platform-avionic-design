@@ -198,6 +198,7 @@ links = \
 	/etc/systemd/system/network.target.wants/ntpd.service \
 	/etc/systemd/system/network.target.wants/ntpdate.service \
 	/etc/systemd/system/sockets.target.wants/lldpd.socket \
+	/etc/systemd/system/display-manager.service \
 	/etc/pango/pango.modules \
 	/etc/proxy.conf \
 	/etc/wpa_supplicant/wpa_supplicant-nl80211-wlan0.conf \
