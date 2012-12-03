@@ -9,7 +9,7 @@ dirs = \
 
 scripts = \
 	/scripts/persist/hostname \
-	/scripts/shutdown/unmount
+	/scripts/shutdown/00-unmount
 
 include platforms/common.mk
 
