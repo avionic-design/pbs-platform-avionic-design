@@ -8,6 +8,7 @@ dirs = \
 	/etc/iflinkd \
 	/etc/iflinkd/hooks.d \
 	/etc/iflinkd/hooks.d/eth0 \
+	/etc/modprobe.d \
 	/etc/systemd \
 	/etc/systemd/system \
 	/etc/systemd/system/basic.target.wants \
@@ -50,6 +51,7 @@ files = \
 	/etc/hosts \
 	/etc/inittab \
 	/etc/localtime \
+	/etc/modprobe.d/blacklist.conf \
 	/etc/nsswitch.conf \
 	/etc/passwd \
 	/etc/pam.conf \
