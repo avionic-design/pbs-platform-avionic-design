@@ -115,6 +115,7 @@ files = \
 	/etc/alsa/medatom.state \
 	/etc/alsa/medatom-wide.conf \
 	/etc/alsa/medatom-wide.state \
+	/etc/browser.conf \
 	/etc/default/locale \
 	/etc/default/rcS \
 	/etc/environment \
@@ -211,7 +212,6 @@ files = \
 
 links = \
 	/bin/sh \
-	/etc/browser.conf \
 	/etc/machine-id \
 	/etc/motd \
 	/etc/mtab \
