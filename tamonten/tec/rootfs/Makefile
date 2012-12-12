@@ -61,6 +61,7 @@ files = \
 	/etc/localtime \
 	/etc/modprobe.d/blacklist.conf \
 	/etc/nsswitch.conf \
+	/etc/ntp.conf \
 	/etc/passwd \
 	/etc/pam.conf \
 	/etc/pam.d/common-account \
@@ -71,6 +72,7 @@ files = \
 	/etc/pam.d/other \
 	/etc/profile \
 	/etc/rsyslog.conf \
+	/etc/services \
 	/etc/shadow \
 	/etc/sysctl.conf \
 	/etc/systemd/system.conf \
