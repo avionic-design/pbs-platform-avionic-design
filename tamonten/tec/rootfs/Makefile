@@ -69,6 +69,7 @@ files = \
 	/etc/systemd/system/gdk-pixbuf.service \
 	/etc/systemd/system/iflinkd@eth0.service \
 	/etc/systemd/system/iflinkd@lo.service \
+	/etc/systemd/system/nodm.service \
 	/etc/systemd/system/openssh.service \
 	/etc/systemd/system/pango.service \
 	/etc/systemd/system/root.mount \
@@ -107,6 +108,7 @@ links = \
 	/etc/systemd/system/multi-user.target.wants/network.target \
 	/etc/systemd/system/network.target.wants/iflinkd@eth0.service \
 	/etc/systemd/system/network.target.wants/iflinkd@lo.service \
+	/etc/systemd/system/display-manager.service \
 	/usr/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache \
 	/var/run \
 	/sbin/init
