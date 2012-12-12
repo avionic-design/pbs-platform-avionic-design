@@ -7,6 +7,7 @@ dirs = \
 	/etc \
 	/etc/iflinkd \
 	/etc/iflinkd/hooks.d \
+	/etc/iflinkd/hooks.d/eth0 \
 	/etc/systemd \
 	/etc/systemd/system \
 	/etc/systemd/system/basic.target.wants \
@@ -33,7 +34,7 @@ dirs = \
 	/var/log
 
 scripts = \
-	/etc/iflinkd/hooks.d/10-dhcpcd
+	/etc/iflinkd/hooks.d/eth0/50-dhcpcd
 
 files = \
 	/etc/fstab \
@@ -54,6 +55,8 @@ files = \
 	/etc/shadow \
 	/etc/sysctl.conf \
 	/etc/systemd/system.conf \
+	/etc/systemd/system/iflinkd@eth0.service \
+	/etc/systemd/system/iflinkd@lo.service \
 	/etc/systemd/system/openssh.service \
 	/etc/systemd/system/root.mount \
 	/etc/systemd/system/tmp.mount \
@@ -83,9 +86,11 @@ links = \
 	/etc/systemd/system/local-fs.target.wants/tmp.mount \
 	/etc/systemd/system/local-fs.target.wants/var-lib.mount \
 	/etc/systemd/system/local-fs.target.wants/var-log.mount \
-	/etc/systemd/system/multi-user.target.wants/iflinkd.service \
 	/etc/systemd/system/multi-user.target.wants/serial-getty@ttyS0.service \
 	/etc/systemd/system/multi-user.target.wants/openssh.service \
+	/etc/systemd/system/multi-user.target.wants/network.target \
+	/etc/systemd/system/network.target.wants/iflinkd@eth0.service \
+	/etc/systemd/system/network.target.wants/iflinkd@lo.service \
 	/var/run \
 	/sbin/init
 
