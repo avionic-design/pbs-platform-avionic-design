@@ -20,6 +20,9 @@ dirs = \
 	/etc/tmpfiles.d \
 	/etc/udev \
 	/etc/udev/rules.d \
+	/etc/X11 \
+	/etc/X11/xorg.conf.d \
+	/etc/X11/Xsession.d \
 	/lib \
 	/media \
 	/media/disk \
@@ -42,6 +45,11 @@ dirs = \
 
 scripts = \
 	/etc/iflinkd/hooks.d/eth0/50-dhcpcd \
+	/etc/X11/Xsession \
+	/etc/X11/Xsession.d/00-persist \
+	/etc/X11/Xsession.d/10-keyboard-layout \
+	/etc/X11/Xsession.d/50-determine-startup \
+	/etc/X11/Xsession.d/99-start \
 	/usr/lib/systemd/gdk-pixbuf-loaders-cache \
 	/usr/lib/systemd/pango-modules-cache
 
@@ -79,6 +87,7 @@ files = \
 	/etc/tmpfiles.d/dbus.conf \
 	/etc/tmpfiles.d/ssh.conf \
 	/etc/tmpfiles.d/systemd.conf \
+	/etc/X11/xorg.conf.d/05-evdev.conf \
 	/lib/lsb/init-functions
 
 links = \
