@@ -11,9 +11,11 @@ dirs = \
 	/etc/systemd \
 	/etc/systemd/system \
 	/etc/systemd/system/basic.target.wants \
+	/etc/systemd/system/graphical.target.wants \
 	/etc/systemd/system/local-fs.target.wants \
 	/etc/systemd/system/multi-user.target.wants \
 	/etc/pam.d \
+	/etc/pango \
 	/etc/tmpfiles.d \
 	/etc/udev \
 	/etc/udev/rules.d \
@@ -28,13 +30,19 @@ dirs = \
 	/sys \
 	/tmp \
 	/usr \
+	/usr/lib \
+	/usr/lib/gdk-pixbuf-2.0 \
+	/usr/lib/gdk-pixbuf-2.0/2.10.0 \
+	/usr/lib/systemd \
 	/var \
 	/var/lib \
 	/var/lock \
 	/var/log
 
 scripts = \
-	/etc/iflinkd/hooks.d/eth0/50-dhcpcd
+	/etc/iflinkd/hooks.d/eth0/50-dhcpcd \
+	/usr/lib/systemd/gdk-pixbuf-loaders-cache \
+	/usr/lib/systemd/pango-modules-cache
 
 files = \
 	/etc/fstab \
@@ -55,9 +63,11 @@ files = \
 	/etc/shadow \
 	/etc/sysctl.conf \
 	/etc/systemd/system.conf \
+	/etc/systemd/system/gdk-pixbuf.service \
 	/etc/systemd/system/iflinkd@eth0.service \
 	/etc/systemd/system/iflinkd@lo.service \
 	/etc/systemd/system/openssh.service \
+	/etc/systemd/system/pango.service \
 	/etc/systemd/system/root.mount \
 	/etc/systemd/system/tmp.mount \
 	/etc/systemd/system/var-lib.mount \
@@ -73,6 +83,7 @@ links = \
 	/etc/machine-id \
 	/etc/motd \
 	/etc/mtab \
+	/etc/pango/pango.modules \
 	/etc/resolv.conf \
 	/etc/ssh/ssh_host_dsa_key \
 	/etc/ssh/ssh_host_dsa_key.pub \
@@ -82,6 +93,8 @@ links = \
 	/etc/ssh/ssh_host_key.pub \
 	/etc/ssh/ssh_host_rsa_key \
 	/etc/ssh/ssh_host_rsa_key.pub \
+	/etc/systemd/system/graphical.target.wants/gdk-pixbuf.service \
+	/etc/systemd/system/graphical.target.wants/pango.service \
 	/etc/systemd/system/local-fs.target.wants/root.mount \
 	/etc/systemd/system/local-fs.target.wants/tmp.mount \
 	/etc/systemd/system/local-fs.target.wants/var-lib.mount \
@@ -91,6 +104,7 @@ links = \
 	/etc/systemd/system/multi-user.target.wants/network.target \
 	/etc/systemd/system/network.target.wants/iflinkd@eth0.service \
 	/etc/systemd/system/network.target.wants/iflinkd@lo.service \
+	/usr/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache \
 	/var/run \
 	/sbin/init
 
