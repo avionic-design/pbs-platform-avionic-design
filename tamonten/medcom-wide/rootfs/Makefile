@@ -9,6 +9,7 @@ dirs = \
 	/etc/X11/Xsession.d \
 	/etc/iflinkd \
 	/etc/iflinkd/hooks.d \
+	/etc/iflinkd/hooks.d/eth0 \
 	/etc/remote-control.conf.d \
 	/etc/systemd \
 	/etc/systemd/system \
@@ -41,7 +42,7 @@ dirs = \
 
 scripts = \
 	/etc/X11/Xsession \
-	/etc/iflinkd/hooks.d/10-dhcpcd \
+	/etc/iflinkd/hooks.d/eth0/50-dhcpcd \
 	/etc/xdg/awesome/xinitrc \
 	/lib/systemd/gdk-pixbuf-loaders-cache \
 	/lib/systemd/pango-modules-cache \
@@ -79,6 +80,8 @@ files = \
 	/etc/systemd/system.conf \
 	/etc/systemd/system/alsa.service \
 	/etc/systemd/system/gdk-pixbuf.service \
+	/etc/systemd/system/iflinkd@eth0.service \
+	/etc/systemd/system/iflinkd@lo.service \
 	/etc/systemd/system/nodm.service \
 	/etc/systemd/system/nvidia-resource-manager.service \
 	/etc/systemd/system/openssh.service \
@@ -119,9 +122,11 @@ links = \
 	/etc/systemd/system/local-fs.target.wants/tmp.mount \
 	/etc/systemd/system/local-fs.target.wants/var-lib.mount \
 	/etc/systemd/system/local-fs.target.wants/var-log.mount \
-	/etc/systemd/system/multi-user.target.wants/iflinkd.service \
 	/etc/systemd/system/multi-user.target.wants/serial-getty@ttyS0.service \
+	/etc/systemd/system/multi-user.target.wants/network.target \
 	/etc/systemd/system/multi-user.target.wants/openssh.service \
+	/etc/systemd/system/network.target.wants/iflinkd@eth0.service \
+	/etc/systemd/system/network.target.wants/iflinkd@lo.service \
 	/etc/pango/pango.modules \
 	/usr/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache \
 	/var/run \
