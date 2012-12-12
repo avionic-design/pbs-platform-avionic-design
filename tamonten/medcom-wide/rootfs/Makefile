@@ -94,6 +94,7 @@ files = \
 	/etc/tmpfiles.d/ssh.conf \
 	/etc/tmpfiles.d/systemd.conf \
 	/etc/udev/rules.d/70-persistent-net.rules \
+	/etc/vconsole.conf \
 	/lib/lsb/init-functions \
 	/root/.htoprc
 
