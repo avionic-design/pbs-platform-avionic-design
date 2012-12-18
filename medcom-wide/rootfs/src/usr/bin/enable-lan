@@ -10,6 +10,24 @@ if [ "$#" != "1" ]; then
 	exit 1
 fi
 
+function find_gpiochip
+{
+        for f in /sys/class/gpio/gpiochip*; do
+                LABEL=`cat $f/label`
+                if [ $LABEL == $1 ]; then
+                        echo "${f:24}"
+			return 0
+                fi
+        done
+	return 1
+}
+
+BASE=$(find_gpiochip "gpio-adnp")
+if [ $BASE == "" ]; then
+	echo "Error: gpio chip not found."
+	exit 1
+fi
+
 if [ "$1" = "on" ]; then
 	VALUE="high"
 elif [ "$1" = "off" ]; then
@@ -19,8 +37,9 @@ else
 	exit 1
 fi
 
-echo 456 > /sys/class/gpio/export
-echo $VALUE > /sys/class/gpio/gpio456/direction
-echo 456 > /sys/class/gpio/unexport
+GPIO_LAN=$[$BASE+8]
+echo $GPIO_LAN > /sys/class/gpio/export
+echo $VALUE > /sys/class/gpio/gpio$GPIO_LAN/direction
+echo $GPIO_LAN > /sys/class/gpio/unexport
 
 exit 0

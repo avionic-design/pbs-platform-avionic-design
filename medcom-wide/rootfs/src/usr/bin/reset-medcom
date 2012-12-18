@@ -1,10 +1,28 @@
 #!/bin/sh -e
 
-echo 508 > /sys/class/gpio/export
-echo 509 > /sys/class/gpio/export
-echo 510 > /sys/class/gpio/export
-echo 511 > /sys/class/gpio/export
-echo low > /sys/class/gpio/gpio508/direction
-echo high > /sys/class/gpio/gpio509/direction
-echo low > /sys/class/gpio/gpio510/direction
-echo high > /sys/class/gpio/gpio511/direction
+function find_gpiochip
+{
+        for f in /sys/class/gpio/gpiochip*; do
+                LABEL=`cat $f/label`
+                if [ $LABEL == $1 ]; then
+                        echo "${f:24}"
+			return 0
+                fi
+        done
+	return 1
+}
+
+BASE=$(find_gpiochip "gpio-adnp")
+if [ $BASE == "" ]; then
+	echo "Error: gpio chip not found."
+	exit 1
+fi
+
+echo $[$BASE+60] > /sys/class/gpio/export
+echo $[$BASE+61] > /sys/class/gpio/export
+echo $[$BASE+62] > /sys/class/gpio/export
+echo $[$BASE+63] > /sys/class/gpio/export
+echo low > /sys/class/gpio/gpio$[$BASE+60]/direction
+echo high > /sys/class/gpio/gpio$[$BASE+61]/direction
+echo low > /sys/class/gpio/gpio$[$BASE+62]/direction
+echo high > /sys/class/gpio/gpio$[$BASE+63]/direction

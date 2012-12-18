@@ -148,6 +148,7 @@ files = \
 
 links = \
 	/bin/sh \
+	/bin/enable-lan \
 	/etc/X11/xorg.conf.d/90-undefined.conf \
 	/etc/X11/xorg.conf.d/99-calibration.conf \
 	/etc/hostname \
