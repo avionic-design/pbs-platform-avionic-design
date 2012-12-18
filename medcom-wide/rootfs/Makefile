@@ -15,6 +15,7 @@ dirs = \
 	/etc/iflinkd \
 	/etc/iflinkd/hooks.d \
 	/etc/logrotate.d \
+	/etc/modprobe.d \
 	/etc/modules-load.d \
 	/etc/syslog-ng \
 	/etc/systemd \
@@ -96,6 +97,7 @@ files = \
 	/etc/localtime \
 	/etc/logrotate.conf \
 	/etc/logrotate.d/general \
+	/etc/modprobe.d/tm6000.conf \
 	/etc/modules-load.d/input.conf \
 	/etc/nsswitch.conf \
 	/etc/passwd \
@@ -140,6 +142,7 @@ files = \
 	/etc/udev/rules.d/70-persistent-net.rules \
 	/etc/vconsole.conf \
 	/usr/lib/lsb/init-functions \
+	/usr/lib/firmware/xc3028L-v36.fw \
 	/usr/share/alsa/ucm/tegrawm8903/hifi.conf \
 	/usr/share/alsa/ucm/tegrawm8903/linein.conf \
 	/usr/share/alsa/ucm/tegrawm8903/tegrawm8903.conf \
