@@ -8,5 +8,4 @@ if test -e /var/log/Xsession.log; then
 	/bin/gzip /var/log/Xsession.log
 fi
 
-export LD_PRELOAD=/usr/lib/libnvrm_graphics_impl.so
-exec $STARTUP > /var/log/Xsession.log 2>&1
+exec $STARTUP 2>&1 | /usr/bin/logger -t Xsession -id

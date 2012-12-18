@@ -2,11 +2,11 @@
 	daily
 	missingok
 	notifempty
-	maxsize 1M
-	rotate 1
+	maxsize 4M
+	rotate 7
 	compress
 	sharedscripts
 	postrotate
-		/usr/bin/systemctl reload-or-try-restart syslog.service || true
+		/usr/bin/kill -HUP `cat /var/run/rsyslogd.pid 2> /dev/null` 2> /dev/null || true
 	endscript
 }

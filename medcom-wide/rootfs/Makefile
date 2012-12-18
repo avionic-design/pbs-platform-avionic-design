@@ -17,7 +17,7 @@ dirs = \
 	/etc/logrotate.d \
 	/etc/modprobe.d \
 	/etc/modules-load.d \
-	/etc/syslog-ng \
+	/etc/rsyslog.d \
 	/etc/systemd \
 	/etc/systemd/system \
 	/etc/systemd/system/basic.target.wants \
@@ -114,10 +114,13 @@ files = \
 	/etc/remote-control.conf.d/logging.conf \
 	/etc/remote-control.conf.d/modem.conf \
 	/etc/remote-control.conf.d/smartcard.conf \
+	/etc/rsyslog.conf \
+	/etc/rsyslog.d/50-remote-control.conf \
+	/etc/rsyslog.d/50-xsession.conf \
+	/etc/rsyslog.d/99-persist.conf \
 	/etc/services \
 	/etc/shadow \
 	/etc/sysctl.conf \
-	/etc/syslog-ng/syslog-ng.conf \
 	/etc/systemd/system.conf \
 	/etc/systemd/system/crond.service \
 	/etc/systemd/system/gdk-pixbuf.service \
@@ -183,7 +186,6 @@ links = \
 	/etc/systemd/system/multi-user.target.wants/network.target \
 	/etc/systemd/system/multi-user.target.wants/serial-getty@ttyS0.service \
 	/etc/systemd/system/multi-user.target.wants/openssh.service \
-	/etc/systemd/system/multi-user.target.wants/syslog-ng.service \
 	/etc/systemd/system/multi-user.target.wants/update-crontab.service \
 	/etc/systemd/system/network.target.wants/ntpd.service \
 	/etc/systemd/system/network.target.wants/ntpdate.service \
