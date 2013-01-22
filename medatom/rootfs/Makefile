@@ -41,6 +41,8 @@ dirs = \
 	/etc/systemd/system/network.target.wants \
 	/etc/systemd/system/sockets.target.wants \
 	/etc/tmpfiles.d \
+	/etc/udev \
+	/etc/udev/rules.d \
 	/etc/X11 \
 	/etc/X11/xorg.conf.d \
 	/etc/X11/Xsession.d \
@@ -189,6 +191,7 @@ files = \
 	/etc/tmpfiles.d/ntp.conf \
 	/etc/tmpfiles.d/ssh.conf \
 	/etc/tmpfiles.d/systemd.conf \
+	/etc/udev/rules.d/80-net-name-slot.rules \
 	/etc/vconsole.conf \
 	/etc/X11/xorg.conf.d/10-evdev.conf \
 	/etc/X11/xorg.conf.d/20-keyboard-layout.conf \
