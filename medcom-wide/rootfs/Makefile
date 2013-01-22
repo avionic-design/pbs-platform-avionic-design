@@ -31,8 +31,6 @@ dirs = \
 	/etc/udev/rules.d \
 	/etc/xdg \
 	/etc/xdg/awesome \
-	/lib \
-	/lib/firmware \
 	/media \
 	/media/disk \
 	/persist \
@@ -47,7 +45,9 @@ dirs = \
 	/usr/lib \
 	/usr/lib/dhcpcd \
 	/usr/lib/dhcpcd/dhcpcd-hooks \
+	/usr/lib/firmware \
 	/usr/lib/gdk-pixbuf-2.0/2.10.0 \
+	/usr/lib/lsb \
 	/usr/lib/systemd \
 	/var \
 	/var/lib \
@@ -139,7 +139,7 @@ files = \
 	/etc/tmpfiles.d/systemd.conf \
 	/etc/udev/rules.d/70-persistent-net.rules \
 	/etc/vconsole.conf \
-	/lib/lsb/init-functions \
+	/usr/lib/lsb/init-functions \
 	/usr/share/alsa/ucm/tegrawm8903/hifi.conf \
 	/usr/share/alsa/ucm/tegrawm8903/linein.conf \
 	/usr/share/alsa/ucm/tegrawm8903/tegrawm8903.conf \
