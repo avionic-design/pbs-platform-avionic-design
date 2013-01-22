@@ -23,7 +23,6 @@ dirs = \
 	/etc/X11 \
 	/etc/X11/xorg.conf.d \
 	/etc/X11/Xsession.d \
-	/lib \
 	/media \
 	/media/disk \
 	/persist \
@@ -51,7 +50,8 @@ scripts = \
 	/etc/X11/Xsession.d/50-determine-startup \
 	/etc/X11/Xsession.d/99-start \
 	/usr/lib/systemd/gdk-pixbuf-loaders-cache \
-	/usr/lib/systemd/pango-modules-cache
+	/usr/lib/systemd/pango-modules-cache \
+	/usr/lib/systemd/update-mime-db
 
 files = \
 	/etc/fstab \
@@ -90,7 +90,7 @@ files = \
 	/etc/tmpfiles.d/ssh.conf \
 	/etc/tmpfiles.d/systemd.conf \
 	/etc/X11/xorg.conf.d/05-evdev.conf \
-	/lib/lsb/init-functions
+	/usr/lib/lsb/init-functions
 
 links = \
 	/bin/sh \
