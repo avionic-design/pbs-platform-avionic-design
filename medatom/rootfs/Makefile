@@ -50,10 +50,6 @@ dirs = \
 	/etc/xdg/xfce4 \
 	/etc/xdg/xfce4/xfconf \
 	/etc/xdg/xfce4/xfconf/xfce-perchannel-xml \
-	/lib \
-	/lib/firmware \
-	/lib/lsb \
-	/lib/systemd \
 	/media \
 	/media/disk \
 	/mnt \
@@ -68,8 +64,10 @@ dirs = \
 	/usr/lib \
 	/usr/lib/dhcpcd \
 	/usr/lib/dhcpcd/dhcpcd-hooks \
+	/usr/lib/firmware \
 	/usr/lib/gdk-pixbuf-2.0 \
 	/usr/lib/gdk-pixbuf-2.0/2.10.0 \
+	/usr/lib/lsb \
 	/usr/share \
 	/usr/share/applications \
 	/usr/share/icons \
@@ -101,10 +99,10 @@ scripts = \
 	/etc/init.d/X \
 	/etc/X11/Xsession \
 	/etc/xdg/awesome/xinitrc \
-	/lib/systemd/gdk-pixbuf-loaders-cache \
-	/lib/systemd/pango-modules-cache \
 	/usr/lib/dhcpcd/dhcpcd-hooks/90-ntp \
 	/usr/lib/dhcpcd/dhcpcd-hooks/91-ddip-announce \
+	/usr/lib/systemd/gdk-pixbuf-loaders-cache \
+	/usr/lib/systemd/pango-modules-cache \
 	/usr/share/udhcpc/default.script
 
 files = \
@@ -203,10 +201,10 @@ files = \
 	/etc/xdg/xfce4/helpers.rc \
 	/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml \
 	/fastboot \
-	/lib/firmware/hda-patch.fw \
-	/lib/firmware/v4l-cx231xx-avcore-01.fw \
-	/lib/firmware/xc3028L-v36.fw \
-	/lib/lsb/init-functions \
+	/usr/lib/firmware/hda-patch.fw \
+	/usr/lib/firmware/v4l-cx231xx-avcore-01.fw \
+	/usr/lib/firmware/xc3028L-v36.fw \
+	/usr/lib/lsb/init-functions \
 	/usr/share/applications/xterm.desktop \
 	/usr/share/vim/vimrc
 
