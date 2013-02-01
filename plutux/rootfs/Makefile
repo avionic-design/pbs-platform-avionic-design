@@ -52,7 +52,7 @@ dirs = \
 	/usr/share \
 	/usr/share/alsa \
 	/usr/share/alsa/ucm \
-	/usr/share/alsa/ucm/tegrawm8903 \
+	/usr/share/alsa/ucm/tegra-wm8903 \
 	/usr/lib/systemd \
 	/var \
 	/var/lib \
@@ -157,10 +157,10 @@ files = \
 	/lib/firmware/rtlwifi/rtl8192defw.bin \
 	/lib/firmware/rtlwifi/rtl8192sefw.bin \
 	/lib/firmware/rtlwifi/rtl8712u.bin \
-	/usr/share/alsa/ucm/tegrawm8903/hifi.conf \
-	/usr/share/alsa/ucm/tegrawm8903/tegrawm8903.conf \
-	/usr/share/alsa/ucm/tegrawm8903/voice-call.conf \
-	/usr/share/alsa/ucm/tegrawm8903/voice-call-ip.conf
+	/usr/share/alsa/ucm/tegra-wm8903/hifi.conf \
+	/usr/share/alsa/ucm/tegra-wm8903/tegra-wm8903.conf \
+	/usr/share/alsa/ucm/tegra-wm8903/voice-call.conf \
+	/usr/share/alsa/ucm/tegra-wm8903/voice-call-ip.conf
 
 links = \
 	/bin/sh \
