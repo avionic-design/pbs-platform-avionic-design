@@ -70,7 +70,10 @@ scripts = \
 	/usr/lib/systemd/update-mime-db \
 	/usr/bin/enable-lan \
 	/usr/bin/ntpdate-wrapper \
-	/usr/bin/reset-medcom
+	/usr/bin/reset-medcom \
+	/usr/bin/zramstart \
+	/usr/bin/zramstat \
+	/usr/bin/zramstop
 
 files = \
 	/fastboot \
@@ -142,6 +145,7 @@ files = \
 	/etc/systemd/system/var-lib.mount \
 	/etc/systemd/system/var-log.mount \
 	/etc/systemd/system/var-spool.mount \
+	/etc/systemd/system/zram.service \
 	/etc/tmpfiles.d/dbus.conf \
 	/etc/tmpfiles.d/lldpd.conf \
 	/etc/tmpfiles.d/ntp.conf \
