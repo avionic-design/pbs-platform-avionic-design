@@ -14,6 +14,8 @@ dirs = \
 	/etc/gtk-2.0 \
 	/etc/iflinkd \
 	/etc/iflinkd/hooks.d \
+	/etc/iflinkd/hooks.d/eth0 \
+	/etc/iflinkd/hooks.d/lo \
 	/etc/logrotate.d \
 	/etc/modprobe.d \
 	/etc/modules-load.d \
@@ -124,6 +126,8 @@ files = \
 	/etc/systemd/system.conf \
 	/etc/systemd/system/crond.service \
 	/etc/systemd/system/gdk-pixbuf.service \
+	/etc/systemd/system/iflinkd@eth0.service \
+	/etc/systemd/system/iflinkd@lo.service \
 	/etc/systemd/system/lldpd.service \
 	/etc/systemd/system/lldpd.socket \
 	/etc/systemd/system/nodm.service \
@@ -159,6 +163,8 @@ links = \
 	/etc/X11/xorg.conf.d/90-undefined.conf \
 	/etc/X11/xorg.conf.d/99-calibration.conf \
 	/etc/hostname \
+	/etc/iflinkd/hooks.d/eth0/00-lldpd \
+	/etc/iflinkd/hooks.d/eth0/10-dhcpcd \
 	/etc/machine-id \
 	/etc/motd \
 	/etc/mtab \
@@ -187,6 +193,8 @@ links = \
 	/etc/systemd/system/multi-user.target.wants/serial-getty@ttyS0.service \
 	/etc/systemd/system/multi-user.target.wants/openssh.service \
 	/etc/systemd/system/multi-user.target.wants/update-crontab.service \
+	/etc/systemd/system/network.target.wants/iflinkd@eth0.service \
+	/etc/systemd/system/network.target.wants/iflinkd@lo.service \
 	/etc/systemd/system/network.target.wants/ntpd.service \
 	/etc/systemd/system/network.target.wants/ntpdate.service \
 	/etc/systemd/system/sockets.target.wants/lldpd.socket \
