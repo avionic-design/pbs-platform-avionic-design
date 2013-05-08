@@ -5,7 +5,7 @@ NTPCONF=/etc/ntp.conf
 tickers=
 
 if [ -f $NTPCONF ]; then
-	tickers=$(awk '$1=="peer"||$1=="server"{print $2}' $NTPCONF | \
+	tickers=$(awk '$1=="pool"||$1=="peer"||$1=="server"{print $2}' $NTPCONF | \
 		grep -Ev '127\.127\.[0-9]+\.[0-9]+')
 fi
 

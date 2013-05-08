@@ -1,13 +1,12 @@
-Unit]
+[Unit]
 Description=Set time via NTP
 After=syslog.target network.target
-Before=time-sync.target ntpd.service
-Wants=time-sync.target
+Before=ntpd.service
 
 [Service]
 Type=oneshot
 ExecStart=/usr/bin/ntpdate-wrapper
-RemainAfterExit=yes
+RemainAfterExit=no
 
 [Install]
 WantedBy=multi-user.target
