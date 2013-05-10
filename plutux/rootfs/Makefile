@@ -33,9 +33,6 @@ dirs = \
 	/etc/wpa_supplicant \
 	/etc/xdg \
 	/etc/xdg/awesome \
-	/lib \
-	/lib/firmware \
-	/lib/firmware/rtlwifi \
 	/media \
 	/media/disk \
 	/persist \
@@ -50,7 +47,10 @@ dirs = \
 	/usr/lib \
 	/usr/lib/dhcpcd \
 	/usr/lib/dhcpcd/dhcpcd-hooks \
+	/usr/lib/firmware \
+	/usr/lib/firmware/rtlwifi \
 	/usr/lib/gdk-pixbuf-2.0/2.10.0 \
+	/usr/lib/lsb \
 	/usr/share \
 	/usr/share/alsa \
 	/usr/share/alsa/ucm \
@@ -145,23 +145,23 @@ files = \
 	/etc/tmpfiles.d/systemd.conf \
 	/etc/udev/rules.d/70-persistent-net.rules \
 	/etc/vconsole.conf \
-	/lib/lsb/init-functions \
-	/lib/firmware/ar9170-1.fw \
-	/lib/firmware/ar9170-2.fw \
-	/lib/firmware/ar9170.fw \
-	/lib/firmware/ar9271.fw \
-	/lib/firmware/htc_9271.fw \
-	/lib/firmware/rt2860.bin \
-	/lib/firmware/rt2870.bin \
-	/lib/firmware/rt3070.bin \
-	/lib/firmware/rt3071.bin \
-	/lib/firmware/rt3090.bin \
-	/lib/firmware/rt73.bin \
-	/lib/firmware/rtlwifi/rtl8192cfw.bin \
-	/lib/firmware/rtlwifi/rtl8192cufw.bin \
-	/lib/firmware/rtlwifi/rtl8192defw.bin \
-	/lib/firmware/rtlwifi/rtl8192sefw.bin \
-	/lib/firmware/rtlwifi/rtl8712u.bin \
+	/usr/lib/lsb/init-functions \
+	/usr/lib/firmware/ar9170-1.fw \
+	/usr/lib/firmware/ar9170-2.fw \
+	/usr/lib/firmware/ar9170.fw \
+	/usr/lib/firmware/ar9271.fw \
+	/usr/lib/firmware/htc_9271.fw \
+	/usr/lib/firmware/rt2860.bin \
+	/usr/lib/firmware/rt2870.bin \
+	/usr/lib/firmware/rt3070.bin \
+	/usr/lib/firmware/rt3071.bin \
+	/usr/lib/firmware/rt3090.bin \
+	/usr/lib/firmware/rt73.bin \
+	/usr/lib/firmware/rtlwifi/rtl8192cfw.bin \
+	/usr/lib/firmware/rtlwifi/rtl8192cufw.bin \
+	/usr/lib/firmware/rtlwifi/rtl8192defw.bin \
+	/usr/lib/firmware/rtlwifi/rtl8192sefw.bin \
+	/usr/lib/firmware/rtlwifi/rtl8712u.bin \
 	/usr/share/alsa/ucm/tegra-wm8903/hifi.conf \
 	/usr/share/alsa/ucm/tegra-wm8903/tegra-wm8903.conf \
 	/usr/share/alsa/ucm/tegra-wm8903/voice-call.conf \

@@ -3,8 +3,6 @@
 /etc
 /fastboot
 /init
-/lib
-/lib/lsb
 /media
 /persist
 /proc
