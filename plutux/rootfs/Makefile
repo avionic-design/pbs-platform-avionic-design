@@ -14,6 +14,8 @@ dirs = \
 	/etc/gtk-2.0 \
 	/etc/iflinkd \
 	/etc/iflinkd/hooks.d \
+	/etc/iflinkd/hooks.d/eth0 \
+	/etc/iflinkd/hooks.d/wlan0 \
 	/etc/logrotate.d \
 	/etc/modules-load.d \
 	/etc/systemd \
@@ -63,8 +65,8 @@ dirs = \
 scripts = \
 	/etc/X11/Xsession \
 	/etc/iflinkd/hooks.d/00-lldpd \
-	/etc/iflinkd/hooks.d/09-wpa_supplicant \
-	/etc/iflinkd/hooks.d/10-dhcpcd \
+	/etc/iflinkd/hooks.d/10-wpa_supplicant \
+	/etc/iflinkd/hooks.d/50-dhcpcd \
 	/etc/xdg/awesome/xinitrc \
 	/usr/bin/ntpdate-wrapper \
 	/usr/lib/dhcpcd/dhcpcd-hooks/90-ntp \
@@ -119,6 +121,9 @@ files = \
 	/etc/systemd/system.conf \
 	/etc/systemd/system/crond.service \
 	/etc/systemd/system/gdk-pixbuf.service \
+	/etc/systemd/system/iflinkd@eth0.service \
+	/etc/systemd/system/iflinkd@lo.service \
+	/etc/systemd/system/iflinkd@wlan0.service \
 	/etc/systemd/system/lldpd.service \
 	/etc/systemd/system/lldpd.socket \
 	/etc/systemd/system/nodm.service \
@@ -166,6 +171,11 @@ links = \
 	/bin/sh \
 	/etc/X11/xorg.conf.d/90-undefined.conf \
 	/etc/hostname \
+	/etc/iflinkd/hooks.d/eth0/00-lldpd \
+	/etc/iflinkd/hooks.d/eth0/50-dhcpcd \
+	/etc/iflinkd/hooks.d/wlan0/00-lldpd \
+	/etc/iflinkd/hooks.d/wlan0/10-wpa_supplicant \
+	/etc/iflinkd/hooks.d/wlan0/50-dhcpcd \
 	/etc/machine-id \
 	/etc/motd \
 	/etc/mtab \
@@ -191,6 +201,9 @@ links = \
 	/etc/systemd/system/local-fs.target.wants/var-log.mount \
 	/etc/systemd/system/local-fs.target.wants/var-spool.mount \
 	/etc/systemd/system/multi-user.target.wants/crond.service \
+	/etc/systemd/system/network.target.wants/iflinkd@eth0.service \
+	/etc/systemd/system/network.target.wants/iflinkd@lo.service \
+	/etc/systemd/system/network.target.wants/iflinkd@wlan0.service \
 	/etc/systemd/system/multi-user.target.wants/network.target \
 	/etc/systemd/system/multi-user.target.wants/openssh.service \
 	/etc/systemd/system/multi-user.target.wants/update-crontab.service \
