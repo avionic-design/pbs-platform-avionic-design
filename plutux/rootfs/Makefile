@@ -27,6 +27,7 @@ dirs = \
 	/etc/pango \
 	/etc/pam.d \
 	/etc/remote-control.conf.d \
+	/etc/rsyslog.d \
 	/etc/tmpfiles.d \
 	/etc/udev \
 	/etc/udev/rules.d \
@@ -114,6 +115,9 @@ files = \
 	/etc/remote-control.conf.d/linphone.conf \
 	/etc/remote-control.conf.d/logging.conf \
 	/etc/rsyslog.conf \
+	/etc/rsyslog.d/50-remote-control.conf \
+	/etc/rsyslog.d/50-xsession.conf \
+	/etc/rsyslog.d/99-persist.conf \
 	/etc/services \
 	/etc/shadow \
 	/etc/sysctl.conf \
