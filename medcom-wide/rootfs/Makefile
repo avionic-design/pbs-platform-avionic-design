@@ -151,6 +151,7 @@ files = \
 	/etc/tmpfiles.d/ntp.conf \
 	/etc/tmpfiles.d/ssh.conf \
 	/etc/tmpfiles.d/systemd.conf \
+	/etc/tmux.conf \
 	/etc/udev/rules.d/70-persistent-net.rules \
 	/etc/vconsole.conf \
 	/usr/lib/lsb/init-functions \
