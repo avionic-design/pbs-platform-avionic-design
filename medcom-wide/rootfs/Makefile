@@ -99,6 +99,7 @@ files = \
 	/etc/htoprc \
 	/etc/inittab \
 	/etc/linphone.conf \
+	/etc/linphone.conf.usb \
 	/etc/localtime \
 	/etc/logrotate.conf \
 	/etc/logrotate.d/general \
@@ -155,6 +156,7 @@ files = \
 	/etc/tmpfiles.d/systemd.conf \
 	/etc/tmux.conf \
 	/etc/udev/rules.d/70-persistent-net.rules \
+	/etc/udev/rules.d/80-usb-devices.rules \
 	/etc/vconsole.conf \
 	/usr/lib/lsb/init-functions \
 	/usr/lib/firmware/xc3028L-v36.fw \

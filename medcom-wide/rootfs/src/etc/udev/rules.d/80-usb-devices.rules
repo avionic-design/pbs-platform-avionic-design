@@ -1,0 +1,2 @@
+SUBSYSTEM=="usb", ACTION=="add", ATTR{idVendor}=="08bb", ATTR{idProduct}=="29c6", RUN="/bin/mount --bind /etc/linphone.conf.usb /etc/linphone.conf"
+SUBSYSTEM=="usb", ACTION=="remove", ATTR{idVendor}=="08bb", ATTR{idProduct}=="29c6", RUN="/bin/umount /etc/linphone.conf"

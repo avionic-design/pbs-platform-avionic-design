@@ -1,0 +1,10 @@
+[sound]
+ringer_dev_id=ALSA: default device
+playback_dev_id=ALSA: USB AUDIO  CODEC
+capture_dev_id=ALSA: USB AUDIO  CODEC
+remote_ring=/usr/share/sounds/linphone/ringback.wav
+echolimiter=0
+el_type=off
+noisegate=0
+#static software gain (linear scale) to be applied to microphone signal
+mic_gain=0.3
