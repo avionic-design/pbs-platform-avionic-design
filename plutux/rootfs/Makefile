@@ -130,6 +130,8 @@ files = \
 	/etc/systemd/system/iflinkd@wlan0.service \
 	/etc/systemd/system/lldpd.service \
 	/etc/systemd/system/lldpd.socket \
+	/etc/systemd/system/logrotate.service \
+	/etc/systemd/system/logrotate.timer \
 	/etc/systemd/system/nodm.service \
 	/etc/systemd/system/ntpd.service \
 	/etc/systemd/system/ntpdate.service \
@@ -197,6 +199,7 @@ links = \
 	/etc/ssh/ssh_host_rsa_key \
 	/etc/ssh/ssh_host_rsa_key.pub \
 	/etc/systemd/system/syslog.service \
+	/etc/systemd/system/basic.target.wants/logrotate.timer \
 	/etc/systemd/system/graphical.target.wants/gdk-pixbuf.service \
 	/etc/systemd/system/graphical.target.wants/nodm.service \
 	/etc/systemd/system/graphical.target.wants/pango.service \
@@ -206,7 +209,6 @@ links = \
 	/etc/systemd/system/local-fs.target.wants/var-lib.mount \
 	/etc/systemd/system/local-fs.target.wants/var-log.mount \
 	/etc/systemd/system/local-fs.target.wants/var-spool.mount \
-	/etc/systemd/system/multi-user.target.wants/crond.service \
 	/etc/systemd/system/network.target.wants/iflinkd@eth0.service \
 	/etc/systemd/system/network.target.wants/iflinkd@lo.service \
 	/etc/systemd/system/network.target.wants/iflinkd@wlan0.service \
