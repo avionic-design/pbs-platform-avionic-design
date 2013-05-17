@@ -133,6 +133,8 @@ files = \
 	/etc/systemd/system/iflinkd@lo.service \
 	/etc/systemd/system/lldpd.service \
 	/etc/systemd/system/lldpd.socket \
+	/etc/systemd/system/logrotate.service \
+	/etc/systemd/system/logrotate.timer \
 	/etc/systemd/system/nodm.service \
 	/etc/systemd/system/ntpd.service \
 	/etc/systemd/system/ntpdate.service \
@@ -185,6 +187,7 @@ links = \
 	/etc/ssh/ssh_host_key.pub \
 	/etc/ssh/ssh_host_rsa_key \
 	/etc/ssh/ssh_host_rsa_key.pub \
+	/etc/systemd/system/basic.target.wants/logrotate.timer \
 	/etc/systemd/system/graphical.target.wants/gdk-pixbuf.service \
 	/etc/systemd/system/graphical.target.wants/pango.service \
 	/etc/systemd/system/graphical.target.wants/update-mime-db.service \
@@ -193,7 +196,6 @@ links = \
 	/etc/systemd/system/local-fs.target.wants/var-lib.mount \
 	/etc/systemd/system/local-fs.target.wants/var-log.mount \
 	/etc/systemd/system/local-fs.target.wants/var-spool.mount \
-	/etc/systemd/system/multi-user.target.wants/crond.service \
 	/etc/systemd/system/multi-user.target.wants/network.target \
 	/etc/systemd/system/multi-user.target.wants/serial-getty@ttyS0.service \
 	/etc/systemd/system/multi-user.target.wants/openssh.service \
