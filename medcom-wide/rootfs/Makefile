@@ -161,6 +161,7 @@ files = \
 	/etc/udev/rules.d/80-usb-devices.rules \
 	/etc/vconsole.conf \
 	/usr/lib/lsb/init-functions \
+	/usr/lib/firmware/dvb-usb-ad1456.fw \
 	/usr/lib/firmware/xc3028L-v36.fw \
 	/usr/share/alsa/ucm/tegra-wm8903/hifi.conf \
 	/usr/share/alsa/ucm/tegra-wm8903/linein.conf \
