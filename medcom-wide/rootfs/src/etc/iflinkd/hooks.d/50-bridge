@@ -1,0 +1,46 @@
+#!/bin/sh -e
+
+interface="$1"
+action="$2"
+arptype="$3"
+
+LOGGER="/usr/bin/logger -t iflinkd"
+BRCTL=/usr/sbin/brctl
+
+if test "x$arptype" != "xether"; then
+	$LOGGER "$interface: unsupported ARP type: $arptype"
+	exit 0
+fi
+
+# Make sure the bridge is active.
+if !(test -d /sys/class/net/br0); then
+	$LOGGER "$interface: creating bridge"
+	$BRCTL addbr br0 && $BRCTL setfd br0 0 && $BRCTL stp br0 yes
+	if test $? -ne 0; then
+		$LOGGER "$interface: failed to create bridge"
+		exit 1
+	fi
+fi
+
+case $action in
+	link)
+		# Add interface to bridge, if it is not added yet.
+		if ! (test -d /sys/class/net/br0/brif/$interface); then
+			$LOGGER "$interface: adding to bridge"
+			$BRCTL addif br0 $interface
+		fi
+		;;
+
+	up | down)
+		# Remove interface from bridge, when interface is
+		# attached to the bridge.
+		if (test -d /sys/class/net/br0/brif/$interface); then
+			$LOGGER "$interface: remove from bridge"
+			$BRCTL delif br0 $interface
+		fi
+		;;
+
+	*)
+		$LOGGER "$interface: unsupported action: $action"
+		;;
+esac

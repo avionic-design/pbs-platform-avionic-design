@@ -1,0 +1,22 @@
+#!/bin/sh -e
+
+interface="$1"
+action="$2"
+arptype="$3"
+
+LOGGER="/usr/bin/logger -t iflinkd"
+
+if test "x$arptype" != "xether"; then
+	$LOGGER "$interface: unsupported ARP type: $arptype"
+	exit 0
+fi
+
+case $action in
+	up)
+		$LOGGER "$interface: setting link speed"
+		/usr/sbin/ethtool -s $interface speed 10 duplex full
+		;;
+
+	link | down | *)
+		;;
+esac

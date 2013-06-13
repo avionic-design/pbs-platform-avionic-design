@@ -1,0 +1,10 @@
+[Unit]
+Description=Interface Link Status Monitor for Secondary Ethernet Interface
+
+[Service]
+Type=simple
+ExecStart=/usr/sbin/iflinkd -S -i eth1
+StandardError=syslog
+
+[Install]
+WantedBy=network.target

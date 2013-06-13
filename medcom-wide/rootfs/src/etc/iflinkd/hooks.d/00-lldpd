@@ -4,21 +4,26 @@ interface="$1"
 action="$2"
 arptype="$3"
 
+LOGGER="/usr/bin/logger -t iflinkd"
+
 if test "x$arptype" != "xether"; then
-	echo "unsupported ARP type: $arptype"
+	$LOGGER "$interface: unsupported ARP type: $arptype"
 	exit 0
 fi
 
 case $action in
 	link)
 		if /bin/systemctl is-active lldpd.service; then
+			$LOGGER "$interface: restarting lldpd service"
 			/bin/systemctl restart lldpd.service
 		else
+			$LOGGER "$interface: starting lldpd service"
 			/bin/systemctl start lldpd.service
 		fi
 		;;
 
 	up | down)
+		$LOGGER "$interface: stopping lldpd service"
 		/bin/systemctl stop lldpd.service
 		;;
 

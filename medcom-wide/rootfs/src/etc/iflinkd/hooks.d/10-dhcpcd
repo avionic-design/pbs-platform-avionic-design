@@ -4,18 +4,20 @@ interface="$1"
 action="$2"
 arptype="$3"
 
+LOGGER="/usr/bin/logger -t iflinkd"
+
 if test "x$arptype" != "xether"; then
-	/usr/bin/logger -t iflinkd "$interface: unsupported ARP type: $arptype"
+	$LOGGER "$interface: unsupported ARP type: $arptype"
 	exit 0
 fi
 
 # configure interface manualy if required
 if test -s /etc/network/if-$interface; then
 	if test "x$action" == "xlink"; then
-		/usr/bin/logger -t iflinkd "$interface: found manual config"
+		$LOGGER "$interface: found manual config"
 		/bin/sh /etc/network/if-$interface $action
 	else
-		/usr/bin/logger -t iflinkd "$interface: removing address"
+		$LOGGER "$interface: removing address"
 		/bin/ip addr flush dev $interface
 		/bin/ip route flush dev $interface
 	fi
@@ -24,16 +26,16 @@ fi
 
 case $action in
 	link)
-		/usr/bin/logger -t iflinkd "$interface: starting dhcpcd"
+		$LOGGER "$interface: starting dhcpcd"
 		/usr/sbin/dhcpcd --quiet --hostname --noipv4ll --timeout 0 $interface &
 		;;
 
 	up | down)
-		/usr/bin/logger -t iflinkd "$interface: stopping dhcpcd"
+		$LOGGER "$interface: stopping dhcpcd"
 		/usr/sbin/dhcpcd --quiet --exit $interface
 		;;
 
 	*)
-		/usr/bin/logger -t iflinkd "$interface: unsupported action: $action"
+		$LOGGER "$interface: unsupported action: $action"
 		;;
 esac
