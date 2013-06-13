@@ -1,0 +1,57 @@
+#!/bin/sh
+
+#
+# Create the host keys for the OpenSSH server.
+#
+
+KEYGEN=/usr/bin/ssh-keygen
+PREFIX=/persist
+
+RSA1_KEY=$PREFIX/etc/ssh/ssh_host_key
+RSA_KEY=$PREFIX/etc/ssh/ssh_host_rsa_key
+DSA_KEY=$PREFIX/etc/ssh/ssh_host_dsa_key
+ECDSA_KEY=$PREFIX/etc/ssh/ssh_host_ecdsa_key
+
+REMOUNTED="no"
+
+do_keygen() {
+	KEY=$1
+	TYPE=$2
+
+	if test -s $KEY; then
+		return 0
+	fi
+
+	if test $REMOUNTED = "no"; then
+		REMOUNTED="yes"
+		echo "Remounting $PREFIX..."
+		/bin/mount -o remount,rw $PREFIX
+	fi
+
+	echo -n "Generating $TYPE key..."
+	$KEYGEN -q -t $TYPE -f $KEY -N '' >&/dev/null
+	if test $? -eq 0; then
+		chmod 600 $KEY
+		chmod 640 $KEY.pub
+		echo "done"
+	else
+		echo "failed $?"
+		return 1
+	fi
+
+	return 0
+}
+
+# Create keys if necessary
+do_keygen $RSA_KEY rsa
+do_keygen $RSA1_KEY rsa1
+do_keygen $DSA_KEY dsa
+do_keygen $ECDSA_KEY ecdsa
+
+# make sure /persist is read-only
+if test $REMOUNTED = "yes"; then
+	sync && /bin/mount -o remount,ro $PREFIX
+fi
+
+# make sure the logfile does exsist, to silence sshd
+touch /var/log/lastlog

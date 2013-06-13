@@ -52,6 +52,7 @@ dirs = \
 	/usr/lib/gdk-pixbuf-2.0/2.10.0 \
 	/usr/lib/lsb \
 	/usr/lib/systemd \
+	/usr/sbin \
 	/var \
 	/var/lib \
 	/var/lock \
@@ -73,7 +74,8 @@ scripts = \
 	/usr/bin/reset-medcom \
 	/usr/bin/zramstart \
 	/usr/bin/zramstat \
-	/usr/bin/zramstop
+	/usr/bin/zramstop \
+	/usr/sbin/sshd-keygen
 
 files = \
 	/fastboot \
