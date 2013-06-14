@@ -128,6 +128,7 @@ files = \
 	/etc/shadow \
 	/etc/sysctl.conf \
 	/etc/systemd/system.conf \
+	/etc/systemd/journald.conf \
 	/etc/systemd/system/crond.service \
 	/etc/systemd/system/drop-caches.service \
 	/etc/systemd/system/drop-caches.timer \
