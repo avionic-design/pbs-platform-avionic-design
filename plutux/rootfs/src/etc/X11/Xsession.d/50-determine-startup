@@ -1,4 +1,8 @@
-STARTUP=/usr/bin/awesome
+if test -x /usr/bin/awesome; then
+	STARTUP=/usr/bin/awesome
+elif test -x /usr/bin/openbox; then
+	STARTUP=/usr/bin/openbox
+fi
 
 if test -s /etc/remote-control.conf; then
 	if test -x /usr/bin/remote-control; then
