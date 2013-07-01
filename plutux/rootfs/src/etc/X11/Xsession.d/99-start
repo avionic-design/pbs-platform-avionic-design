@@ -4,8 +4,9 @@ fi
 
 # backup old session file for later analysis
 if test -e /var/log/Xsession.log; then
+	rm -f /var/log/Xsession.log.gz
 	/bin/gzip /var/log/Xsession.log
 fi
 
 export LD_PRELOAD=/usr/lib/libnvrm_graphics_impl.so
-exec $STARTUP > /var/log/Xsession.log 2>&1
+exec $STARTUP 2>&1 | /usr/bin/logger -t Xsession -id
