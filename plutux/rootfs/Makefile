@@ -57,6 +57,7 @@ dirs = \
 	/usr/share/alsa/ucm \
 	/usr/share/alsa/ucm/tegra-wm8903 \
 	/usr/lib/systemd \
+	/usr/sbin \
 	/var \
 	/var/lib \
 	/var/lock \
@@ -74,7 +75,8 @@ scripts = \
 	/usr/lib/systemd/gdk-pixbuf-loaders-cache \
 	/usr/lib/systemd/update-crontab \
 	/usr/lib/systemd/pango-modules-cache \
-	/usr/lib/systemd/update-mime-db
+	/usr/lib/systemd/update-mime-db \
+	/usr/sbin/sshd-keygen
 
 files = \
 	/fastboot \
