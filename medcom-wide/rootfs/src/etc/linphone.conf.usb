@@ -1,3 +1,6 @@
+[misc]
+max_calls=1
+
 [sound]
 ringer_dev_id=ALSA: default device
 playback_dev_id=ALSA: USB AUDIO  CODEC
