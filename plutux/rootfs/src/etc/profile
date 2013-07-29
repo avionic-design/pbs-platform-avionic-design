@@ -51,4 +51,13 @@ else
     umask 022
 fi
 
+if test -f /etc/os-release; then
+	source /etc/os-release
+	if test -n "${VERSION}"; then
+		echo " "
+		echo " OS Release: ${VERSION}"
+		echo " "
+	fi
+fi
+
 echo "You are root now ... be careful!"
