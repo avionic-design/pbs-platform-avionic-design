@@ -1,1 +1,1 @@
-exclude-packages-y := linux-kernel l4t-bin
+exclude-packages-y := linux-kernel
