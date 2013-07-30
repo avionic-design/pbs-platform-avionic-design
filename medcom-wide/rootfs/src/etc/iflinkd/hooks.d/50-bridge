@@ -12,10 +12,18 @@ if test "x$arptype" != "xether"; then
 	exit 0
 fi
 
+# override bridge defaults if needed.
+if test -f /persist/etc/bridge.conf; then
+	source /persist/etc/bridge.conf
+fi
+
 # Make sure the bridge is active.
 if !(test -d /sys/class/net/br0); then
-	$LOGGER "$interface: creating bridge"
-	$BRCTL addbr br0 && $BRCTL setfd br0 0 && $BRCTL stp br0 yes
+	fdt=${BRIDGE_FORWARD_TIME:-5}
+	stp=${BRIDGE_STP:-off}
+
+	$LOGGER "$interface: creating bridge with stp $stp and fd $fdt"
+	$BRCTL addbr br0 && $BRCTL setfd br0 $fdt && $BRCTL stp br0 $stp
 	if test $? -ne 0; then
 		$LOGGER "$interface: failed to create bridge"
 		exit 1
