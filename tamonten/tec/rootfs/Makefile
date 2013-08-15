@@ -18,6 +18,7 @@ dirs = \
 	/etc/systemd/system/multi-user.target.wants \
 	/etc/pam.d \
 	/etc/pango \
+	/etc/rsyslog.d \
 	/etc/tmpfiles.d \
 	/etc/udev \
 	/etc/udev/rules.d \
@@ -74,6 +75,7 @@ files = \
 	/etc/pam.d/other \
 	/etc/profile \
 	/etc/rsyslog.conf \
+	/etc/rsyslog.d/50-xsession.conf \
 	/etc/services \
 	/etc/shadow \
 	/etc/sysctl.conf \
