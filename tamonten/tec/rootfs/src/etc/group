@@ -15,3 +15,4 @@ lock:x:54:
 messagebus:x:104:
 haldaemon:x:108:
 _lldpd:x:129:
+systemd-journal:x:190:
