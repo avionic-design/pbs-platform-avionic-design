@@ -78,6 +78,7 @@ files = \
 	/etc/services \
 	/etc/shadow \
 	/etc/sysctl.conf \
+	/etc/systemd/journald.conf \
 	/etc/systemd/system.conf \
 	/etc/systemd/system/gdk-pixbuf.service \
 	/etc/systemd/system/iflinkd@eth0.service \
