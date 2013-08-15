@@ -8,6 +8,7 @@ dirs = \
 	/etc/iflinkd \
 	/etc/iflinkd/hooks.d \
 	/etc/iflinkd/hooks.d/eth0 \
+	/etc/logrotate.d \
 	/etc/modprobe.d \
 	/etc/systemd \
 	/etc/systemd/system \
@@ -59,6 +60,8 @@ files = \
 	/etc/hosts \
 	/etc/inittab \
 	/etc/localtime \
+	/etc/logrotate.conf \
+	/etc/logrotate.d/general.conf \
 	/etc/modprobe.d/blacklist.conf \
 	/etc/nsswitch.conf \
 	/etc/ntp.conf \
@@ -79,6 +82,8 @@ files = \
 	/etc/systemd/system/gdk-pixbuf.service \
 	/etc/systemd/system/iflinkd@eth0.service \
 	/etc/systemd/system/iflinkd@lo.service \
+	/etc/systemd/system/logrotate.service \
+	/etc/systemd/system/logrotate.timer \
 	/etc/systemd/system/nodm.service \
 	/etc/systemd/system/openssh.service \
 	/etc/systemd/system/pango.service \
@@ -108,6 +113,7 @@ links = \
 	/etc/ssh/ssh_host_key.pub \
 	/etc/ssh/ssh_host_rsa_key \
 	/etc/ssh/ssh_host_rsa_key.pub \
+	/etc/systemd/system/basic.target.wants/logrotate.timer \
 	/etc/systemd/system/graphical.target.wants/gdk-pixbuf.service \
 	/etc/systemd/system/graphical.target.wants/pango.service \
 	/etc/systemd/system/local-fs.target.wants/root.mount \
