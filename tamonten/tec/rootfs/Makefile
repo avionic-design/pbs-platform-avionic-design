@@ -89,6 +89,7 @@ files = \
 	/etc/systemd/system/pango.service \
 	/etc/systemd/system/root.mount \
 	/etc/systemd/system/tmp.mount \
+	/etc/systemd/system/update-mime-db.service \
 	/etc/systemd/system/var-lib.mount \
 	/etc/systemd/system/var-log.mount \
 	/etc/tmpfiles.d/dbus.conf \
@@ -116,6 +117,7 @@ links = \
 	/etc/systemd/system/basic.target.wants/logrotate.timer \
 	/etc/systemd/system/graphical.target.wants/gdk-pixbuf.service \
 	/etc/systemd/system/graphical.target.wants/pango.service \
+	/etc/systemd/system/graphical.target.wants/update-mime-db.service \
 	/etc/systemd/system/local-fs.target.wants/root.mount \
 	/etc/systemd/system/local-fs.target.wants/tmp.mount \
 	/etc/systemd/system/local-fs.target.wants/var-lib.mount \

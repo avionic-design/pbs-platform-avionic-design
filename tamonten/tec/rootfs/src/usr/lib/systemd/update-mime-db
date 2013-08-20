@@ -2,6 +2,6 @@
 
 MIMEDIR=/root/.local/share/mime
 
-/bin/mkdir -p $MIMEDIR/packages
-/bin/cp /usr/share/mime/packages/freedesktop.org.xml $MIMEDIR/packages
+mkdir -p $MIMEDIR/packages
+cp /usr/share/mime/packages/freedesktop.org.xml $MIMEDIR/packages
 /usr/bin/update-mime-database $MIMEDIR

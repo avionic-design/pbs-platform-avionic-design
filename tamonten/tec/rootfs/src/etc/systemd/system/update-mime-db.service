@@ -1,10 +1,10 @@
-[unit]
+[Unit]
 Description=Update MIME Type DB
 
 [Service]
 Type=oneshot
 RemainAfterExit=no
-ExecStart=/lib/systemd/update-mime-db
+ExecStart=/usr/lib/systemd/update-mime-db
 
 [Install]
 WantedBy=graphical.target
