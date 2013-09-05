@@ -34,6 +34,7 @@ dirs = \
 	/etc/wpa_supplicant \
 	/etc/xdg \
 	/etc/xdg/awesome \
+	/etc/xdg/openbox \
 	/media \
 	/media/disk \
 	/persist \
@@ -154,6 +155,7 @@ files = \
 	/etc/tmux.conf \
 	/etc/udev/rules.d/70-persistent-net.rules \
 	/etc/vconsole.conf \
+	/etc/xdg/openbox/menu.xml \
 	/usr/lib/lsb/init-functions \
 	/usr/lib/firmware/ar9170-1.fw \
 	/usr/lib/firmware/ar9170-2.fw \
