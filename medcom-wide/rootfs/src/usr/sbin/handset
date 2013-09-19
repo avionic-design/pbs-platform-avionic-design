@@ -7,14 +7,16 @@ usage()
 
 handset_add()
 {
-	echo "applying linphone usb config..."
-	/bin/mount --bind /etc/linphone.conf.usb /etc/linphone.conf
+	echo "applying usb-handset config..."
+	mount --bind /etc/asound.conf.usb /etc/asound.conf
+	mount --bind /etc/linphone.conf.usb /etc/linphone.conf
 }
 
 handset_remove()
 {
-	echo "restoring linphone default config..."
-	/bin/umount /etc/linphone.conf
+	echo "restoring default config..."
+	umount /etc/asound.conf
+	umount /etc/linphone.conf
 }
 
 case "$1" in

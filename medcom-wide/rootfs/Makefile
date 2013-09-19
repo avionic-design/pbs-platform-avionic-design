@@ -91,6 +91,7 @@ files = \
 	/etc/X11/xorg.conf.d/99-keyboard-de.conf \
 	/etc/adobe/mms.cfg \
 	/etc/asound.conf \
+	/etc/asound.conf.usb \
 	/etc/browser.conf \
 	/etc/crontab \
 	/etc/fonts/conf.d/99-antialiasing.conf \
