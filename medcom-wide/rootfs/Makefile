@@ -75,7 +75,8 @@ scripts = \
 	/usr/bin/zramstart \
 	/usr/bin/zramstat \
 	/usr/bin/zramstop \
-	/usr/sbin/sshd-keygen
+	/usr/sbin/sshd-keygen \
+	/usr/sbin/handset
 
 files = \
 	/fastboot \

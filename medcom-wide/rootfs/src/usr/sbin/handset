@@ -1,0 +1,31 @@
+#!/bin/sh -e
+
+usage()
+{
+	echo "Usage: $1 {add|del}"
+}
+
+handset_add()
+{
+	echo "applying linphone usb config..."
+	/bin/mount --bind /etc/linphone.conf.usb /etc/linphone.conf
+}
+
+handset_remove()
+{
+	echo "restoring linphone default config..."
+	/bin/umount /etc/linphone.conf
+}
+
+case "$1" in
+	add|insert)
+		handset_add
+		;;
+	del|remove)
+		handset_remove
+		;;
+	*)
+		usage $(basename $0)
+		exit 1
+		;;
+esac
