@@ -19,8 +19,8 @@ m4_changequote([, ])
 			arch = "arm";
 			os = "linux";
 			compression = "none";
-			load = <0x00008000>;
-			entry = <0x00008000>;
+			load = <0x80008000>;
+			entry = <0x80008000>;
 			hash@1 {
 				algo = "crc32";
 			};
@@ -35,7 +35,7 @@ m4_changequote([, ])
 			type = "ramdisk";
 			arch = "arm";
 			os = "linux";
-			load = <0x00300000>;
+			load = <0x80300000>;
 			compression = "none";
 			hash@1 {
 				algo = "crc32";
