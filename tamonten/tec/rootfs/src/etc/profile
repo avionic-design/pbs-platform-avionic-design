@@ -1,1 +1,18 @@
-echo "You are root now ... be careful!"
+# /etc/profile
+
+HOSTNAME=`/bin/hostname 2>/dev/null`
+USER=`/usr/bin/id -un`
+PS1="\h \W\$ "
+
+export HOSTNAME USER PS1
+
+echo "Welcome to Avionic-Design GNU/Linux"
+if test -f /etc/os-release; then
+	source /etc/os-release
+	if test -n "${VERSION}"; then
+		echo " "
+		echo "	OS Release: ${VERSION}"
+		echo " "
+	fi
+fi
+
