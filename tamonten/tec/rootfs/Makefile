@@ -98,6 +98,7 @@ files = \
 	/etc/tmpfiles.d/dbus.conf \
 	/etc/tmpfiles.d/ssh.conf \
 	/etc/tmpfiles.d/systemd.conf \
+	/etc/tmux.conf \
 	/etc/X11/xorg.conf.d/05-evdev.conf \
 	/etc/X11/xorg.conf.d/70-monitor-hdmi.conf \
 	/etc/X11/xorg.conf.d/70-monitor-lvds.conf \
