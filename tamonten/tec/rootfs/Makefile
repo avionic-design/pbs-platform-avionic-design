@@ -58,7 +58,6 @@ files = \
 	/etc/fstab \
 	/etc/group \
 	/etc/hosts \
-	/etc/inittab \
 	/etc/localtime \
 	/etc/logrotate.conf \
 	/etc/logrotate.d/general.conf \
