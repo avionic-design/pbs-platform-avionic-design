@@ -126,6 +126,7 @@ links = \
 	/etc/systemd/system/network.target.wants/iflinkd@eth0.service \
 	/etc/systemd/system/network.target.wants/iflinkd@lo.service \
 	/etc/systemd/system/display-manager.service \
+	/etc/systemd/system/syslog.service \
 	/usr/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache \
 	/var/run \
 	/sbin/init
