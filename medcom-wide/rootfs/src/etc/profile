@@ -56,6 +56,7 @@ if test -f /etc/os-release; then
 	if test -n "${VERSION}"; then
 		echo " "
 		echo " OS Release: ${VERSION}"
+		[ -n "${DATE}" ] && echo " Date:       ${DATE}"
 		echo " "
 	fi
 fi

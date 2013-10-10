@@ -1,5 +1,6 @@
 PACKAGE = medcom-wide-rootfs
 VERSION = 6
+DATE = $(shell date +%d.%m.%Y)
 
 dirs = \
 	/bin \
@@ -247,7 +248,7 @@ include include/config/auto.conf
 include platforms/common.mk
 
 quiet_cmd_edit = SED     $@
-      cmd_edit = $(SED) 's|@VERSION@|$(VERSION)|' $< > $@
+      cmd_edit = $(SED) 's|@VERSION@|$(VERSION)|;s|@DATE@|$(DATE)|' $< > $@
 
 $(DESTDIR)/etc/os-release: $(obj)/src/etc/os-release.in $(obj)/Makefile
 	$(call cmd,edit)
