@@ -210,6 +210,7 @@ links = \
 	/etc/ssh/ssh_host_rsa_key.pub \
 	/etc/systemd/system/basic.target.wants/drop-caches.timer \
 	/etc/systemd/system/basic.target.wants/logrotate.timer \
+	/etc/systemd/system/basic.target.wants/zram.service \
 	/etc/systemd/system/graphical.target.wants/gdk-pixbuf.service \
 	/etc/systemd/system/graphical.target.wants/pango.service \
 	/etc/systemd/system/graphical.target.wants/update-mime-db.service \

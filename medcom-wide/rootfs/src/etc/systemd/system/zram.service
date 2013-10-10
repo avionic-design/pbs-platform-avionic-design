@@ -1,6 +1,6 @@
 [Unit]
 Description=Enable compressed swap in memory using zram
-After=multi-user.target
+After=basic.target
 
 [Service]
 RemainAfterExit=yes
@@ -9,4 +9,4 @@ ExecStop=/usr/bin/zramstop
 Type=oneshot
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=basic.target

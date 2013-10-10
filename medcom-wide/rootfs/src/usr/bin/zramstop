@@ -2,6 +2,7 @@
 
 for i in $(grep '^/dev/zram' /proc/swaps | awk '{ print $1 }'); do
 	swapoff "$i"
+	echo 1 > /sys/block/zram$i/reset
 done
 
 if grep -q "^zram " /proc/modules; then
