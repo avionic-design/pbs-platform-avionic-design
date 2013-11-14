@@ -1,5 +1,16 @@
-STARTUP=/usr/bin/awesome
-
-#if test -x /usr/bin/remote-control; then
-#	STARTUP=/usr/bin/remote-control
-#fi
+if test "x$STARTUP" == "x"; then
+	# check if we have a window manager or desktop enviroment
+	if test -x /usr/bin/startxfce4; then
+		STARTUP=/usr/bin/startxfce4
+	elif test -x /usr/bin/awesome; then
+		STARTUP=/usr/bin/awesome
+	elif test -x /usr/bin/openbox-session; then
+		STARTUP=/usr/bin/openbox-session
+	fi
+	# when remote-control is present and active, use it.
+	if test -s /etc/remote-control.conf; then
+		if test -x /usr/bin/remote-control; then
+			STARTUP=/usr/bin/remote-control
+		fi
+	fi
+fi
