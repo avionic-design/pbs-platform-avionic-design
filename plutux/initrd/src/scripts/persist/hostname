@@ -1,12 +1,17 @@
 #!/bin/sh -e
 
 persist="$1"
-
-serial=`/usr/bin/adak-mac -i eth0 serial`
-name="plutux-$serial"
+serial=`adak-mac -i eth0 serial`
+suffix=""
+if test $(cat /proc/cpuinfo | grep -c processor) -gt 2; then
+	suffix="ng-"
+fi
+if test -z $serial; then
+	serial="XXXXX"
+fi
+name="plutux-$suffix$serial"
 
 . /lib/lsb/init-functions
-
 
 # check if update is needed
 if test -e "$persist/etc/hostname" ; then
