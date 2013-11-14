@@ -3,17 +3,34 @@
 . /lib/lsb/init-functions
 
 persist="$1"
-
 serial=`adak-mac -i eth0 serial`
-name="tec-$serial"
+suffix=""
 
-if test -f "$persist/etc/hostname"; then
-	oldname=`cat "$persist/etc/hostname"`
-	if test "$name" != "$oldname"; then
-		log_action_begin_msg "Generating hostname"
-		mount -o remount,rw "$persist" && \
-			echo "tec-$serial" > "$persist/etc/hostname" && \
-			mount -o remount,ro "$persist"
-		log_action_end_msg $?
+if test $(cat /proc/cpuinfo | grep -c processor) -gt 2; then
+	suffix="ng-"
+fi
+if test -z $serial; then
+	serial="XXXXX"
+fi
+
+name="tec-$suffix$serial"
+
+# check if update is needed
+if test -e "$persist/etc/hostname" ; then
+	if test $name == `cat $persist/etc/hostname`; then
+		exit 0
 	fi
 fi
+
+# make filesystem writable
+log_action_begin_msg "Remounting persistent filesystem read-write"
+mount -o remount,rw "$persist"
+log_action_end_msg $?
+
+# update hostname
+echo $name > "$persist/etc/hostname"
+
+# make sure filesystem is protected
+log_action_begin_msg "Remounting persistent filesystem read-only"
+mount -o remount,ro "$persist"
+log_action_end_msg $?
