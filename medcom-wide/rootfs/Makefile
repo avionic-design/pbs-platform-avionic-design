@@ -80,6 +80,7 @@ scripts = \
 	/usr/bin/zramstart \
 	/usr/bin/zramstat \
 	/usr/bin/zramstop \
+	/usr/sbin/sensorpads-backlight \
 	/usr/sbin/sshd-keygen \
 	/usr/sbin/handset
 
@@ -157,6 +158,7 @@ files = \
 	/etc/systemd/system/openssh.service \
 	/etc/systemd/system/pango.service \
 	/etc/systemd/system/root.mount \
+	/etc/systemd/system/sensorpads-backlight.service \
 	/etc/systemd/system/sensors.service \
 	/etc/systemd/system/tmp.mount \
 	/etc/systemd/system/update-crontab.service \
@@ -220,6 +222,7 @@ links = \
 	/etc/systemd/system/local-fs.target.wants/var-log.mount \
 	/etc/systemd/system/local-fs.target.wants/var-spool.mount \
 	/etc/systemd/system/multi-user.target.wants/network.target \
+	/etc/systemd/system/multi-user.target.wants/sensorpads-backlight.service \
 	/etc/systemd/system/multi-user.target.wants/sensors.service \
 	/etc/systemd/system/multi-user.target.wants/serial-getty@ttyS0.service \
 	/etc/systemd/system/multi-user.target.wants/openssh.service \

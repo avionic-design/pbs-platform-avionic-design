@@ -1,0 +1,12 @@
+[Unit]
+Description=Update sensorpad backlight brightness
+After=multi-user.target
+
+[Service]
+RemainAfterExit=yes
+EnvironmentFile=-/persist/etc/defaults/sensorpads
+ExecStart=/usr/sbin/sensorpads-backlight apply
+ExecStop=/usr/sbin/sensorpads-backlight disable
+
+[Install]
+WantedBy=multi-user.target

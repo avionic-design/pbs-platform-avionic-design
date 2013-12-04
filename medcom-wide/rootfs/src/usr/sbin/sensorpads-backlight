@@ -1,0 +1,58 @@
+#!/bin/sh -e
+
+CONFIG=/persist/etc/defaults/sensorpads
+
+usage()
+{
+	echo "Usage: $1 {apply|disable}"
+	echo ""
+	echo "See $CONFIG for BRIGHTNESS value."
+}
+
+backlight_apply()
+{
+	if test ! -f $CONFIG; then
+		echo "File not found: $CONFIG"
+		return 1
+	fi
+
+	source $CONFIG
+
+	if test -z "$BRIGHTNESS"; then
+		echo "Missing entry: BRIGHTNESS"
+		return 1
+	fi
+
+	MAX_VAL=`cat /sys/class/backlight/sx8634-backlight.0.0/max_brightness`
+
+	if test $BRIGHTNESS -gt $MAX_VAL; then
+		echo "Invalid value: BRIGHTNESS can be 0...$MAX_VAL"
+		return 1
+	fi
+
+	echo "setting backlight brightness to $BRIGHTNESS..."
+	echo $BRIGHTNESS > /sys/class/backlight/sx8634-backlight.0.0/brightness
+	echo $BRIGHTNESS > /sys/class/backlight/sx8634-backlight.1.0/brightness
+
+	return 0
+}
+
+backlight_disable()
+{
+	echo "restoring default config..."
+	echo 0 > /sys/class/backlight/sx8634-backlight.0.0/brightness
+	echo 0 > /sys/class/backlight/sx8634-backlight.1.0/brightness
+}
+
+case "$1" in
+	apply)
+		backlight_apply
+		;;
+	disable)
+		backlight_disable
+		;;
+	*)
+		usage $(basename $0)
+		exit 1
+		;;
+esac
