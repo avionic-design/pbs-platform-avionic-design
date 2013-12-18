@@ -2,8 +2,9 @@
 max_calls=1
 
 [sound]
+alsadev=handset
 ringer_dev_id=ALSA: default device
-playback_dev_id=ALSA: USB AUDIO  CODEC
+playback_dev_id=ALSA: handset
 capture_dev_id=ALSA: USB AUDIO  CODEC
 remote_ring=/usr/share/sounds/linphone/ringback.wav
 echolimiter=0

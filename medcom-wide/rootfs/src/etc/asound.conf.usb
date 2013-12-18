@@ -9,7 +9,7 @@ pcm.!default {
 
 pcm.handset {
 	type plug
-	slave.pcm "samplerate-usb"
+	slave.pcm "dmixer-usb"
 	hint {
 		show on
 		description "Handset Soundcard (usb)"
@@ -51,14 +51,6 @@ pcm.dmixer-usb {
 	bindings {
 		0 0
 		1 1
-	}
-}
-
-pcm.samplerate-usb {
-	type rate
-	slave {
-		pcm "dmixer-usb"
-		rate 32000
 	}
 }
 
