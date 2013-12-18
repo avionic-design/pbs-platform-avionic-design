@@ -1,11 +1,19 @@
 pcm.!default {
 	type plug
 	slave.pcm "dmixer"
+	hint {
+		show on
+		description "Default Soundcard (dmix)"
+	}
 }
 
 pcm.handset {
 	type plug
 	slave.pcm "samplerate-usb"
+	hint {
+		show on
+		description "Handset Soundcard (usb)"
+	}
 }
 
 pcm.dmixer  {
@@ -57,13 +65,4 @@ pcm.samplerate-usb {
 ctl.dmixer-usb {
 	type hw
 	card 1
-}
-
-pcm.!hdmi {
-	type plug;
-	slave {
-		pcm "hw:0,1"
-		rate 48000
-		channels 2
-	}
 }
