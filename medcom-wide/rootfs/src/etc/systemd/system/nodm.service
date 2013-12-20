@@ -2,6 +2,7 @@
 Description=nodm Display Manager
 
 [Service]
+TimeoutStopSec=4sec
 ExecStart=/usr/sbin/nodm
 
 [Install]
