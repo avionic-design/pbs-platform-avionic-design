@@ -98,7 +98,6 @@ files = \
 	/etc/adobe/mms.cfg \
 	/etc/asound.conf \
 	/etc/asound.conf.usb \
-	/etc/browser.conf \
 	/etc/crontab \
 	/etc/fonts/conf.d/99-antialiasing.conf \
 	/etc/fstab \
@@ -200,6 +199,7 @@ links = \
 	/etc/mtab \
 	/etc/network \
 	/etc/ntp.conf \
+	/etc/browser.conf \
 	/etc/remote-control.conf \
 	/etc/resolv.conf \
 	/etc/ssh/ssh_host_dsa_key \
