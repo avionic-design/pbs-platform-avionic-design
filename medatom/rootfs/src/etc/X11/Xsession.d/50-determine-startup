@@ -1,7 +1,13 @@
-STARTUP=/usr/bin/awesome
+if test "x$STARTUP" = "x"; then
+	if test -x /usr/bin/awesome; then
+		STARTUP=/usr/bin/awesome
+	elif test -x /usr/bin/openbox; then
+		STARTUP=/usr/bin/openbox
+	fi
 
-if test -x /usr/bin/remote-control; then
-	if test -f /etc/remote-control.conf; then
-		STARTUP=/usr/bin/remote-control
+	if test -s /etc/remote-control.conf; then
+		if test -x /usr/bin/remote-control; then
+			STARTUP=/usr/bin/remote-control
+		fi
 	fi
 fi
