@@ -1,8 +1,60 @@
+# System wide environment and startup programs, for login setup
+# Functions and aliases go in /etc/bashrc
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
+
+pathmunge () {
+    case ":${PATH}:" in
+        *:"$1":*)
+            ;;
+        *)
+            if [ "$2" = "after" ] ; then
+                PATH=$PATH:$1
+            else
+                PATH=$1:$PATH
+            fi
+    esac
+}
+
+if [ -x /usr/bin/id ]; then
+    if [ -z "$EUID" ]; then
+        # ksh workaround
+        EUID=`id -u`
+        UID=`id -ru`
+    fi
+    USER="`id -un`"
+fi
+
+# Path manipulation
+if [ "$EUID" = "0" ]; then
+    pathmunge /sbin
+    pathmunge /usr/sbin
+    pathmunge /usr/local/sbin
+else
+    pathmunge /usr/local/sbin after
+    pathmunge /usr/sbin after
+    pathmunge /sbin after
+fi
+
+HOSTNAME=`/bin/hostname 2>/dev/null`
+
+export PATH USER HOSTNAME PS1
 
 # Set prompt
 PS1='[\u@\h \W]\$ '
 PS2='> '
 PS3='> '
 PS4='+ '
+
+if test -f /etc/os-release; then
+	source /etc/os-release
+	if test -n "${VERSION}"; then
+		echo " "
+		echo " OS Release: ${VERSION}"
+		[ -n "${DATE}" ] && echo " Date:       ${DATE}"
+		echo " "
+	fi
+fi
+
+echo "You are root now ... be careful!"
