@@ -2,7 +2,7 @@
 Description=LLDP Daemon
 
 [Service]
-ExecStart=/usr/sbin/lldpd -d -M 1
+ExecStart=/usr/sbin/lldpd -d -x -M 1
 Sockets=lldpd.socket
 StandardError=syslog
 
