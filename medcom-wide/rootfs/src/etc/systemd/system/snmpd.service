@@ -1,0 +1,11 @@
+[Unit]
+Description=SNMP Daemon
+
+[Service]
+Type=forking
+ExecStart=/usr/sbin/snmpd -p /run/snmpd.pid
+PIDFile=/run/snmpd.pid
+StandardError=syslog
+
+[Install]
+WantedBy=lldpd.service

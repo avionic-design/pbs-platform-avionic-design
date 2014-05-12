@@ -23,9 +23,11 @@ dirs = \
 	/etc/modprobe.d \
 	/etc/modules-load.d \
 	/etc/rsyslog.d \
+	/etc/snmp/ \
 	/etc/systemd \
 	/etc/systemd/system \
 	/etc/systemd/system/basic.target.wants \
+	/etc/systemd/system/lldpd.service.wants \
 	/etc/systemd/system/local-fs.target.wants \
 	/etc/systemd/system/multi-user.target.wants \
 	/etc/systemd/system/sockets.target.wants \
@@ -136,6 +138,7 @@ files = \
 	/etc/rsyslog.d/99-persist.conf \
 	/etc/services \
 	/etc/shadow \
+	/etc/snmp/snmpd.conf \
 	/etc/sysctl.conf \
 	/etc/systemd/system.conf \
 	/etc/systemd/journald.conf \
@@ -159,6 +162,7 @@ files = \
 	/etc/systemd/system/root.mount \
 	/etc/systemd/system/sensorpads-backlight.service \
 	/etc/systemd/system/sensors.service \
+	/etc/systemd/system/snmpd.service \
 	/etc/systemd/system/tmp.mount \
 	/etc/systemd/system/update-crontab.service \
 	/etc/systemd/system/update-mime-db.service \
@@ -216,6 +220,7 @@ links = \
 	/etc/systemd/system/graphical.target.wants/gdk-pixbuf.service \
 	/etc/systemd/system/graphical.target.wants/pango.service \
 	/etc/systemd/system/graphical.target.wants/update-mime-db.service \
+	/etc/systemd/system/lldpd.service.wants/snmpd.service \
 	/etc/systemd/system/local-fs.target.wants/root.mount \
 	/etc/systemd/system/local-fs.target.wants/tmp.mount \
 	/etc/systemd/system/local-fs.target.wants/var-lib.mount \
