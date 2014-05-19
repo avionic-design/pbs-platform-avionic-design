@@ -57,4 +57,10 @@ if test -f /etc/os-release; then
 	fi
 fi
 
+# Hook into the dbus session bus. This device is running one session only, so
+# it is safe to hook the session bus in the gloal profile
+if test -f /var/run/dbus-session-bus-address; then
+	eval `cat /var/run/dbus-session-bus-address`
+fi
+
 echo "You are root now ... be careful!"
