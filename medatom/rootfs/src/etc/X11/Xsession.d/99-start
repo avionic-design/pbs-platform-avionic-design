@@ -11,4 +11,10 @@ echo "export DBUS_SESSION_BUS_ADDRESS=$DBUS_SESSION_BUS_ADDRESS" > /var/run/dbus
 
 /usr/lib/at-spi2/at-spi-bus-launcher --launch-immediately >/tmp/spi.log 2>&1 &
 
+if test "x$WINDOW_MANAGER" != "x"; then
+	$WINDOW_MANAGER &
+fi
+if test "x$KEYBOARD" != "x"; then
+	$KEYBOARD &
+fi
 exec $STARTUP > /var/log/Xsession.log 2>&1
