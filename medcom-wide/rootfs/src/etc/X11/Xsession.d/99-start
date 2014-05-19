@@ -8,4 +8,8 @@ if test -e /var/log/Xsession.log; then
 	/bin/gzip /var/log/Xsession.log
 fi
 
+eval `dbus-launch --sh-syntax --exit-with-session`
+# Make the session bus address available for use from a ssh session, etc.
+echo "export DBUS_SESSION_BUS_ADDRESS=$DBUS_SESSION_BUS_ADDRESS" > /var/run/dbus-session-bus-address
+
 exec $STARTUP 2>&1 | /usr/bin/logger -t Xsession -id
