@@ -3,6 +3,7 @@ VERSION = 8-wip
 
 dirs = \
 	/bin \
+	/debug \
 	/dev \
 	/etc \
 	/etc/adobe \

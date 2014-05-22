@@ -3,6 +3,7 @@ VERSION = 1
 
 dirs = \
 	/bin \
+	/debug \
 	/dev \
 	/etc \
 	/etc/X11 \

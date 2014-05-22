@@ -4,6 +4,7 @@ DATE = $(shell date +%d.%m.%Y)
 
 dirs = \
 	/bin \
+	/debug \
 	/dev \
 	/etc \
 	/etc/X11 \
