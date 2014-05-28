@@ -14,6 +14,7 @@ dirs = \
 	/etc/fonts \
 	/etc/fonts/conf.d \
 	/etc/gtk-2.0 \
+	/etc/gtk-3.0 \
 	/etc/iflinkd \
 	/etc/iflinkd/hooks.d \
 	/etc/iflinkd/hooks.d/br0 \
@@ -106,6 +107,7 @@ files = \
 	/etc/fstab \
 	/etc/group \
 	/etc/gtk-2.0/gtkrc \
+	/etc/gtk-3.0/settings.ini \
 	/etc/host.conf \
 	/etc/hosts \
 	/etc/htoprc \
