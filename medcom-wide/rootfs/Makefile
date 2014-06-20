@@ -132,6 +132,7 @@ files = \
 	/etc/remote-control.conf.d/linphone.conf \
 	/etc/remote-control.conf.d/lldp.conf \
 	/etc/remote-control.conf.d/logging.conf \
+	/etc/remote-control.conf.d/mmt.conf \
 	/etc/remote-control.conf.d/modem.conf \
 	/etc/remote-control.conf.d/smartcard.conf \
 	/etc/rsyslog.conf \
