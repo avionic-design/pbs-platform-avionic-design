@@ -1,0 +1,13 @@
+[Unit]
+Description=Debug Objects Directory
+Before=local-fs.target
+ConditionPathExists=/media/disk/debugfs.img
+
+[Mount]
+What=/media/disk/debugfs.img
+Where=/debug
+Type=squashfs
+Options=loop
+
+[Install]
+WantedBy=local-fs.target

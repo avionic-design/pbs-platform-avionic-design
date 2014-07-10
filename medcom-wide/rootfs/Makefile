@@ -148,6 +148,7 @@ files = \
 	/etc/systemd/system.conf \
 	/etc/systemd/journald.conf \
 	/etc/systemd/system/crond.service \
+	/etc/systemd/system/debug.mount \
 	/etc/systemd/system/drop-caches.service \
 	/etc/systemd/system/drop-caches.timer \
 	/etc/systemd/system/gdk-pixbuf.service \
@@ -226,6 +227,7 @@ links = \
 	/etc/systemd/system/graphical.target.wants/pango.service \
 	/etc/systemd/system/graphical.target.wants/update-mime-db.service \
 	/etc/systemd/system/lldpd.service.wants/snmpd.service \
+	/etc/systemd/system/local-fs.target.wants/debug.mount \
 	/etc/systemd/system/local-fs.target.wants/root.mount \
 	/etc/systemd/system/local-fs.target.wants/tmp.mount \
 	/etc/systemd/system/local-fs.target.wants/var-lib.mount \
