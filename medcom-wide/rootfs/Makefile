@@ -131,6 +131,7 @@ files = \
 	/etc/profile \
 	/etc/remote-control.conf.d/bgu-handset.conf \
 	/etc/remote-control.conf.d/gpio.conf \
+	/etc/remote-control.conf.d/input.conf \
 	/etc/remote-control.conf.d/linphone.conf \
 	/etc/remote-control.conf.d/lldp.conf \
 	/etc/remote-control.conf.d/logging.conf \
