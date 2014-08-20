@@ -6,6 +6,7 @@ arptype="$3"
 
 LOGGER="/usr/bin/logger -t iflinkd"
 BRCTL=/usr/sbin/brctl
+IP=/bin/ip
 
 if test "x$arptype" != "xether"; then
 	$LOGGER "$interface: unsupported ARP type: $arptype"
@@ -28,6 +29,8 @@ if !(test -d /sys/class/net/br0); then
 		$LOGGER "$interface: failed to create bridge"
 		exit 1
 	fi
+	# Force multicast to use the bridge
+	$IP route add 224.0.0.0/4 dev br0
 fi
 
 case $action in
