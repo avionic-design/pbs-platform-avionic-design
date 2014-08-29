@@ -153,6 +153,7 @@ files = \
 	/etc/pam.d/other \
 	/etc/passwd \
 	/etc/profile \
+	/etc/remote-control.conf.d/input.conf \
 	/etc/remote-control.conf.d/linphone.conf \
 	/etc/remote-control.conf.d/logging.conf \
 	/etc/remote-control.conf.d/medatom/gpio.conf \
