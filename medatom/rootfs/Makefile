@@ -1,5 +1,5 @@
 PACKAGE = medatom
-VERSION = 8-wip
+VERSION = 8-rc8
 
 dirs = \
 	/bin \
