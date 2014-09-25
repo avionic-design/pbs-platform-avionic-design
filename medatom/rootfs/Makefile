@@ -166,6 +166,7 @@ files = \
 	/etc/rsyslog.d/99-persist.conf \
 	/etc/services \
 	/etc/shadow \
+	/etc/ssh/sshd_config \
 	/etc/sysctl.conf \
 	/etc/systemd/system.conf \
 	/etc/systemd/system/gdk-pixbuf.service \
@@ -236,14 +237,6 @@ links = \
 	/etc/proxy.conf \
 	/etc/remote-control.conf \
 	/etc/resolv.conf \
-	/etc/ssh/ssh_host_dsa_key \
-	/etc/ssh/ssh_host_dsa_key.pub \
-	/etc/ssh/ssh_host_ecdsa_key \
-	/etc/ssh/ssh_host_ecdsa_key.pub \
-	/etc/ssh/ssh_host_key \
-	/etc/ssh/ssh_host_key.pub \
-	/etc/ssh/ssh_host_rsa_key \
-	/etc/ssh/ssh_host_rsa_key.pub \
 	/etc/systemd/system/basic.target.wants/logrotate.timer \
 	/etc/systemd/system/display-manager.service \
 	/etc/systemd/system/graphical.target.wants/gdk-pixbuf.service \
