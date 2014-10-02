@@ -64,6 +64,8 @@ config PLATFORM_AVIONIC_DESIGN_MEDCOM_WIDE_ROOTFS_DEFAULTS
 	select HAVE_OPENGL_ES
 	select VIRTUAL_OPENGL_ES
 	select OPENGL_NVIDIA_L4T_T2
+	select PACKAGE_WM_DWM
+	select PACKAGE_WM_DWM_PATCH_REMOTE_CONTROL
 	help
 	  Default package selection for working rootfs
 
