@@ -1,5 +1,5 @@
 PACKAGE = medcom-wide-rootfs
-VERSION = 9.0-RC1
+VERSION = 9.0-RC2
 DATE = $(shell date +%d.%m.%Y)
 
 dirs = \
