@@ -36,7 +36,7 @@ m4_include([tegra.m4])
 			type = "ramdisk";
 			arch = "arm";
 			os = "linux";
-			load = <ADDRESS([0x00300000])>;
+			load = <ADDRESS([0x02100000])>;
 			compression = "none";
 			hash@1 {
 				algo = "crc32";
