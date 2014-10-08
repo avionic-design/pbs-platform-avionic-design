@@ -4,6 +4,7 @@ Description=nodm Display Manager
 [Service]
 TimeoutStopSec=4sec
 ExecStart=/usr/sbin/nodm
+ExecStartPre=/bin/sh -c 'test "$(cat /sys/class/graphics/fbcon/rotate)" -eq 2 && mount --bind /etc/X11/xorg.conf.available/monitor-inverted.conf /etc/X11/xorg.conf.d/20-monitor.conf'
 
 [Install]
 WantedBy=graphical.target

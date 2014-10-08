@@ -97,8 +97,10 @@ files = \
 	/etc/X11/Xsession.d/99-start \
 	/etc/X11/xorg.conf.d/05-evdev.conf \
 	/etc/X11/xorg.conf.d/10-egalax.conf \
+	/etc/X11/xorg.conf.d/20-monitor.conf \
 	/etc/X11/xorg.conf.d/80-server.conf \
 	/etc/X11/xorg.conf.d/99-keyboard-de.conf \
+	/etc/X11/xorg.conf.available/monitor-inverted.conf \
 	/etc/adobe/mms.cfg \
 	/etc/asound.conf \
 	/etc/asound.conf.usb \
