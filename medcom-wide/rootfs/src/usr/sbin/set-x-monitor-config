@@ -1,0 +1,20 @@
+#!/bin/sh -e
+#
+# Script to bind the inverted monitor config when needed
+#
+
+rotate="$(cat /sys/class/graphics/fbcon/rotate)"
+monitor_cfg=/etc/X11/xorg.conf.d/20-monitor.conf
+inverted_monitor_cfg=/etc/X11/xorg.conf.available/monitor-inverted.conf
+
+mount | grep -q " $monitor_cfg " && mounted=true || mounted=false
+
+if [ "$rotate" -eq 2 ] ; then
+	if ! $mounted ; then
+		mount --bind "$inverted_monitor_cfg" "$monitor_cfg"
+	fi
+else
+	if $mounted ; then
+		umount "$monitor_cfg"
+	fi
+fi

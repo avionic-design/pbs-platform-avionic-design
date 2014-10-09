@@ -84,6 +84,7 @@ scripts = \
 	/usr/bin/zramstart \
 	/usr/bin/zramstat \
 	/usr/bin/zramstop \
+	/usr/sbin/set-x-monitor-config \
 	/usr/sbin/sensorpads-backlight \
 	/usr/sbin/sshd-keygen \
 	/usr/sbin/handset
