@@ -1,0 +1,4 @@
+setenv bootargs console=ttyS0,115200n8 root=LABEL=boot:/rootfs.img ro ${mtdparts} ${extrabootargs}
+setenv bootfile uImage
+load ${devtype} ${devnum}:${rootpart} ${loadaddr} ${prefix}${bootfile}
+bootm
