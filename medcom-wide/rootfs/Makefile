@@ -147,6 +147,7 @@ files = \
 	/etc/rsyslog.d/99-persist.conf \
 	/etc/services \
 	/etc/shadow \
+	/etc/ssh/sshd_config \
 	/etc/snmp/snmpd.conf \
 	/etc/sysctl.conf \
 	/etc/systemd/system.conf \
@@ -216,14 +217,6 @@ links = \
 	/etc/browser.conf \
 	/etc/remote-control.conf \
 	/etc/resolv.conf \
-	/etc/ssh/ssh_host_dsa_key \
-	/etc/ssh/ssh_host_dsa_key.pub \
-	/etc/ssh/ssh_host_ecdsa_key \
-	/etc/ssh/ssh_host_ecdsa_key.pub \
-	/etc/ssh/ssh_host_key \
-	/etc/ssh/ssh_host_key.pub \
-	/etc/ssh/ssh_host_rsa_key \
-	/etc/ssh/ssh_host_rsa_key.pub \
 	/etc/systemd/system/basic.target.wants/drop-caches.timer \
 	/etc/systemd/system/basic.target.wants/logrotate.timer \
 	/etc/systemd/system/basic.target.wants/zram.service \
