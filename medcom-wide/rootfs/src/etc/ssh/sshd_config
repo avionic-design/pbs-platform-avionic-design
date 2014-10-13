@@ -8,6 +8,9 @@ HostKey /persist/etc/ssh/ssh_host_rsa_key
 HostKey /persist/etc/ssh/ssh_host_dsa_key
 HostKey /persist/etc/ssh/ssh_host_ecdsa_key
 
+# Use a global authorized_keys from /persist
+AuthorizedKeysFile	/persist/etc/ssh/authorized_keys
+
 # Default for new installations.
 UsePrivilegeSeparation sandbox
 
