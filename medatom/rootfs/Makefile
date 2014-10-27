@@ -106,6 +106,7 @@ scripts = \
 	/usr/lib/dhcpcd/dhcpcd-hooks/91-ddip-announce \
 	/usr/lib/systemd/gdk-pixbuf-loaders-cache \
 	/usr/lib/systemd/pango-modules-cache \
+	/usr/lib/systemd/usb-power \
 	/usr/share/udhcpc/default.script
 
 files = \
@@ -182,6 +183,7 @@ files = \
 	/etc/systemd/system/openssh.service \
 	/etc/systemd/system/pango.service \
 	/etc/systemd/system/slattach@.service \
+	/etc/systemd/system/usb-power.service \
 	/etc/systemd/system/root.mount \
 	/etc/systemd/system/tmp.mount \
 	/etc/systemd/system/var-lib.mount \
@@ -252,6 +254,7 @@ links = \
 	/etc/systemd/system/multi-user.target.wants/lldpctl.service \
 	/etc/systemd/system/multi-user.target.wants/network.target \
 	/etc/systemd/system/multi-user.target.wants/openssh.service \
+	/etc/systemd/system/multi-user.target.wants/usb-power.service \
 	/etc/systemd/system/sockets.target.wants/lldpd.socket \
 	/etc/systemd/system/syslog.service \
 	/etc/X11/xorg.conf.d/99-calibration.conf \
