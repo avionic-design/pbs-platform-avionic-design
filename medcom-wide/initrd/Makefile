@@ -1,5 +1,5 @@
 PACKAGE = medcom-wide-initrd
-VERSION = 9.0
+VERSION = 9.1.0
 
 dirs = \
 	/etc \
