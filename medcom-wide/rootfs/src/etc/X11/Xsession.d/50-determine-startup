@@ -9,7 +9,7 @@ if test "x$STARTUP" == "x"; then
 		if test -x /usr/bin/remote-control; then
 			STARTUP=/usr/bin/remote-control
 			WINDOW_MANAGER=/usr/bin/dwm
-			KEYBOARD=/usr/bin/gtkosk
+			KEYBOARD="/usr/bin/gtkosk -c"
 		fi
 	fi
 fi
