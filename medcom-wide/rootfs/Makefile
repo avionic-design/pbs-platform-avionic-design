@@ -11,6 +11,7 @@ dirs = \
 	/etc/X11/Xsession.d \
 	/etc/X11/xorg.conf.d \
 	/etc/adobe \
+	/etc/default/lldpd \
 	/etc/fonts \
 	/etc/fonts/conf.d \
 	/etc/gtk-2.0 \
@@ -161,7 +162,6 @@ files = \
 	/etc/systemd/system/iflinkd@eth0.service \
 	/etc/systemd/system/iflinkd@eth1.service \
 	/etc/systemd/system/iflinkd@lo.service \
-	/etc/systemd/system/lldpd.service \
 	/etc/systemd/system/logrotate.service \
 	/etc/systemd/system/logrotate.timer \
 	/etc/systemd/system/nodm.service \

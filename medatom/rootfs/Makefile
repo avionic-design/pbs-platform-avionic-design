@@ -118,6 +118,7 @@ files = \
 	/etc/alsa/medatom-wide.state \
 	/etc/default/locale \
 	/etc/default/rcS \
+	/etc/default/lldpd \
 	/etc/environment \
 	/etc/fstab \
 	/etc/group \
@@ -174,7 +175,6 @@ files = \
 	/etc/systemd/system/iflinkd@eth0.service \
 	/etc/systemd/system/iflinkd@lo.service \
 	/etc/systemd/system/iflinkd@sl0.service \
-	/etc/systemd/system/lldpd.service \
 	/etc/systemd/system/logrotate.service \
 	/etc/systemd/system/logrotate.timer \
 	/etc/systemd/system/nodm.service \
