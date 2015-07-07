@@ -68,6 +68,7 @@ dirs = \
 	/usr/lib/dhcpcd \
 	/usr/lib/dhcpcd/dhcpcd-hooks \
 	/usr/lib/firmware \
+	/usr/lib/firmware/edid \
 	/usr/lib/gdk-pixbuf-2.0 \
 	/usr/lib/gdk-pixbuf-2.0/2.10.0 \
 	/usr/lib/lsb \
@@ -204,6 +205,7 @@ files = \
 	/etc/X11/xorg.conf.d/20-keyboard-layout.conf \
 	/etc/X11/xorg.conf.d/95-sharp-touch.conf \
 	/etc/X11/xorg.conf.d/98-dpms.conf \
+	/etc/X11/xorg.conf.d/99-intel.conf \
 	/etc/X11/Xsession.d/00-persist \
 	/etc/X11/Xsession.d/50-determine-startup \
 	/etc/X11/Xsession.d/90-calibrate \
@@ -215,6 +217,7 @@ files = \
 	/usr/lib/firmware/hda-patch.fw \
 	/usr/lib/firmware/v4l-cx231xx-avcore-01.fw \
 	/usr/lib/firmware/xc3028L-v36.fw \
+	/usr/lib/firmware/edid/chimei-1366-768.bin \
 	/usr/lib/lsb/init-functions \
 	/usr/share/applications/xterm.desktop \
 	/usr/share/vim/vimrc

@@ -4,11 +4,17 @@ VERSION = 5-wip
 dirs = \
 	/etc \
 	/scripts \
-	/scripts/shutdown
+	/scripts/shutdown \
+	/lib \
+	/lib/firmware \
+	/lib/firmware/edid
 
 scripts = \
 	/scripts/shutdown/00-unmount \
 	/scripts/shutdown/99-reset
+
+files = \
+	/lib/firmware/edid/chimei-1366-768.bin
 
 include platforms/common.mk
 
