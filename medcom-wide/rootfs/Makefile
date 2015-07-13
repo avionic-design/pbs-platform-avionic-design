@@ -61,6 +61,8 @@ dirs = \
 	/usr/lib/systemd \
 	/usr/sbin \
 	/var \
+	/var/db \
+	/var/db/nscd \
 	/var/lib \
 	/var/lock \
 	/var/log \
@@ -122,6 +124,7 @@ files = \
 	/etc/logrotate.d/general \
 	/etc/modprobe.d/tm6000.conf \
 	/etc/modules-load.d/input.conf \
+	/etc/nscd.conf \
 	/etc/nsswitch.conf \
 	/etc/passwd \
 	/etc/pam.conf \
@@ -166,6 +169,7 @@ files = \
 	/etc/systemd/system/logrotate.service \
 	/etc/systemd/system/logrotate.timer \
 	/etc/systemd/system/nodm.service \
+	/etc/systemd/system/nscd.service \
 	/etc/systemd/system/ntpd.service \
 	/etc/systemd/system/ntpdate.service \
 	/etc/systemd/system/openssh.service \
@@ -177,12 +181,14 @@ files = \
 	/etc/systemd/system/tmp.mount \
 	/etc/systemd/system/update-crontab.service \
 	/etc/systemd/system/update-mime-db.service \
+	/etc/systemd/system/var-db-nscd.mount \
 	/etc/systemd/system/var-lib.mount \
 	/etc/systemd/system/var-log.mount \
 	/etc/systemd/system/var-spool.mount \
 	/etc/systemd/system/zram.service \
 	/etc/tmpfiles.d/dbus.conf \
 	/etc/tmpfiles.d/lldpd.conf \
+	/etc/tmpfiles.d/nscd.conf \
 	/etc/tmpfiles.d/ntp.conf \
 	/etc/tmpfiles.d/ssh.conf \
 	/etc/tmpfiles.d/systemd.conf \
@@ -227,10 +233,12 @@ links = \
 	/etc/systemd/system/local-fs.target.wants/debug.mount \
 	/etc/systemd/system/local-fs.target.wants/root.mount \
 	/etc/systemd/system/local-fs.target.wants/tmp.mount \
+	/etc/systemd/system/local-fs.target.wants/var-db-nscd.mount \
 	/etc/systemd/system/local-fs.target.wants/var-lib.mount \
 	/etc/systemd/system/local-fs.target.wants/var-log.mount \
 	/etc/systemd/system/local-fs.target.wants/var-spool.mount \
 	/etc/systemd/system/multi-user.target.wants/network.target \
+	/etc/systemd/system/multi-user.target.wants/nscd.service \
 	/etc/systemd/system/multi-user.target.wants/sensorpads-backlight.service \
 	/etc/systemd/system/multi-user.target.wants/sensors.service \
 	/etc/systemd/system/multi-user.target.wants/serial-getty@ttyS0.service \
