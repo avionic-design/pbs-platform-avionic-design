@@ -7,6 +7,7 @@ def=$pbsroot/defconfig
 imgdir=$pbsroot/img
 uImg="$imgdir/uImage"
 rootImg="$imgdir/rootfs.img"
+bootScript="$imgdir/boot.scr.uimg"
 
 
 log_action_begin_msg()
@@ -97,6 +98,16 @@ if test -d "$imgdir" && test -f "$uImg" && test -f "$rootImg"; then
 	log_action_end_msg $?
 else
 	echo "Images not found...$uImg and/or $rootImg"
+	log_action_end_msg 1
+fi
+
+if test -f "$bootScript"; then
+	log_action_begin_msg "  Copy boot script"
+		cp "$bootScript" "$mp/boot"
+	log_action_end_msg $?
+else
+	echo "Boot script $bootScript  not found!"
+	log_action_end_msg 1
 fi
 
 log_action_begin_msg "Unmounting rootfs storage"
