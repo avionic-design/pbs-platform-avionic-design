@@ -1,0 +1,145 @@
+#!/bin/bash -e
+
+pbsroot=.
+
+mp=/media
+def=$pbsroot/defconfig
+imgdir=$pbsroot/img
+uImg="$imgdir/uImage"
+rootImg="$imgdir/rootfs.img"
+
+
+log_action_begin_msg()
+{
+	echo -n "$@..."
+}
+
+log_action_end_msg()
+{
+	if test $1 -eq 0; then
+		echo "\033[32m done"
+	else
+		echo "\033[31m failed"
+	fi
+	echo "\033[0m"
+}
+
+wait_for_partition()
+{
+	log_action_begin_msg "Waiting for partition $1"
+	while ! test -b "$1"; do
+		echo -n .
+		sleep 1
+	done
+	log_action_end_msg $?
+}
+
+format_partition()
+{
+	log_action_begin_msg "Formatting $1 with $2 (label:$3)"
+	/sbin/mkfs -t $2 -L $3 $1 > /dev/null 2>&1
+	log_action_end_msg $?
+}
+
+ssh_keygen()
+{
+	type="$1"
+	path="$2"
+
+	if ! test -f "$path"; then
+		ssh-keygen -q -f "$path" -N '' -t $type
+	fi
+}
+
+#
+# Validate the input
+#
+if ! test -n "$1"; then
+	echo "usage: $0 device"
+	exit 1
+fi
+if test "$1" = "-h" -o "$1" = "--help"; then
+	echo "usage: $0 device"
+	exit 0
+fi
+
+if ! test -b "$1"; then
+	echo "$1 is not a device"
+	exit 1
+fi
+
+device="$1"
+
+/sbin/sfdisk --force -uM "$device" <<EOF
+,512,L,*
+,128,L
+,,L
+EOF
+
+wait_for_partition ${device}1
+format_partition ${device}1 ext3 boot
+wait_for_partition ${device}2
+format_partition ${device}2 ext4 persist
+wait_for_partition ${device}3
+format_partition ${device}3 ext4 data
+
+log_action_begin_msg "Mounting rootfs storage"
+	mount "${device}1" "$mp"
+log_action_end_msg $?
+
+log_action_begin_msg "  Creating directories"
+	mkdir -p "$mp/boot"
+log_action_end_msg $?
+
+if test -d "$imgdir" && test -f "$uImg" && test -f "$rootImg"; then
+	log_action_begin_msg "  Copy images"
+		cp "$uImg" "$mp/boot" && cp "$rootImg" "$mp/"
+	log_action_end_msg $?
+else
+	echo "Images not found...$uImg and/or $rootImg"
+fi
+
+log_action_begin_msg "Unmounting rootfs storage"
+	umount "$mp"
+log_action_end_msg $?
+
+log_action_begin_msg "Mounting persistent storage"
+	mount "${device}2" "$mp"
+log_action_end_msg $?
+
+log_action_begin_msg "  Creating directories"
+	mkdir -p "$mp/etc/X11/xorg.conf.d" &&
+	mkdir -p "$mp/etc/network"
+log_action_end_msg $?
+
+if test -d "$def"; then
+	log_action_begin_msg "  Copy default configuration"
+		cp "$def/etc"/*.conf "$mp/etc"/ &&
+		cp "$def/etc/X11/xorg.conf.d"/*.conf "$mp/etc/X11/xorg.conf.d"/
+	log_action_end_msg $?
+else
+	echo "$def"
+fi
+
+if test -x `which dbus-uuidgen`; then
+	log_action_begin_msg "  Generating machine ID"
+	mkdir -p "$mp/etc" &&
+		dbus-uuidgen --ensure="$mp/etc/machine-id"
+	log_action_end_msg $?
+fi
+
+if test -x `which ssh-keygen`; then
+	log_action_begin_msg "  Generating SSH keys"
+	mkdir -p "$mp/etc/ssh" &&
+		ssh_keygen dsa "$mp/etc/ssh/ssh_host_dsa_key" &&
+		ssh_keygen rsa "$mp/etc/ssh/ssh_host_rsa_key" &&
+		ssh_keygen rsa1 "$mp/etc/ssh/ssh_host_key"
+	log_action_end_msg $?
+#	log_action_begin_msg "  Generating SSH key (ecdsa)"
+#		ssh_keygen ecdsa "$mp/etc/ssh/ssh_host_ecdsa_key"
+#	log_action_end_msg $?
+fi
+
+log_action_begin_msg "Unmounting persistent storage"
+	umount "$mp"
+log_action_end_msg $?
