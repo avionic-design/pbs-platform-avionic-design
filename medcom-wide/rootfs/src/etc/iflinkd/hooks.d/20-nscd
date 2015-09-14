@@ -1,0 +1,32 @@
+#!/bin/sh -e
+
+interface="$1"
+action="$2"
+arptype="$3"
+
+LOGGER="/usr/bin/logger -t iflinkd"
+
+if test "x$arptype" != "xether"; then
+	$LOGGER "$interface: unsupported ARP type: $arptype"
+	exit 0
+fi
+
+case $action in
+	link)
+		if /bin/systemctl is-active nscd.service; then
+			$LOGGER "$interface: restarting nscd service"
+			/bin/systemctl restart nscd.service
+		else
+			$LOGGER "$interface: starting nscd service"
+			/bin/systemctl start nscd.service
+		fi
+		;;
+
+	up | down)
+		$LOGGER "$interface: stopping nscd service"
+		/bin/systemctl stop nscd.service
+		;;
+
+	*)
+		;;
+esac
