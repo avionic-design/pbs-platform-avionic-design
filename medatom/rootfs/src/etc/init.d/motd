@@ -1,6 +1,6 @@
 #!/bin/sh
 
-. /lib/lsb/init-functions
+. /usr/lib/lsb/init-functions
 
 usage() {
 	echo "usage: $0 {start|stop}"

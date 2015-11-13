@@ -1,6 +1,6 @@
 #!/bin/sh
 
-. /lib/lsb/init-functions
+. /usr/lib/lsb/init-functions
 
 PANGO_QUERYMODULES=/usr/bin/pango-querymodules
 PANGO_MODULES=/etc/pango/pango.modules

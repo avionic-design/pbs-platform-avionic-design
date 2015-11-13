@@ -7,7 +7,7 @@ if test -f /etc/default/rcS; then
 	. /etc/default/rcS
 fi
 
-. /lib/lsb/init-functions
+. /usr/lib/lsb/init-functions
 
 list_modules() {
 	if test -f /etc/modules; then

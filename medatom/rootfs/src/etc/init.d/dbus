@@ -1,6 +1,6 @@
 #!/bin/sh
 
-. /lib/lsb/init-functions
+. /usr/lib/lsb/init-functions
 
 DBUS=/usr/bin/dbus-daemon
 DBUS_OPTS="--system"

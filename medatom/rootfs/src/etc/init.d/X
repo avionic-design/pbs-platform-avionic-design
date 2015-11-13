@@ -1,6 +1,6 @@
 #!/bin/sh -e
 
-. /lib/lsb/init-functions
+. /usr/lib/lsb/init-functions
 
 usage()
 {

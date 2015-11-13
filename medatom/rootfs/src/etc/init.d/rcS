@@ -1,6 +1,6 @@
 #!/bin/sh
 
-. /lib/lsb/init-functions
+. /usr/lib/lsb/init-functions
 
 log_action_begin_msg "Creating /tmp filesystem"
 mount -t tmpfs -n tmpfs /tmp

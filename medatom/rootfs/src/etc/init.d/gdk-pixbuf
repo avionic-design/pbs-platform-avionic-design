@@ -1,6 +1,6 @@
 #!/bin/sh
 
-. /lib/lsb/init-functions
+. /usr/lib/lsb/init-functions
 
 GDK_PIXBUF_QUERY_LOADERS=/usr/bin/gdk-pixbuf-query-loaders
 GDK_PIXBUF_LOADERS_CACHE=/usr/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache
