@@ -254,6 +254,7 @@ links = \
 	/etc/systemd/system/multi-user.target.wants/openssh.service \
 	/etc/systemd/system/multi-user.target.wants/usb-power.service \
 	/etc/systemd/system/syslog.service \
+	/etc/udev/rules.d/80-net-setup-link.rules \
 	/etc/X11/xorg.conf.d/99-calibration.conf \
 	/etc/xdg/menus/xfce-applications.menu \
 	/sbin/getty \
