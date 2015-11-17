@@ -199,6 +199,7 @@ files = \
 	/etc/vconsole.conf \
 	/etc/X11/xorg.conf.d/10-evdev.conf \
 	/etc/X11/xorg.conf.d/20-keyboard-layout.conf \
+	/etc/X11/xorg.conf.d/95-sharp-touch.conf \
 	/etc/X11/xorg.conf.d/98-dpms.conf \
 	/etc/X11/Xsession.d/00-persist \
 	/etc/X11/Xsession.d/50-determine-startup \
