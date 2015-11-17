@@ -72,6 +72,7 @@ dirs = \
 	/usr/lib/gdk-pixbuf-2.0 \
 	/usr/lib/gdk-pixbuf-2.0/2.10.0 \
 	/usr/lib/lsb \
+	/usr/sbin \
 	/usr/share \
 	/usr/share/applications \
 	/usr/share/icons \
@@ -108,6 +109,7 @@ scripts = \
 	/usr/lib/systemd/gdk-pixbuf-loaders-cache \
 	/usr/lib/systemd/pango-modules-cache \
 	/usr/lib/systemd/usb-power \
+	/usr/sbin/sshd-keygen \
 	/usr/share/udhcpc/default.script
 
 files = \
