@@ -1,8 +1,0 @@
-[Unit]
-Description=SLIP on port /dev/%i
-
-[Service]
-ExecStart=/sbin/slattach /dev/%I -p slip -s 115200 -F -L
-
-[Install]
-WantedBy=network.target

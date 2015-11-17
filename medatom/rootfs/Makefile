@@ -16,7 +16,6 @@ dirs = \
 	/etc/iflinkd/hooks.d \
 	/etc/iflinkd/hooks.d/eth0 \
 	/etc/iflinkd/hooks.d/lo \
-	/etc/iflinkd/hooks.d/sl0 \
 	/etc/init.d \
 	/etc/logrotate.d \
 	/etc/modprobe.d \
@@ -87,7 +86,6 @@ scripts = \
 	/etc/alsa/medatom-wide.sh \
 	/etc/iflinkd/hooks.d/eth0/50-dhcpcd \
 	/etc/iflinkd/hooks.d/eth0/00-lldpd \
-	/etc/iflinkd/hooks.d/sl0/slip \
 	/etc/init.d/alsa \
 	/etc/init.d/console-kit \
 	/etc/init.d/dbus \
@@ -180,13 +178,11 @@ files = \
 	/etc/systemd/system/gdk-pixbuf.service \
 	/etc/systemd/system/iflinkd@eth0.service \
 	/etc/systemd/system/iflinkd@lo.service \
-	/etc/systemd/system/iflinkd@sl0.service \
 	/etc/systemd/system/logrotate.service \
 	/etc/systemd/system/logrotate.timer \
 	/etc/systemd/system/nodm.service \
 	/etc/systemd/system/openssh.service \
 	/etc/systemd/system/pango.service \
-	/etc/systemd/system/slattach@.service \
 	/etc/systemd/system/usb-power.service \
 	/etc/systemd/system/root.mount \
 	/etc/systemd/system/tmp.mount \
@@ -259,8 +255,6 @@ links = \
 	/etc/systemd/system/local-fs.target.wants/var-spool.mount \
 	/etc/systemd/system/network.target.wants/iflinkd@eth0.service \
 	/etc/systemd/system/network.target.wants/iflinkd@lo.service \
-	/etc/systemd/system/network.target.wants/iflinkd@sl0.service \
-	/etc/systemd/system/network.target.wants/slattach@ttyS4.service \
 	/etc/systemd/system/multi-user.target.wants/network.target \
 	/etc/systemd/system/multi-user.target.wants/openssh.service \
 	/etc/systemd/system/multi-user.target.wants/update-crontab.service \
