@@ -84,7 +84,7 @@ state.Intel {
 	}
 	control.7 {
 		iface MIXER
-		name 'Internal Mic Playback Volume'
+		name 'Mic Playback Volume'
 		value.0 0
 		value.1 0
 		comment {
@@ -100,7 +100,7 @@ state.Intel {
 	}
 	control.8 {
 		iface MIXER
-		name 'Internal Mic Playback Switch'
+		name 'Mic Playback Switch'
 		value.0 false
 		value.1 false
 		comment {
@@ -111,7 +111,7 @@ state.Intel {
 	}
 	control.9 {
 		iface MIXER
-		name 'Mic Playback Volume'
+		name 'Internal Mic Playback Volume'
 		value.0 0
 		value.1 0
 		comment {
@@ -127,7 +127,7 @@ state.Intel {
 	}
 	control.10 {
 		iface MIXER
-		name 'Mic Playback Switch'
+		name 'Internal Mic Playback Switch'
 		value.0 false
 		value.1 false
 		comment {
@@ -177,37 +177,48 @@ state.Intel {
 	}
 	control.14 {
 		iface MIXER
-		name 'Internal Mic Boost Volume'
-		value.0 0
-		value.1 0
+		name 'Input Source'
+		value 'Internal Mic'
 		comment {
 			access 'read write'
-			type INTEGER
-			count 2
-			range '0 - 3'
-			dbmin 0
-			dbmax 3000
-			dbvalue.0 0
-			dbvalue.1 0
+			type ENUMERATED
+			count 1
+			item.0 Mic
+			item.1 'Internal Mic'
+			item.2 CD
 		}
 	}
 	control.15 {
 		iface MIXER
-		name 'Mic Boost Volume'
-		value.0 0
-		value.1 0
+		name 'Input Source'
+		index 1
+		value Mic
+		comment {
+			access 'read write'
+			type ENUMERATED
+			count 1
+			item.0 Mic
+			item.1 'Internal Mic'
+			item.2 CD
+		}
+	}
+	control.16 {
+		iface MIXER
+		name 'Capture Volume'
+		value.0 16
+		value.1 16
 		comment {
 			access 'read write'
 			type INTEGER
 			count 2
-			range '0 - 3'
-			dbmin 0
+			range '0 - 46'
+			dbmin -1600
 			dbmax 3000
 			dbvalue.0 0
 			dbvalue.1 0
 		}
 	}
-	control.16 {
+	control.17 {
 		iface MIXER
 		name 'Capture Switch'
 		value.0 true
@@ -218,21 +229,10 @@ state.Intel {
 			count 2
 		}
 	}
-	control.17 {
-		iface MIXER
-		name 'Capture Switch'
-		index 1
-		value.0 false
-		value.1 false
-		comment {
-			access 'read write'
-			type BOOLEAN
-			count 2
-		}
-	}
 	control.18 {
 		iface MIXER
 		name 'Capture Volume'
+		index 1
 		value.0 16
 		value.1 16
 		comment {
@@ -248,46 +248,46 @@ state.Intel {
 	}
 	control.19 {
 		iface MIXER
-		name 'Capture Volume'
+		name 'Capture Switch'
 		index 1
-		value.0 16
-		value.1 16
+		value.0 false
+		value.1 false
+		comment {
+			access 'read write'
+			type BOOLEAN
+			count 2
+		}
+	}
+	control.20 {
+		iface MIXER
+		name 'Mic Boost Volume'
+		value.0 0
+		value.1 0
 		comment {
 			access 'read write'
 			type INTEGER
 			count 2
-			range '0 - 46'
-			dbmin -1600
+			range '0 - 3'
+			dbmin 0
 			dbmax 3000
 			dbvalue.0 0
 			dbvalue.1 0
 		}
 	}
-	control.20 {
-		iface MIXER
-		name 'Input Source'
-		value 'Internal Mic'
-		comment {
-			access 'read write'
-			type ENUMERATED
-			count 1
-			item.0 'Internal Mic'
-			item.1 Mic
-			item.2 CD
-		}
-	}
 	control.21 {
 		iface MIXER
-		name 'Input Source'
-		index 1
-		value Mic
+		name 'Internal Mic Boost Volume'
+		value.0 0
+		value.1 0
 		comment {
 			access 'read write'
-			type ENUMERATED
-			count 1
-			item.0 'Internal Mic'
-			item.1 Mic
-			item.2 CD
+			type INTEGER
+			count 2
+			range '0 - 3'
+			dbmin 0
+			dbmax 3000
+			dbvalue.0 0
+			dbvalue.1 0
 		}
 	}
 	control.22 {
@@ -316,17 +316,7 @@ state.Intel {
 	}
 	control.24 {
 		iface CARD
-		name 'Headphone Front Phantom Jack'
-		value true
-		comment {
-			access read
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.25 {
-		iface CARD
-		name 'Headphone Surround Jack'
+		name 'Mic Jack'
 		value false
 		comment {
 			access read
@@ -334,17 +324,7 @@ state.Intel {
 			count 1
 		}
 	}
-	control.26 {
-		iface CARD
-		name 'Speaker Phantom Jack'
-		value true
-		comment {
-			access read
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.27 {
+	control.25 {
 		iface CARD
 		name 'Internal Mic Phantom Jack'
 		value true
@@ -354,17 +334,7 @@ state.Intel {
 			count 1
 		}
 	}
-	control.28 {
-		iface CARD
-		name 'Mic Jack'
-		value false
-		comment {
-			access read
-			type BOOLEAN
-			count 1
-		}
-	}
-	control.29 {
+	control.26 {
 		iface CARD
 		name 'CD Phantom Jack'
 		value true
@@ -374,7 +344,76 @@ state.Intel {
 			count 1
 		}
 	}
+	control.27 {
+		iface CARD
+		name 'Headphone Front Jack'
+		value false
+		comment {
+			access read
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.28 {
+		iface CARD
+		name 'Headphone Surround Phantom Jack'
+		value true
+		comment {
+			access read
+			type BOOLEAN
+			count 1
+		}
+	}
+	control.29 {
+		iface CARD
+		name 'Speaker Phantom Jack'
+		value true
+		comment {
+			access read
+			type BOOLEAN
+			count 1
+		}
+	}
 	control.30 {
+		iface PCM
+		name 'Playback Channel Map'
+		value.0 0
+		value.1 0
+		value.2 0
+		value.3 0
+		comment {
+			access read
+			type INTEGER
+			count 4
+			range '0 - 36'
+		}
+	}
+	control.31 {
+		iface PCM
+		name 'Capture Channel Map'
+		value.0 0
+		value.1 0
+		comment {
+			access read
+			type INTEGER
+			count 2
+			range '0 - 36'
+		}
+	}
+	control.32 {
+		iface PCM
+		device 2
+		name 'Capture Channel Map'
+		value.0 0
+		value.1 0
+		comment {
+			access read
+			type INTEGER
+			count 2
+			range '0 - 36'
+		}
+	}
+	control.33 {
 		iface MIXER
 		name 'PCM Playback Volume'
 		value.0 200
@@ -391,7 +430,7 @@ state.Intel {
 			dbvalue.1 -1100
 		}
 	}
-	control.31 {
+	control.34 {
 		iface MIXER
 		name 'Digital Capture Volume'
 		value.0 62
