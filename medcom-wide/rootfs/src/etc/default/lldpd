@@ -1,0 +1,1 @@
+LLDPD_OPTIONS="-x -M 1"

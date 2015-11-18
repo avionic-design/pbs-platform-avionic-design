@@ -16,16 +16,9 @@ case $action in
 		else
 			systemctl start lldpd.service
 		fi
-
-		if systemctl --quiet is-active lldpctl.service; then
-			systemctl restart lldpctl.service
-		else
-			systemctl start lldpctl.service
-		fi
 		;;
 
 	up | down)
-		systemctl stop lldpctl.service
 		systemctl stop lldpd.service
 		;;
 

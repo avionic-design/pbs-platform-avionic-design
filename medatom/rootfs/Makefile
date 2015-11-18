@@ -119,6 +119,7 @@ files = \
 	/etc/alsa/medatom-wide.state \
 	/etc/default/locale \
 	/etc/default/rcS \
+	/etc/default/lldpd \
 	/etc/environment \
 	/etc/fstab \
 	/etc/group \
@@ -128,6 +129,7 @@ files = \
 	/etc/inittab \
 	/etc/issue \
 	/etc/linphone.conf \
+	/etc/lldpd.conf \
 	/etc/locale.conf \
 	/etc/localtime \
 	/etc/logrotate.conf \
@@ -174,9 +176,6 @@ files = \
 	/etc/systemd/system/iflinkd@eth0.service \
 	/etc/systemd/system/iflinkd@lo.service \
 	/etc/systemd/system/iflinkd@sl0.service \
-	/etc/systemd/system/lldpctl.service \
-	/etc/systemd/system/lldpd.service \
-	/etc/systemd/system/lldpd.socket \
 	/etc/systemd/system/logrotate.service \
 	/etc/systemd/system/logrotate.timer \
 	/etc/systemd/system/nodm.service \
@@ -251,11 +250,9 @@ links = \
 	/etc/systemd/system/network.target.wants/iflinkd@lo.service \
 	/etc/systemd/system/network.target.wants/iflinkd@sl0.service \
 	/etc/systemd/system/network.target.wants/slattach@ttyS4.service \
-	/etc/systemd/system/multi-user.target.wants/lldpctl.service \
 	/etc/systemd/system/multi-user.target.wants/network.target \
 	/etc/systemd/system/multi-user.target.wants/openssh.service \
 	/etc/systemd/system/multi-user.target.wants/usb-power.service \
-	/etc/systemd/system/sockets.target.wants/lldpd.socket \
 	/etc/systemd/system/syslog.service \
 	/etc/X11/xorg.conf.d/99-calibration.conf \
 	/etc/xdg/menus/xfce-applications.menu \
