@@ -187,6 +187,7 @@ files = \
 	/etc/systemd/system/var-spool.mount \
 	/etc/systemd/system/zram.service \
 	/etc/tmpfiles.d/dbus.conf \
+	/etc/tmpfiles.d/dhcpcd.conf \
 	/etc/tmpfiles.d/lldpd.conf \
 	/etc/tmpfiles.d/nscd.conf \
 	/etc/tmpfiles.d/ntp.conf \
@@ -208,6 +209,7 @@ files = \
 links = \
 	/bin/sh \
 	/bin/enable-lan \
+	/etc/dhcpcd.duid \
 	/etc/X11/xorg.conf.d/90-undefined.conf \
 	/etc/X11/xorg.conf.d/99-calibration.conf \
 	/etc/hostname \

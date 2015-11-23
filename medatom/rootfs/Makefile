@@ -192,6 +192,7 @@ files = \
 	/etc/systemd/system/var-log.mount \
 	/etc/tmpfiles.d/console-kit.conf \
 	/etc/tmpfiles.d/dbus.conf \
+	/etc/tmpfiles.d/dhcpcd.conf \
 	/etc/tmpfiles.d/hosts.conf \
 	/etc/tmpfiles.d/lldpd.conf \
 	/etc/tmpfiles.d/ntp.conf \
@@ -221,6 +222,7 @@ files = \
 links = \
 	/bin/sh \
 	/etc/browser.conf \
+	/etc/dhcpcd.duid \
 	/etc/machine-id \
 	/etc/motd \
 	/etc/mtab \
