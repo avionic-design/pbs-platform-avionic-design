@@ -1,7 +1,0 @@
-[Unit]
-Description=Rotate System Log Files
-
-[Service]
-Type=oneshot
-ExecStart=/usr/sbin/logrotate --state /run/logrotate.state /etc/logrotate.conf
-IOSchedulingClass=idle

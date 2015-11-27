@@ -35,7 +35,6 @@ dirs = \
 	/etc/ssh \
 	/etc/systemd \
 	/etc/systemd/system \
-	/etc/systemd/system/basic.target.wants \
 	/etc/systemd/system/local-fs.target.wants \
 	/etc/systemd/system/graphical.target.wants \
 	/etc/systemd/system/multi-user.target.wants \
@@ -121,6 +120,7 @@ files = \
 	/etc/alsa/medatom.state \
 	/etc/alsa/medatom-wide.conf \
 	/etc/alsa/medatom-wide.state \
+	/etc/crontab \
 	/etc/default/locale \
 	/etc/default/rcS \
 	/etc/default/lldpd \
@@ -180,8 +180,6 @@ files = \
 	/etc/systemd/system/gdk-pixbuf.service \
 	/etc/systemd/system/iflinkd@eth0.service \
 	/etc/systemd/system/iflinkd@lo.service \
-	/etc/systemd/system/logrotate.service \
-	/etc/systemd/system/logrotate.timer \
 	/etc/systemd/system/nodm.service \
 	/etc/systemd/system/openssh.service \
 	/etc/systemd/system/pango.service \
@@ -248,7 +246,6 @@ links = \
 	/etc/proxy.conf \
 	/etc/remote-control.conf \
 	/etc/resolv.conf \
-	/etc/systemd/system/basic.target.wants/logrotate.timer \
 	/etc/systemd/system/display-manager.service \
 	/etc/systemd/system/graphical.target.wants/gdk-pixbuf.service \
 	/etc/systemd/system/graphical.target.wants/pango.service \
