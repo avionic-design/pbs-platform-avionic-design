@@ -109,6 +109,7 @@ scripts = \
 	/usr/lib/dhcpcd/dhcpcd-hooks/91-ddip-announce \
 	/usr/lib/systemd/gdk-pixbuf-loaders-cache \
 	/usr/lib/systemd/pango-modules-cache \
+	/usr/lib/systemd/update-crontab \
 	/usr/lib/systemd/usb-power \
 	/usr/sbin/sshd-keygen \
 	/usr/share/udhcpc/default.script
@@ -189,6 +190,7 @@ files = \
 	/etc/systemd/system/usb-power.service \
 	/etc/systemd/system/root.mount \
 	/etc/systemd/system/tmp.mount \
+	/etc/systemd/system/update-crontab.service \
 	/etc/systemd/system/var-lib.mount \
 	/etc/systemd/system/var-log.mount \
 	/etc/systemd/system/var-spool.mount \
@@ -261,6 +263,7 @@ links = \
 	/etc/systemd/system/network.target.wants/slattach@ttyS4.service \
 	/etc/systemd/system/multi-user.target.wants/network.target \
 	/etc/systemd/system/multi-user.target.wants/openssh.service \
+	/etc/systemd/system/multi-user.target.wants/update-crontab.service \
 	/etc/systemd/system/multi-user.target.wants/usb-power.service \
 	/etc/systemd/system/syslog.service \
 	/etc/udev/rules.d/80-net-setup-link.rules \
