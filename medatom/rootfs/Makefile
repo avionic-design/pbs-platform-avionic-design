@@ -176,6 +176,7 @@ files = \
 	/etc/ssh/sshd_config \
 	/etc/sysctl.conf \
 	/etc/systemd/system.conf \
+	/etc/systemd/system/crond.service \
 	/etc/systemd/system/gdk-pixbuf.service \
 	/etc/systemd/system/iflinkd@eth0.service \
 	/etc/systemd/system/iflinkd@lo.service \
@@ -258,6 +259,7 @@ links = \
 	/etc/systemd/system/local-fs.target.wants/var-spool.mount \
 	/etc/systemd/system/network.target.wants/iflinkd@eth0.service \
 	/etc/systemd/system/network.target.wants/iflinkd@lo.service \
+	/etc/systemd/system/multi-user.target.wants/crond.service \
 	/etc/systemd/system/multi-user.target.wants/network.target \
 	/etc/systemd/system/multi-user.target.wants/openssh.service \
 	/etc/systemd/system/multi-user.target.wants/update-crontab.service \
