@@ -79,7 +79,8 @@ dirs = \
 	/usr/share/icons/default \
 	/var \
 	/var/lib \
-	/var/log
+	/var/log \
+	/var/spool
 
 scripts = \
 	/etc/alsa/medatom.sh \
@@ -190,6 +191,7 @@ files = \
 	/etc/systemd/system/tmp.mount \
 	/etc/systemd/system/var-lib.mount \
 	/etc/systemd/system/var-log.mount \
+	/etc/systemd/system/var-spool.mount \
 	/etc/tmpfiles.d/console-kit.conf \
 	/etc/tmpfiles.d/dbus.conf \
 	/etc/tmpfiles.d/dhcpcd.conf \
@@ -252,6 +254,7 @@ links = \
 	/etc/systemd/system/local-fs.target.wants/tmp.mount \
 	/etc/systemd/system/local-fs.target.wants/var-lib.mount \
 	/etc/systemd/system/local-fs.target.wants/var-log.mount \
+	/etc/systemd/system/local-fs.target.wants/var-spool.mount \
 	/etc/systemd/system/network.target.wants/iflinkd@eth0.service \
 	/etc/systemd/system/network.target.wants/iflinkd@lo.service \
 	/etc/systemd/system/network.target.wants/iflinkd@sl0.service \
