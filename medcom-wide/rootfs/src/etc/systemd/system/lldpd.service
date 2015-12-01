@@ -2,7 +2,8 @@
 Description=LLDP Daemon
 
 [Service]
-ExecStart=/usr/sbin/lldpd -d -x -M 1
+EnvironmentFile=-/persist/etc/lldpd.env
+ExecStart=/usr/sbin/lldpd -d -x -M 1 $OPTIONS
 Sockets=lldpd.socket
 StandardError=syslog
 
