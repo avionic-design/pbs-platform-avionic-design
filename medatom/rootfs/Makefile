@@ -27,6 +27,9 @@ dirs = \
 	/etc/network/if-up.d \
 	/etc/pam.d \
 	/etc/pango \
+	/etc/pki \
+	/etc/pki/tls \
+	/etc/pki/tls/cert \
 	/etc/rcS.d \
 	/etc/remote-control.conf.d \
 	/etc/remote-control.conf.d/medatom \
@@ -228,6 +231,7 @@ links = \
 	/etc/machine-id \
 	/etc/motd \
 	/etc/mtab \
+	/etc/pki/tls/certs/ca-bundle.crt \
 	/etc/pango/pango.modules \
 	/etc/rcS.d/05-syslogd \
 	/etc/rcS.d/10-modules \
