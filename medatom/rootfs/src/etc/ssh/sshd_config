@@ -11,6 +11,9 @@ HostKey /persist/etc/ssh/ssh_host_ecdsa_key
 # Use a global authorized_keys from /persist
 AuthorizedKeysFile	/persist/etc/ssh/authorized_keys
 
+# Allow root login via password
+PermitRootLogin yes
+
 # Default for new installations.
 UsePrivilegeSeparation sandbox
 
