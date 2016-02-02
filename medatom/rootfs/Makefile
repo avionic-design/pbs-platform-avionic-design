@@ -265,6 +265,7 @@ links = \
 	/etc/systemd/system/syslog.service \
 	/etc/udev/rules.d/80-net-setup-link.rules \
 	/etc/X11/xorg.conf.d/99-calibration.conf \
+	/etc/X11/xorg.conf.d/99-undefined.conf \
 	/etc/xdg/menus/xfce-applications.menu \
 	/sbin/getty \
 	/sbin/init \
