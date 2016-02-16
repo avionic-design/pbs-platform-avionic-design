@@ -1,5 +1,5 @@
 PACKAGE = medatom
-VERSION = 8-rc8
+VERSION = 9.4.0
 DATE = $(shell date +%d.%m.%Y)
 
 dirs = \

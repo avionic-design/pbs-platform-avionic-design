@@ -1,5 +1,5 @@
 PACKAGE = medatom-initrd
-VERSION = 5-wip
+VERSION = 9.4.0
 
 dirs = \
 	/etc \
