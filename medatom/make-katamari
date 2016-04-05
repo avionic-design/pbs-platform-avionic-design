@@ -19,5 +19,8 @@ test -f "$dir/install/remote-control.conf" && files="$files remote-control.conf"
 test -f "$dir/install/ring.wav" && files="$files ring.wav"
 test -f "$dir/install/config.tar" && files="$files config.tar"
 test -f "$dir/install/MANIFEST" && files="$files MANIFEST"
+test -f "$dir/install/linux.c32" && files="$files linux.c32"
+test -f "$dir/install/libcom32.c32" && files="$files libcom32.c32"
+test -f "$dir/install/fdt.dtb" && files="$files fdt.dtb"
 
 tar cf "$dir/install.tar" -C "$dir/install" $files
