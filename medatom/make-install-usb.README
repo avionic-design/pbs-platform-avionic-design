@@ -1,0 +1,73 @@
+To make an install-usb stick:
+
+Go to pbs-stage2 root.
+
+Build medatom-initrd:
+
+$ mkdir -p build/medatom-initrd
+$ make O=build/medatom-initrd PLATFORM=avionic-design medatom-initrd_defconfig
+$ make O=build/medatom-initrd
+$ fakeroot make O=build/medatom-initrd initrd
+
+Build medatom-rootfs:
+
+$ mkdir -p build/medatom-rootfs
+$ make O=build/medatom-rootfs PLATFORM=avionic-design medatom-rootfs_defconfig
+$ make O=build/medatom-rootfs
+$ fakeroot make O=build/medatom-rootfs rootfs
+
+Build medatom-install
+
+$ mkdir -p build/medatom-install
+$ make O=build/medatom-install PLATFORM=avionic-design medatom-initrd_defconfig
+$ make O=build/medatom-install menuconfig
+Change Platform/"Avionic Design Med@om" to "Avionic Design Medatom Installer Ramdisk"
+$ make O=build/medatom-install
+$ fakeroot make O=build/medatom-install initrd
+
+Prepare install.tar:
+
+$ mkdir -p build/medatom/install
+Add "config.tar" with files for /persist
+Add "MANIFEST" describing the file versions
+Add "disk-layout" decribing how to partition the device
+At last boot and persit partitions are needed. Currently we use:
+512 ext4 boot
+128 ext4 persist
+*   ext4 data
+
+Add "extlinux.conf" for bootoptions. Currently we use:
+DEFAULT linux
+LABEL linux
+    KERNEL linux.c32
+    APPEND vmlinuz initrd=initrd.gz dtb=fdt.dtb drm_kms_helper.edid_firmware=edid/chimei-1366-768.bin root=LABEL=boot:/rootfs.img ro
+
+Add "fdt.dtb" device tree binary for medatom
+Add "hostname-prefix".  Currently we use:
+medatom-wide-
+
+Add "initrd.gz" from build/medatom-initrd
+Add "vmlinuz"  from build/medatom-initrd
+Add "rootfs.img" from build/medatom-rootfs
+Add "linux.c32" from build/medatom-install/build/packages/core/syslinux/install/usr/share/syslinux
+Add build/medatom-install/build/packages/core/syslinux/install/usr/share/syslinux/libcom32.c32 if it exists
+(For newer syslinux versions)
+
+$platforms/avionic-design/medatom/make-katamari build/medatom
+Now you have "install.tar" in build/medatom.
+
+Fill build/medatom directory with:
+Add "linux.c32" from you syslinux directory (/usr/share/syslinux or /usr/lib/syslinux)
+Add "libcom32.c32" from you syslinux directory if present
+Add "initrd.gz" from build/medatom-install
+Add "vmlinuz"  from build/medatom-install
+Add "fdt.dtb" device tree binary for medatom
+Add "extlinux.conf" for bootoptions. Currently we use:
+DEFAULT linux
+LABEL linux
+    KERNEL linux.c32
+    APPEND vmlinuz initrd=initrd.gz dtb=fdt.dtb drm_kms_helper.edid_firmware=edid/chimei-1366-768.bin quiet
+
+Create stick:
+Make sure your stick is not mounted.
+$ sudo platforms/avionic-design/medatom/make-install-usb [your usb root device] build/medatom
