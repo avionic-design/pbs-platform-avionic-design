@@ -30,7 +30,7 @@ device="$1"
 source="$2"
 mp="/media"
 
-/sbin/sfdisk -uM "$device" <<EOF
+/sbin/sfdisk "$device" <<EOF
 ,,L,*
 EOF
 
