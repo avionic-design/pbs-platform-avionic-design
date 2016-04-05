@@ -34,7 +34,18 @@ device="$1"
 ,,L
 EOF
 
-cat /usr/lib/syslinux/mbr.bin > ${device}
+for directory in /usr/lib/syslinux /usr/share/syslinux; do
+    if test -f "$directory/mbr.bin"; then
+	cat "$directory/mbr.bin" > ${device}
+	mbr_installed=yes
+    fi
+done
+
+if test "x$mbr_installed" != "xyes"; then
+    echo "MBR not found, try installing syslinux"
+    exit 1
+fi
+
 wait_for_partition ${device}1
 format_partition ${device}1 ext4 boot
 wait_for_partition ${device}2
