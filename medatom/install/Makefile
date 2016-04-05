@@ -6,6 +6,9 @@ dirs = \
 	/etc/init.d \
 	/etc/modprobe.d \
 	/lib \
+	/lib/firmware \
+	/lib/firmware/edid \
+	/lib/lsb \
 	/mnt \
 	/mnt/install \
 	/mnt/target \
@@ -27,6 +30,7 @@ files = \
 	/etc/passwd \
 	/etc/shadow \
 	/etc/sysctl.conf \
+	/lib/firmware/edid/chimei-1366-768.bin \
 	/lib/lsb/init-functions
 
 include platforms/common.mk
