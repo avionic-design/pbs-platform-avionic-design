@@ -51,7 +51,7 @@ DEFAULT linux
 LABEL linux
 	KERNEL vmlinuz
 	INITRD initrd.gz
-	APPEND root=LABEL=boot:/rootfs.img
+	APPEND root=LABEL=boot:/rootfs.img drm_kms_helper.edid_firmware=edid/chimei-1366-768.bin
 EOF
 chown root:root /media/extlinux.conf
 umount /media
