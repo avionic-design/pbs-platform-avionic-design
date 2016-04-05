@@ -109,7 +109,6 @@ scripts = \
 	/usr/lib/dhcpcd/dhcpcd-hooks/90-ntp \
 	/usr/lib/dhcpcd/dhcpcd-hooks/91-ddip-announce \
 	/usr/lib/systemd/gdk-pixbuf-loaders-cache \
-	/usr/lib/systemd/pango-modules-cache \
 	/usr/lib/systemd/update-crontab \
 	/usr/lib/systemd/usb-power \
 	/usr/sbin/sshd-keygen \
@@ -185,7 +184,6 @@ files = \
 	/etc/systemd/system/iflinkd@lo.service \
 	/etc/systemd/system/nodm.service \
 	/etc/systemd/system/openssh.service \
-	/etc/systemd/system/pango.service \
 	/etc/systemd/system/usb-power.service \
 	/etc/systemd/system/root.mount \
 	/etc/systemd/system/tmp.mount \
@@ -232,7 +230,6 @@ links = \
 	/etc/motd \
 	/etc/mtab \
 	/etc/pki/tls/certs/ca-bundle.crt \
-	/etc/pango/pango.modules \
 	/etc/rcS.d/05-syslogd \
 	/etc/rcS.d/10-modules \
 	/etc/rcS.d/11-networking \
@@ -252,7 +249,6 @@ links = \
 	/etc/resolv.conf \
 	/etc/systemd/system/display-manager.service \
 	/etc/systemd/system/graphical.target.wants/gdk-pixbuf.service \
-	/etc/systemd/system/graphical.target.wants/pango.service \
 	/etc/systemd/system/local-fs.target.wants/root.mount \
 	/etc/systemd/system/local-fs.target.wants/tmp.mount \
 	/etc/systemd/system/local-fs.target.wants/var-lib.mount \
