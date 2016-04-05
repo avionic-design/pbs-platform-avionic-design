@@ -28,9 +28,9 @@ fi
 
 device="$1"
 
-/sbin/sfdisk -uM "$device" <<EOF
-,512,L,*
-,128,L
+/sbin/sfdisk "$device" <<EOF
+,512M,L,*
+,128M,L
 ,,L
 EOF
 
