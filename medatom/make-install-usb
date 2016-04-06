@@ -46,6 +46,7 @@ if test "x$mbr_installed" != "xyes"; then
 	exit 1
 fi
 
+sync
 wait_for_partition ${device}1
 format_partition ${device}1 ext4 install
 
