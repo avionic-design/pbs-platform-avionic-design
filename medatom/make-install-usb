@@ -54,6 +54,7 @@ files="$source/extlinux.conf $source/vmlinuz $source/initrd.gz"
 files="$files $source/install.tar"
 
 test -f "$source/linux.c32" && files="$files $source/linux.c32"
+test -f "$source/libcom32.c32" && files="$files $source/libcom32.c32"
 test -f "$source/fdt.dtb" && files="$files $source/fdt.dtb"
 
 mount ${device}1 "$mp"
