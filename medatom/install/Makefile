@@ -1,5 +1,5 @@
 PACKAGE = medatom-install
-VERSION = 3
+VERSION = 9.5.0
 
 dirs = \
 	/etc \
