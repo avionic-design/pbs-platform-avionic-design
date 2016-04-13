@@ -79,7 +79,6 @@ scripts = \
 	/etc/xdg/awesome/xinitrc \
 	/usr/lib/dhcpcd/dhcpcd-hooks/90-ntp \
 	/usr/lib/systemd/gdk-pixbuf-loaders-cache \
-	/usr/lib/systemd/pango-modules-cache \
 	/usr/lib/systemd/update-crontab \
 	/usr/lib/systemd/update-mime-db \
 	/usr/bin/enable-lan \
@@ -173,7 +172,6 @@ files = \
 	/etc/systemd/system/ntpd.service \
 	/etc/systemd/system/ntpdate.service \
 	/etc/systemd/system/openssh.service \
-	/etc/systemd/system/pango.service \
 	/etc/systemd/system/root.mount \
 	/etc/systemd/system/sensorpads-backlight.service \
 	/etc/systemd/system/sensors.service \
@@ -230,7 +228,6 @@ links = \
 	/etc/systemd/system/basic.target.wants/logrotate.timer \
 	/etc/systemd/system/basic.target.wants/zram.service \
 	/etc/systemd/system/graphical.target.wants/gdk-pixbuf.service \
-	/etc/systemd/system/graphical.target.wants/pango.service \
 	/etc/systemd/system/graphical.target.wants/update-mime-db.service \
 	/etc/systemd/system/lldpd.service.wants/snmpd.service \
 	/etc/systemd/system/local-fs.target.wants/debug.mount \
@@ -255,7 +252,6 @@ links = \
 	/etc/systemd/system/network.target.wants/ntpdate.service \
 	/etc/systemd/system/display-manager.service \
 	/etc/systemd/system/syslog.service \
-	/etc/pango/pango.modules \
 	/etc/proxy.conf \
 	/usr/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache \
 	/var/run \
