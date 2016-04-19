@@ -219,6 +219,11 @@ files = \
 	/usr/lib/firmware/xc3028L-v36.fw \
 	/usr/lib/firmware/edid/chimei-1366-768.bin \
 	/usr/lib/lsb/init-functions \
+	/usr/share/alsa/ucm/HDA_Intel_PCH/HDA_Intel_PCH.conf \
+	/usr/share/alsa/ucm/HDA_Intel_PCH/hifi.conf \
+	/usr/share/alsa/ucm/HDA_Intel_PCH/linein.conf \
+	/usr/share/alsa/ucm/HDA_Intel_PCH/voice-call.conf \
+	/usr/share/alsa/ucm/HDA_Intel_PCH/voice-call-ip.conf \
 	/usr/share/applications/xterm.desktop \
 	/usr/share/vim/vimrc
 
