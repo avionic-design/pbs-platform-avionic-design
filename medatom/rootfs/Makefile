@@ -268,6 +268,7 @@ links = \
 	/etc/xdg/menus/xfce-applications.menu \
 	/sbin/getty \
 	/sbin/init \
+	/sbin/reboot \
 	/usr/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache \
 	/usr/share/icons/default/index.theme \
 	/var/lock \
