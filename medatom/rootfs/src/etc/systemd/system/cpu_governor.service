@@ -1,0 +1,10 @@
+# /etc/systemd/system/cpu_governor.service
+[Unit]
+Description=Set the initial cpu governor
+After=multi-user.target
+
+[Service]
+ExecStart=/bin/bash -c 'for file in /sys/devices/system/cpu/cpu? ; do echo performance > $file/cpufreq/scaling_governor ; done'
+
+[Install]
+WantedBy=multi-user.target.wants
