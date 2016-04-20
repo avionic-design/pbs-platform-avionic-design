@@ -71,7 +71,7 @@ fi
 
 device="$1"
 
-/sbin/sfdisk --force -uM "$device" <<EOF
+/sbin/sfdisk --no-reread -uM "$device" <<EOF
 ,512,L,*
 ,128,L
 ,,L
