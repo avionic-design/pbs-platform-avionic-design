@@ -71,6 +71,8 @@ fi
 
 device="$1"
 
+umount "$device"?* 2>/dev/null || true
+
 /sbin/sfdisk --no-reread -uM "$device" <<EOF
 ,512,L,*
 ,128,L
