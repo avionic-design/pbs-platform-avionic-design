@@ -1,2 +1,0 @@
-# Rename tegra2 usb ethernet device from usb* to eth*
-SUBSYSTEM=="net", ACTION=="add", DRIVERS=="smsc95xx", KERNEL=="usb*", NAME="eth%n"

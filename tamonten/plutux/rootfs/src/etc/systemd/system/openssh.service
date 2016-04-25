@@ -1,8 +1,0 @@
-[Unit]
-Description=OpenSSH Server
-
-[Service]
-ExecStart=/usr/sbin/sshd -D
-
-[Install]
-WantedBy=multi-user.target

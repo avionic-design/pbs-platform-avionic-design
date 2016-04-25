@@ -1,0 +1,3 @@
+config PLATFORM_AVIONIC_DESIGN_TEC_INITRD
+	select PLATFORM_GENERIC_INITRD
+	bool "Initial Ramdisk"

@@ -1,0 +1,11 @@
+if PLATFORM_AVIONIC_DESIGN_TEC
+
+choice
+	prompt "Avionic Design Tamonten Evaluation Carrier"
+
+source "platforms/avionic-design/tec/initrd/Kconfig"
+source "platforms/avionic-design/tec/rootfs/Kconfig"
+
+endchoice
+
+endif

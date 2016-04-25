@@ -17,8 +17,9 @@ config PLATFORM_AVIONIC_DESIGN_PLUTUX
 	bool "Plutux"
 	select ARCH_TEGRA_2x_SOC
 
-config PLATFORM_AVIONIC_DESIGN_TAMONTEN
-	bool "Tamonten-based boards"
+config PLATFORM_AVIONIC_DESIGN_TEC
+	bool "Avionic Design Tamonten Evaluation Carrier"
+	select ARCH_TEGRA_2x_SOC
 
 endchoice
 
@@ -26,6 +27,6 @@ source "platforms/avionic-design/xanthos/Kconfig"
 source "platforms/avionic-design/medatom/Kconfig"
 source "platforms/avionic-design/medcom-wide/Kconfig"
 source "platforms/avionic-design/plutux/Kconfig"
-source "platforms/avionic-design/tamonten/Kconfig"
+source "platforms/avionic-design/tec/Kconfig"
 
 endif
