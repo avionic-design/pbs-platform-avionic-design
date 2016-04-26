@@ -28,11 +28,19 @@ fi
 
 device="$1"
 
+if LANG=C sfdisk --help 2>&1 | grep -qE '\--unit.*(ignored|deprecated)'; then
 /sbin/sfdisk "$device" <<EOF
 ,512M,L,*
 ,128M,L
 ,,L
 EOF
+else
+/sbin/sfdisk -uM "$device" <<EOF
+,512,L,*
+,128,L
+,,L
+EOF
+fi
 
 for directory in /usr/lib/syslinux /usr/share/syslinux; do
     if test -f "$directory/mbr.bin"; then
