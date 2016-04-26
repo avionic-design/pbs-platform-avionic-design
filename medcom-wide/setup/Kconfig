@@ -1,0 +1,9 @@
+config PLATFORM_AVIONIC_DESIGN_MEDCOM_WIDE_SETUP
+	select PLATFORM_GENERIC_INITRD
+	select PACKAGE_BUILD_TOOLS_UBOOT
+	bool "Setup OS"
+	help
+	  Create an initramfs without rootfs to setup a new device. The image is
+	  is intended to be loaded via TFTP from U-Boot. After booting this OS
+	  is capable of configuring the I2C sensor bars and flashing an SD card
+	  with production images.

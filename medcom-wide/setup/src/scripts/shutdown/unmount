@@ -1,0 +1,27 @@
+#!/bin/sh
+
+. /lib/lsb/init-functions
+
+log_action_begin_msg "Unmounting /proc filesystem"
+umount /proc
+log_action_end_msg $?
+
+log_action_begin_msg "Unmounting /sys filesystem"
+umount /sys
+log_action_end_msg $?
+
+log_action_begin_msg "Unmounting /tmp filesystem"
+umount /tmp
+log_action_end_msg $?
+
+log_action_begin_msg "Unmounting /dev filesystem"
+umount /dev
+log_action_end_msg $?
+
+log_action_begin_msg "Unmounting /run filesystem"
+umount /run
+log_action_end_msg $?
+
+log_action_begin_msg "Unmounting root filesystem"
+umount /
+log_action_end_msg $?

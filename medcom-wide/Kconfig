@@ -5,6 +5,7 @@ choice
 
 source "platforms/avionic-design/medcom-wide/initrd/Kconfig"
 source "platforms/avionic-design/medcom-wide/rootfs/Kconfig"
+source "platforms/avionic-design/medcom-wide/setup/Kconfig"
 
 endchoice
 

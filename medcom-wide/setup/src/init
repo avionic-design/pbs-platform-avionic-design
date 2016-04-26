@@ -1,0 +1,52 @@
+#!/bin/sh
+
+. /lib/lsb/init-functions
+
+HALT() {
+	echo "$1: $2"
+	echo "What is thy bidding?"
+	setsid cttyhack sh
+
+	echo "Powering down"
+	/shutdown 'poweroff'
+}
+
+log_action_begin_msg "Mounting /proc filesystem"
+mount -t proc none /proc
+log_action_end_msg $?
+
+log_action_begin_msg "Mounting /sys filesystem"
+mount -t sysfs none /sys
+log_action_end_msg $?
+
+log_action_begin_msg "Mounting /dev filesystem"
+mount -o mode=0755 -t devtmpfs none /dev
+log_action_end_msg $?
+
+log_action_begin_msg "Mounting /tmp filesystem"
+mount -t tmpfs none /tmp
+log_action_end_msg $?
+
+log_action_begin_msg "Mounting /run filesystem"
+mount -o nosuid,nodev,mode=0755 -t tmpfs run /run &&
+	mkdir /run/lock &&
+	mkdir /run/initramfs
+log_action_end_msg $?
+
+log_action_begin_msg "Starting udev daemon"
+/usr/lib/udev/udevd --daemon --resolve-names=never
+log_action_end_msg $?
+
+log_action_begin_msg "Waiting for /dev filesystem to be populated"
+/usr/bin/udevadm trigger
+/usr/bin/udevadm settle || true
+log_action_end_msg $?
+
+log_action_begin_msg "Looking for mtd devices"
+echo ""
+echo "Listing mtd devices:"
+echo "`cat /proc/mtd`"
+echo ""
+log_action_end_msg 0
+
+HALT "DONE" "Init for Medcom-wide Setup OS."
