@@ -30,6 +30,8 @@ device="$1"
 source="$2"
 mp="/media"
 
+umount "$device"?* 2>/dev/null || true
+
 /sbin/sfdisk "$device" <<EOF
 ,,L,*
 EOF
