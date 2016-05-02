@@ -8,6 +8,10 @@ dirs = \
 	/scripts/shutdown \
 	/tmp
 
+files = \
+	/etc/inittab \
+	/etc/passwd
+
 scripts = \
 	/init \
 	/scripts/shutdown/unmount
