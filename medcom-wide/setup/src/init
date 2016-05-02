@@ -52,6 +52,11 @@ echo "`cat /proc/mtd`"
 echo ""
 log_action_end_msg 0
 
+log_action_begin_msg "Updating hostname"
+hostname "medcom-wide-$(adak-mac -i eth0 serial)"
+echo "hostname: $(hostname)"
+log_action_end_msg 0
+
 log_action_begin_msg "Triggering dhcpcd"
 mkdir -p /var/run
 mkdir -p /var/lib/dhcp
