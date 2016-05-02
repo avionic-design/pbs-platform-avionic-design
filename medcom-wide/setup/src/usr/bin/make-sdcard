@@ -1,0 +1,100 @@
+#!/bin/sh
+
+mp=/media
+
+log_action_begin_msg()
+{
+	printf "%s... " "$@"
+}
+
+log_action_end_msg()
+{
+	if test "$1" -eq 0; then
+		echo "- done -"
+	else
+		echo "- FAILED -"
+		exit 1
+	fi
+}
+
+wait_for_partition()
+{
+	log_action_begin_msg "Waiting for partition $1"
+	while ! test -b "$1"; do
+		printf .
+		sleep 1
+	done
+	log_action_end_msg $?
+}
+
+format_partition()
+{
+	# mkfs from util-linux 2.27 fails to find mkfs.ext* due to some weird
+	# path issue. Unsure whether uclibc is to blame, let's call binaries
+	# directly for now.
+	mkbin="mkfs.$2"
+
+	log_action_begin_msg "Formatting $1 with $2 (label:$3)"
+	command -v "$mkbin" >/dev/null && $mkbin -F -L "$3" "$1"
+	log_action_end_msg $?
+}
+
+[ -n "$1" ] && [ -b "$1" ] || exit 1
+
+device="$1"
+
+umount "$device"?* 2>/dev/null || true
+
+if LANG=C sfdisk --help 2>&1 | grep -qE '\--unit.*(ignored|deprecated)'; then
+/sbin/sfdisk --no-reread "$device" <<EOF
+,512M,L,*
+,128M,L
+,,L
+EOF
+else
+/sbin/sfdisk --no-reread -uM "$device" <<EOF
+,512,L,*
+,128,L
+,,L
+EOF
+fi
+
+case "$device" in
+	*mmcblk0*)
+	device="$device"p
+	;;
+esac
+
+wait_for_partition "${device}1"
+format_partition "${device}1" ext3 boot
+wait_for_partition "${device}2"
+format_partition "${device}2" ext4 persist
+wait_for_partition "${device}3"
+format_partition "${device}3" ext4 data
+
+[ -d "$mp" ] || mkdir "$mp"
+
+log_action_begin_msg "Mounting rootfs storage"
+	mount "${device}1" "$mp"
+log_action_end_msg $?
+
+log_action_begin_msg "  Creating directories"
+	mkdir -p "$mp/boot"
+log_action_end_msg $?
+
+log_action_begin_msg "Unmounting rootfs storage"
+	umount "$mp"
+log_action_end_msg $?
+
+log_action_begin_msg "Mounting persistent storage"
+	mount "${device}2" "$mp"
+log_action_end_msg $?
+
+log_action_begin_msg "  Creating directories"
+	mkdir -p "$mp/etc/X11/xorg.conf.d" &&
+	mkdir -p "$mp/etc/network"
+log_action_end_msg $?
+
+log_action_begin_msg "Unmounting persistent storage"
+	umount "$mp"
+log_action_end_msg $?

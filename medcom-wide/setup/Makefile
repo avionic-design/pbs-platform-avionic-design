@@ -6,7 +6,9 @@ dirs = \
 	/etc \
 	/scripts \
 	/scripts/shutdown \
-	/tmp
+	/tmp \
+	/usr \
+	/usr/bin
 
 files = \
 	/etc/inittab \
@@ -14,7 +16,8 @@ files = \
 
 scripts = \
 	/init \
-	/scripts/shutdown/unmount
+	/scripts/shutdown/unmount \
+	/usr/bin/make-sdcard
 
 links = \
 	/bin/echo
