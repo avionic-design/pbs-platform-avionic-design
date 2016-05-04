@@ -8,6 +8,7 @@ if ! test -f "$CALIBRATION_FILE"; then
 	if [ $RET -eq 0 ]; then
 		echo "saving calibration"
 		mount -o remount,rw /persist
+		mkdir -p "$(dirname "$CALIBRATION_FILE")"
 		mv $CALIBRATION_OUT $CALIBRATION_FILE
 		mount -o remount,ro /persist
 		exit 0

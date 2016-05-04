@@ -9,6 +9,7 @@ fi
 if test "x$board" = "xmedatom"; then
 	if ! test -f "$CALIBRATION_FILE"; then
 		mount -o remount,rw /persist
+		mkdir -p "$(dirname "$CALIBRATION_FILE")"
 		evdev-calibrate --output "$CALIBRATION_FILE"
 		mount -o remount,ro /persist
 		exit 0
