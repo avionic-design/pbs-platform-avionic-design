@@ -1,0 +1,37 @@
+#!/bin/sh -e
+
+interface="$1"
+action="$2"
+arptype="$3"
+
+LOGGER="/usr/bin/logger -t iflinkd"
+
+if test "x$arptype" != "xether"; then
+	$LOGGER "$interface: unsupported ARP type: $arptype"
+	exit 0
+fi
+
+if test ! -f /etc/wpa_supplicant/wpa_supplicant-wired-$interface.conf; then
+	$LOGGER "$interface: authentication not configured"
+	exit 0
+fi
+
+case $action in
+	link)
+		if /bin/systemctl is-active wpa_supplicant@$interface.service; then
+			$LOGGER "$interface: restarting wpa_supplicant@$interface service"
+			/bin/systemctl restart wpa_supplicant@$interface.service
+		else
+			$LOGGER "$interface: starting wpa_supplicant@$interface service"
+			/bin/systemctl start wpa_supplicant@$interface.service
+		fi
+		;;
+
+	up | down)
+		$LOGGER "$interface: stopping wpa_supplicant@$interface service"
+		/bin/systemctl stop wpa_supplicant@$interface.service
+		;;
+
+	*)
+		;;
+esac

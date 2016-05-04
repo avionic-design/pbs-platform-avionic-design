@@ -71,6 +71,7 @@ dirs = \
 
 scripts = \
 	/etc/X11/Xsession \
+	/etc/iflinkd/hooks.d/00-auth \
 	/etc/iflinkd/hooks.d/00-lldpd \
 	/etc/iflinkd/hooks.d/10-dhcpcd \
 	/etc/iflinkd/hooks.d/20-nscd \
@@ -214,6 +215,7 @@ links = \
 	/etc/iflinkd/hooks.d/br0/00-lldpd \
 	/etc/iflinkd/hooks.d/br0/10-dhcpcd \
 	/etc/iflinkd/hooks.d/br0/20-nscd \
+	/etc/iflinkd/hooks.d/eth0/00-auth \
 	/etc/iflinkd/hooks.d/eth0/50-bridge \
 	/etc/iflinkd/hooks.d/eth1/50-bridge \
 	/etc/machine-id \
@@ -253,7 +255,9 @@ links = \
 	/etc/systemd/system/display-manager.service \
 	/etc/systemd/system/syslog.service \
 	/etc/proxy.conf \
+	/etc/wpa_supplicant \
 	/usr/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache \
+	/usr/lib/systemd/system/wpa_supplicant@eth0.service \
 	/var/run \
 	/init \
 	/sbin/halt \
