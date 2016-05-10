@@ -11,7 +11,7 @@ dirs = \
 	/etc/X11/Xsession.d \
 	/etc/X11/xorg.conf.d \
 	/etc/adobe \
-	/etc/default/lldpd \
+	/etc/default \
 	/etc/fonts \
 	/etc/fonts/conf.d \
 	/etc/gtk-2.0 \
@@ -110,6 +110,7 @@ files = \
 	/etc/asound.conf \
 	/etc/asound.conf.usb \
 	/etc/crontab \
+	/etc/default/lldpd \
 	/etc/fonts/conf.d/99-antialiasing.conf \
 	/etc/fstab \
 	/etc/group \
