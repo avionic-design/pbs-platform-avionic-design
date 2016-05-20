@@ -7,7 +7,6 @@
 KEYGEN=/usr/bin/ssh-keygen
 PREFIX=/persist
 
-RSA1_KEY=$PREFIX/etc/ssh/ssh_host_key
 RSA_KEY=$PREFIX/etc/ssh/ssh_host_rsa_key
 DSA_KEY=$PREFIX/etc/ssh/ssh_host_dsa_key
 ECDSA_KEY=$PREFIX/etc/ssh/ssh_host_ecdsa_key
@@ -44,7 +43,6 @@ do_keygen() {
 
 # Create keys if necessary
 do_keygen $RSA_KEY rsa
-do_keygen $RSA1_KEY rsa1
 do_keygen $DSA_KEY dsa
 do_keygen $ECDSA_KEY ecdsa
 

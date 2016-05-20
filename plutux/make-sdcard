@@ -117,8 +117,7 @@ if test -x `which ssh-keygen`; then
 	log_action_begin_msg "  Generating SSH keys"
 	mkdir -p "$mp/etc/ssh" &&
 		ssh_keygen dsa "$mp/etc/ssh/ssh_host_dsa_key" &&
-		ssh_keygen rsa "$mp/etc/ssh/ssh_host_rsa_key" &&
-		ssh_keygen rsa1 "$mp/etc/ssh/ssh_host_key"
+		ssh_keygen rsa "$mp/etc/ssh/ssh_host_rsa_key"
 	log_action_end_msg $?
 fi
 
