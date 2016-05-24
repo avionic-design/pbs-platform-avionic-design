@@ -1,3 +1,5 @@
+DBUS_ADDRESS_FILE='/var/run/dbus-session-bus-address'
+
 if test "x$XDG_CONFIG_HOME" = "x"; then
 	XDG_CONFIG_HOME="$HOME/.config"
 fi
@@ -8,9 +10,21 @@ if test -e /var/log/Xsession.log; then
 	/bin/gzip /var/log/Xsession.log
 fi
 
-eval `dbus-launch --sh-syntax`
-# Make the session bus address available for use from a ssh session, etc.
-echo "export DBUS_SESSION_BUS_ADDRESS=$DBUS_SESSION_BUS_ADDRESS" > /var/run/dbus-session-bus-address
+if [ -f "$DBUS_ADDRESS_FILE" ]; then
+	eval `cat "$DBUS_ADDRESS_FILE"`
+	dbus-send --dest=org.freedesktop.DBus --type=method_call \
+		/org/freedesktop/DBus org.freedesktop.DBus.GetId 2>/dev/null
+	if [ $? -eq 0 ]; then
+		RECYCLE=1
+		echo 'Reusing existing dbus session daemon.'
+	fi
+fi
+
+if test "x$RECYCLE" = "x"; then
+	eval `dbus-launch --sh-syntax`
+	# Make the session bus address available for use from a ssh session, etc.
+	echo "export DBUS_SESSION_BUS_ADDRESS=$DBUS_SESSION_BUS_ADDRESS" > "$DBUS_ADDRESS_FILE"
+fi
 
 /usr/lib/at-spi2/at-spi-bus-launcher --launch-immediately >/tmp/spi.log 2>&1 &
 
