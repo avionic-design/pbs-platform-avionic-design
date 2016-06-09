@@ -104,6 +104,7 @@ files = \
 	/etc/X11/xorg.conf.d/10-egalax.conf \
 	/etc/X11/xorg.conf.d/20-monitor.conf \
 	/etc/X11/xorg.conf.d/80-server.conf \
+	/etc/X11/xorg.conf.d/95-sharp-touch.conf \
 	/etc/X11/xorg.conf.d/99-keyboard-de.conf \
 	/etc/X11/xorg.conf.available/monitor-inverted.conf \
 	/etc/adobe/mms.cfg \
