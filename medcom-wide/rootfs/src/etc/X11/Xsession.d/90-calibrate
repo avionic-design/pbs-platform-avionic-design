@@ -1,6 +1,20 @@
 CALIBRATION_FILE=`/usr/bin/readlink /etc/X11/xorg.conf.d/99-calibration.conf`
 CALIBRATION_OUT=/tmp/calibration.conf
 
+# Space separated list of USB vendor:device pairs which do not need calibration.
+# 1. "Sharp Corp.   TPC-IC   USB HID"
+NO_CALIBRATION="04dd:9570"
+
+for dev in $NO_CALIBRATION; do
+	if lsusb -d "$dev" >/dev/null; then
+		if test -f "$CALIBRATION_FILE"; then
+			echo "Warning: USB device $dev does not need" \
+				"calibration, but $CALIBRATION_FILE exists";
+		fi
+		return 0
+	fi;
+done
+
 if ! test -f "$CALIBRATION_FILE"; then
 	/usr/bin/evdev-calibrate --output "$CALIBRATION_OUT"
 	RET=$?
