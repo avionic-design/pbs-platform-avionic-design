@@ -266,8 +266,10 @@ links = \
 	/etc/systemd/system/multi-user.target.wants/crond.service \
 	/etc/systemd/system/multi-user.target.wants/network.target \
 	/etc/systemd/system/multi-user.target.wants/openssh.service \
+	/etc/systemd/system/multi-user.target.wants/pcscd.service \
 	/etc/systemd/system/multi-user.target.wants/update-crontab.service \
 	/etc/systemd/system/multi-user.target.wants/usb-power.service \
+	/etc/systemd/system/sockets.target.wants/pcscd.socket \
 	/etc/systemd/system/syslog.service \
 	/etc/udev/rules.d/80-net-setup-link.rules \
 	/etc/X11/xorg.conf.d/99-calibration.conf \
