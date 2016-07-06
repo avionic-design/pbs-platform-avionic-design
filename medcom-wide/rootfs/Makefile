@@ -220,6 +220,7 @@ links = \
 	/etc/iflinkd/hooks.d/eth0/00-auth \
 	/etc/iflinkd/hooks.d/eth0/50-bridge \
 	/etc/iflinkd/hooks.d/eth1/50-bridge \
+	/etc/lldpd.d \
 	/etc/machine-id \
 	/etc/motd \
 	/etc/mtab \

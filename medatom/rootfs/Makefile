@@ -249,6 +249,7 @@ links = \
 	/etc/rcS.d/75-ssh \
 	/etc/rcS.d/99-X \
 	/etc/hostname \
+	/etc/lldpd.d \
 	/etc/ntp.conf \
 	/etc/proxy.conf \
 	/etc/remote-control.conf \
