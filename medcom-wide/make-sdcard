@@ -18,11 +18,11 @@ log_action_begin_msg()
 log_action_end_msg()
 {
 	if test $1 -eq 0; then
-		echo "\033[32m done"
+		echo -e "\033[0;32m done"
 	else
-		echo "\033[31m failed"
+		echo -e "\033[0;31m failed"
 	fi
-	echo "\033[0m"
+	echo -e "\033[m"
 }
 
 wait_for_partition()
@@ -71,11 +71,21 @@ fi
 
 device="$1"
 
-/sbin/sfdisk --force -uM "$device" <<EOF
+umount "$device"?* 2>/dev/null || true
+
+if LANG=C sfdisk --help 2>&1 | grep -qE '\--unit.*(ignored|deprecated)'; then
+/sbin/sfdisk --no-reread "$device" <<EOF
+,512M,L,*
+,128M,L
+,,L
+EOF
+else
+/sbin/sfdisk --no-reread -uM "$device" <<EOF
 ,512,L,*
 ,128,L
 ,,L
 EOF
+fi
 
 wait_for_partition ${device}1
 format_partition ${device}1 ext3 boot
@@ -143,8 +153,7 @@ if test -x `which ssh-keygen`; then
 	log_action_begin_msg "  Generating SSH keys"
 	mkdir -p "$mp/etc/ssh" &&
 		ssh_keygen dsa "$mp/etc/ssh/ssh_host_dsa_key" &&
-		ssh_keygen rsa "$mp/etc/ssh/ssh_host_rsa_key" &&
-		ssh_keygen rsa1 "$mp/etc/ssh/ssh_host_key"
+		ssh_keygen rsa "$mp/etc/ssh/ssh_host_rsa_key"
 	log_action_end_msg $?
 #	log_action_begin_msg "  Generating SSH key (ecdsa)"
 #		ssh_keygen ecdsa "$mp/etc/ssh/ssh_host_ecdsa_key"
