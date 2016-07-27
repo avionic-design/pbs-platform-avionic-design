@@ -33,5 +33,9 @@ if test "x$WINDOW_MANAGER" != "x"; then
 fi
 if test "x$KEYBOARD" != "x"; then
 	$KEYBOARD &
+	# if starting remote-control too fast after gtkosk, the X server
+	# sometimes terminates the session without any reason
+	# TODO: Invest more time finding out the reason.
+	sleep 1
 fi
 exec $STARTUP 2>&1 | /usr/bin/logger -t Xsession -id
