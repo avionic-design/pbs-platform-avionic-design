@@ -76,6 +76,7 @@ scripts = \
 	/etc/iflinkd/hooks.d/10-dhcpcd \
 	/etc/iflinkd/hooks.d/20-nscd \
 	/etc/iflinkd/hooks.d/50-bridge \
+	/etc/iflinkd/hooks.d/60-multicast \
 	/etc/iflinkd/hooks.d/eth1/00-speed \
 	/etc/xdg/awesome/xinitrc \
 	/usr/lib/dhcpcd/dhcpcd-hooks/90-ntp \
@@ -217,6 +218,7 @@ links = \
 	/etc/iflinkd/hooks.d/br0/00-lldpd \
 	/etc/iflinkd/hooks.d/br0/10-dhcpcd \
 	/etc/iflinkd/hooks.d/br0/20-nscd \
+	/etc/iflinkd/hooks.d/br0/60-multicast \
 	/etc/iflinkd/hooks.d/eth0/00-auth \
 	/etc/iflinkd/hooks.d/eth0/50-bridge \
 	/etc/iflinkd/hooks.d/eth1/50-bridge \

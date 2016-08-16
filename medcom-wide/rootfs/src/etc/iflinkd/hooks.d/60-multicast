@@ -1,0 +1,22 @@
+#!/bin/sh -e
+
+interface="$1"
+action="$2"
+arptype="$3"
+
+LOGGER="/usr/bin/logger -t iflinkd"
+IP=/sbin/ip
+
+case $action in
+	link)
+		$IP route add 224.0.0.0/4 dev $interface
+		;;
+
+	up | down)
+		$IP route del 224.0.0.0/4 dev $interface
+		;;
+
+	*)
+		$LOGGER "$interface: unsupported action: $action"
+		;;
+esac
