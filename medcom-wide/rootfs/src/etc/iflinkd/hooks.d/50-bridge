@@ -7,23 +7,29 @@ arptype="$3"
 LOGGER="/usr/bin/logger -t iflinkd"
 BRCTL=/usr/sbin/brctl
 
+# Set the default bridge device if it is not set
+[ -n "$BRIDGE_DEV" ] || BRIDGE_DEV=br0
+
 if test "x$arptype" != "xether"; then
 	$LOGGER "$interface: unsupported ARP type: $arptype"
 	exit 0
 fi
 
 # override bridge defaults if needed.
-if test -f /persist/etc/bridge.conf; then
+if test -f /persist/etc/bridge-$BRIDGE_DEV.conf; then
+	source /persist/etc/bridge-$BRIDGE_DEV.conf
+elif test -f /persist/etc/bridge.conf; then
 	source /persist/etc/bridge.conf
 fi
 
 # Make sure the bridge is active.
-if !(test -d /sys/class/net/br0); then
+if !(test -d /sys/class/net/$BRIDGE_DEV); then
 	fdt=${BRIDGE_FORWARD_TIME:-5}
 	stp=${BRIDGE_STP:-off}
 
 	$LOGGER "$interface: creating bridge with stp $stp and fd $fdt"
-	$BRCTL addbr br0 && $BRCTL setfd br0 $fdt && $BRCTL stp br0 $stp
+	$BRCTL addbr $BRIDGE_DEV && \
+		$BRCTL setfd $BRIDGE_DEV $fdt && $BRCTL stp $BRIDGE_DEV $stp
 	if test $? -ne 0; then
 		$LOGGER "$interface: failed to create bridge"
 		exit 1
@@ -33,18 +39,18 @@ fi
 case $action in
 	link)
 		# Add interface to bridge, if it is not added yet.
-		if ! (test -d /sys/class/net/br0/brif/$interface); then
+		if ! (test -d /sys/class/net/$BRIDGE_DEV/brif/$interface); then
 			$LOGGER "$interface: adding to bridge"
-			$BRCTL addif br0 $interface
+			$BRCTL addif $BRIDGE_DEV $interface
 		fi
 		;;
 
 	up | down)
 		# Remove interface from bridge, when interface is
 		# attached to the bridge.
-		if (test -d /sys/class/net/br0/brif/$interface); then
+		if (test -d /sys/class/net/$BRIDGE_DEV/brif/$interface); then
 			$LOGGER "$interface: remove from bridge"
-			$BRCTL delif br0 $interface
+			$BRCTL delif $BRIDGE_DEV $interface
 		fi
 		;;
 
