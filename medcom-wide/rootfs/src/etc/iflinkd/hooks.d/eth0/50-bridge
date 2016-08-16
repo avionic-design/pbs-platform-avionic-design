@@ -1,1 +1,11 @@
-../50-bridge
+#!/bin/sh -e
+
+if [ -f /persist/etc/vlan.conf ]; then
+	. /persist/etc/vlan.conf
+	# If a management VLAN is used no need to join the bridge
+	if test "$MGMNT_VLAN" -gt 0 2> /dev/null; then
+		exit 0
+	fi
+fi
+
+exec $(dirname $0)/../$(basename $0) "$@"
