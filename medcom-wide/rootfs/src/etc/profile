@@ -51,6 +51,11 @@ else
     umask 022
 fi
 
+# Fix the terminal size on serial consoles
+if tty | grep -q ^/dev/ttyS[0-9] ; then
+	eval $(resize)
+fi
+
 if test -f /etc/os-release; then
 	source /etc/os-release
 	if test -n "${VERSION}"; then
