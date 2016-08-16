@@ -1,0 +1,56 @@
+#!/bin/sh -e
+
+interface="$1"
+action="$2"
+arptype="$3"
+
+LOGGER="/usr/bin/logger -t iflinkd"
+BROUTE="ebtables -t broute"
+CHAIN="$interface-vlan-filter"
+
+VLANS=
+add_vlan() {
+	local vid
+	eval vid=\"\$$(echo $1 | tr a-z A-Z)_VLAN\"
+	if test "$vid" -gt 0 2> /dev/null; then
+		test -n "$VLANS" && VLANS="$VLANS $1" || VLANS="$1"
+	fi
+}
+
+if test "x$arptype" != "xether"; then
+	$LOGGER "$interface: unsupported ARP type: $arptype"
+	exit 0
+fi
+
+test -f /persist/etc/vlan.conf || exit 0
+. /persist/etc/vlan.conf
+
+add_vlan guest
+
+test -n "$VLANS" || exit 0
+
+case $action in
+	link)
+		$LOGGER "$interface: adding VLAN interfaces ($VLANS)"
+		if $BROUTE -N $CHAIN 2> /dev/null; then
+			$BROUTE -A $CHAIN -j DROP
+			$BROUTE -A BROUTING -p 0x8100 -i $interface -j $CHAIN
+		fi
+		for VLAN in $VLANS; do
+			systemctl start iflinkd@$interface-$VLAN
+		done
+		;;
+	up | down)
+		$LOGGER "$interface: removing VLAN interfaces ($VLANS)"
+		for VLAN in $VLANS; do
+			systemctl stop iflinkd@$interface-$VLAN
+		done
+		if $BROUTE -F $CHAIN 2> /dev/null; then
+			$BROUTE -D BROUTING -p 0x8100 -i $interface -j $CHAIN
+			$BROUTE -X $CHAIN
+		fi
+		;;
+	*)
+		$LOGGER "$interface: unsupported action: $action"
+		;;
+esac

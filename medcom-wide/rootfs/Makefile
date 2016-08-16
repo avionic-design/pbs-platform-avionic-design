@@ -19,7 +19,9 @@ dirs = \
 	/etc/iflinkd \
 	/etc/iflinkd/hooks.d \
 	/etc/iflinkd/hooks.d/br0 \
+	/etc/iflinkd/hooks.d/br-guest \
 	/etc/iflinkd/hooks.d/eth0 \
+	/etc/iflinkd/hooks.d/eth0.guest \
 	/etc/iflinkd/hooks.d/eth1 \
 	/etc/iflinkd/hooks.d/lo \
 	/etc/logrotate.d \
@@ -77,7 +79,10 @@ scripts = \
 	/etc/iflinkd/hooks.d/20-nscd \
 	/etc/iflinkd/hooks.d/50-bridge \
 	/etc/iflinkd/hooks.d/60-multicast \
+	/etc/iflinkd/hooks.d/eth0/10-vlan \
+	/etc/iflinkd/hooks.d/eth0.guest/50-bridge \
 	/etc/iflinkd/hooks.d/eth1/00-speed \
+	/etc/iflinkd/hooks.d/eth1/50-bridge \
 	/etc/xdg/awesome/xinitrc \
 	/usr/lib/dhcpcd/dhcpcd-hooks/90-ntp \
 	/usr/lib/systemd/gdk-pixbuf-loaders-cache \
@@ -129,6 +134,7 @@ files = \
 	/etc/logrotate.d/general \
 	/etc/modprobe.d/tm6000.conf \
 	/etc/modules-load.d/input.conf \
+	/etc/modules-load.d/vlan.conf \
 	/etc/nscd.conf \
 	/etc/nsswitch.conf \
 	/etc/passwd \
@@ -166,7 +172,9 @@ files = \
 	/etc/systemd/system/drop-caches.timer \
 	/etc/systemd/system/gdk-pixbuf.service \
 	/etc/systemd/system/iflinkd@br0.service \
+	/etc/systemd/system/iflinkd@br-guest.service \
 	/etc/systemd/system/iflinkd@eth0.service \
+	/etc/systemd/system/iflinkd@eth0-guest.service \
 	/etc/systemd/system/iflinkd@eth1.service \
 	/etc/systemd/system/iflinkd@lo.service \
 	/etc/systemd/system/logrotate.service \
@@ -221,7 +229,6 @@ links = \
 	/etc/iflinkd/hooks.d/br0/60-multicast \
 	/etc/iflinkd/hooks.d/eth0/00-auth \
 	/etc/iflinkd/hooks.d/eth0/50-bridge \
-	/etc/iflinkd/hooks.d/eth1/50-bridge \
 	/etc/lldpd.d \
 	/etc/machine-id \
 	/etc/motd \
@@ -252,6 +259,7 @@ links = \
 	/etc/systemd/system/multi-user.target.wants/openssh.service \
 	/etc/systemd/system/multi-user.target.wants/update-crontab.service \
 	/etc/systemd/system/network.target.wants/iflinkd@br0.service \
+	/etc/systemd/system/network.target.wants/iflinkd@br-guest.service \
 	/etc/systemd/system/network.target.wants/iflinkd@eth0.service \
 	/etc/systemd/system/network.target.wants/iflinkd@eth1.service \
 	/etc/systemd/system/network.target.wants/iflinkd@lo.service \

@@ -1,1 +1,12 @@
-../50-bridge
+#!/bin/sh -e
+
+# If there is a guest VLAN we need to use the guest bridge
+if [ -f /persist/etc/vlan.conf ]; then
+	. /persist/etc/vlan.conf
+
+	if test "$GUEST_VLAN" -gt 0 2> /dev/null; then
+		export BRIDGE_DEV=br-guest
+	fi
+fi
+
+exec $(dirname $0)/../$(basename $0) "$@"

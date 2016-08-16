@@ -1,0 +1,6 @@
+#!/bin/sh -e
+
+# Use the guest bridge
+export BRIDGE_DEV=br-guest
+
+exec $(dirname $0)/../$(basename $0) "$@"
