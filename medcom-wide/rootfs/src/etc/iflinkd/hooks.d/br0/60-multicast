@@ -1,1 +1,12 @@
-../60-multicast
+#!/bin/sh -e
+
+# If there is a media VLAN we don't set the multicast route
+if [ -f /persist/etc/vlan.conf ]; then
+	. /persist/etc/vlan.conf
+
+	if test "$MEDIA_VLAN" -gt 0 2> /dev/null; then
+		exit 0
+	fi
+fi
+
+exec $(dirname $0)/../$(basename $0) "$@"

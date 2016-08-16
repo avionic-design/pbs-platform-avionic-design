@@ -1,0 +1,15 @@
+[Unit]
+Description=Interface Link Status Monitor for media VLAN Ethernet Interface
+Requires=iflinkd@eth0.service
+After=iflinkd@eth0.service
+
+[Service]
+Type=simple
+EnvironmentFile=/persist/etc/vlan.conf
+ExecStartPre=/sbin/ip link add link eth0 name eth0.media type vlan id "$MEDIA_VLAN"
+ExecStart=/usr/sbin/iflinkd -i eth0.media
+ExecStopPost=/sbin/ip link delete eth0.media
+StandardError=syslog
+
+[Install]
+WantedBy=network.target

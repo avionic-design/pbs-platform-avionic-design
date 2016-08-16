@@ -23,6 +23,7 @@ dirs = \
 	/etc/iflinkd/hooks.d/eth0 \
 	/etc/iflinkd/hooks.d/eth0.guest \
 	/etc/iflinkd/hooks.d/eth0.inet \
+	/etc/iflinkd/hooks.d/eth0.media \
 	/etc/iflinkd/hooks.d/eth1 \
 	/etc/iflinkd/hooks.d/lo \
 	/etc/logrotate.d \
@@ -81,8 +82,10 @@ scripts = \
 	/etc/iflinkd/hooks.d/50-bridge \
 	/etc/iflinkd/hooks.d/60-multicast \
 	/etc/iflinkd/hooks.d/br0/10-dhcpcd \
+	/etc/iflinkd/hooks.d/br0/60-multicast \
 	/etc/iflinkd/hooks.d/eth0/10-vlan \
 	/etc/iflinkd/hooks.d/eth0.guest/50-bridge \
+	/etc/iflinkd/hooks.d/eth0.media/10-dhcpcd \
 	/etc/iflinkd/hooks.d/eth1/00-speed \
 	/etc/iflinkd/hooks.d/eth1/50-bridge \
 	/etc/xdg/awesome/xinitrc \
@@ -178,6 +181,7 @@ files = \
 	/etc/systemd/system/iflinkd@eth0.service \
 	/etc/systemd/system/iflinkd@eth0-guest.service \
 	/etc/systemd/system/iflinkd@eth0-inet.service \
+	/etc/systemd/system/iflinkd@eth0-media.service \
 	/etc/systemd/system/iflinkd@eth1.service \
 	/etc/systemd/system/iflinkd@lo.service \
 	/etc/systemd/system/logrotate.service \
@@ -228,11 +232,11 @@ links = \
 	/etc/hostname \
 	/etc/iflinkd/hooks.d/br0/00-lldpd \
 	/etc/iflinkd/hooks.d/br0/20-nscd \
-	/etc/iflinkd/hooks.d/br0/60-multicast \
 	/etc/iflinkd/hooks.d/eth0/00-auth \
 	/etc/iflinkd/hooks.d/eth0/50-bridge \
 	/etc/iflinkd/hooks.d/eth0.inet/10-dhcpcd \
 	/etc/iflinkd/hooks.d/eth0.inet/20-nscd \
+	/etc/iflinkd/hooks.d/eth0.media/60-multicast \
 	/etc/lldpd.d \
 	/etc/machine-id \
 	/etc/motd \

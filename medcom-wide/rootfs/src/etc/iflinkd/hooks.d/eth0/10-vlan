@@ -27,6 +27,7 @@ test -f /persist/etc/vlan.conf || exit 0
 
 add_vlan guest
 add_vlan inet
+add_vlan media
 
 test -n "$VLANS" || exit 0
 
