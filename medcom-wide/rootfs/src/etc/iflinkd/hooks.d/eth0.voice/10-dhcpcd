@@ -1,0 +1,6 @@
+#!/bin/sh -e
+
+# Assume we don't need a default route for the VoIP server
+export DHCPCD_OPTS="--nogateway"
+
+exec $(dirname $0)/../$(basename $0) "$@"

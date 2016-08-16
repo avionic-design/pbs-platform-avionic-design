@@ -25,6 +25,7 @@ dirs = \
 	/etc/iflinkd/hooks.d/eth0.inet \
 	/etc/iflinkd/hooks.d/eth0.media \
 	/etc/iflinkd/hooks.d/eth0.mgmnt \
+	/etc/iflinkd/hooks.d/eth0.voice \
 	/etc/iflinkd/hooks.d/eth1 \
 	/etc/iflinkd/hooks.d/lo \
 	/etc/logrotate.d \
@@ -88,6 +89,7 @@ scripts = \
 	/etc/iflinkd/hooks.d/eth0/50-bridge \
 	/etc/iflinkd/hooks.d/eth0.guest/50-bridge \
 	/etc/iflinkd/hooks.d/eth0.media/10-dhcpcd \
+	/etc/iflinkd/hooks.d/eth0.voice/10-dhcpcd \
 	/etc/iflinkd/hooks.d/eth1/00-speed \
 	/etc/iflinkd/hooks.d/eth1/50-bridge \
 	/etc/xdg/awesome/xinitrc \
@@ -185,6 +187,7 @@ files = \
 	/etc/systemd/system/iflinkd@eth0-inet.service \
 	/etc/systemd/system/iflinkd@eth0-media.service \
 	/etc/systemd/system/iflinkd@eth0-mgmnt.service \
+	/etc/systemd/system/iflinkd@eth0-voice.service \
 	/etc/systemd/system/iflinkd@eth1.service \
 	/etc/systemd/system/iflinkd@lo.service \
 	/etc/systemd/system/logrotate.service \

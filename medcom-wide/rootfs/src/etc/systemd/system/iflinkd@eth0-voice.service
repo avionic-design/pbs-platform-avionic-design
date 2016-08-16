@@ -1,0 +1,15 @@
+[Unit]
+Description=Interface Link Status Monitor for VoIP VLAN Ethernet Interface
+Requires=iflinkd@eth0.service
+After=iflinkd@eth0.service
+
+[Service]
+Type=simple
+EnvironmentFile=/persist/etc/vlan.conf
+ExecStartPre=/sbin/ip link add link eth0 name eth0.voice type vlan id "$VOICE_VLAN"
+ExecStart=/usr/sbin/iflinkd -i eth0.voice
+ExecStopPost=/sbin/ip link delete eth0.voice
+StandardError=syslog
+
+[Install]
+WantedBy=network.target

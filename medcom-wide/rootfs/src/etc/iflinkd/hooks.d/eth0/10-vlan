@@ -29,6 +29,7 @@ add_vlan guest
 add_vlan inet
 add_vlan media
 add_vlan mgmnt
+add_vlan voice
 
 test -n "$VLANS" || exit 0
 
