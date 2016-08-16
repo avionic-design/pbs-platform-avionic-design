@@ -1,1 +1,12 @@
-../10-dhcpcd
+#!/bin/sh -e
+
+# If there is an internet VLAN we don't set the default route
+if [ -f /persist/etc/vlan.conf ]; then
+	. /persist/etc/vlan.conf
+
+	if test "$INET_VLAN" -gt 0 2> /dev/null; then
+		export DHCPCD_OPTS="--nogateway"
+	fi
+fi
+
+exec $(dirname $0)/../$(basename $0) "$@"

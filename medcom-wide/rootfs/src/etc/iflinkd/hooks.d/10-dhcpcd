@@ -27,7 +27,7 @@ fi
 case $action in
 	link)
 		$LOGGER "$interface: starting dhcpcd"
-		/usr/sbin/dhcpcd --quiet --hostname --noipv4ll --timeout 0 $interface &
+		/usr/sbin/dhcpcd --quiet --hostname --noipv4ll --timeout 0 $DHCPCD_OPTS $interface &
 		;;
 
 	up | down)
