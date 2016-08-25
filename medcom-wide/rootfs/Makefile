@@ -181,7 +181,6 @@ files = \
 	/etc/systemd/system/drop-caches.timer \
 	/etc/systemd/system/gdk-pixbuf.service \
 	/etc/systemd/system/iflinkd@br0.service \
-	/etc/systemd/system/iflinkd@br-guest.service \
 	/etc/systemd/system/iflinkd@eth0.service \
 	/etc/systemd/system/iflinkd@eth0-guest.service \
 	/etc/systemd/system/iflinkd@eth0-inet.service \
@@ -273,7 +272,6 @@ links = \
 	/etc/systemd/system/multi-user.target.wants/openssh.service \
 	/etc/systemd/system/multi-user.target.wants/update-crontab.service \
 	/etc/systemd/system/network.target.wants/iflinkd@br0.service \
-	/etc/systemd/system/network.target.wants/iflinkd@br-guest.service \
 	/etc/systemd/system/network.target.wants/iflinkd@eth0.service \
 	/etc/systemd/system/network.target.wants/iflinkd@eth1.service \
 	/etc/systemd/system/network.target.wants/iflinkd@lo.service \
