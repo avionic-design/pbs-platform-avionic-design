@@ -253,7 +253,6 @@ links = \
 	/etc/resolv.conf \
 	/etc/systemd/system/basic.target.wants/drop-caches.timer \
 	/etc/systemd/system/basic.target.wants/logrotate.timer \
-	/etc/systemd/system/basic.target.wants/zram.service \
 	/etc/systemd/system/graphical.target.wants/gdk-pixbuf.service \
 	/etc/systemd/system/graphical.target.wants/update-mime-db.service \
 	/etc/systemd/system/lldpd.service.wants/snmpd.service \
