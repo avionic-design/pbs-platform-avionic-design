@@ -14,10 +14,9 @@ find_gpiochip()
 	return 1
 }
 
-# retry with old-style naming
-find_gpiochip "gpio-ad64p" || find_gpiochip "0000:05:00.0"
+find_gpiochip "gpio-kempld"
 
 [ "$BASE" = "x" ] && { echo "Error: gpio chip not found."; exit 1; }
 
-echo $((BASE+15)) > /sys/class/gpio/export
-echo high > /sys/class/gpio/gpio$((BASE+15))/direction
+echo $((BASE+4)) > /sys/class/gpio/export
+echo high > /sys/class/gpio/gpio$((BASE+4))/direction
