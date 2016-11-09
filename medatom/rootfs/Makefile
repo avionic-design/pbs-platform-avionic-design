@@ -170,6 +170,7 @@ files = \
 	/etc/shadow \
 	/etc/ssh/sshd_config \
 	/etc/sysctl.conf \
+	/etc/systemd/journald.conf \
 	/etc/systemd/system.conf \
 	/etc/systemd/system/cpu_governor.service \
 	/etc/systemd/system/crond.service \
