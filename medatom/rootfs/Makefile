@@ -186,6 +186,7 @@ files = \
 	/etc/systemd/system/var-lib.mount \
 	/etc/systemd/system/var-log.mount \
 	/etc/systemd/system/var-spool.mount \
+	/etc/systemd/system/watchdog.service \
 	/etc/tmpfiles.d/console-kit.conf \
 	/etc/tmpfiles.d/dbus.conf \
 	/etc/tmpfiles.d/dhcpcd.conf \
@@ -265,6 +266,7 @@ links = \
 	/etc/systemd/system/multi-user.target.wants/pcscd.service \
 	/etc/systemd/system/multi-user.target.wants/update-crontab.service \
 	/etc/systemd/system/multi-user.target.wants/usb-power.service \
+	/etc/systemd/system/multi-user.target.wants/watchdog.service \
 	/etc/systemd/system/sockets.target.wants/pcscd.socket \
 	/etc/systemd/system/syslog.service \
 	/etc/udev/rules.d/80-net-setup-link.rules \
