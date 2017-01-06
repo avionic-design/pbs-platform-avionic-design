@@ -204,6 +204,7 @@ files = \
 	/etc/X11/xorg.conf.d/98-dpms.conf \
 	/etc/X11/xorg.conf.d/99-intel.conf \
 	/etc/X11/Xsession.d/00-persist \
+	/etc/X11/Xsession.d/20-detect-restart-reason \
 	/etc/X11/Xsession.d/50-determine-startup \
 	/etc/X11/Xsession.d/90-calibrate \
 	/etc/X11/Xsession.d/99-start \

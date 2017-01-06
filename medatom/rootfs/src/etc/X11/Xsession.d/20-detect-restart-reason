@@ -1,0 +1,39 @@
+BASE='x'
+
+find_gpiochip()
+{
+	for f in /sys/class/gpio/gpiochip*; do
+		LABEL=$(cat "$f/label")
+		if [ "$LABEL" = "$1" ]; then
+			BASE=$(cat "$f/base")
+			return 0
+		fi
+	done
+	return 1
+}
+
+find_gpiochip "gpio-kempld"
+
+[ "$BASE" = "x" ] && { logger "Boot reason unknown: gpio chip not found."; exit 1; }
+
+echo $((BASE+0)) > /sys/class/gpio/export $2>/dev/null
+echo $((BASE+1)) > /sys/class/gpio/export $2>/dev/null
+echo $((BASE+6)) > /sys/class/gpio/export $2>/dev/null
+
+RST=$(cat "/sys/class/gpio/gpio$((BASE+0))/value")
+WD=$(cat "/sys/class/gpio/gpio$((BASE+1))/value")
+CLR=$(cat "/sys/class/gpio/gpio$((BASE+6))/value")
+
+if [ "$CLR" = "1" ] ; then
+	logger "Restarted X11"
+else
+	if [ "$RST" = "1" ] ; then
+		logger "Rebboted due to reset button"
+	elif [ "$WD" = "1" ] ; then
+		logger "Rebooted due to watchdog"
+	else
+		logger "Booted due to power on"
+	fi
+fi
+
+echo high > /sys/class/gpio/gpio$((BASE+6))/direction
