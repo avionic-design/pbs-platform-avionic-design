@@ -16,9 +16,9 @@ find_gpiochip "gpio-kempld"
 
 [ "$BASE" = "x" ] && { logger "Boot reason unknown: gpio chip not found."; exit 1; }
 
-echo $((BASE+0)) > /sys/class/gpio/export $2>/dev/null
-echo $((BASE+1)) > /sys/class/gpio/export $2>/dev/null
-echo $((BASE+6)) > /sys/class/gpio/export $2>/dev/null
+echo $((BASE+0)) > /sys/class/gpio/export 2>/dev/null
+echo $((BASE+1)) > /sys/class/gpio/export 2>/dev/null
+echo $((BASE+6)) > /sys/class/gpio/export 2>/dev/null
 
 RST=$(cat "/sys/class/gpio/gpio$((BASE+0))/value")
 WD=$(cat "/sys/class/gpio/gpio$((BASE+1))/value")
