@@ -3,6 +3,7 @@ PWD=$(dir $(lastword $(MAKEFILE_LIST)))
 
 PACKAGE = medcom-wide-rootfs
 VERSION = $(MEDCOM_VERSION)
+NAME = Rosencrantz
 DATE = $(shell date +%d.%m.%Y)
 
 dirs = \
@@ -298,7 +299,8 @@ include include/config/auto.conf
 include platforms/common.mk
 
 quiet_cmd_edit = SED     $@
-      cmd_edit = $(SED) 's|@VERSION@|$(VERSION)|;s|@DATE@|$(DATE)|' $< > $@
+      cmd_edit = $(SED) \
+	's|@VERSION@|$(VERSION)|;s|@DATE@|$(DATE)|;s|@NAME@|$(NAME)|' $< > $@
 
 $(DESTDIR)/etc/os-release: $(obj)/src/etc/os-release.in $(obj)/Makefile
 	$(call cmd,edit)

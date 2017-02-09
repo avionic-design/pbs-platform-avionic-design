@@ -3,6 +3,7 @@ PWD=$(dir $(lastword $(MAKEFILE_LIST)))
 
 PACKAGE = medatom-ng-rootfs
 VERSION = $(MEDCOM_VERSION)
+NAME = Claudius
 DATE = $(shell date +%d.%m.%Y)
 
 dirs = \
@@ -288,7 +289,8 @@ links = \
 include platforms/common.mk
 
 quiet_cmd_edit = SED     $@
-      cmd_edit = $(SED) 's|@VERSION@|$(VERSION)|;s|@DATE@|$(DATE)|' $< > $@
+      cmd_edit = $(SED) \
+	's|@VERSION@|$(VERSION)|;s|@DATE@|$(DATE)|;s|@NAME@|$(NAME)|' $< > $@
 
 $(DESTDIR)/etc/os-release: $(obj)/src/etc/os-release.in $(obj)/Makefile
 	$(call cmd,edit)

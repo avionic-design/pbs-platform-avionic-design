@@ -1,3 +1,4 @@
 NAME="Avionic Design Medatom NextGen GNU/Linux"
+FLAVOUR=@NAME@
 VERSION=@VERSION@
 DATE=@DATE@

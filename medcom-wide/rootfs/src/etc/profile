@@ -60,6 +60,7 @@ if test -f /etc/os-release; then
 	source /etc/os-release
 	if test -n "${VERSION}"; then
 		echo " "
+		echo " OS Flavour: ${FLAVOUR}"
 		echo " OS Release: ${VERSION}"
 		[ -n "${DATE}" ] && echo " Date:       ${DATE}"
 		echo " "
