@@ -1,0 +1,11 @@
+[Unit]
+Description=OpenSSH Server
+After=syslog.target network.target
+
+[Service]
+ExecStartPre=/usr/sbin/sshd-keygen
+ExecStart=/usr/sbin/sshd -D
+ExecReload=/bin/kill -HUP $MAINPID
+
+[Install]
+WantedBy=multi-user.target

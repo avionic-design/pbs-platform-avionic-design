@@ -1,0 +1,15 @@
+acpi-cpufreq
+cpufreq-conservative
+cpufreq-powersave
+cpufreq-stats
+processor
+usbhid
+i915
+e1000e
+snd-hda-intel model=ad-medatom
+spioc
+m25p80
+8250-pci
+i2c-ocores
+i2c-dev
+tsc2007

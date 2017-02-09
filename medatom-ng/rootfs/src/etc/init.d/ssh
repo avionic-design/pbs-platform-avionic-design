@@ -1,0 +1,73 @@
+#!/bin/sh
+
+. /usr/lib/lsb/init-functions
+
+PIDFILE=/var/run/ssh.pid
+KEYSDIR=/var/lib/ssh
+
+RSA_KEY="$KEYSDIR/host.rsa"
+DSS_KEY="$KEYSDIR/host.dss"
+
+gen_keys()
+{
+	if ! test -d "$KEYSDIR"; then
+		mkdir -p "$KEYSDIR"
+	fi
+
+	if ! test -e "$RSA_KEY"; then
+		log_action_begin_msg "Generating host RSA key"
+		dropbearkey -t rsa -f "$RSA_KEY" > /dev/null 2>&1
+		log_action_end_msg $?
+	fi
+
+	if ! test -e "$DSS_KEY"; then
+		log_action_begin_msg "Generating host DSS key"
+		dropbearkey -t dss -f "$DSS_KEY" > /dev/null 2>&1
+		log_action_end_msg $?
+	fi
+}
+
+do_start()
+{
+	log_action_begin_msg "Starting dropbear"
+
+	if ! test -e "$PIDFILE"; then
+		dropbear -r "$RSA_KEY" -d "$DSS_KEY" -P "$PIDFILE"
+		log_action_end_msg $?
+	else
+		log_action_msg "already running"
+	fi
+}
+
+do_stop()
+{
+	log_action_begin_msg "Stopping dropbear"
+
+	if test -e "$PIDFILE"; then
+		pid=`cat $PIDFILE` && kill $pid
+		log_action_end_msg $?
+	else
+		log_action_msg "not running"
+	fi
+}
+
+case $1 in
+	start)
+		gen_keys
+		do_start
+		;;
+
+	stop)
+		do_stop
+		;;
+
+	restart)
+		do_stop
+		do_start
+		;;
+
+	*)
+		echo "usage: $0 {start|stop|restart}"
+		exit 1
+		;;
+esac

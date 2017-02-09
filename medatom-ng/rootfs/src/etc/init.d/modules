@@ -1,0 +1,103 @@
+#!/bin/sh
+
+MODPROBE=/sbin/modprobe
+
+# load defaults
+if test -f /etc/default/rcS; then
+	. /etc/default/rcS
+fi
+
+. /usr/lib/lsb/init-functions
+
+list_modules() {
+	if test -f /etc/modules; then
+		cat /etc/modules | \
+			grep '^[^#]'
+	fi
+}
+
+load_module() {
+	module="$1"; shift
+	args="$@"
+
+	if test -z "$module"; then
+		return 0
+	fi
+
+	if test "x$VERBOSE" != "xno"; then
+		log_action_begin_msg "Loading kernel module $module"
+		$MODPROBE $module $args
+		log_action_end_msg $?
+	else
+		$MODPROBE $module $args > /dev/null 2>&1 || true
+	fi
+}
+
+unload_module() {
+	module="$1"; shift
+	args="$@"
+
+	if test -z "$module"; then
+		return 0
+	fi
+
+	if test "x$VERBOSE" != "xno"; then
+		log_action_begin_msg "Unloading kernel module $module"
+		$MODPROBE -r $module
+		log_action_end_msg $?
+	else
+		$MODPROBE -r $module > /dev/null 2>&1 || true
+	fi
+}
+
+do_start() {
+	if test "x$VERBOSE" = "xno"; then
+		log_action_begin_msg "Loading kernel modules"
+	fi
+
+	list_modules | {
+		while read module args; do
+			load_module "$module" "$args"
+		done
+	}
+
+	if test "x$VERBOSE" = "xno"; then
+		log_action_end_msg 0
+	fi
+}
+
+do_stop() {
+	if test "x$VERBOSE" = "xno"; then
+		log_action_begin_msg "Unloading kernel modules"
+	fi
+
+	list_modules | (
+		while read module args; do
+			unload_module "$module" "$args"
+		done
+	)
+
+	if test "x$VERBOSE" = "xno"; then
+		log_action_end_msg 0
+	fi
+}
+
+case $1 in
+	start)
+		do_start
+		;;
+
+	stop)
+		do_stop
+		;;
+
+	restart)
+		do_stop
+		do_start
+		;;
+
+	*)
+		echo "usage: $0 {start|stop|restart}"
+		exit 1
+		;;
+esac

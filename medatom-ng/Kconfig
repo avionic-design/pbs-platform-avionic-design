@@ -1,0 +1,11 @@
+if PLATFORM_AVIONIC_DESIGN_MEDATOM_NG
+
+choice
+	prompt "Avionic Design Med@om NextGen"
+
+source "platforms/avionic-design/medatom-ng/initrd/Kconfig"
+source "platforms/avionic-design/medatom-ng/rootfs/Kconfig"
+
+endchoice
+
+endif

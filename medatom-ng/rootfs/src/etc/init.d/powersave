@@ -1,0 +1,30 @@
+#!/bin/sh
+
+. /usr/lib/lsb/init-functions
+
+CPUFREQ_GOVERNOR=powersave
+
+do_start()
+{
+	log_action_begin_msg "Enabling $CPUFREQ_GOVERNOR governor"
+
+	for cpu in /sys/devices/system/cpu/cpu*; do
+		if test -f "$cpu/cpufreq/scaling_governor"; then
+			echo $CPUFREQ_GOVERNOR > \
+				"$cpu/cpufreq/scaling_governor"
+		fi
+	done
+
+	log_action_end_msg $?
+}
+
+case $1 in
+	start)
+		do_start
+		;;
+
+	*)
+		echo "usage: $0 start"
+		exit 1
+		;;
+esac

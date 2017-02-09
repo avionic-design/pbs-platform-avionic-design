@@ -1,0 +1,22 @@
+#!/bin/sh -e
+
+BASE='x'
+
+find_gpiochip()
+{
+	for f in /sys/class/gpio/gpiochip*; do
+		LABEL=$(cat "$f/label")
+		if [ "$LABEL" = "$1" ]; then
+			BASE=$(cat "$f/base")
+			return 0
+		fi
+	done
+	return 1
+}
+
+find_gpiochip "gpio-kempld"
+
+[ "$BASE" = "x" ] && { echo "Error: gpio chip not found."; exit 1; }
+
+echo $((BASE+4)) > /sys/class/gpio/export
+echo high > /sys/class/gpio/gpio$((BASE+4))/direction

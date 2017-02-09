@@ -1,0 +1,49 @@
+#!/bin/sh
+
+. /usr/lib/lsb/init-functions
+
+PIDFILE=/var/run/ConsoleKit/pid
+
+do_start()
+{
+	log_action_begin_msg "Starting ConsoleKit"
+
+	if ! test -e "$PIDFILE"; then
+		console-kit-daemon
+		log_action_end_msg $?
+	else
+		log_action_msg "already running"
+	fi
+}
+
+do_stop()
+{
+	log_action_begin_msg "Stopping ConsoleKit"
+
+	if test -e "$PIDFILE"; then
+		pid=`cat $PIDFILE` && kill $pid && rm "$PIDFILE"
+		log_action_end_msg $?
+	else
+		log_action_msg "not running"
+	fi
+}
+
+case $1 in
+	start)
+		do_start
+		;;
+
+	stop)
+		do_stop
+		;;
+
+	restart)
+		do_stop
+		do_start
+		;;
+
+	*)
+		echo "usage: $0 {start|stop}"
+		exit 1
+		;;
+esac

@@ -1,0 +1,26 @@
+#!/bin/sh
+
+. /usr/lib/lsb/init-functions
+
+usage() {
+	echo "usage: $0 {start|stop}"
+}
+
+case $1 in
+	start)
+		log_action_begin_msg "Generating /etc/motd"
+		/bin/uname -snrvm > /var/run/motd
+		if test -f /etc/motd.tail; then
+			/bin/cat /etc/motd.tail >> /var/run/motd
+		fi
+		log_action_end_msg $?
+		;;
+
+	stop)
+		;;
+
+	*)
+		usage $0
+		exit 1
+		;;
+esac

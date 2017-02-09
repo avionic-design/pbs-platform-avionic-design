@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Encoding=UTF-8
+Name=XTerm
+Comment=XTerm: terminal emulator for X
+Icon=
+Exec=xterm
+Terminal=false
+Categories=

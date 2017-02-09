@@ -1,0 +1,10 @@
+[Unit]
+Description=Interface Link Status Monitor for Primary Ethernet Interface
+
+[Service]
+Type=simple
+ExecStart=/usr/sbin/iflinkd -i eth0 --force-fast
+StandardError=syslog
+
+[Install]
+WantedBy=network.target

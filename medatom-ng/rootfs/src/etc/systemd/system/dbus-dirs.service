@@ -1,0 +1,18 @@
+[Unit]
+Description=D-Bus Directories
+DefaultDependencies=no
+Requires=var-run.mount
+Requires=var-lib.mount
+After=var-run.mount
+After=var-lib.mount
+Before=local-fs.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/bin/echo "Hello, World!"
+#ExecStart=/bin/mkdir -p /var/run/dbus ; /bin/chmod 0755 /var/run/dbus
+#ExecStart=/bin/mkdir -p /var/lib/dbus ; /bin/chmod 0755 /var/lib/dbus
+
+[Install]
+WantedBy=local-fs.target

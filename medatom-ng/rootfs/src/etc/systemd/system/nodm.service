@@ -1,0 +1,9 @@
+[Unit]
+Description=nodm Display Manager
+
+[Service]
+ExecStart=/usr/sbin/nodm
+TimeoutStopSec=4sec
+
+[Install]
+WantedBy=graphical.target

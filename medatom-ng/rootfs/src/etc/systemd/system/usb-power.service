@@ -1,0 +1,9 @@
+[Unit]
+Description=USB Power Enable
+
+[Service]
+Type=oneshot
+ExecStart=/usr/lib/systemd/usb-power
+
+[Install]
+WantedBy=multi-user.target

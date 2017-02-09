@@ -1,0 +1,11 @@
+[Unit]
+Description=Crontab Update Service
+After=local-fs.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=no
+ExecStart=/usr/lib/systemd/update-crontab
+
+[Install]
+WantedBy=multi-user.target

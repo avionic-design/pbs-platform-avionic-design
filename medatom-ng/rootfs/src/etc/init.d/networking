@@ -1,0 +1,62 @@
+#!/bin/sh
+
+. /usr/lib/lsb/init-functions
+
+IFCONFIG=/sbin/ifconfig
+UDHCPC=/sbin/udhcpc
+HOSTNAME=medatom
+IFACE=eth0
+RETRIES=10
+PIDFILE=/var/run/udhcpc.$IFACE.pid
+
+usage()
+{
+	echo "usage: $1 {start|stop|restart}"
+}
+
+do_start()
+{
+	log_action_begin_msg "Configuring loopback interface"
+	$IFCONFIG lo 127.0.0.1
+	log_action_end_msg $?
+
+	log_action_begin_msg "Bringing up network interface $IFACE"
+	$IFCONFIG $IFACE up && \
+		$UDHCPC -i $IFACE -h $HOSTNAME -t $RETRIES -p $PIDFILE
+	log_action_end_msg $?
+}
+
+do_stop()
+{
+	log_action_begin_msg "Taking down network interface $IFACE"
+	if test -f "$PIDFILE"; then
+		PID=`cat $PIDFILE`
+		kill $PID && wait $PID
+	fi
+	$IFCONFIG $IFACE down
+	log_action_end_msg $?
+
+	log_action_begin_msg "Deconfiguring loopback interface"
+	$IFCONFIG lo 0.0.0.0 && $IFCONFIG lo down
+	log_action_end_msg $?
+}
+
+case $1 in
+	start)
+		do_start
+		;;
+
+	stop)
+		do_stop
+		;;
+
+	restart)
+		do_stop
+		do_start
+		;;
+
+	*)
+		usage $0
+		exit 1
+		;;
+esac

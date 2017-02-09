@@ -1,0 +1,10 @@
+[Unit]
+Description=software watchdog
+After=syslog.target
+
+[Service]
+Type=forking
+ExecStart=/sbin/watchdog /dev/watchdog
+
+[Install]
+WantedBy=multi-user.target

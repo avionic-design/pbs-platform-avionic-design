@@ -1,0 +1,30 @@
+#!/bin/sh
+
+. /usr/lib/lsb/init-functions
+
+SYSLOGD=/sbin/syslogd
+SYSLOGD_OPTS=
+
+usage() {
+	echo "usage: $1 {start|stop}"
+}
+
+case $1 in
+	start)
+		log_action_begin_msg "Starting system logger"
+		$SYSLOGD $SYSLOGD_OPTS
+		log_action_end_msg $?
+		;;
+
+	stop)
+		log_action_begin_msg "Stopping system logger"
+		pid=`cat /var/run/syslogd.pid`
+		kill $pid
+		log_action_end_msg $?
+		;;
+
+	*)
+		usage $0
+		exit 1
+		;;
+esac
