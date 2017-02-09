@@ -32,6 +32,7 @@ dirs = \
 	/etc/pki/tls/cert \
 	/etc/rcS.d \
 	/etc/remote-control.conf.d \
+	/etc/remote-control.conf.d/medatom \
 	/etc/remote-control.conf.d/medatom-wide \
 	/etc/rsyslog.d \
 	/etc/ssh \
@@ -160,9 +161,14 @@ files = \
 	/etc/pam.d/other \
 	/etc/passwd \
 	/etc/profile \
+	/etc/remote-control.conf.d/input.conf \
 	/etc/remote-control.conf.d/linphone.conf \
 	/etc/remote-control.conf.d/logging.conf \
+	/etc/remote-control.conf.d/medatom/gpio.conf \
+	/etc/remote-control.conf.d/medatom/smartcard.conf \
+	/etc/remote-control.conf.d/medatom-wide/gpio.conf \
 	/etc/remote-control.conf.d/medatom-wide/smartcard.conf \
+	/etc/remote-control.conf.d/modem.conf \
 	/etc/rsyslog.conf \
 	/etc/rsyslog.d/50-remote-control.conf \
 	/etc/rsyslog.d/99-persist.conf \
@@ -186,7 +192,6 @@ files = \
 	/etc/systemd/system/var-lib.mount \
 	/etc/systemd/system/var-log.mount \
 	/etc/systemd/system/var-spool.mount \
-	/etc/systemd/system/watchdog.service \
 	/etc/tmpfiles.d/console-kit.conf \
 	/etc/tmpfiles.d/dbus.conf \
 	/etc/tmpfiles.d/dhcpcd.conf \
@@ -204,7 +209,6 @@ files = \
 	/etc/X11/xorg.conf.d/98-dpms.conf \
 	/etc/X11/xorg.conf.d/99-intel.conf \
 	/etc/X11/Xsession.d/00-persist \
-	/etc/X11/Xsession.d/20-detect-restart-reason \
 	/etc/X11/Xsession.d/50-determine-startup \
 	/etc/X11/Xsession.d/90-calibrate \
 	/etc/X11/Xsession.d/99-start \
@@ -264,11 +268,8 @@ links = \
 	/etc/systemd/system/multi-user.target.wants/crond.service \
 	/etc/systemd/system/multi-user.target.wants/network.target \
 	/etc/systemd/system/multi-user.target.wants/openssh.service \
-	/etc/systemd/system/multi-user.target.wants/pcscd.service \
 	/etc/systemd/system/multi-user.target.wants/update-crontab.service \
 	/etc/systemd/system/multi-user.target.wants/usb-power.service \
-	/etc/systemd/system/multi-user.target.wants/watchdog.service \
-	/etc/systemd/system/sockets.target.wants/pcscd.socket \
 	/etc/systemd/system/syslog.service \
 	/etc/udev/rules.d/80-net-setup-link.rules \
 	/etc/X11/xorg.conf.d/99-calibration.conf \

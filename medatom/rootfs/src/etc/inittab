@@ -5,4 +5,3 @@
 ::respawn:/sbin/getty -L 38400 tty4 vt100
 ::respawn:/sbin/getty -L 38400 tty5 vt100
 ::respawn:/sbin/getty -L 38400 tty6 vt100
-::respawn:/sbin/getty -L 115200 ttyS0 vt102
