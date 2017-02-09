@@ -1,5 +1,8 @@
+PWD=$(dir $(lastword $(MAKEFILE_LIST)))
+-include $(PWD)../../Makefile.version
+
 PACKAGE = medatom
-VERSION = 9.5.0
+VERSION = $(MEDCOM_VERSION)
 DATE = $(shell date +%d.%m.%Y)
 
 dirs = \

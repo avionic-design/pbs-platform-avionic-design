@@ -1,5 +1,8 @@
+PWD=$(dir $(lastword $(MAKEFILE_LIST)))
+-include $(PWD)../../Makefile.version
+
 PACKAGE = medcom-wide-setup
-VERSION = 9.5.1
+VERSION = $(MEDCOM_VERSION)
 
 dirs = \
 	/bin \
