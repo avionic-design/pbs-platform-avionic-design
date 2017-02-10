@@ -77,7 +77,8 @@ dirs = \
 	/var/lib \
 	/var/lock \
 	/var/log \
-	/var/spool
+	/var/spool \
+	/var/tmp
 
 scripts = \
 	/etc/X11/Xsession \
@@ -211,6 +212,7 @@ files = \
 	/etc/systemd/system/var-lib.mount \
 	/etc/systemd/system/var-log.mount \
 	/etc/systemd/system/var-spool.mount \
+	/etc/systemd/system/var-tmp.mount \
 	/etc/systemd/system/zram.service \
 	/etc/tmpfiles.d/dbus.conf \
 	/etc/tmpfiles.d/dhcpcd.conf \
@@ -267,6 +269,7 @@ links = \
 	/etc/systemd/system/local-fs.target.wants/var-lib.mount \
 	/etc/systemd/system/local-fs.target.wants/var-log.mount \
 	/etc/systemd/system/local-fs.target.wants/var-spool.mount \
+	/etc/systemd/system/local-fs.target.wants/var-tmp.mount \
 	/etc/systemd/system/multi-user.target.wants/network.target \
 	/etc/systemd/system/multi-user.target.wants/nscd.service \
 	/etc/systemd/system/multi-user.target.wants/sensorpads-backlight.service \
