@@ -282,6 +282,10 @@ links = \
 	/etc/systemd/system/systemd-networkd.socket \
 	/etc/systemd/system/systemd-resolved.service \
 	/etc/systemd/system/systemd-timesyncd.service \
+	/etc/tmpfiles.d/etc.conf \
+	/etc/tmpfiles.d/legacy.conf \
+	/etc/tmpfiles.d/home.conf \
+	/etc/tmpfiles.d/var.conf \
 	/etc/udev/rules.d/80-net-setup-link.rules \
 	/etc/X11/xorg.conf.d/99-calibration.conf \
 	/etc/X11/xorg.conf.d/99-undefined.conf \
