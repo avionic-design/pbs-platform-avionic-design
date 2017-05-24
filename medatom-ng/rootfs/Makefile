@@ -275,8 +275,15 @@ links = \
 	/etc/systemd/system/multi-user.target.wants/update-crontab.service \
 	/etc/systemd/system/multi-user.target.wants/usb-power.service \
 	/etc/systemd/system/multi-user.target.wants/watchdog.service \
+	/etc/systemd/system/proc-sys-fs-binfmt_misc.automount \
+	/etc/systemd/system/proc-sys-fs-binfmt_misc.mount \
 	/etc/systemd/system/sockets.target.wants/pcscd.socket \
+	/etc/systemd/system/ldconfig.service \
 	/etc/systemd/system/syslog.service \
+	/etc/systemd/system/systemd-networkd.service \
+	/etc/systemd/system/systemd-networkd.socket \
+	/etc/systemd/system/systemd-resolved.service \
+	/etc/systemd/system/systemd-timesyncd.service \
 	/etc/udev/rules.d/80-net-setup-link.rules \
 	/etc/X11/xorg.conf.d/99-calibration.conf \
 	/etc/X11/xorg.conf.d/99-undefined.conf \
