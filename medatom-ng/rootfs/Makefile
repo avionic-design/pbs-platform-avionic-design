@@ -105,7 +105,6 @@ scripts = \
 	/etc/init.d/pango \
 	/etc/init.d/powersave \
 	/etc/init.d/rcS \
-	/etc/init.d/ssh \
 	/etc/init.d/syslogd \
 	/etc/init.d/X \
 	/etc/X11/Xsession \
@@ -249,7 +248,6 @@ links = \
 	/etc/rcS.d/53-gdk-pixbuf \
 	/etc/rcS.d/54-pango \
 	/etc/rcS.d/70-console-kit \
-	/etc/rcS.d/75-ssh \
 	/etc/rcS.d/99-X \
 	/etc/hostname \
 	/etc/lldpd.d \
