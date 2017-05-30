@@ -1,7 +1,7 @@
 CALIBRATION_FILE=/etc/X11/xorg.conf.d/99-calibration.conf
 
 if test -d /proc/device-tree; then
-	board=`cut -d, -f2 /proc/device-tree/compatible`
+	board=`cut -d, -f2 /proc/device-tree/compatible | tr -d '\000'`
 else
 	board=medatom
 fi
