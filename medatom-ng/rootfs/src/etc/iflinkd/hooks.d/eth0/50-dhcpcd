@@ -14,7 +14,7 @@ case $action in
 		dhcpcd --quiet --hostname --noipv4ll --timeout 0 $interface
 		;;
 
-	up | down)
+	down)
 		dhcpcd --quiet --exit $interface || true
 		;;
 
