@@ -20,7 +20,6 @@ dirs = \
 	/etc/iflinkd/hooks.d \
 	/etc/iflinkd/hooks.d/eth0 \
 	/etc/iflinkd/hooks.d/lo \
-	/etc/init.d \
 	/etc/logrotate.d \
 	/etc/modprobe.d \
 	/etc/modules-load.d \
@@ -34,7 +33,6 @@ dirs = \
 	/etc/pki \
 	/etc/pki/tls \
 	/etc/pki/tls/cert \
-	/etc/rcS.d \
 	/etc/remote-control.conf.d \
 	/etc/remote-control.conf.d/medatom-wide \
 	/etc/rsyslog.d \
@@ -93,20 +91,6 @@ scripts = \
 	/etc/alsa/medatom-wide.sh \
 	/etc/iflinkd/hooks.d/eth0/50-dhcpcd \
 	/etc/iflinkd/hooks.d/eth0/00-lldpd \
-	/etc/init.d/alsa \
-	/etc/init.d/console-kit \
-	/etc/init.d/dbus \
-	/etc/init.d/gconf \
-	/etc/init.d/gdk-pixbuf \
-	/etc/init.d/hal \
-	/etc/init.d/modules \
-	/etc/init.d/motd \
-	/etc/init.d/networking \
-	/etc/init.d/pango \
-	/etc/init.d/powersave \
-	/etc/init.d/rcS \
-	/etc/init.d/syslogd \
-	/etc/init.d/X \
 	/etc/X11/Xsession \
 	/etc/xdg/awesome/xinitrc \
 	/usr/lib/dhcpcd/dhcpcd-hooks/90-ntp \
@@ -127,7 +111,6 @@ files = \
 	/etc/alsa/medatom-wide.state \
 	/etc/crontab \
 	/etc/default/locale \
-	/etc/default/rcS \
 	/etc/default/lldpd \
 	/etc/environment \
 	/etc/fstab \
@@ -152,7 +135,7 @@ files = \
 	/etc/modules-load.d/input.conf \
 	/etc/modules-load.d/misc.conf \
 	/etc/modules-load.d/networking.conf \
-	/etc/motd.tail \
+	/etc/motd \
 	/etc/network/interfaces \
 	/etc/nsswitch.conf \
 	/etc/pam.conf \
@@ -235,20 +218,8 @@ links = \
 	/etc/browser.conf \
 	/etc/dhcpcd.duid \
 	/etc/machine-id \
-	/etc/motd \
 	/etc/mtab \
 	/etc/pki/tls/certs/ca-bundle.crt \
-	/etc/rcS.d/05-syslogd \
-	/etc/rcS.d/10-modules \
-	/etc/rcS.d/11-networking \
-	/etc/rcS.d/12-powersave \
-	/etc/rcS.d/20-alsa \
-	/etc/rcS.d/50-dbus \
-	/etc/rcS.d/52-motd \
-	/etc/rcS.d/53-gdk-pixbuf \
-	/etc/rcS.d/54-pango \
-	/etc/rcS.d/70-console-kit \
-	/etc/rcS.d/99-X \
 	/etc/hostname \
 	/etc/lldpd.d \
 	/etc/ntp.conf \
