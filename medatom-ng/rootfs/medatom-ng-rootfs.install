@@ -12,7 +12,5 @@
 /sbin
 /sys
 /tmp
-/usr/lib
-/usr/sbin
-/usr/share
+/usr
 /var

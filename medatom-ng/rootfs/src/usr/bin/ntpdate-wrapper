@@ -1,0 +1,28 @@
+#!/bin/sh
+
+RETRIES=3
+NTPCONF=/etc/ntp.conf
+tickers=
+
+if [ -f $NTPCONF ]; then
+	tickers=$(awk '$1=="pool"||$1=="peer"||$1=="server"{print $2}' $NTPCONF | \
+		grep -Ev '127\.127\.[0-9]+\.[0-9]+')
+fi
+
+if ! echo "$tickers" | grep -qi '[a-z0-9]'; then
+	echo "NTP server not specified in $NTPCONF"
+	exit 6
+fi
+
+retry=0
+
+echo "Using ntp server(s): $tickers"
+while true; do
+	/usr/bin/ntpdate -s -b -p 1 $tickers &> /dev/null
+	RETVAL=$?
+	[ $RETVAL -eq 0 ] || [ $retry -ge "$RETRIES" ] && break
+	sleep $[10 * (1 << $retry)]
+	retry=$[$retry + 1]
+done
+
+exit $RETVAL

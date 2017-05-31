@@ -1,0 +1,11 @@
+[Unit]
+Description=Network Time Service
+After=syslog.target network.target ntpdate.service
+
+[Service]
+Type=forking
+PIDFile=/run/ntpd.pid
+ExecStart=/usr/bin/ntpd -p /run/ntpd.pid -f /run/ntp/driftfile -I lo -g
+
+[Install]
+WantedBy=multi-user.target

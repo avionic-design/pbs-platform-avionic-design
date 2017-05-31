@@ -67,6 +67,7 @@ dirs = \
 	/sys \
 	/tmp \
 	/usr \
+	/usr/bin \
 	/usr/lib \
 	/usr/lib/dhcpcd \
 	/usr/lib/dhcpcd/dhcpcd-hooks \
@@ -93,6 +94,7 @@ scripts = \
 	/etc/iflinkd/hooks.d/eth0/00-lldpd \
 	/etc/X11/Xsession \
 	/etc/xdg/awesome/xinitrc \
+	/usr/bin/ntpdate-wrapper \
 	/usr/lib/dhcpcd/dhcpcd-hooks/90-ntp \
 	/usr/lib/dhcpcd/dhcpcd-hooks/91-ddip-announce \
 	/usr/lib/systemd/gdk-pixbuf-loaders-cache \
@@ -165,6 +167,8 @@ files = \
 	/etc/systemd/system/iflinkd@eth0.service \
 	/etc/systemd/system/iflinkd@lo.service \
 	/etc/systemd/system/nodm.service \
+	/etc/systemd/system/ntpd.service \
+	/etc/systemd/system/ntpdate.service \
 	/etc/systemd/system/openssh.service \
 	/etc/systemd/system/usb-power.service \
 	/etc/systemd/system/root.mount \
@@ -236,6 +240,8 @@ links = \
 	/etc/systemd/system/local-fs.target.wants/var-tmp.mount \
 	/etc/systemd/system/network.target.wants/iflinkd@eth0.service \
 	/etc/systemd/system/network.target.wants/iflinkd@lo.service \
+	/etc/systemd/system/network.target.wants/ntpd.service \
+	/etc/systemd/system/network.target.wants/ntpdate.service \
 	/etc/systemd/system/multi-user.target.wants/cpu_governor.service \
 	/etc/systemd/system/multi-user.target.wants/crond.service \
 	/etc/systemd/system/multi-user.target.wants/network.target \

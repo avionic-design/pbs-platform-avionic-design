@@ -1,15 +1,11 @@
 #!/bin/sh -e
 
-PIDFILE=/run/ntp.pid
-
 case "$reason" in
 	BOUND | RENEW)
-		/usr/bin/ntpd -p $PIDFILE -g
+		systemctl try-restart ntpdate.service
 		;;
 
 	EXPIRE | RELEASE)
-		pid=$(cat $PIDFILE)
-		kill $pid
 		;;
 
 	*)
